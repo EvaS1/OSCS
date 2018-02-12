@@ -1,0 +1,694 @@
+@import url("normalize.css");
+/*@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Ubuntu+Condensed');*/
+/*---------------------------------
+POUR JS
+---------------------------------*/
+.hide {
+	display: none;	
+}
+
+/*---------------------------------
+POUR TOUS
+----------------------------------*/
+a {
+	text-decoration: none; /*Pour enlever la mise en forme des liens, ici soulignage*/
+}
+
+a {
+	color: white;
+}
+
+#menu ul {
+list-style-type:none;
+}
+
+body {
+	background-image: url("../Fond/Fond rectangulairedouble.png");
+	background-size: cover;
+	/*background-position: center;*/
+	background-repeat: no-repeat;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+}
+
+#page {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+/*HEADER MOBILE*/
+.block-header {
+	margin: 20px;
+}
+
+/*.block-header .inner .connexion {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 200px;
+	padding: 20px;
+	font-family: 'Fjalla One', Arial, sans-serif; 
+	font-size: 1em;
+}*/
+
+.block-header .inner .logo-mobile {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.block-header .inner .logo img {
+	position: relative;
+    right: -325px;
+    margin: 20px;
+}
+
+.block-header .inner .connexion img{
+	position: absolute;
+	top: 70px;
+	right: 190px;
+	width: 60px;
+}
+
+.block-header .inner .connexion a {
+	position: absolute;
+	top: 80px;
+	right: 25px;
+	color: #274451;
+	font-size: 0.8em;
+}
+
+/*NAV MOBILE*/
+.block-nav .inner .menunav{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100vh; 	
+	background-color: #203863;
+	visibility: visible;
+	color: white;
+	padding: 35px 30px 5px 15px;
+	font-family: 'Fjalla One', Arial, sans-serif; 
+	font-size: 30px;
+	z-index: 98;
+}
+.block-nav .inner #menu .titre{
+	padding: 50px;
+	padding-left: 125px;
+	top: 70px;
+}
+.block-nav .inner .search{
+	border-radius: 50px;
+	padding: 10px;
+}
+.block-nav .inner #btnClickMe{
+	position: absolute;
+	z-index: 99;
+	top: 70px;
+	left: 25px;
+}
+.block-nav .inner .lemenu{
+	padding-top: 70px;
+	padding-left:100px;
+}
+.block-nav li {
+	padding-top: 100px;
+	left: 0;
+	padding-left: 0px;
+}
+.block-nav .inner .action ul input  {
+	padding: 10px 10px 0px;
+	position: relative;
+	border-radius: 50px;
+}
+
+/*HEADER WEB*/
+.titleandlogo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.block-header-web .titleandlogo h1 {
+	color: #203863;
+	font-size: 50px;
+	display: none;
+	margin: 0px 15px 0px 0px;
+}
+
+.block-header-web .titleandlogo img {
+	width: 20%;
+}
+
+
+.block-nav-web,
+.block-header-web {
+	display: none;
+}
+
+.block-nav-web .inner {
+	display: flex;
+	justify-content: space-around;
+}
+
+
+/*MAIN PAGE INSCRIPTION*/
+#content {
+	flex-grow: 1;
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+}
+
+/*Style Inscription*/
+.block-main-inscription h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+
+/*Couleur nom des champs*/
+.block-main-inscription .form label:nth-of-type(1) {
+	color: #203863;
+}
+
+
+/*Style champs*/
+.block-main-inscription .form  p {
+	color: white;
+	margin: 50px 20px;
+	font-size: 1.2em;
+}
+
+
+/*Ombrage texte du formulaire sauf bouton*/
+.block-main-inscription .form p:not(:last-of-type) {
+	text-shadow: 1px 1px 2px #288797;
+}
+
+
+/*Espace entre noms champs et zones de texte + boutons radios*/
+.block-main-inscription .form p label:nth-of-type(1) {
+	display: block;
+	width: 128px;
+	float: left;
+}
+
+
+
+/*Espace entre boutons radios et textes*/
+.block-main-inscription .form p:nth-of-type(4) input,
+.block-main-inscription .form p:nth-of-type(5) input {
+	margin: 0px 8px 0px 0px;	
+}
+
+
+/*Style zones de texte*/
+.block-main-inscription .form input:first-of-type,
+.block-main-inscription .form input:nth-of-type(2),
+.block-main-inscription .form input:nth-of-type(3) {
+	background-color: rgba(255,255,255,0.50);
+	border: thin;
+	border-radius: 10px;
+	color: #203863;
+}
+
+
+/*Espace entre chaque input*/
+.block-main-inscription .form p:nth-of-type(4) input:not(:first-of-type), 
+.block-main-inscription .form p:nth-of-type(5) input:not(:first-of-type) { 
+	margin: 0px 8px 0px 29px;
+}
+
+
+
+/*Style texte bouton*/
+.block-main-inscription .form p:last-of-type {
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: 600;
+	margin: 70px;
+}
+   
+
+/*Style bouton*/
+.block-main-inscription .form p:last-of-type input {
+	color: #203863;
+	padding: 15px 30px;
+	border: thin;
+	border-radius: 10px;
+	background-color: white;
+	filter: drop-shadow(0px 2px 5px #288797); 
+}
+
+/*Style bouton au survol, au tab ou au clic*/
+.block-main-inscription .form p:last-of-type input:hover,
+.block-main-inscription .form p:last-of-type input:focus,
+.block-main-inscription .form p:last-of-type input:active {
+	background-color: #203863;
+	color: white;
+	text-decoration: none;
+}
+
+/*MAIN PAGE CONFIRMATION INSCRIPTION*/
+
+/*Style Inscription*/
+.block-main-confirmationinscription .titleconfirmation h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Style confirmation*/
+.block-main-confirmationinscription .confirmation {
+	color: white;
+	text-shadow: 1px 1px 2px #288797;
+	font-size: 1.4em;
+	margin: 20px;
+}
+
+/*Style lien suivant*/
+.block-main-confirmationinscription .buttonlink {
+	text-align: center;
+	
+}
+
+/*Style texte lien suivant*/
+.block-main-confirmationinscription .buttonlink a {
+	color: #00022e;
+	font-size: 1.3em;
+}
+
+/*MAIN CONNEXION*/
+
+
+/*Style titre connexion*/
+.block-main-connexion h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+
+/*Couleur nom des champs*/
+.block-main-connexion .form label:nth-of-type(1) {
+	color: #203863;
+}
+
+
+/*Style champs*/
+.block-main-connexion .form  p {
+	color: white;
+	margin: 50px 20px;
+	font-size: 1.3em;
+}
+
+
+/*Ombrage texte du formulaire sauf bouton*/
+.block-main-connexion .form p:not(:last-of-type) {
+	text-shadow: 1px 1px 2px #288797;
+}
+
+
+/*Espace entre noms champs et zones de texte + boutons radios*/
+.block-main-connexion .form p label:nth-of-type(1) {
+	display: block;
+	width: 128px;
+	float: left;
+}
+
+
+
+/*Espace entre boutons radios et textes*/
+.block-main-connexion .form p:nth-of-type(4) input,
+.block-main-connexion .form p:nth-of-type(5) input {
+	margin: 0px 8px 0px 0px;	
+}
+
+
+/*Style zones de texte*/
+.block-main-connexion .form input:first-of-type,
+.block-main-connexion .form input:nth-of-type(2),
+.block-main-connexion .form input:nth-of-type(3) {
+	background-color: rgba(255,255,255,0.50);
+	border: thin;
+	border-radius: 10px;
+	color: #203863;
+}
+
+
+/*Espace entre chaque input*/
+.block-main-connexion .form p:nth-of-type(4) input:not(:first-of-type), 
+.block-main-connexion .form p:nth-of-type(5) input:not(:first-of-type) { 
+	margin: 0px 8px 0px 29px;
+}
+
+
+
+/*Style texte bouton*/
+.block-main-connexion .form p:last-of-type {
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: 600;
+	margin: 70px;
+}
+   
+
+/*Style bouton*/
+.block-main-connexion .form p:last-of-type input {
+	color: #203863;
+	padding: 15px 30px;
+	border: thin;
+	border-radius: 10px;
+	background-color: white;
+	filter: drop-shadow(0px 2px 5px #288797); 
+}
+
+/*Style bouton au survol, au tab ou au clic*/
+.block-main-connexion .form p:last-of-type input:hover,
+.block-main-connexion .form p:last-of-type input:focus,
+.block-main-connexion .form p:last-of-type input:active {
+	background-color: #203863;
+	color: white;
+	text-decoration: none;
+}
+
+/*Style ligne horizontale*/
+.block-main-connexion hr {
+	background-color: white;
+	height: 1px;
+}
+
+/*Style Rien de prévu + inscription*/
+.block-main-connexion .noplan,
+.block-main-connexion .register {
+	text-align: center;
+}
+
+/*Style texte Rien de prévu + inscription*/
+.block-main-connexion .noplan p,
+.block-main-connexion .register a {
+	color: #203863;
+	font-size: 1.3em;
+	text-shadow: 1px 1px 2px #288797;
+}
+
+/*Espace après paragraphe Rien de prévu*/
+.block-main-connexion .noplan p {
+	margin-bottom: 10px;
+}
+
+
+/*MAIN CONFIRMATION CONNEXION*/
+.block-main-confirmationconnexion p  {
+	display: none;
+}
+
+.block-main-confirmationconnexion .erreurpseudo p,
+.block-main-confirmationconnexion .erreurpassword p {
+	display: block;
+}
+
+.block-main-confirmationconnexion h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+.block-main-confirmationconnexion p:last-of-type {
+	color: white;
+	font-size: 1.3em;
+	text-shadow: 1px 1px 2px #288797;
+}
+
+/*MAIN DEBUT FORMULAIRE*/
+
+/*Style titre page*/
+.block-main-debutformulaire h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Style texte paragraphe*/
+.block-main-debutformulaire .introduction {
+	color: white;
+	font-size: 1.2em;
+	text-align: justify;
+	margin: 40px 70px;
+}
+
+/*Style texte bouton*/
+.block-main-debutformulaire .buttonbegin {
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: 600;
+	margin: 70px;
+}
+
+
+/*Style bouton*/
+.block-main-debutformulaire .buttonbegin a {
+	color: #203863;
+	padding: 15px 30px;
+	border: thin;
+	border-radius: 10px;
+	background-color: white;
+	filter: drop-shadow(0px 2px 5px #288797); 
+}
+
+/*Style bouton au survol, au tab ou au clic*/
+.block-main-debutformulaire .buttonbegin a:hover,
+.block-main-debutformulaire .buttonbegin a:focus,
+.block-main-debutformulaire .buttonbegin a:active {
+	background-color: #203863;
+	color: white;
+	text-decoration: none;
+}
+
+
+/*MAIN CHOIX*/
+
+/*Style titre page*/
+.block-main-choix h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+
+/*Style sous-titre page*/
+.block-main-choix .selection p {
+	font-size: 1.4em;
+	color: white;
+	margin: 20px 0px 20px;
+	text-shadow: 1px 1px 2px #288797;
+}
+
+/*Event : Style du fond*/
+.block-main-choix .event1,
+.block-main-choix .event2 {
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.1em;
+	margin: 20px;
+	max-width: 650px;
+}
+
+/*Event : Style image*/
+.block-main-choix .event1 .image1,
+.block-main-choix .event2 .image2 {
+	height: 135px;
+}
+
+/*Event : Style titre*/
+.block-main-choix .event1 .titleevent1,
+.block-main-choix .event2 .titleevent2 {
+	font-size: 1.2em;
+	color: #047395;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style sous-titre*/
+.block-main-choix .event1 .subtitleevent1,
+.block-main-choix .event2 .subtitleevent2 {
+	font-size: 1.1em;
+	color: #00022e;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style description*/
+.block-main-choix .event1 .descriptionevent1,
+.block-main-choix .event2 .descriptionevent2 {
+	text-align: justify;
+}
+
+/*Event : Décalage en savoir plus*/
+.block-main-choix .event1 .link,
+.block-main-choix .event2 .link {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/*Event : Style texte en savoir plus*/
+.block-main-choix .event1 .link a,
+.block-main-choix .event2 .link a {
+	color: #047395;
+	font-weight: bold;
+}
+
+/*Event : Infos*/
+.block-main-choix .event1 .infoevent1,
+.block-main-choix .event2 .infoevent2 {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px 0px 20px;
+	font-size: 1.2em;
+}
+
+/*Event : Suppression espace après paragraphes*/
+.block-main-choix .event1 p,
+.block-main-choix .event2 p {
+	margin-bottom: 0;
+	max-width: 430px;
+}
+
+/*Event : Infos et icônes sur une ligne + alignement vertical*/
+.block-main-choix .event1 .dayevent1,
+.block-main-choix .event1 .timeevent1,
+.block-main-choix .event1 .placeevent1,
+.block-main-choix .event2 .dayevent2,
+.block-main-choix .event2 .timeevent2,
+.block-main-choix .event2 .placeevent2 {
+	display: flex;
+	align-items: center;
+}
+
+/*Event : Taille des icônes + espace entre icônes et textes*/
+.block-main-choix .infoevent1 img,
+.block-main-choix .infoevent2 img {
+	max-height: 30px;
+	margin: 0px 15px 0px 0px;
+}
+
+
+
+/*LARGE DEVICES (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+	/*HEADER*/
+
+	/*Nom + logo*/
+	.block-header-web .titleandlogo h1 {
+		display: block;
+	}
+
+	/*Taille logo*/
+	.block-header-web .titleandlogo img {
+		width: 12%;
+	}
+
+
+	/*Apparition barre de navigation + header web*/
+	.block-nav-web,
+	.block-header-web {
+		/*opacity: 1;*/
+		display: block;
+	}
+	
+	/*Disparition header mobile*/
+	.block-header,
+	.block-nav {
+		display: none;
+	}
+	
+	/*Couleur barre de nav*/
+	.block-nav-web .nav {
+		background: #203863;
+		margin: 0px 0px 40px;
+		width: 100vw;
+	}
+	
+	/*Style "a"*/
+	.block-nav-web a {
+		color: white;
+		font-size: 1.2em;
+	}
+	
+	/*Style séparateurs*/
+	.block-nav-web li:nth-of-type(2),
+	.block-nav-web li:nth-of-type(4),
+	.block-nav-web li:nth-of-type(6),
+	.block-nav-web li:nth-of-type(8),
+	.block-nav-web li:nth-of-type(10),
+	.block-nav-web li:nth-of-type(12) {
+		color: #46b3a6;
+		padding: .30rem 0rem;
+		font-size: 1.4em;
+	}
+	
+	
+	/*Style nav au survol ou au clic*/
+	.block-nav-web a:hover, 
+	.block-nav-web a:focus,
+	.block-nav-web a:active { 
+		color: #46b3a6;
+	}
+	
+	/*MAIN PAGE INSCRIPTION*/
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-inscription .form p label:nth-of-type(1) {
+		display: block;
+		width: 150px;
+		float: left;
+	}
+	
+	/*Espace entre boutons radios et textes*/
+	.block-main-inscription .form p:nth-of-type(4) input,
+	.block-main-inscription .form p:nth-of-type(5) input {
+		margin: 0px 20px 0px 0px;	
+	}
+	
+	/*MAIN PAGE CONNEXION*/
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-connexion .form p label:nth-of-type(1) {
+		display: block;
+		width: 150px;
+		float: left;
+	}
+	
+}
+
+
+/*FOOTER*/
+.footer {
+	background-color: transparent;
+	text-align: center;
+	color: white;
+	font-size: 1.1em;
+	width: 100%;
+  	height: 50px;
+	text-shadow: 1px 1px 2px #288797;
+}
+
+
+/*Séparateur*/
+.footer hr {
+	background-color: white;
+}
+
