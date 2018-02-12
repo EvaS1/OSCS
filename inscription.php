@@ -68,14 +68,6 @@
 				</main>
 			</div>
 			<?php include('footer.php');?>
-			<div class="footer">
-			<footer class="footer">
-				<div class="inner">
-   					<hr>
-   					<p><a href="mentionlegale.php">Mentions légales | Conditions générales | Politique de confidentialité</a></p>
-   				</div> 
-			</footer>
-			</div>
 		</div>
 	</body>
 	

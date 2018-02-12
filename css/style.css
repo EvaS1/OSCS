@@ -36,7 +36,9 @@ body {
 	flex-direction: column;
 }
 
-/*HEADER MOBILE*/
+/*---------------------------------
+HEADER MOBILE
+----------------------------------*/
 .block-header {
 	margin: 20px;
 }
@@ -79,7 +81,9 @@ body {
 	font-size: 0.8em;
 }
 
-/*NAV MOBILE*/
+/*---------------------------------
+NAV MOBILE
+----------------------------------*/
 .block-nav .inner .menunav{
 	position: absolute;
 	top: 0px;
@@ -123,7 +127,9 @@ body {
 	border-radius: 50px;
 }
 
-/*HEADER WEB*/
+/*---------------------------------
+HEADER WEB
+----------------------------------*/
 .titleandlogo {
 	display: flex;
 	justify-content: center;
@@ -154,7 +160,9 @@ body {
 }
 
 
-/*MAIN PAGE INSCRIPTION*/
+/*---------------------------------
+PAGE INSCRIPTION
+----------------------------------*/
 #content {
 	flex-grow: 1;
 }
@@ -256,7 +264,9 @@ body {
 	text-decoration: none;
 }
 
-/*MAIN PAGE CONFIRMATION INSCRIPTION*/
+/*---------------------------------
+PAGE CONFIRMATION INSCRIPTION
+----------------------------------*/
 
 /*Style Inscription*/
 .block-main-confirmationinscription .titleconfirmation h2 {
@@ -286,7 +296,9 @@ body {
 	font-size: 1.3em;
 }
 
-/*MAIN CONNEXION*/
+/*---------------------------------
+CONNEXION
+----------------------------------*/
 
 
 /*Style titre connexion*/
@@ -430,7 +442,9 @@ body {
 	text-shadow: 1px 1px 2px #288797;
 }
 
-/*MAIN DEBUT FORMULAIRE*/
+/*---------------------------------
+PAGE DEBUT FORMULAIRE
+----------------------------------*/
 
 /*Style titre page*/
 .block-main-debutformulaire h2 {
@@ -477,7 +491,9 @@ body {
 }
 
 
-/*MAIN CHOIX*/
+/*---------------------------------
+PAGE CHOIX
+----------------------------------*/
 
 /*Style titre page*/
 .block-main-choix h2 {
@@ -586,11 +602,13 @@ body {
 }
 
 
-
-/*LARGE DEVICES (desktops, 992px and up)*/
+/*---------------------------------
+LARGE DEVICES (desktops, 992px and up)
+----------------------------------*/
 @media (min-width: 992px) { 
-	/*HEADER*/
-
+	/*---------------------------------
+	HEADER GRANDS ECRANS
+	----------------------------------*/
 	/*Nom + logo*/
 	.block-header-web .titleandlogo h1 {
 		display: block;
@@ -648,7 +666,9 @@ body {
 		color: #46b3a6;
 	}
 	
-	/*MAIN PAGE INSCRIPTION*/
+	/*---------------------------------
+	PAGE INSCRIPTION GRANDS ECRANS
+	----------------------------------*/
 
 	/*Espace entre noms champs et zones de texte + boutons radios*/
 	.block-main-inscription .form p label:nth-of-type(1) {
@@ -663,7 +683,9 @@ body {
 		margin: 0px 20px 0px 0px;	
 	}
 	
-	/*MAIN PAGE CONNEXION*/
+	/*---------------------------------
+	PAGE CONNEXION GRANDS ECRANS
+	----------------------------------*/
 
 	/*Espace entre noms champs et zones de texte + boutons radios*/
 	.block-main-connexion .form p label:nth-of-type(1) {
@@ -672,10 +694,16 @@ body {
 		float: left;
 	}
 	
+	.block-main-connexion .register {
+		margin-bottom: 20px;
+	}
+	
 }
 
 
-/*FOOTER*/
+/*---------------------------------
+FOOTER
+----------------------------------*/
 .footer {
 	background-color: transparent;
 	text-align: center;
@@ -686,6 +714,22 @@ body {
 	text-shadow: 1px 1px 2px #288797;
 }
 
+/*Couleur des liens*/
+.footer ul a {
+	color: white;
+}
+
+/*Alignement footer*/
+.footer ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+/*Espace entre liens du footer*/
+.footer ul li:not(:last-of-type) {
+	padding-right: 10px;
+}
 
 /*Séparateur*/
 .footer hr {

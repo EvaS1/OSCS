@@ -2,7 +2,13 @@
 	<footer class="footer">
 		<div class="inner">
 			<hr>
-			<p>Mentions légales | Conditions générales | Politique de confidentialité</p>
+			<ul>
+				<li><a href="mentionlegale.php"> Mentions légales</a></li>
+				<li>|</li>
+				<li><a href="#"> Conditions générales</a></li>
+				<li>|</li>
+				<li><a href="#"> Politique de confidentialité</a></li>
+  			</ul>
 		</div> 
 	</footer>
 </div>

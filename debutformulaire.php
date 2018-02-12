@@ -27,9 +27,7 @@
 
 								<div class="buttonbegin">
 									<p>
-										<a class="button2" href="question1.html" role="button">
-										Je commence !
-										</a>
+										<a class="button2" href="question1.html" role="button">Je commence !</a>
 									</p>
 								</div>
 										

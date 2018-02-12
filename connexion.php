@@ -36,7 +36,8 @@
 												<input type="password" name="password" id="password" size="32" required>
 											</p>							
 
-											<p>											<input id="button" type="submit" value="Se connecter">
+											<p>											
+												<input id="button" type="submit" value="Se connecter">
 											</p>
 
 										</fieldset>
