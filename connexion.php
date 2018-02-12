@@ -7,8 +7,9 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
-		<script src="menu.js"></script>
 		<script src="jquery.min.js"></script>
+		<script src="menu.js"></script>
+		
 	</head>
 
 	<body>
