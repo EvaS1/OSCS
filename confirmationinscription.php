@@ -7,8 +7,8 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
-		<script src="menu.js"></script>
 		<script src="jquery.min.js"></script>
+		<script src="menu.js"></script>
 	</head>
 
 	<body>
@@ -113,7 +113,8 @@
 								<div class="confirmation">
 									<p>Ton compte a bien été créé !</p>
 								</div>
-								<div class="buttonlink">													<a href="debutformulaire.php" class="beginlink">Suivant</a>
+								<div class="buttonlink">													
+									<a href="debutformulaire.php" class="beginlink">Suivant</a>
 								</div>
 							</div>
 						</div>
@@ -124,7 +125,7 @@
 				/*On définit les variables*/
 				$pseudo = $_POST['pseudo'];
 				$mail = $_POST['mail'];
-				$password = $_POST['password'];
+				$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 				$gender = $_POST['gender'];
 				$age = $_POST['age'];	
 
