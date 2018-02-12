@@ -145,16 +145,22 @@
 											echo('<p class="error">Error</p>');
 										}
 
-
+										//$hash = '$2y$10$o6eVjOYvi/0JCWvVpUW7weilL3AyMay.iWYgoe2d3qPQKxxJcf4GS';
 										/*On vérifie que le pseudo et le mot de passe correspondent à un compte enregistré dans la base de données*/
-										if(($_POST['pseudo']==$pseudo) && ($_POST['password']==$password)) {
-											header ('Location: debutformulaire.php'); /*On redirige vers le formulaire*/
+										if(($_POST['pseudo']==$pseudo) && (password_verify($_POST['password'], $password))) {
+											header ('Location: debutformulaire.php'); //On redirige vers le formulaire
 										} else if($_POST['pseudo']!==$pseudo) {
 											echo "<div class='erreurpseudo'>" . "<p>" . "Pseudo erroné" . "</p>" . "</div>";
 										} else {
 											echo  "<div class='erreurpassword'>" ."<p>" . "Mot de passe erroné" . "</p>" . "</div>";
 										}
-
+										
+										/*if (password_verify($_POST['password'], $hash)) {
+											echo 'Le mot de passe est valide !';
+										} else {
+											echo 'Le mot de passe est invalide.';
+										}*/
+						
 										/*On se déconnecte de la base de données*/
 										mysqli_close($link);				
 									?>
