@@ -159,7 +159,7 @@
 			<footer class="footer">
 				<div class="inner">
    					<hr>
-   					<p>Mentions légales | Conditions générales | Politique de confidentialité</p>
+   					<p><a href="mentionlegale.php">Mentions légales | Conditions générales | Politique de confidentialité</a></p>
    				</div> 
 			</footer>
 			</div>
