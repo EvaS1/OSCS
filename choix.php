@@ -1,3 +1,10 @@
+<?php include "pdo.php"; 
+$stmt= $connexion->prepare('SELECT * FROM evenement');
+$stmt->execute();
+$stmt= $connexion->prepare('SELECT * FROM image');
+$stmt->execute();				
+?>
+
 <!doctype html>
 <html>
 	<head>
@@ -25,6 +32,14 @@
 								<div class="selection">
 									<p>Ta sélection personnalisée :</p>
 								</div>
+								
+									
+									<?php 
+									
+									while($evenement= $stmt-> fetch()){
+										
+									?>
+									
 								<div class="event1">
 									<div class="container">
 										<div class="row">
@@ -36,13 +51,13 @@
 											<div class="col-9">
 												<div class="inner">
 													<div class="titleevent1">
-														<p>Lamomali</p>
+														<p><?php echo $evenement -> 	nomEvenement; ?></p>
 													</div>
 													<div class="subtitleevent1">
-														<p>L'aventure malienne de -M-</p>
+														<p><?php echo $evenement -> 	libelleCourtEvenement; ?></p>
 													</div>
 													<div class="descriptionevent1">
-														<p>Avec Toumani et Sidiki Diabaté et Fatoumata Diawara, Lamomali est une passerelle entre Paris, Bamako et le monde.</p>
+														<p><?php echo $evenement -> 	descriptionEvenement; ?></p>
 													</div>
 												</div>
 											</div>
@@ -54,16 +69,17 @@
 												</div>
 											</div>
 										</div> 
-									</div> 	
+									</div> 
+										
 								
 									<div class="infoevent1">
 										<div class="dayevent1">
 											<img src="Icones/calendar.png" alt="Calendar" class="calendarevent1">
-											<p>Ce soir</p>
+											<p><?php echo $evenement -> dateEvenement; ?></p>
 										</div>
 										<div class="timeevent1">
 											<img src="Icones/clock.png" alt="Clock" class="clockevent1">
-											<p>20h00</p>
+											<p><?php echo $evenement -> heureEvenement; ?></p>
 										</div>
 										<div class="placeevent1">
 											<img src="Icones/maps-and-flags (1).png" alt="markevent1">
@@ -71,56 +87,12 @@
 										</div>
 									</div>
 								</div>
-								<div class="event2">
-									<div class="container">
-										<div class="row">
-											<div class="col-3">
-												<div class="inner">
-													<img src="Images/Gala.png" alt="Gala" class="image2">
-												</div>
-											</div>
-											<div class="col-9">
-												<div class="inner">
-													<div class="titleevent2">
-														<p>Gala</p>
-													</div>
-													<div class="subtitleevent2">
-														<p>Soirée de Noël de l'ESPL</p>
-													</div>
-													<div class="descriptionevent2">
-														<p>Ce gala est organisé par la promotion Evènementiel et Communication de l'ESPL et propose un cocktail dînatoire et des animations.</p>
-													</div>
-												</div>
-											</div>
-											<div class="col">
-												<div class="inner">
-													<div class="link">
-														<a class="gala-link" href="#">En savoir plus</a>
-													</div>
-												</div>
-											</div>
-										</div> 
-									</div> 	
 								
-									<div class="infoevent2">
-										<div class="dayevent2">
-											<img src="Icones/calendar.png" alt="Calendar" class="calendarevent2">
-											<p>21/12/17</p>
-										</div>
-										<div class="timeevent2">
-											<img src="Icones/clock.png" alt="Clock" class="clockevent2">
-											<p>20h00</p>
-										</div>
-										<div class="placeevent2">
-											<img src="Icones/maps-and-flags (1).png" alt="markevent2">
-											<p>Espace Longuenée</p>
-										</div>
-									</div>
-								</div>
-									
+								<?php
+								}
+								?>
+								
 								</div>	
-								
-								
 							</div>
 						</div>
 					</div>
