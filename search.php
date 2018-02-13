@@ -75,16 +75,15 @@
 
 									<li>
 									<a href="detail.php?id=<?php echo $evenement -> nomEvenement?>"><?php echo "<img alt='image1' src='images/".$image-> nomImage."'>";?></a><br />
-									<?php echo $evenement -> nomEvenement?></a>				
-									<?php echo "<div class='description'>".$evenement -> libelleCourtEvenement."</div>"; ?>
-									
+									<?php echo $evenement -> nomEvenement?>			
+									<?php echo "<div class='description'>".$evenement -> libelleCourtEvenement."</div>"; ?>								
 									<?php } ?>
 									</li>
 								</ul>
 
 								<!--S'il n'y a pas de résultats-->
 								<?php } else { ?>
-								<div class='results'>Aucun résultat pour "<?php echo $q?>"...</div>
+									<div class='results'>Aucun résultat pour "<?php echo $q?>"...</div>
 								<?php } 
 
 						} catch(Exception $e) {
@@ -102,7 +101,7 @@
 					</div>
 				 </div>
 			 </div>
-
+			<?php include('footer.php');?>
 		</div>
 	</body>
 </html>
