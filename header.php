@@ -21,8 +21,8 @@
 							<div class="titre">
 								<h2>Menu</h2>
 							</div>
-							<form class="form" method="get" role="search">
-								<input class="search" type="search" name="q" id="q" placeholder="Rechercher...">
+							<form class="form" method="get" action="search.php">
+								<input class="search" type="search" name="q" id="q" placeholder="Rechercher..." required>
 							</form>
 							<li><a href="news.html">News</a></li>
 							<li><a href="about.html">Bars</a></li>
