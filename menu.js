@@ -8,9 +8,12 @@ $(function() {
 		if(!balise_a.hasClass('hide')) {
 			balise_a.addClass('hide');			
 			$('hide').fadeOut('slow');
+			
+			$('#btnClickMe').attr('src', 'Icones/menu.png');
 		} else {
-			balise_a.removeClass('hide');
-						
+			balise_a.removeClass('hide');	
+			
+			$('#btnClickMe').attr('src', 'Icones/menublanc.png');
 		}
 	});
 	
