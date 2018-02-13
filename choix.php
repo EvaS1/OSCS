@@ -1,10 +1,14 @@
 <?php include "pdo.php"; 
 $stmt= $connexion->prepare('SELECT * FROM evenement');
-$stmt->execute();
-$stmt= $connexion->prepare('SELECT * FROM image');
 $stmt->execute();				
 ?>
 
+<?php 
+$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
+$statementImage = $connexion->prepare($query);
+$statementImage -> bindValue(':id', $stmt -> idEvenement);
+$statementImage -> execute();
+$image = $statementImage -> fetch (); ?>
 <!doctype html>
 <html>
 	<head>
@@ -45,19 +49,19 @@ $stmt->execute();
 										<div class="row">
 											<div class="col-3">
 												<div class="inner">
-													<img src="Images/Lamomali.jpg" alt="Lamomali" class="image1">
+													<?php echo "<img alt='image1' src='Images/".$image-> nomImage."'>";?>
 												</div>
 											</div>
 											<div class="col-9">
 												<div class="inner">
 													<div class="titleevent1">
-														<p><?php echo $evenement -> 	nomEvenement; ?></p>
+														<p><?php echo $evenement -> nomEvenement; ?></p>
 													</div>
 													<div class="subtitleevent1">
-														<p><?php echo $evenement -> 	libelleCourtEvenement; ?></p>
+														<p><?php echo $evenement -> libelleCourtEvenement; ?></p>
 													</div>
 													<div class="descriptionevent1">
-														<p><?php echo $evenement -> 	descriptionEvenement; ?></p>
+														<p><?php echo $evenement -> descriptionEvenement; ?></p>
 													</div>
 												</div>
 											</div>
