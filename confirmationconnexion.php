@@ -57,7 +57,7 @@
 											echo('<p class="error">Error</p>');
 										}
 
-										//$hash = '$2y$10$o6eVjOYvi/0JCWvVpUW7weilL3AyMay.iWYgoe2d3qPQKxxJcf4GS';
+										
 										/*On vérifie que le pseudo et le mot de passe correspondent à un compte enregistré dans la base de données*/
 										if(($_POST['pseudo']==$pseudo) && (password_verify($_POST['password'], $password))) {
 											header ('Location: debutformulaire.php'); //On redirige vers le formulaire

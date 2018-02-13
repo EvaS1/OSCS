@@ -71,11 +71,17 @@
 			<a href="connexion.php"><h1>Où sortir ce soir</h1></a>
 			<img class="logo-web" src="Logo/logof.png" alt="logo">
 		</div>
+		<div class="search">
+			<form method="get" action="search.php">
+				<input type="text" name="q" placeholder="Rechercher..." required>
+				<input class="search" type="submit" value="" alt="Rechercher">
+			</form>
+		</div>
 	</header>
 
 	<nav class="block-nav-web">
 		<div class="inner">
-			<ul class="nav justify-content-center">
+			<ul class="nav justify-content">
 			  <li class="nav-item">
 				<a class="nav-link" href="connexion.php">Home</a>
 			  </li>

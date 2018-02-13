@@ -12,9 +12,6 @@ POUR TOUS
 ----------------------------------*/
 a {
 	text-decoration: none; /*Pour enlever la mise en forme des liens, ici soulignage*/
-}
-
-a {
 	color: white;
 }
 
@@ -31,7 +28,7 @@ body {
 }
 
 .content {
-	min-height: 55vh;
+	min-height: 622px;
 }
 
 
@@ -167,6 +164,7 @@ HEADER WEB
 	color: #203863;
 	font-size: 1.2rem;
 	margin: 0;
+	font-weight: 500;
 }
 
 .titleandlogo {
@@ -284,7 +282,6 @@ PAGE INSCRIPTION
 	text-align: center;
 	font-size: 1.3em;
 	font-weight: 600;
-	margin: 70px;
 }
    
 
@@ -454,6 +451,7 @@ CONNEXION
 	color: #203863;
 	font-size: 1.3em;
 	text-shadow: 1px 1px 2px #288797;
+	text-decoration: none;
 }
 
 /*Espace après paragraphe Rien de prévu*/
@@ -727,6 +725,11 @@ LARGE DEVICES (desktops, 992px and up)
 		display: block;
 	}
 	
+	.block-nav-web {
+		background-color: #203863;
+		margin: 0 0 40px;
+	}
+	
 	/*Disparition header mobile*/
 	.block-header,
 	.block-nav {
@@ -735,21 +738,20 @@ LARGE DEVICES (desktops, 992px and up)
 	
 	/*Couleur barre de nav*/
 	.block-nav-web .nav {
-		background: #203863;
-		margin: 0px 0px 40px;
-		width: 100vw;
+		width: 1000px;
 	}
 	
 	/*Style "a"*/
 	.block-nav-web a {
 		color: white;
 		font-size: 1.2em;
+		padding: .5rem 0;
 	}
 	
 	.block-nav-web ul {
 		list-style: none;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 	}
 	
 	/*Style séparateurs*/
