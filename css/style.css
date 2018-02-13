@@ -491,6 +491,63 @@ PAGE DEBUT FORMULAIRE
 }
 
 
+
+
+/*---------------------------------
+PAGES QUESTION
+----------------------------------*/
+
+.block-center .block-main .title{	
+	text-align: center;
+	position: relative;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 1.3em;
+	color: #00022E;
+	margin: 0px 0px 20px;
+}
+.block-center .block-main .section .forms{	
+	text-align: center;
+	position: relative;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-size: 1.2em;
+	color: #00022e;
+}
+
+.block-center .block-main .section .forms .quest{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.3em;
+	color: white;
+	border-width: 50px;
+}
+
+.block-center .block-main .section .forms div .btn{
+	border-radius: 50%;
+	padding: 11px;
+	text-align: center;	
+	border: 0px solid #000;
+}
+.block-center .block-main .section .forms div .btnq1{
+	border-radius: 50%;
+	padding: 11px;
+	text-align: center;	
+	border: 0px solid #000;
+}
+
+
+.block-center .block-main .section .forms .end{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	border-radius: 25px;
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: 600;
+	margin: 70px;
+}
+
 /*---------------------------------
 PAGE CHOIX
 ----------------------------------*/
@@ -644,6 +701,12 @@ LARGE DEVICES (desktops, 992px and up)
 	.block-nav-web a {
 		color: white;
 		font-size: 1.2em;
+	}
+	
+	.block-nav-web ul {
+		list-style: none;
+		display: flex;
+		justify-content: center;
 	}
 	
 	/*Style séparateurs*/
