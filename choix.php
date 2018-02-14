@@ -13,7 +13,10 @@
 
 	<body>
 		<div class="page">
-			<?php include('header.php');?>
+			<?php include('header.php');
+			include('pdo.php');?>
+
+			
 			<div class="content">
 				<main class="block-main-choix">
 					<div class="container">
@@ -25,53 +28,73 @@
 								<div class="selection">
 									<p>Ta sélection personnalisée :</p>
 								</div>
-								<div class="event1">
+								<?php 
+									$idType = 3;
+									$query = "SELECT * FROM evenement WHERE idType=:id";
+									$statementEvenement = $connexion->prepare($query);
+									$statementEvenement -> bindValue(':id', $idType);
+									$statementEvenement -> execute();
+									$i = 0;
+									while ($evenement = $statementEvenement -> fetch()) {
+										$i++;
+								
+								?>
+								<div class="event<?php echo $i;?>">
 									<div class="container">
 										<div class="row">
 											<div class="col-3">
 												<div class="inner">
-													<img src="Images/Lamomali.jpg" alt="Lamomali" class="image1">
+													<?php 
+														$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
+														$statementImage = $connexion->prepare($query);
+														$statementImage -> bindValue(':id', $evenement -> idEvenement);
+														$statementImage -> execute();
+														$image = $statementImage -> fetch ();
+														echo "<img class='image".$i."'alt='image1' src='Images/".$image-> nomImage."'>";
+													?>
 												</div>
 											</div>
 											<div class="col-9">
 												<div class="inner">
-													<div class="titleevent1">
-														<p>Lamomali</p>
+													<div class="titleevent<?php echo $i;?>">
+														<p><?php echo $evenement -> nomEvenement; ?></p>
 													</div>
-													<div class="subtitleevent1">
-														<p>L'aventure malienne de -M-</p>
+													<div class="subtitleevent<?php echo $i;?>">
+														<p><?php echo $evenement -> libelleCourtEvenement;?></p>
 													</div>
-													<div class="descriptionevent1">
-														<p>Avec Toumani et Sidiki Diabaté et Fatoumata Diawara, Lamomali est une passerelle entre Paris, Bamako et le monde.</p>
+													<div class="descriptionevent<?php echo $i;?>">
+														<p><?php echo $evenement -> descriptionEvenement;?></p>
 													</div>
 												</div>
 											</div>
 											<div class="col">
 												<div class="inner">
 													<div class="link">
-														<a class="lamomali-link" href="#">En savoir plus</a>
+														<a class="lamomali-link" href="soiree.php?id=<?php echo $evenement -> idEvenement;?>">En savoir plus</a>
 													</div>
 												</div>
 											</div>
 										</div> 
 									</div> 	
 								
-									<div class="infoevent1">
-										<div class="dayevent1">
+									<div class="infoevent<?php echo $i;?>">
+										<div class="dayevent<?php echo $i;?>">
 											<img src="Icones/calendar.png" alt="Calendar" class="calendarevent1">
-											<p>Ce soir</p>
+											<p><?php echo $evenement -> dateEvenement;?></p>
 										</div>
-										<div class="timeevent1">
+										<div class="timeevent<?php echo $i;?>">
 											<img src="Icones/clock.png" alt="Clock" class="clockevent1">
-											<p>20h00</p>
+											<p><?php echo $evenement -> heureEvenement;?></p>
 										</div>
-										<div class="placeevent1">
+										<div class="placeevent<?php echo $i;?>">
 											<img src="Icones/maps-and-flags (1).png" alt="markevent1">
-											<p>Arena Loire Trélazé</p>
+											<p><?php echo $evenement -> nomVilleEvenement;?></p>
 										</div>
 									</div>
 								</div>
-								<div class="event2">
+
+								<?php } ?>
+								<!-- <div class="event2">
 									<div class="container">
 										<div class="row">
 											<div class="col-3">
@@ -116,7 +139,7 @@
 											<p>Espace Longuenée</p>
 										</div>
 									</div>
-								</div>
+								</div> -->
 									
 								</div>	
 								
