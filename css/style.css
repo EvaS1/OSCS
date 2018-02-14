@@ -943,14 +943,23 @@ LARGE DEVICES (desktops, 992px and up)
 /*---------------------------------
 PAGE SOIREE
 ----------------------------------*/
-
+	/* POUR TOUS */
+	.block-main-soiree {
+		color: #00022e;
+	}
+	
 	/* TITRE */
 	.block-main-soiree .titre_soiree {
-	display: flex;
-	
+		font-size: 45px;
+		text-align: center;	
 	}
+	
 
-
+	/* COORDONEES */
+	.block-main-soiree .coordonees {
+		font-size: 25px;
+		
+	}
 /*---------------------------------
 FOOTER
 ----------------------------------*/
