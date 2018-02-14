@@ -22,18 +22,28 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
+							<?php 
+								$idType = $_GET['id'];
+								$query = "SELECT * FROM evenement WHERE idType=:id";
+								$statementEvenement = $connexion->prepare($query);
+								$statementEvenement -> bindValue(':id', $idType);
+								$statementEvenement -> execute();?>
+								
+								
 								<div class="title">
-									<h2>Choisis ta soirée</h2>
+									<?php
+										if ($idType == 1) {
+											echo "<h2>Les bars</h2>";
+										} else if ($idType == 2) {
+											echo "<h2>Les concerts</h2>";
+										} else if ($idType == 3) {
+											echo "<h2>Les pièces de théâtre</h2>";
+										}
+									?>								
 								</div>
-								<div class="selection">
-									<p>Ta sélection personnalisée :</p>
-								</div>
-								<?php 
-									$idType = 3;
-									$query = "SELECT * FROM evenement WHERE idType=:id";
-									$statementEvenement = $connexion->prepare($query);
-									$statementEvenement -> bindValue(':id', $idType);
-									$statementEvenement -> execute();
+										
+									<?php
+								
 									$i = 0;
 									while ($evenement = $statementEvenement -> fetch()) {
 										$i++;

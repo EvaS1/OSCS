@@ -882,7 +882,7 @@ LARGE DEVICES (desktops, 992px and up)
 	.block-nav-web ul {
 		list-style: none;
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 	}
 	
 	/*Style séparateurs*/

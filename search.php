@@ -74,7 +74,7 @@
 									$image = $statementImage -> fetch (); ?>
 
 									<li>
-										<a href="detail.php?id=<?php echo $evenement -> nomEvenement?>"><?php echo "<img alt='image1' src='images/".$image-> nomImage."'>";?><br />
+										<a href="soiree.php?id=<?php echo $evenement -> idEvenement?>"><?php echo "<img alt='image1' src='images/".$image-> nomImage."'>";?><br />
 										<?php echo "<div class='name'>".$evenement -> nomEvenement."</div>";?>			
 										<?php echo "<div class='description'>".$evenement -> libelleCourtEvenement."</div>"; ?>	</a>							
 										<?php } ?>
