@@ -5,6 +5,7 @@
 		<title>Où sortir ce soir ?</title>
 		<link rel="icon" href="Logo/logof.png">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/recherche.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
 		<script src="jquery.min.js"></script>
@@ -74,10 +75,10 @@
 									$image = $statementImage -> fetch (); ?>
 
 									<li>
-									<a href="detail.php?id=<?php echo $evenement -> nomEvenement?>"><?php echo "<img alt='image1' src='images/".$image-> nomImage."'>";?></a><br />
-									<?php echo $evenement -> nomEvenement?>			
-									<?php echo "<div class='description'>".$evenement -> libelleCourtEvenement."</div>"; ?>								
-									<?php } ?>
+										<a href="detail.php?id=<?php echo $evenement -> nomEvenement?>"><?php echo "<img alt='image1' src='images/".$image-> nomImage."'>";?><br />
+										<?php echo "<div class='name'>".$evenement -> nomEvenement."</div>";?>			
+										<?php echo "<div class='description'>".$evenement -> libelleCourtEvenement."</div>"; ?>	</a>							
+										<?php } ?>
 									</li>
 								</ul>
 

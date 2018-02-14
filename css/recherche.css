@@ -1,0 +1,142 @@
+/*---------------------------------
+BARRE DE RECHERCHE
+----------------------------------*/
+.block-nav .button {
+	position: absolute;
+    z-index: 1;
+    margin: -32px 0 0 225px;
+    background-image: url(../Icones/searchb.png);
+    width: 21px; 
+    height: 21px; 
+    background-color: rgba(0,0,0,0);
+    overflow: hidden;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+.block-header-web .search {
+	width: 1000px;
+    text-align: right;
+    margin: 0 auto 20px;
+}
+
+.block-header-web .search input:first-of-type {
+	border-radius: 5px;
+    padding: 1px;
+    /* font-size: 20px; */
+    border: 2px solid #203863;
+    background-color: rgba(255,255,255,0.75);
+}
+
+
+.block-header-web .button {
+	position: absolute;
+    z-index: 1;
+    margin: 5px 0 0 -26px;
+    background-image: url(../Icones/searchv.png);
+    width: 21px; 
+    height: 21px; 
+    background-color: rgba(0,0,0,0);
+    overflow: hidden;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+/*---------------------------------
+PAGE RESULTATS RECHERCHE
+----------------------------------*/
+/*Bloc résultats recherche*/
+.block-content-search .inner {
+	width: 600px;
+	margin: 0 auto;
+}
+
+/*Alignement titre*/
+.block-content-search .results {
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Affichage liste des résultats*/
+.block-content-search ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0;
+}
+
+/*Style de chaque résultat*/
+.block-content-search li {
+	width: 300px;
+	height: 380px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(255,255,255,0.50);
+    border-radius: 20px;
+    padding: 20px;
+	margin: 0 0 20px;
+}
+
+/*Taille images*/
+.block-content-search li img {
+	max-width: 260px;
+	max-height: 260px;
+	margin: 0 0 20px;
+}
+
+/*Style nom de l'événement*/
+.block-content-search .name {
+	color: #00022e;
+	font-size: 1.3rem;
+	text-decoration: none;
+	text-align: center;
+}
+
+/*Style nom de l'événement*/
+.block-content-search .description {
+	font-size: 1.2rem;	
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+
+.block-content-search a:hover,
+.block-content-search a:focus,
+.block-content-search a:active {
+	text-decoration: none;
+}
+
+
+@media (min-width: 992px) { 
+
+	.block-content-search .inner {
+		width: 1000px;
+		margin: 0 auto;
+	}
+	
+	/*Affichage liste des résultats*/
+	.block-content-search ul {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		padding: 20px 0;
+	}
+	
+	/*Style de chaque résultat*/
+	.block-content-search li {
+		flex-direction: column;
+		align-items: center;
+		border-radius: 20px;
+		padding: 20px;
+		margin: 0 0 20px;
+	}
+	
+}

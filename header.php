@@ -23,6 +23,7 @@
 							</div>
 							<form class="form" method="get" action="search.php">
 								<input class="search" type="search" name="q" id="q" placeholder="Rechercher..." required>
+								<input class="button" type="submit" value="" alt="Rechercher">
 							</form>
 							<li><a href="news.html">News</a></li>
 							<li><a href="about.html">Bars</a></li>
@@ -74,7 +75,7 @@
 		<div class="search">
 			<form method="get" action="search.php">
 				<input type="text" name="q" placeholder="Rechercher..." required>
-				<input class="search" type="submit" value="" alt="Rechercher">
+				<input class="button" type="submit" value="" alt="Rechercher">
 			</form>
 		</div>
 	</header>
