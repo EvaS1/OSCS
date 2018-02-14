@@ -12,9 +12,6 @@ POUR TOUS
 ----------------------------------*/
 a {
 	text-decoration: none; /*Pour enlever la mise en forme des liens, ici soulignage*/
-}
-
-a {
 	color: white;
 }
 
@@ -30,53 +27,40 @@ body {
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 }
 
-#page {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+.content {
+	min-height: 622px;
 }
+
 
 /*---------------------------------
 HEADER MOBILE
 ----------------------------------*/
-.block-header {
-	margin: 20px;
+.block-header .inner {
+	margin: 35px;
+	display: flex;
+	justify-content: space-between; 
+	align-items: center;
 }
 
-/*.block-header .inner .connexion {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 200px;
-	padding: 20px;
-	font-family: 'Fjalla One', Arial, sans-serif; 
-	font-size: 1em;
-}*/
 
-.block-header .inner .logo-mobile {
+/*Bouton menu par dessus la sidebar*/
+.block-header #btnClickMe {
+	z-index: 99;
+	width: 50px;
+}
+
+/*Style logo mobile*/
+.block-header .logo-mobile  {
 	display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
+	width: 13%;
 }
 
-.block-header .inner .logo img {
-	position: relative;
-    right: -325px;
-    margin: 20px;
+
+.block-header .connexion img{
+	width: 50px;
 }
 
-.block-header .inner .connexion img{
-	position: absolute;
-	top: 70px;
-	right: 190px;
-	width: 60px;
-}
-
-.block-header .inner .connexion a {
-	position: absolute;
-	top: 80px;
-	right: 25px;
+.block-header .connexion a {
 	color: #274451;
 	font-size: 0.8em;
 }
@@ -84,7 +68,7 @@ HEADER MOBILE
 /*---------------------------------
 NAV MOBILE
 ----------------------------------*/
-.block-nav .inner .menunav{
+.block-nav .menunav {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -92,36 +76,48 @@ NAV MOBILE
 	background-color: #203863;
 	visibility: visible;
 	color: white;
-	padding: 35px 30px 5px 15px;
+	padding: 25px;
 	font-family: 'Fjalla One', Arial, sans-serif; 
-	font-size: 30px;
+	font-size: 25px;
 	z-index: 98;
 }
-.block-nav .inner #menu .titre{
-	padding: 50px;
-	padding-left: 125px;
-	top: 70px;
+
+.block-nav #menu .titre {
+	text-align: center;
+	margin: 50px;
+	color: white;
 }
-.block-nav .inner .search{
-	border-radius: 50px;
-	padding: 10px;
+
+.block-nav .search {
+	border-radius: 10px;
+	padding: 5px;
+	font-size: 20px;
+	border: 2px solid #46b3a6;
+	background-color: rgba(255,255,255,0.90);
 }
-.block-nav .inner #btnClickMe{
-	position: absolute;
-	z-index: 99;
-	top: 70px;
-	left: 25px;
-}
-.block-nav .inner .lemenu{
+
+.block-nav .lemenu {
 	padding-top: 70px;
-	padding-left:100px;
+	padding-left: 100px;
 }
+
 .block-nav li {
-	padding-top: 100px;
-	left: 0;
-	padding-left: 0px;
+	padding-top: 20px;
 }
-.block-nav .inner .action ul input  {
+
+.block-nav li a {
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+.block-nav li a:hover,
+.block-nav li a:focus,
+.block-nav li a:active {
+	color: #46b3a6;
+}
+
+.block-nav .action ul input  {
 	padding: 10px 10px 0px;
 	position: relative;
 	border-radius: 50px;
@@ -130,11 +126,56 @@ NAV MOBILE
 /*---------------------------------
 HEADER WEB
 ----------------------------------*/
+.block-header-web .topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1000px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.block-header-web .topbar .socialmedia ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+}
+
+.block-header-web .topbar .socialmedia img {
+	width: 30px;
+	margin-right: 10px;
+}
+
+.block-header-web .topbar .connexion a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	justify-content: flex-end;
+}
+
+.block-header-web .topbar .connexion img {
+	width: 30px;
+	margin-right: 10px;
+}
+
+.block-header-web .topbar .connexion p {
+	color: #203863;
+	font-size: 1.2rem;
+	margin: 0;
+	font-weight: 500;
+}
+
 .titleandlogo {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 20px;
+}
+
+.block-header-web .titleandlogo a {
+	text-decoration: none;
 }
 
 .block-header-web .titleandlogo h1 {
@@ -144,8 +185,8 @@ HEADER WEB
 	margin: 0px 15px 0px 0px;
 }
 
-.block-header-web .titleandlogo img {
-	width: 20%;
+.block-header-web .titleandlogo .logo-web {
+	width: 6%;
 }
 
 
@@ -241,7 +282,6 @@ PAGE INSCRIPTION
 	text-align: center;
 	font-size: 1.3em;
 	font-weight: 600;
-	margin: 70px;
 }
    
 
@@ -411,6 +451,7 @@ CONNEXION
 	color: #203863;
 	font-size: 1.3em;
 	text-shadow: 1px 1px 2px #288797;
+	text-decoration: none;
 }
 
 /*Espace après paragraphe Rien de prévu*/
@@ -660,6 +701,44 @@ PAGE CHOIX
 }
 
 
+
+/*---------------------------------
+PAGE RESULTATS RECHERCHE
+----------------------------------*/
+.block-content-search .inner {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.block-content-search .results {
+	padding: 50px 0;
+	text-align: center;
+}
+
+.block-content-search ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	padding: 20px 0;
+}
+
+.block-content-search a {
+	color: black;
+}
+
+.block-content-search li {
+	width: 300px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.block-content-search li img {
+	max-width: 300px;
+}
+
 /*---------------------------------
 LARGE DEVICES (desktops, 992px and up)
 ----------------------------------*/
@@ -685,6 +764,11 @@ LARGE DEVICES (desktops, 992px and up)
 		display: block;
 	}
 	
+	.block-nav-web {
+		background-color: #203863;
+		margin: 0 0 40px;
+	}
+	
 	/*Disparition header mobile*/
 	.block-header,
 	.block-nav {
@@ -693,15 +777,20 @@ LARGE DEVICES (desktops, 992px and up)
 	
 	/*Couleur barre de nav*/
 	.block-nav-web .nav {
-		background: #203863;
-		margin: 0px 0px 40px;
-		width: 100vw;
+		width: 1000px;
 	}
 	
 	/*Style "a"*/
 	.block-nav-web a {
 		color: white;
 		font-size: 1.2em;
+		padding: .5rem 0;
+	}
+	
+	.block-nav-web ul {
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
 	}
 	
 	.block-nav-web ul {

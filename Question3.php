@@ -8,11 +8,12 @@
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
 		<script src="jquery.min.js"></script>
-		<script type ="text/javascript" src="javascript.js"></script>
+		<script type ="text/javascript" src="menu.js"></script>
 		<link rel="icon" type="image/png" href="Logo/logof.png" /> 
 	</head>
 
 	<body>
+	<div class="page">
 		<?php include('header.php');?>
 		<div class="block-center">
 			<div class="inner">
@@ -55,6 +56,7 @@
 			</div>
 		</div>
 		<?php include('footer.php');?>
+		</div>
 	</body>
 </html>
 
