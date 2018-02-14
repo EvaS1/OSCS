@@ -623,7 +623,7 @@ PAGE CHOIX
 /*Event : Style image*/
 .block-main-choix .event .image {
 	max-height: 135px;
-	max-width: 150px;
+	max-width: 135px;
 }
 
 /*Event : Style titre*/
@@ -778,12 +778,6 @@ LARGE DEVICES (desktops, 992px and up)
 		list-style: none;
 		display: flex;
 		justify-content: space-between;
-	}
-	
-	.block-nav-web ul {
-		list-style: none;
-		display: flex;
-		justify-content: center;
 	}
 	
 	/*Style séparateurs*/
