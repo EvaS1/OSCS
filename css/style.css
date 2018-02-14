@@ -186,7 +186,7 @@ HEADER WEB
 }
 
 .block-header-web .titleandlogo .logo-web {
-	width: 6%;
+	width: 100px;
 }
 
 
@@ -623,7 +623,7 @@ PAGE CHOIX
 /*Event : Style image*/
 .block-main-choix .event .image {
 	max-height: 135px;
-	max-width: 150px;
+	max-width: 135	px;
 }
 
 /*Event : Style titre*/
@@ -780,12 +780,6 @@ LARGE DEVICES (desktops, 992px and up)
 		justify-content: space-between;
 	}
 	
-	.block-nav-web ul {
-		list-style: none;
-		display: flex;
-		justify-content: center;
-	}
-	
 	/*Style séparateurs*/
 	.block-nav-web li:nth-of-type(2),
 	.block-nav-web li:nth-of-type(4),
@@ -839,6 +833,17 @@ LARGE DEVICES (desktops, 992px and up)
 	}
 	
 }
+
+
+/*---------------------------------
+PAGE SOIREE
+----------------------------------*/
+
+	/* TITRE */
+	.block-main-soiree .titre_soiree {
+	display: flex;
+	
+	}
 
 
 /*---------------------------------

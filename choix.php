@@ -1,4 +1,4 @@
-<!doctype html>
+	<!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -95,52 +95,7 @@
 
 								<?php } ?>
 							
-								<!-- <div class="event2">
-									<div class="container">
-										<div class="row">
-											<div class="col-3">
-												<div class="inner">
-													<img src="Images/Gala.png" alt="Gala" class="image2">
-												</div>
-											</div>
-											<div class="col-9">
-												<div class="inner">
-													<div class="titleevent2">
-														<p>Gala</p>
-													</div>
-													<div class="subtitleevent2">
-														<p>Soirée de Noël de l'ESPL</p>
-													</div>
-													<div class="descriptionevent2">
-														<p>Ce gala est organisé par la promotion Evènementiel et Communication de l'ESPL et propose un cocktail dînatoire et des animations.</p>
-													</div>
-												</div>
-											</div>
-											<div class="col">
-												<div class="inner">
-													<div class="link">
-														<a class="gala-link" href="#">En savoir plus</a>
-													</div>
-												</div>
-											</div>
-										</div> 
-									</div> 	
 								
-									<div class="infoevent2">
-										<div class="dayevent2">
-											<img src="Icones/calendar.png" alt="Calendar" class="calendarevent2">
-											<p>21/12/17</p>
-										</div>
-										<div class="timeevent2">
-											<img src="Icones/clock.png" alt="Clock" class="clockevent2">
-											<p>20h00</p>
-										</div>
-										<div class="placeevent2">
-											<img src="Icones/maps-and-flags (1).png" alt="markevent2">
-											<p>Espace Longuenée</p>
-										</div>
-									</div>
-								</div> -->
 									
 								</div>	
 								
