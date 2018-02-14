@@ -25,14 +25,12 @@
 								<input class="search" type="search" name="q" id="q" placeholder="Rechercher..." required>
 								<input class="button" type="submit" value="" alt="Rechercher">
 							</form>
-							<li><a href="news.html">News</a></li>
-							<li><a href="about.html">Bars</a></li>
-							<li><a href="concert.html">Concerts</a></li>
-							<li><a href="theatre.html">Théâtres</a></li>
-							<li><a href="event.html">Evènements</a></li>
-							<li><a href="arrond.html">Autour de moi</a></li>
-							<li><a href="compte.html">Mon compte</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="news.php">News</a></li>
+							<li><a href="listing.php?id=1">Bars</a></li>
+							<li><a href="listing.php?id=2">Concerts</a></li>
+							<li><a href="listing.php?id=3">Théâtres</a></li>
+							<li><a href="compte.php">Mon compte</a></li>
+							<li><a href="contact.php">Contact</a></li>
 						</div>
 					</ul>
 				</div>
@@ -92,23 +90,19 @@
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#">Bars</a>
+				<a class="nav-link" href="listing.php?id=1">Bars</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#">Concerts</a>
+				<a class="nav-link" href="listing.php?id=2">Concerts</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#">Théâtres</a>
+				<a class="nav-link" href="listing.php?id=3">Théâtres</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#">Evènements</a>
-			  </li>
-			  <li>|</li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#">Autour de moi</a>
+				<a class="nav-link" href="contact.php">Contact</a>
 			  </li>
 			</ul>
 		</div>
