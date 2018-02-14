@@ -611,8 +611,7 @@ PAGE CHOIX
 }
 
 /*Event : Style du fond*/
-.block-main-choix .event1,
-.block-main-choix .event2 {
+.block-main-choix .event {
 	background-color: rgba(255,255,255,0.50);
 	border-radius: 20px;
 	padding: 20px;
@@ -622,15 +621,13 @@ PAGE CHOIX
 }
 
 /*Event : Style image*/
-.block-main-choix .event1 .image1,
-.block-main-choix .event2 .image2 {
+.block-main-choix .event .image {
 	max-height: 135px;
 	max-width: 150px;
 }
 
 /*Event : Style titre*/
-.block-main-choix .event1 .titleevent1,
-.block-main-choix .event2 .titleevent2 {
+.block-main-choix .event .titleevent {
 	font-size: 1.2em;
 	color: #047395;
 	font-weight: bold;
@@ -638,8 +635,7 @@ PAGE CHOIX
 }
 
 /*Event : Style sous-titre*/
-.block-main-choix .event1 .subtitleevent1,
-.block-main-choix .event2 .subtitleevent2 {
+.block-main-choix .event .subtitleevent {
 	font-size: 1.1em;
 	color: #00022e;
 	font-weight: bold;
@@ -647,55 +643,46 @@ PAGE CHOIX
 }
 
 /*Event : Style description*/
-.block-main-choix .event1 .descriptionevent1,
-.block-main-choix .event2 .descriptionevent2 {
+.block-main-choix .event .descriptionevent {
 	text-align: justify;
 }
 
 /*Event : Décalage en savoir plus*/
-.block-main-choix .event1 .link,
-.block-main-choix .event2 .link {
+.block-main-choix .event .link {
 	display: flex;
 	justify-content: flex-end;
 }
 
 /*Event : Style texte en savoir plus*/
-.block-main-choix .event1 .link a,
-.block-main-choix .event2 .link a {
+.block-main-choix .event .link a {
 	color: #047395;
 	font-weight: bold;
 }
 
 /*Event : Infos*/
-.block-main-choix .event1 .infoevent1,
-.block-main-choix .event2 .infoevent2 {
+.block-main-choix .event .infoevent {
 	display: flex;
 	justify-content: space-between;
 	padding: 10px 20px 0px 20px;
-	font-size: 1.2em;
+	/*font-size: 1em;*/
 }
 
 /*Event : Suppression espace après paragraphes*/
-.block-main-choix .event1 p,
-.block-main-choix .event2 p {
+.block-main-choix .event p{
 	margin-bottom: 0;
 	max-width: 430px;
 }
 
 /*Event : Infos et icônes sur une ligne + alignement vertical*/
-.block-main-choix .event1 .dayevent1,
-.block-main-choix .event1 .timeevent1,
-.block-main-choix .event1 .placeevent1,
-.block-main-choix .event2 .dayevent2,
-.block-main-choix .event2 .timeevent2,
-.block-main-choix .event2 .placeevent2 {
+.block-main-choix .event .dayevent,
+.block-main-choix .event .timeevent,
+.block-main-choix .event .placeevent {
 	display: flex;
 	align-items: center;
 }
 
 /*Event : Taille des icônes + espace entre icônes et textes*/
-.block-main-choix .infoevent1 img,
-.block-main-choix .infoevent2 img {
+.block-main-choix .infoevent img {
 	max-height: 30px;
 	margin: 0px 15px 0px 0px;
 }

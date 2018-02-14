@@ -39,7 +39,7 @@
 										$i++;
 								
 								?>
-								<div class="event<?php echo $i;?>">
+								<div class="event">
 									<div class="container">
 										<div class="row">
 											<div class="col-3">
@@ -50,19 +50,19 @@
 														$statementImage -> bindValue(':id', $evenement -> idEvenement);
 														$statementImage -> execute();
 														$image = $statementImage -> fetch ();
-														echo "<img class='image".$i."'alt='image1' src='Images/".$image-> nomImage."'>";
+														echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
 													?>
 												</div>
 											</div>
 											<div class="col-9">
 												<div class="inner">
-													<div class="titleevent<?php echo $i;?>">
+													<div class="titleevent">
 														<p><?php echo $evenement -> nomEvenement; ?></p>
 													</div>
-													<div class="subtitleevent<?php echo $i;?>">
+													<div class="subtitleevent">
 														<p><?php echo $evenement -> libelleCourtEvenement;?></p>
 													</div>
-													<div class="descriptionevent<?php echo $i;?>">
+													<div class="descriptionevent">
 														<p><?php echo $evenement -> descriptionEvenement;?></p>
 													</div>
 												</div>
@@ -77,24 +77,24 @@
 										</div> 
 									</div> 	
 								
-									<div class="infoevent<?php echo $i;?>">
-										<div class="dayevent<?php echo $i;?>">
+									<div class="infoevent">
+										<div class="dayevent">
 											<img src="Icones/calendar.png" alt="Calendar" class="calendarevent1">
 											<p><?php echo $evenement -> dateEvenement;?></p>
 										</div>
-										<div class="timeevent<?php echo $i;?>">
+										<div class="timeevent">
 											<img src="Icones/clock.png" alt="Clock" class="clockevent1">
 											<p><?php echo $evenement -> heureEvenement;?></p>
 										</div>
-										<div class="placeevent<?php echo $i;?>">
+										<div class="placeevent">
 											<img src="Icones/maps-and-flags (1).png" alt="markevent1">
 											<p><?php echo $evenement -> nomVilleEvenement;?></p>
 										</div>
 									</div>
-								
+									</div>
 
 								<?php } ?>
-								</div>
+							
 								<!-- <div class="event2">
 									<div class="container">
 										<div class="row">
