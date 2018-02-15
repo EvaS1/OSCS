@@ -86,6 +86,10 @@
 											<img src="Icones/clock.png" alt="Clock" class="clockevent1">
 											<p><?php echo $evenement -> heureEvenement;?></p>
 										</div>
+										<div class="priceevent">
+											<img src="Icones/euro.png" alt="price" class="price">
+											<p><?php echo $evenement ->prixEvenement;?> €</p>
+										</div>
 										<div class="placeevent">
 											<img src="Icones/maps-and-flags (1).png" alt="markevent1">
 											<p><?php echo $evenement -> nomVilleEvenement;?></p>
