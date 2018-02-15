@@ -42,13 +42,13 @@
 								<div class="titre_soiree">
 								 <?php echo $evenement -> nomEvenement;?>
 								</div>
-								<div class="coordonees">
-								Coordonées
+								<div class="coordonnees">
+								Coordonnées
 									<div class="contact">
-									Arena Loire 
-									131 Rue Ferdinand Vest
-									49800 Trélazé
-									02 77 79 80 00
+									<p>Arena Loire</p> 
+									<p>131 Rue Ferdinand Vest</p>
+									<p>49800 Trélazé</p>
+									<p>02 77 79 80 00</p>
 									</div>
 								</div>
 								<div class="map">
