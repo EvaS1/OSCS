@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
 		<title>Où sortir ce soir ?</title>
 		<link rel="icon" href="Logo/logof.png">
-		<link rel="stylesheet" href="css/style.css">		
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/eva.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
 		<script src="jquery.min.js"></script>
@@ -80,7 +81,11 @@
 									<div class="infoevent">
 										<div class="dayevent">
 											<img src="Icones/calendar.png" alt="Calendar" class="calendarevent1">
-											<p><?php echo $evenement -> dateEvenement;?></p>
+											<p><?php 
+											$dateUS = $evenement -> dateEvenement; 
+											list($annee, $mois, $jour) = explode('-',$dateUS); 
+											$dateFR = $jour."/".$mois."/".$annee; 
+											echo $dateFR;?></p>
 										</div>
 										<div class="timeevent">
 											<img src="Icones/clock.png" alt="Clock" class="clockevent1">

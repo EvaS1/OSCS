@@ -36,7 +36,7 @@
 							//Récupération automatique sous forme d'objet
 							$connexion -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
-							//Récupération colonnes de la table produit
+							//Récupération colonnes de la table événement
 							$query = "SELECT * FROM evenement  WHERE idEvenement=:id ORDER BY idEvenement ASC";
 							$statementEvenement = $connexion->prepare($query);
 							$statementEvenement -> bindValue(':id', 'idEvenement');
