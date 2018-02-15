@@ -5,6 +5,7 @@
 		<title>Où sortir ce soir ?</title>
 		<link rel="icon" href="Logo/logof.png">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/eva.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
 		<script src="jquery.min.js"></script>
@@ -18,7 +19,7 @@
 
 			
 			<div class="content">
-				<main class="block-main-choix">
+				<main class="block-main-listing">
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
@@ -95,6 +96,10 @@
 										<div class="timeevent">
 											<img src="Icones/clock.png" alt="Clock" class="clockevent1">
 											<p><?php echo $evenement -> heureEvenement;?></p>
+										</div>
+										<div class="priceevent">
+											<img src="Icones/euro.png" alt="price" class="price">
+											<p><?php echo $evenement ->prixEvenement;?> €</p>
 										</div>
 										<div class="placeevent">
 											<img src="Icones/maps-and-flags (1).png" alt="markevent1">
