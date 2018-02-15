@@ -28,6 +28,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
+								<div class="inner">
 								<?php 
 									$idEvenement = $_GET['id'];
 									$query = "SELECT * FROM evenement WHERE idEvenement=:id";
@@ -42,37 +43,48 @@
 								<div class="titre_soiree">
 								 <?php echo $evenement -> nomEvenement;?>
 								</div>
-								<div class="coordonnees">
-								Coordonnées
-									<div class="contact">
-									<p>Arena Loire</p> 
-									<p>131 Rue Ferdinand Vest</p>
-									<p>49800 Trélazé</p>
-									<p>02 77 79 80 00</p>
+								
+								<div class="mapcoordonnees">
+								
+									<div class="map">
+											<div id="map"></div>
+										<script>
+											function initMap() {
+												var angers = {lat: <?php echo $evenement -> latitudeEvenement;?>, lng: <?php echo $evenement -> longitudeEvenement;?>};
+												var map = new google.maps.Map(document.getElementById('map'), {
+													zoom: 15,
+													center: angers
+												});
+												var marker = new google.maps.Marker({
+													position: angers,
+													map: map
+												});
+											}
+										</script>
+										<script async defer
+											src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyytxogOqYAz2Dyz8WRsqZRZ9dABbEN6o&callback=initMap">
+										</script>
 									</div>
-								</div>
-								<div class="map">
-										<div id="map"></div>
-									<script>
-										function initMap() {
-											var angers = {lat: <?php echo $evenement -> latitudeEvenement;?>, lng: <?php echo $evenement -> longitudeEvenement;?>};
-											var map = new google.maps.Map(document.getElementById('map'), {
-												zoom: 15,
-												center: angers
-											});
-											var marker = new google.maps.Marker({
-												position: angers,
-												map: map
-											});
-										}
-									</script>
-									<script async defer
-										src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyytxogOqYAz2Dyz8WRsqZRZ9dABbEN6o&callback=initMap">
-									</script>
+									<div class="coordonnees">
+										<strong>Coordonnées</strong>
+										<div class="contact">
+											<p><?php echo $evenement -> lieuEvenement;?></p> 
+											<p><?php echo $evenement -> numeroVoieEvenement;?> <?php echo $evenement -> typeVoieEvenement;?> <?php echo $evenement -> nomVoieEvenement;?></p>
+											<p><?php echo $evenement -> codePostalEvenement;?> <?php echo $evenement -> nomVilleEvenement;?></p>
+											<p><?php echo $evenement -> telephoneEvenement;?></p>
+										</div>
+									</div>
 								</div>
 								
 								<div class="affiche">
-								<img src="Images/Lamomali.jpg" alt="Images">	
+									<?php 
+										$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
+										$statementImage = $connexion->prepare($query);
+										$statementImage -> bindValue(':id', $evenement -> idEvenement);
+										$statementImage -> execute();
+										$image = $statementImage -> fetch ();
+										echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
+									?>                  		
 								</div>
 								
 							<?php } ?>
