@@ -946,6 +946,7 @@ PAGE SOIREE
 	/* POUR TOUS */
 	.block-main-soiree {
 		color: #00022e;
+		width: 1000px;
 	}
 	
 	/* TITRE */
@@ -955,11 +956,14 @@ PAGE SOIREE
 	}
 	
 
-	/* COORDONEES */
-	.block-main-soiree .coordonees {
-		font-size: 25px;
-		
+	/* COORDONNEES */
+	.block-main-soiree .coordonnees {
+		font-size: 25px;	
+		text-align: right;
 	}
+
+
+
 /*---------------------------------
 FOOTER
 ----------------------------------*/
