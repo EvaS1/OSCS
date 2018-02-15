@@ -25,7 +25,7 @@
 								<input class="search" type="search" name="q" id="q" placeholder="Rechercher..." required>
 								<input class="button" type="submit" value="" alt="Rechercher">
 							</form>
-							<li><a href="news.php">News</a></li>
+							<li><a href="news.php">Nouveautés</a></li>
 							<li><a href="listing.php?id=1">Bars</a></li>
 							<li><a href="listing.php?id=2">Concerts</a></li>
 							<li><a href="listing.php?id=3">Théâtres</a></li>
@@ -86,7 +86,7 @@
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#">News</a>
+				<a class="nav-link" href="news.php">Nouveautés</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">

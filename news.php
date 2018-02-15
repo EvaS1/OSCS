@@ -17,37 +17,23 @@
 			<?php include('header.php');
 			include('pdo.php');?>			
 			<div class="content">
-				<main class="block-main-listing">
+				<main class="block-main-news">
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
-							<?php 
-								$idType = $_GET['id'];
-								$query = "SELECT * FROM evenement WHERE idType=:id";
-								$statementEvenement = $connexion->prepare($query);
-								$statementEvenement -> bindValue(':id', $idType);
-								$statementEvenement -> execute();?>
-								
-								
 								<div class="title">
-									<?php
-										if ($idType == 1) {
-											echo "<h2>Les bars</h2>";
-										} else if ($idType == 2) {
-											echo "<h2>Les concerts</h2>";
-										} else if ($idType == 3) {
-											echo "<h2>Les pièces de théâtre</h2>";
-										}
-									?>								
+									<h2>Les derniers événements ajoutés</h2>		
 								</div>
-										
-									<?php
-								
-										$i = 0;
-										while ($evenement = $statementEvenement -> fetch()) {
-											$i++;
-								
-									?>
+								<?php
+									$query = "SELECT * FROM evenement ORDER BY idEvenement desc";
+									$statementEvenement = $connexion->prepare($query);
+									$statementEvenement -> bindValue(':id', 'idEvenement');
+									$statementEvenement -> execute();
+									
+									$i = 0;
+									while ($evenement = $statementEvenement -> fetch()) {
+										$i++;
+								?>
 								<div class="event">
 									<div class="container">
 										<div class="row">
@@ -84,8 +70,7 @@
 												</div>
 											</div>
 										</div> 
-									</div> 	
-								
+									</div> 									
 									<div class="infoevent">
 										<div class="dayevent">
 											<img src="Icones/calendar.png" alt="Calendar" class="calendarevent1">
@@ -109,9 +94,8 @@
 										</div>
 									</div>
 								</div>
-
-							<?php } ?>							
-
+								
+							<?php } ?>
 							</div>	
 						</div>
 					</div>					
