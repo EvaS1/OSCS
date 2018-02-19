@@ -29,26 +29,26 @@
 									</div>
 									<div>
 									<p>
-									<input type="radio" id="Choice1"
-									required name="contact" value="event">
-									<label for="contactChoice1">Aller chill autour d'un verre </label><br>
+										<input type="radio" id="Choice1"
+										required name="contact" value="event">
+										<label for="contactChoice1">Aller chill autour d'un verre </label><br>
 									</p>
 									<p>
-									<input type="radio" id="Choice2"
-									required name="contact" value="concert">
-									<label for="contactChoice2">Aller à un concert</label><br>
+										<input type="radio" id="Choice2"
+										required name="contact" value="concert">
+										<label for="contactChoice2">Aller à un concert</label><br>
 									</p>
 									<p>
-									<input type="radio" id="Choice3"
-									required name="contact" value="theatre">
-									<label for="contactChoice3">Aller au théâtre</label><br>
+										<input type="radio" id="Choice3"
+										required name="contact" value="theatre">
+										<label for="contactChoice3">Aller au théâtre</label><br>
 									</p>
 									</div>
 									<div>
-									<button class="btn" type="submit">1/3</button>
+										<button class="btn" type="submit">1/3</button>
 
 									</div>
-									<input class="end" type="submit" value="Suivant">
+										<input class="end" type="submit" value="Suivant">
 								</form>
 							</article>
 						</section>				
