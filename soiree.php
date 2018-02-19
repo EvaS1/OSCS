@@ -47,8 +47,7 @@
 								<div class="mapcoordonnees">
 								
 									<div class="map">
-											<div id="map"></div>
-										<script>
+											<div id="map"><script>
 											function initMap() {
 												var angers = {lat: <?php echo $evenement -> latitudeEvenement;?>, lng: <?php echo $evenement -> longitudeEvenement;?>};
 												var map = new google.maps.Map(document.getElementById('map'), {
@@ -63,7 +62,9 @@
 										</script>
 										<script async defer
 											src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyytxogOqYAz2Dyz8WRsqZRZ9dABbEN6o&callback=initMap">
-										</script>
+										</script></div>
+										
+									
 									</div>
 									<div class="coordonnees">
 										<strong>Coordonnées</strong>
@@ -72,11 +73,17 @@
 											<p><?php echo $evenement -> numeroVoieEvenement;?> <?php echo $evenement -> typeVoieEvenement;?> <?php echo $evenement -> nomVoieEvenement;?></p>
 											<p><?php echo $evenement -> codePostalEvenement;?> <?php echo $evenement -> nomVilleEvenement;?></p>
 											<p><?php echo $evenement -> telephoneEvenement;?></p>
+											
+											<p><a href="<?php echo $evenement -> siteEvenement;?>"> Achetez  vos places </a>	</p>
 										</div>
 									</div>
 								</div>
 								
-								<div class="affiche">
+								<div class="afficheavis">
+									<div class="avis">
+									super site web wowwww!!!!!!!!
+									</div>
+									
 									<?php 
 										$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
 										$statementImage = $connexion->prepare($query);
@@ -86,13 +93,27 @@
 										echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
 									?>                  		
 								</div>
+									
+								vos avis:<br />
+									<a href="action.php">Rédigez votre avis</a><br />
+									
+								ta note est de <?php echo (int)$_POST['note']; ?> /5.
+								Bonjour, <?php echo htmlspecialchars($_POST['avis']); ?>.
 								
-							<?php } ?>
-					
-				</main>
+								</form>
+								
+								
+								
+									
+								<?php } ?>
+							<?php include "footer.php" ?>
+						</div>
+					</div>
+				</div>
 			</div>
-			<?php include('footer.php');?>
 		</div>
+	</div>
+							
 	</body>
 	
 </html>
