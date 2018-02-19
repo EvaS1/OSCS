@@ -13,7 +13,8 @@
 
 	<body>
 		<div class="page">
-			<?php include('header.php');?>
+			<?php include('header.php');
+			include('pdo.php');?>
 			<div class="content">
 				<main class="block-main-confirmationconnexion">
 					<div class="container">
@@ -24,57 +25,37 @@
 								</div>
 								<div messageconfirmationconnexion>
 									<?php 
+									
+										$query = 'SELECT * FROM membres WHERE pseudoMembre=\''.$_POST['pseudo'].'\'';
+										$statement = $connexion->prepare($query);
+										$statement -> execute();
+										$password = $statement -> passwordMembre;
+										/*$statement = $connexion->query('SELECT * FROM membres WHERE pseudoMembre=\''.$_POST['pseudo'].'\' AND passwordMembre=\''.$_POST['password'].'\''); // Je choisis de la base de donné login le champ login*/
 
-										/*On définit les variables de message*/
-										$erreur='';
-										$msg='';
-
-										/*On se connecte à la base de données*/
-										$link = mysqli_connect("localhost", "EvaS", "sydney", "ou_sortir_ce_soir");
-
-										/*Si la connexion a échoué : affichage des messages d'erreur*/
-										if (!$link) {
-										echo "Error: Unable to connect to MySQL." . PHP_EOL;
-										echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-										echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-										exit;
+										while ($donnees = $statement ->fetch()) {
+										   	if(password_verify($_POST['password'], $password) == true) {
+												echo "connexion réussie";
+											/*if($donnees !== false){
+											   var_dump($donnees);
+											   echo 'connexion réussie';
+												header("location: debutformulaire.php");
+*/
+										   } else {
+												echo"Votre pseudo et/ou votre mot de passe sont incorrects";}
 										}
 
-										/*On récupère les pseudos et les mots de passe de la base de données*/
-										$query = "SELECT pseudoMembre, passwordMembre FROM membres";
-
-										if ($stmt = mysqli_prepare($link, $query)){
-											mysqli_stmt_execute($stmt);
-
-											mysqli_stmt_bind_result($stmt,$pseudo, $password);
-
-											echo('<div class"success">');
-
-											while(mysqli_stmt_fetch($stmt)){
-												echo('<p>Pseudo = ' . $pseudo . ', Password = ' . $password . '</p>');
-											}
-										} else {
-											echo('<p class="error">Error</p>');
-										}
-
-										
+										$statement->closeCursor(); 
+											
 										/*On vérifie que le pseudo et le mot de passe correspondent à un compte enregistré dans la base de données*/
-										if(($_POST['pseudo']==$pseudo) && (password_verify($_POST['password'], $password))) {
-											header ('Location: debutformulaire.php'); //On redirige vers le formulaire
+										/*if(($_POST['pseudo']==$pseudo) && (password_verify($_POST['password'], $password))) {
+											/*header ('Location: debutformulaire.php'); //On redirige vers le formulaire
 										} else if($_POST['pseudo']!==$pseudo) {
 											echo "<div class='erreurpseudo'>" . "<p>" . "Pseudo erroné" . "</p>" . "</div>";
 										} else {
 											echo  "<div class='erreurpassword'>" ."<p>" . "Mot de passe erroné" . "</p>" . "</div>";
-										}
-										
-										/*if (password_verify($_POST['password'], $hash)) {
-											echo 'Le mot de passe est valide !';
-										} else {
-											echo 'Le mot de passe est invalide.';
 										}*/
-						
-										/*On se déconnecte de la base de données*/
-										mysqli_close($link);				
+											
+														
 									?>
 								</div>
 								
