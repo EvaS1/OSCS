@@ -8,73 +8,97 @@
 	<body>
 	
 		<?php 
+			session_start();
+				
+			//Script connexion à la base de données
 			include('pdo.php');
-		
-			$idQuestion = 1;
+			
+			//Requête pour la table question
+			$idQuestion = $_GET['id'];
 			$query = "SELECT * FROM question WHERE idQuestion=:id";
 			$statementQuestion = $connexion->prepare($query);
 			$statementQuestion -> bindValue(':id', $idQuestion);
 			$statementQuestion -> execute();	
 		?>
 		
-		<form method="post">
 
-		<?php 
-
-			$bar = 0;
-			$concert = 0;
-			$theatre = 0;
-
-			while ($question = $statementQuestion -> fetch()) {
-				echo "<h4>".$question -> texteQuestion."</h4>";
-			
+			<?php 
+		
+			//Passage à la question suivante
+			if (($idQuestion == 1) || ($idQuestion == 2) ) {
+				echo "<form method='post' action='resultatformulaire.php?id=".($idQuestion +1)."'>";
+				
+			//Redirection vers résultats
+			} else if ($idQuestion == 3) {
+				echo "<form method='post' action='choix.php'>";
+				
+			//Si erreur, redirections vers début du formulaire
+			} else {
+				echo "Erreur, pour revenir au début du formulaire, <a href='debutformulaire.php'>cliquez-ici</a>";
 			}
-		
-			$query = "SELECT * FROM reponse WHERE idQuestion=:id";
-			$statementReponse = $connexion->prepare($query);
-			$statementReponse -> bindValue(':id', $idQuestion);
-			$statementReponse -> execute();
-			
-			echo "<ul>";
-			$i=0;
-			while ($reponse = $statementReponse -> fetch()) {
-				$i++;
-				echo "<input id='reponse".$i."' name='reponse' type='radio' value ='".$i."'><label for='reponse".$i."'>".$reponse -> texteReponse."</label><br />";
-			
-			} 
-			
-			?>
-			
-			<input class="button" name="submit" type="submit" value="Valider">
-			
-			</form>
-			
-			
-			<?php
-		
-			if (isset($_POST['reponse'])) {
-				echo "<br>".$_POST['reponse']."</br>";
-			}
-		
-		
-			/*//Boucle while pour afficher les questions {
-		
+
+				//Affichage de la question
+				while ($question = $statementQuestion -> fetch()) {
+					echo "<h4>".$question -> texteQuestion."</h4>";
+
+				
+
+					//Requête pour la table réponse
+					$query = "SELECT * FROM reponse WHERE idQuestion=:id";
+					$statementReponse = $connexion->prepare($query);
+					$statementReponse -> bindValue(':id', $idQuestion);
+					$statementReponse -> execute();
+
+
+					//Affichage des réponses correspondantes
+					$i=0;
+					while ($reponse = $statementReponse -> fetch()) {
+						$i++;
+						echo "<input id='reponse".$i."' name='reponse' type='radio' value ='".$reponse -> idType."'required><label for='reponse".$i."'>".$reponse -> texteReponse."</label><br />";
+						
+					} 
+}
+					?>
+
+					<input class="button" name="submit" type="submit" value="Valider">
+			</form> <br />
+					
+				
+				<?php
+				
+					$_SESSION['bar'] = 0;
+					$concert = 0;
+					$theatre = 0;
+					if (isset($_POST['submit'])) { 
+						if ($_POST['reponse'] == 1) {
+							$_SESSION['bar'] ++;
+						} else if ($_POST['reponse'] == 2) {
+							$concert++;
+						} else {
+							$theatre++;
+						}
+					}
+					
+				?>
+
+
+				<?php
+					
 				//Compter le nombre de réponses pour chaque type d'événement
-				if ($_POST[id] == 1) {
-					$bar = $bar ++;
-				} else if ($_POST[id] == 2) {
-					$concert = $concert ++;
-				} else {
-					$theatre = $theatre ++;
-				}
-			
-			// } Fin de la boucle while
-		
+				
 
+				echo "Bar : ".$_SESSION['bar']."<br />";
+				echo "Concert : ".$concert."<br />";
+				echo "Théâtre : ".$theatre."<br />";
+				
+				// } Fin de la boucle while
+		
+				
+			
 			//Comparaison des résultats
 
 			//Si un type d'événements se démarque
-			if ($bar > $concert && $bar > $theatre) {
+			/*if ($bar > $concert && $bar > $theatre) {
 				echo "Bars";
 			} else if ($concert > $bar && $concert > $theatre) {
 				echo "Concerts";

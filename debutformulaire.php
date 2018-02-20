@@ -13,7 +13,8 @@
 
 	<body>
 		<div class="page">
-			<?php include('header.php');?>
+			<?php include('header.php');
+			include('pdo.php')?>
 			<div class="content">
 				<main class="block-main-debutformulaire">
 					<div class="container">
@@ -27,7 +28,7 @@
 
 								<div class="buttonbegin">
 									<p>
-										<a class="button2" href="question1.html" role="button">Je commence !</a>
+										<a class="button2" href="resultatformulaire.php?id=1" role="button">Je commence !</a>
 									</p>
 								</div>
 										
