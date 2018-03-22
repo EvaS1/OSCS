@@ -26,6 +26,7 @@
 								<input class="button" type="submit" value="" alt="Rechercher">
 							</form>
 							<li><a href="news.php">Nouveautés</a></li>
+							<li><a href="debutformulaire.php">Questionnaire</a></li>
 							<li><a href="listing.php?id=1">Bars</a></li>
 							<li><a href="listing.php?id=2">Concerts</a></li>
 							<li><a href="listing.php?id=3">Théâtres</a></li>
@@ -82,11 +83,11 @@
 		<div class="inner">
 			<ul class="nav justify-content">
 			  <li class="nav-item">
-				<a class="nav-link" href="connexion.php">Home</a>
+				<a class="nav-link" href="news.php">Nouveautés</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="news.php">Nouveautés</a>
+				<a class="nav-link" href="debutformulaire.php">Questionnaire</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
