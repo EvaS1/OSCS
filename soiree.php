@@ -78,11 +78,41 @@
 										</div>
 									</div>
 								</div>
+									
+								<?php 
+									$query ="SELECT * FROM avis WHERE idEvenement=:id LIMIT 0,1";
+									$statementAvis = $connexion->prepare($query);
+									$statementAvis -> bindValue(':id', $evenement -> idEvenement);
+									$statementAvis -> execute();
+									$avis = $statementAvis -> fetch ();
+									
+								?> 
+									<?php 
+									$query ="SELECT * FROM membres WHERE idAvis=:id LIMIT 0,1";
+									$statementMembres = $connexion->prepare($query);
+									$statementMembres -> bindValue(':id', $avis -> idAvis);
+									$statementMembres -> execute();
+									$membres = $statementMembres -> fetch ();
+									
+								?> 
+								
 								
 								<div class="afficheavis">
 									<div class="avis">
-									super site web wowwww!!!!!!!!
+									Avis: <br />
+									
+										<div class="perso">
+											<img src="Images/userbleu.png" alt="user" class="userbleu"><br />
+											<?php echo $membres -> pseudoMembre; ?>
+											<img src="Images/4-5.png" alt="étoiles"><br />
+											<div class="description">
+												<?php echo $avis -> commentaireAvis; ?>
+											</div>	
+										</div>
+										
 									</div>
+									
+									
 									
 									<?php 
 										$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
@@ -92,22 +122,23 @@
 										$image = $statementImage -> fetch ();
 										echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
 									?>                  		
-								</div>
+									<!--</div>
+
+									vos avis:<br />
+										<a href="action.php">Rédigez votre avis</a><br />
+
+									ta note est de <?php echo (int)$_POST['note']; ?> /5.<br />
+									<?php echo htmlspecialchars($_POST['avis']); ?>.
+
+									</form>-->
 									
-								vos avis:<br />
-									<a href="action.php">Rédigez votre avis</a><br />
+									<?php
+									} 
+								?>
 									
-								ta note est de <?php echo (int)$_POST['note']; ?> /5.
-								Bonjour, <?php echo htmlspecialchars($_POST['avis']); ?>.
-								
-								</form>
-								
-								
-								
-									
-								<?php } ?>
+																	</div>
 							<?php include "footer.php" ?>
-						</div>
+						
 					</div>
 				</div>
 			</div>

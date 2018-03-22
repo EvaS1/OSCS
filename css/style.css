@@ -964,6 +964,7 @@ PAGE SOIREE
 		justify-content: space-between;
 		
 	}
+	
 
 	/* COORDONNEES */
 	.block-main-soiree .coordonnees {
@@ -990,14 +991,41 @@ PAGE SOIREE
 	.block-main-soiree .afficheavis {	
 		display: flex;
 		margin-top: 10%;
-		width: 1000px;
+		width: 1000px;		
 		justify-content: space-between;
-	}	
+	}
+
+	/* Avis */
+
+	.block-main-soiree .avis {
+		width: 450px;
+		padding: 15px;
+	}
+
+	.block-main-soiree .avis .perso {
+		border: 0.2rem solid #2B2B2B;
+		margin-top: 30px;
+		padding: 5px;
+		
+	}
+	
+	.block-main-soiree .avis .perso .userbleu{
+		width: 75px;
+	}
+
 	.block-main-soiree .afficheavis .image{
 		max-height: 400px;
 		max-width: 400px;
 	}
-	
+	.block-main-soiree .afficheavis .avis{
+			font-size: 25px;
+			text-align: center;
+	}
+
+	.block-main-soiree .afficheavis .avis img{
+		max-height: 400px;
+		max-width: 400px;
+	}
 
 
 
