@@ -94,7 +94,9 @@
 										</div>
 										<div class="priceevent">
 											<img src="Icones/euro.png" alt="price" class="price">
-											<p><?php echo $evenement ->prixEvenement;?> €</p>
+											<p><?php $prix = $evenement ->prixEvenement;
+												$prix = str_replace('.', ',', $prix);
+												echo $prix;?> €</p>
 										</div>
 										<div class="placeevent">
 											<img src="Icones/maps-and-flags (1).png" alt="markevent1">
