@@ -26,13 +26,13 @@
 		
 			//Passage à la question suivante
 			if (($idQuestion == 1) || ($idQuestion == 2) ) {
-				echo "<form method='post' action='resultatformulaire.php?id=".($idQuestion +1)."'>";
+				echo "<form method='post' action='resultatformulaire.php?id=".($idQuestion +1)."&reponse=".$_POST['reponse']."'>";
 				
 			//Redirection vers résultats
 			} else if ($idQuestion == 3) {
 				echo "<form method='post' action='choix.php'>";
 				
-			//Si erreur, redirections vers début du formulaire
+			//Si erreur, redirection vers début du formulaire
 			} else {
 				echo "Erreur, pour revenir au début du formulaire, <a href='debutformulaire.php'>cliquez-ici</a>";
 			}
@@ -40,8 +40,6 @@
 				//Affichage de la question
 				while ($question = $statementQuestion -> fetch()) {
 					echo "<h4>".$question -> texteQuestion."</h4>";
-
-				
 
 					//Requête pour la table réponse
 					$query = "SELECT * FROM reponse WHERE idQuestion=:id";
@@ -55,9 +53,8 @@
 					while ($reponse = $statementReponse -> fetch()) {
 						$i++;
 						echo "<input id='reponse".$i."' name='reponse' type='radio' value ='".$reponse -> idType."'required><label for='reponse".$i."'>".$reponse -> texteReponse."</label><br />";
-						
 					} 
-}
+				}
 					?>
 
 					<input class="button" name="submit" type="submit" value="Valider">
@@ -71,7 +68,7 @@
 					$theatre = 0;
 					if (isset($_POST['submit'])) { 
 						if ($_POST['reponse'] == 1) {
-							$_SESSION['bar'] ++;
+							$_SESSION['bar']++;
 						} else if ($_POST['reponse'] == 2) {
 							$concert++;
 						} else {
@@ -84,7 +81,7 @@
 
 				<?php
 					
-				//Compter le nombre de réponses pour chaque type d'événement
+				//Afficher le nombre de réponses pour chaque type d'événement
 				
 
 				echo "Bar : ".$_SESSION['bar']."<br />";
