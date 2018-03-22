@@ -28,12 +28,14 @@
 								//On récupère la réponse de la question précédente
 								$_SESSION['reponse3'] = $_GET['reponse3'];
 								
+								
 								$heure1 = 19.50;
 								$heure2 = 20.00;
 								$heure3 = 20.50;
 								$prix1 = 15;
 								$prix2 = 30;
-								if (isset ($_SESSION['reponse1'])) {	
+								
+								if ($_SESSION['reponse1'] == 1 || $_SESSION['reponse1'] == 2 || $_SESSION['reponse1'] == 3) {	
 									
 									//Si l'horaire est avant 19h30
 									if($_SESSION['reponse2'] == 5) {
@@ -49,7 +51,12 @@
 										//et prix supérieur à 30€
 										} else if ($_SESSION['reponse3'] == 11) {
 											$query = "SELECT * FROM evenement WHERE idType=:id AND (heureEvenement <= $heure1) AND (prixEvenement >= $prix2)";
+										
+										//et prix pas important
+										} else {
+											$query = "SELECT * FROM evenement WHERE idType=:id AND (heureEvenement <= $heure1)";
 										}
+										
 									
 									//Si l'horaire est entre 19h30 et 20h00
 									} else if ($_SESSION['reponse2'] == 6) {
@@ -65,6 +72,11 @@
 										//et prix supérieur à 30€
 										} else if ($_SESSION['reponse3'] == 11) {
 											$query = "SELECT * FROM evenement WHERE idType=:id AND ($heure1 < heureEvenement) AND (prixEvenement >= $prix2)";
+										
+										
+										//et prix pas important
+										} else {
+											$query = "SELECT * FROM evenement WHERE idType=:id AND ($heure1 < heureEvenement)";
 										}
 									
 									//Si l'horaire est entre 20h00 et 20h30
@@ -80,17 +92,133 @@
 										//et prix supérieur à 30€
 										} else if ($_SESSION['reponse3'] == 11) {
 											$query = "SELECT * FROM evenement WHERE idType=:id AND ($heure2 < heureEvenement) AND (heureEvenement <= $heure3) AND (prixEvenement >= $prix2)";
+										
+											
+										//et prix pas important
+										} else {
+											$query = "SELECT * FROM evenement WHERE idType=:id AND ($heure2 < heureEvenement) AND (heureEvenement <= $heure3)";
 										}
+										
+									//Si l'horaire importe peu
+									} else {
+										//et prix inférieur à 15€
+										if ($_SESSION['reponse3'] == 9) {
+											$query = "SELECT * FROM evenement WHERE idType=:id AND (prixEvenement < $prix1)";
+										
+										//et prix compris entre 15€ et 30€	
+										} else if ($_SESSION['reponse3'] == 10) {
+											$query = "SELECT * FROM evenement WHERE idType=:id AND (prixEvenement < $prix2)";
+										
+										//et prix supérieur à 30€
+										} else if ($_SESSION['reponse3'] == 11) {
+											$query = "SELECT * FROM evenement WHERE idType=:id AND (prixEvenement >= $prix2)";
+										
+										//et prix pas important
+										} else {
+											$query = "SELECT * FROM evenement WHERE idType=:id";
+										}
+											
 									}
 									
+									
+									
+									
+									//Si la réponse au type de soirée est peu importe
+									} else if ($_SESSION['reponse1'] == 4) {
+										
+										//Si l'horaire est avant 19h30
+										if($_SESSION['reponse2'] == 5) {
+										
+											//et prix inférieur à 15€
+											if ($_SESSION['reponse3'] == 9) {
+												$query = "SELECT * FROM evenement WHERE (heureEvenement <= $heure1) AND (prixEvenement < $prix1)";
+
+											//et prix compris entre 15€ et 30€
+											} else if ($_SESSION['reponse3'] == 10) {
+												$query = "SELECT * FROM evenement WHERE (heureEvenement <= $heure1) AND (prixEvenement >= $prix1) AND (prixEvenement < $prix2)";
+
+											//et prix supérieur à 30€
+											} else if ($_SESSION['reponse3'] == 11) {
+												$query = "SELECT * FROM evenement WHERE (heureEvenement <= $heure1) AND (prixEvenement >= $prix2)";
+											
+											//et prix pas important
+											} else {
+												$query = "SELECT * FROM evenement WHERE (heureEvenement <= $heure1)";
+											}
+
+										//Si l'horaire est entre 19h30 et 20h00
+										} else if ($_SESSION['reponse2'] == 6) {
+
+											//et prix inférieur à 15€
+											if ($_SESSION['reponse3'] == 9) {
+												$query = "SELECT * FROM evenement WHERE ($heure1 < heureEvenement) AND (heureEvenement <= $heure2) AND (prixEvenement < $prix1)";
+
+											//et prix compris entre 15€ et 30€	
+											} else if ($_SESSION['reponse3'] == 10) {
+												$query = "SELECT * FROM evenement WHERE ($heure1 < heureEvenement) AND (heureEvenement <= $heure2)  AND (prixEvenement < $prix2)";
+
+											//et prix supérieur à 30€
+											} else if ($_SESSION['reponse3'] == 11) {
+												$query = "SELECT * FROM evenement WHERE ($heure1 < heureEvenement) AND (prixEvenement >= $prix2)";
+											
+											//et prix pas important
+											} else {
+												$query = "SELECT * FROM evenement WHERE ($heure1 < heureEvenement)";
+											}
+
+										//Si l'horaire est entre 20h00 et 20h30
+										} else if ($_SESSION['reponse2'] == 7) {
+											//et prix inférieur à 15€
+											if ($_SESSION['reponse3'] == 9) {
+												$query = "SELECT * FROM evenement WHERE ($heure2 < heureEvenement) AND (heureEvenement <= $heure3) AND (prixEvenement < $prix1)";
+
+											//et prix compris entre 15€ et 30€	
+											} else if ($_SESSION['reponse3'] == 10) {
+												$query = "SELECT * FROM evenement WHERE ($heure2 < heureEvenement) AND (heureEvenement <= $heure3) AND (prixEvenement < $prix2)";
+
+											//et prix supérieur à 30€
+											} else if ($_SESSION['reponse3'] == 11) {
+												$query = "SELECT * FROM evenement WHERE ($heure2 < heureEvenement) AND (heureEvenement <= $heure3) AND (prixEvenement >= $prix2)";
+											
+											//et prix pas important
+											} else {
+												$query = "SELECT * FROM evenement WHERE ($heure2 < heureEvenement) AND (heureEvenement <= $heure3)";
+											}
+										
+									
+										//Si l'horaire importe peu
+										} else {
+											//et prix inférieur à 15€
+											if ($_SESSION['reponse3'] == 9) {
+												$query = "SELECT * FROM evenement WHERE (prixEvenement < $prix1)";
+
+											//et prix compris entre 15€ et 30€	
+											} else if ($_SESSION['reponse3'] == 10) {
+												$query = "SELECT * FROM evenement WHERE (prixEvenement < $prix2)";
+
+											//et prix supérieur à 30€
+											} else if ($_SESSION['reponse3'] == 11) {
+												$query = "SELECT * FROM evenement WHERE (prixEvenement >= $prix2)";
+											
+											//et prix pas important
+											} else {
+												$query = "SELECT * FROM evenement";
+											}
+										}
+
+										
+
+									//S'il y a un bug	
+									} else {
+										echo "Oula... <a href='debutformulaire.php'> Retour au début du questionnaire</a>"; 
+									}
+								
+								
 									$statementEvenement = $connexion->prepare($query);
 									$statementEvenement -> bindValue(':id', $_SESSION['reponse1']);
 									$statementEvenement -> execute();
 									
-									
-								} else {
-									echo "Oula... <a href='debutformulaire.php'> Retour au début du questionnaire</a>"; 
-								}
+								
 								
 								?>
 									
@@ -165,7 +293,16 @@
 										</div>
 										<div class="timeevent">
 											<img src="Icones/clock.png" alt="Clock" class="clockevent1">
-											<p><?php echo $evenement -> heureEvenement;?></p>
+											<p><?php $heure = $evenement -> heureEvenement;
+											list($heures, $minutes) = explode('.', $heure);
+																							
+											if ($minutes < 10) {
+												$heuretexte = $heures."h".'0'.$minutes*0.6;
+											} else {
+												$heuretexte = $heures."h".$minutes*0.6;
+											}
+											echo $heuretexte;?></p>
+											
 										</div>
 										<div class="priceevent">
 											<img src="Icones/euro.png" alt="price" class="price">
@@ -178,7 +315,15 @@
 									</div>
 								</div>
 
-							<?php } ?>							
+							<?php 
+								} 
+								
+								
+								if ($i == 0) {
+									echo "Il n'y a pas de résultats";
+								} 
+								
+							?>							
 
 							</div>	
 						</div>

@@ -82,7 +82,15 @@
 										</div>
 										<div class="timeevent">
 											<img src="Icones/clock.png" alt="Clock" class="clockevent1">
-											<p><?php echo $evenement -> heureEvenement;?></p>
+											<p><?php $heure = $evenement -> heureEvenement;
+											list($heures, $minutes) = explode('.', $heure);
+																							
+											if ($minutes < 10) {
+												$heuretexte = $heures."h".'0'.$minutes*0.6;
+											} else {
+												$heuretexte = $heures."h".$minutes*0.6;
+											}
+											echo $heuretexte;?></p>
 										</div>
 										<div class="priceevent">
 											<img src="Icones/euro.png" alt="price" class="price">
