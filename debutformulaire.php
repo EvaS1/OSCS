@@ -28,7 +28,7 @@
 
 								<div class="buttonbegin">
 									<p>
-										<a class="button2" href="resultatformulaire.php?id=1" role="button">Je commence !</a>
+										<a class="button2" href="Question1.php" role="button">Je commence !</a>
 									</p>
 								</div>
 										
