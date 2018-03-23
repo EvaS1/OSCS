@@ -30,12 +30,12 @@
 								//On récupère la réponse de la question précédente
 								$_SESSION['reponse3'] = $_GET['reponse3'];							
 								
-								
 								$heure1 = 19.50;
 								$heure2 = 20.00;
 								$heure3 = 20.50;
 								$prix1 = 15;
 								$prix2 = 30;
+								
 								
 								if ($_SESSION['reponse1'] == 1 || $_SESSION['reponse1'] == 2 || $_SESSION['reponse1'] == 3) {	
 									
@@ -225,7 +225,7 @@
 									?>								
 								</div>
 										
-								<?php
+								<?php									
 									$i = 0;
 									while ($evenement = $statementEvenement -> fetch()) {
 										$i++;
@@ -309,9 +309,7 @@
 								} 								
 								if ($i == 0) {
 									echo "Il n'y a pas de résultats, réessaie en <a href='debutformulaire.php'>cliquant ici</a>";
-								} else {
-									echo "Il y a ".$i." résultats :";
-								}								
+								}						
 							?>							
 
 							</div>	

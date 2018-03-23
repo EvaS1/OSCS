@@ -821,6 +821,140 @@ PAGE RESULTATS RECHERCHE
 }
 
 
+
+/*---------------------------------
+CONTACT
+----------------------------------*/
+
+
+/*Style titre contact*/
+.block-main-contact h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Style intro contact*/
+.block-main-contact .send p {
+	text-align: center;
+	color: white;
+	text-shadow: 1px 1px 2px #288797;
+	font-size: 1.2em;
+	margin: 20px 0 0;
+}
+
+/*Couleur nom des champs*/
+.block-main-contact .form label:nth-of-type(1) {
+	color: #203863;
+}
+
+
+/*Style champs*/
+.block-main-contact .form  p {
+	color: white;
+	margin: 50px 20px;
+	font-size: 1.2em;
+}
+
+
+/*Ombrage texte du formulaire sauf bouton*/
+.block-main-contact .form p:not(:last-of-type) {
+	text-shadow: 1px 1px 2px #288797;
+}
+
+
+/*Espace entre noms champs et zones de texte + boutons radios*/
+.block-main-contact .form p label:nth-of-type(1) {
+	display: block;
+	width: 128px;
+	float: left;
+}
+
+
+/*Style zones de texte*/
+.block-main-contact .form input:first-of-type,
+.block-main-contact .form input:nth-of-type(2),
+.block-main-contact .form input:nth-of-type(3),
+.block-main-contact .form textarea {
+	background-color: rgba(255,255,255,0.50);
+	border: thin;
+	border-radius: 10px;
+	color: #203863;
+}
+
+/*Style zone de texte*/
+.block-main-contact .form textarea {
+	resize: vertical;
+}
+
+/*Style texte bouton*/
+.block-main-contact .form p:last-of-type {
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: 600;
+}
+   
+
+/*Style bouton*/
+.block-main-contact .form p:last-of-type input {
+	color: #203863;
+	padding: 15px 30px;
+	border: thin;
+	border-radius: 10px;
+	background-color: white;
+	filter: drop-shadow(0px 2px 5px #288797); 
+}
+
+/*Style bouton au survol, au tab ou au clic*/
+.block-main-contact .form p:last-of-type input:hover,
+.block-main-contact .form p:last-of-type input:focus,
+.block-main-contact .form p:last-of-type input:active {
+	background-color: #203863;
+	color: white;
+	text-decoration: none;
+}
+
+/*---------------------------------
+CONFIRMATION CONTACT
+----------------------------------*/
+
+
+/*Style titre confirmation contact*/
+.block-main-confirmation-contact h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Style message confirmation + erreur*/
+.block-main-confirmation-contact .sent p,
+.block-main-confirmation-contact .error p {
+	text-align: center;
+	color: white;
+	text-shadow: 1px 1px 2px #288797;
+	font-size: 1.2em;
+	margin: 40px 0 0;
+}
+
+/*Style liens retour*/
+.block-main-confirmation-contact .sent a,
+.block-main-confirmation-contact .error a {
+	color: #00022e;
+}
+
+/*Style liens retour au survol*/
+.block-main-confirmation-contact .sent a:hover,
+.block-main-confirmation-contact .sent a:focus,
+.block-main-confirmation-contact .sent a:active,
+.block-main-confirmation-contact .error a:hover,
+.block-main-confirmation-contact .error a:focus,
+.block-main-confirmation-contact .error a:active {
+	text-decoration: none;
+	color: #203863;
+}
+
 @media (min-width: 992px) { 
 
 	.block-content-search .inner {
@@ -847,6 +981,8 @@ PAGE RESULTATS RECHERCHE
 	}
 	
 }
+
+
 /*---------------------------------
 LARGE DEVICES (desktops, 992px and up)
 ----------------------------------*/
