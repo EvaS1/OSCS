@@ -9,7 +9,7 @@
 	<html>
 	<head>
 		<meta charset="utf-8">
-		<title>Question1</title>
+		<title>Question 3</title>
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="icon" href="Logo/logof.png">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
@@ -47,7 +47,7 @@
 								<?php 
 								//Passage à la question suivante
 								if ($idQuestion == 3) {
-									echo "<form method='get' action='essai.php'>";
+									echo "<form method='get' action='choix.php'>";
 
 
 								//Si erreur, redirection vers début du formulaire
@@ -64,7 +64,7 @@
 										echo "<p>".$question -> texteQuestion."</p>";
 										?>
 									</div>
-									<div>
+									<div class="answers">
 										<?php 	
 											//Requête pour la table réponse
 											$query = "SELECT * FROM reponse WHERE idQuestion=:id";
@@ -78,10 +78,12 @@
 											$i=0;
 											while ($reponse = $statementReponse -> fetch()) {
 												$i++;
-												echo "<input id='reponse".$i."' name='reponse3' type='radio' value ='".$reponse -> idReponse."'required><label for='reponse".$i."'>".$reponse -> texteReponse."</label><br />";
+												echo "<p><input id='reponse".$i."' name='reponse3' type='radio' value ='".$reponse -> idReponse."'required><label for='reponse".$i."'>".$reponse -> texteReponse."</label></p>";
 											} 
 										}
 										?>
+									</div>
+									<div class="next">
 										<input class="button" name="submit" type="submit" value="Valider">
 									</div>
 								</form>

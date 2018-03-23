@@ -9,7 +9,7 @@
 	<html>
 	<head>
 		<meta charset="utf-8">
-		<title>Question2</title>
+		<title>Question 2</title>
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="icon" href="Logo/logof.png">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
@@ -60,10 +60,10 @@
 										<?php
 										//Affichage de la question
 										while ($question = $statementQuestion -> fetch()) {
-										echo "<p>".$question -> texteQuestion."</p>";
+											echo "<p>".$question -> texteQuestion."</p>";
 										?>
 									</div>
-									<div>
+									<div class="answers">
 										<?php 	
 											//Requête pour la table réponse
 											$query = "SELECT * FROM reponse WHERE idQuestion=:id";
@@ -76,10 +76,12 @@
 											$i=0;
 											while ($reponse = $statementReponse -> fetch()) {
 												$i++;
-												echo "<input id='reponse".$i."' name='reponse2' type='radio' value ='".$reponse -> idReponse."'required><label for='reponse".$i."'>".$reponse -> texteReponse."</label><br />";
+												echo "<p><input id='reponse".$i."' name='reponse2' type='radio' value ='".$reponse -> idReponse."'required><label for='reponse".$i."'>".$reponse -> texteReponse."</label></p>";
 											}
 										}
 										?>
+									</div>
+									<div class="next">
 										<input class="button" name="submit" type="submit" value="Valider">
 									</div>
 								</form>

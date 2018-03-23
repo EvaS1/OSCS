@@ -17,17 +17,18 @@
 
 	<body>
 		<div class="page">
-			<?php include('header.php');
-			include('pdo.php');?>			
+			<?php 
+				include('header.php');
+				include('pdo.php');
+			?>			
 			<div class="content">
-				<main class="block-main-listing">
+				<main class="block-main-choix">
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
 							<?php 
 								//On récupère la réponse de la question précédente
-								$_SESSION['reponse3'] = $_GET['reponse3'];
-								
+								$_SESSION['reponse3'] = $_GET['reponse3'];								
 								
 								$heure1 = 19.50;
 								$heure2 = 20.00;
@@ -118,11 +119,8 @@
 											$query = "SELECT * FROM evenement WHERE idType=:id";
 										}
 											
-									}
-									
-									
-									
-									
+									}				
+															
 									//Si la réponse au type de soirée est peu importe
 									} else if ($_SESSION['reponse1'] == 4) {
 										
@@ -205,41 +203,33 @@
 												$query = "SELECT * FROM evenement";
 											}
 										}
-
-										
+									
 
 									//S'il y a un bug	
 									} else {
-										echo "Oula... <a href='debutformulaire.php'> Retour au début du questionnaire</a>"; 
+										echo "<a href='debutformulaire.php'>Retour au début du questionnaire</a>"; 
 									}
 								
 								
 									$statementEvenement = $connexion->prepare($query);
 									$statementEvenement -> bindValue(':id', $_SESSION['reponse1']);
-									$statementEvenement -> execute();						
-								
+									$statementEvenement -> execute();	
 								
 								?>								
 								
 								
 								<div class="title">
 									<?php
-										echo "<h2>Choisis ta soirée</h2>";
-																				
-										
-									
-										
+										echo "<h2>Choisis ta soirée</h2>";	
 									?>								
 								</div>
 										
 								<?php
-
 									$i = 0;
 									while ($evenement = $statementEvenement -> fetch()) {
-										$i++;											
-											
-
+										$i++;
 								?>
+								
 								<div class="event">
 									<div class="container">
 										<div class="row">
@@ -255,6 +245,7 @@
 													?>
 												</div>
 											</div>
+											
 											<div class="col-9">
 												<div class="inner">
 													<div class="titleevent">
@@ -314,13 +305,10 @@
 								</div>
 
 							<?php 
-								} 
-								
-								
+								} 								
 								if ($i == 0) {
 									echo "Il n'y a pas de résultats, réessaie en <a href='debutformulaire.php'>cliquant ici</a>";
-								} 
-								
+								} 								
 							?>							
 
 							</div>	

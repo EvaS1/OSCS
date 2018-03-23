@@ -547,6 +547,7 @@ PAGE DEBUT FORMULAIRE
 	font-size: 1.2em;
 	text-align: justify;
 	margin: 40px 70px;
+	text-shadow: 1px 1px 2px #288797;
 }
 
 /*Style texte bouton*/
@@ -587,15 +588,13 @@ PAGES QUESTION
 .block-center .block-main .title{	
 	text-align: center;
 	position: relative;
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 	font-size: 1.3em;
 	color: #00022E;
-	margin: 0px 0px 20px;
+	margin: 70px 0 30px;
 }
 .block-center .block-main .section .forms{	
 	text-align: center;
 	position: relative;
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 	font-size: 1.2em;
 	color: #00022e;
 }
@@ -607,32 +606,48 @@ PAGES QUESTION
 	font-size: 1.3em;
 	color: white;
 	border-width: 50px;
+	text-shadow: 1px 1px 2px #288797;
 }
 
-.block-center .block-main .section .forms div .btn{
-	border-radius: 50%;
-	padding: 11px;
-	text-align: center;	
-	border: 0px solid #000;
-}
-.block-center .block-main .section .forms div .btnq1{
-	border-radius: 50%;
-	padding: 11px;
-	text-align: center;	
-	border: 0px solid #000;
+.block-center .section .forms .answers {
+	width: 350px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+	margin: 30px auto;
 }
 
+.block-center .section .forms .answers p {
+	width: 50%;
+	text-align: left;
+}
 
-.block-center .block-main .section .forms .end{
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 10px;
-	border-radius: 25px;
-	text-align: center;
-	font-size: 1.3em;
-	font-weight: 600;
-	margin: 70px;
+.block-center .section .forms .answers p:nth-of-type(2),
+.block-center .section .forms .answers p:nth-of-type(4) {
+	padding-left: 38px;
+}
+
+.block-center .section .forms .answers input {
+    margin-right: 10px;
+}
+
+/*Style bouton*/
+.block-center .next .button {
+	color: #203863;
+	padding: 15px 30px;
+	border: thin;
+	border-radius: 10px;
+	background-color: white;
+	filter: drop-shadow(0px 2px 5px #288797); 
+}
+
+/*Style bouton au survol, au tab ou au clic*/
+.block-center .next .button:hover,
+.block-center .next .button:focus,
+.block-center .next .button:active {
+	background-color: #203863;
+	color: white;
+	text-decoration: none;
 }
 
 /*---------------------------------
