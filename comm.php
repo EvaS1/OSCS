@@ -7,16 +7,14 @@
 
 <body>
 	<?php include('pdo.php');?>
-	<form method="post" action="news.php">
-    	<p>
-        	<label for="commentaire">Votre pseudo :</label>
-        	<!--<input type="text" name="commentaire" id="commentaire" placeholder="Ex : Zozor" size="30" maxlength="10" />-->
-			<textarea name="ameliorer" id="ameliorer" rows="10" cols="50">
-      		</textarea>   
-    	</p>
-		Tu as <?php echo $_POST['commentaire']; ?> ans.
-		<input type="submit" value="Envoyer" />
-	</form>	
+	
+	<?php 
+	echo $_POST['pseudo'], '<br/>'; 
+	echo $_POST['commentaire'], '<br/>';
+	echo $_POST['event'], '<br/>';
+	echo $_POST['note'];
+	?>
+	
 	<?php 
 	$stmt = $connexion -> prepare('INSERT INTO avis (commentaireAvis, noteAvis, idEvenement, idMembre)) VALUES (:CommentaireAvis, :noteAvis, :idEvenement, :idMembre)');
 	$stmt->bindValue(':commentaireAvis', $_POST ['commentaireAvis']);
