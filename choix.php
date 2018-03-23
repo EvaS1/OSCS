@@ -28,7 +28,8 @@
 							<div class="col-12">
 							<?php 
 								//On récupère la réponse de la question précédente
-								$_SESSION['reponse3'] = $_GET['reponse3'];								
+								$_SESSION['reponse3'] = $_GET['reponse3'];							
+								
 								
 								$heure1 = 19.50;
 								$heure2 = 20.00;
@@ -308,7 +309,9 @@
 								} 								
 								if ($i == 0) {
 									echo "Il n'y a pas de résultats, réessaie en <a href='debutformulaire.php'>cliquant ici</a>";
-								} 								
+								} else {
+									echo "Il y a ".$i." résultats :";
+								}								
 							?>							
 
 							</div>	

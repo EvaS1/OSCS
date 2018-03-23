@@ -22,13 +22,13 @@ list-style-type:none;
 body {
 	background-image: url("../Fond/Fond rectangulairedouble.png");
 	background-size: cover;
-	/*background-position: center;*/
+	background-position: center;
 	background-repeat: no-repeat;
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 }
 
 .content {
-	min-height: 622px;
+	min-height: 570px;
 }
 
 
@@ -542,7 +542,7 @@ PAGE DEBUT FORMULAIRE
 }
 
 /*Style texte paragraphe*/
-.block-main-debutformulaire .introduction {
+.block-main-debutformulaire .introduction p {
 	color: white;
 	font-size: 1.2em;
 	text-align: justify;
@@ -610,7 +610,7 @@ PAGES QUESTION
 }
 
 .block-center .section .forms .answers {
-	width: 350px;
+	width: 400px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -620,11 +620,12 @@ PAGES QUESTION
 .block-center .section .forms .answers p {
 	width: 50%;
 	text-align: left;
+	font-weight: 500;
 }
 
 .block-center .section .forms .answers p:nth-of-type(2),
 .block-center .section .forms .answers p:nth-of-type(4) {
-	padding-left: 38px;
+	padding-left: 53px;
 }
 
 .block-center .section .forms .answers input {

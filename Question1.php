@@ -34,66 +34,66 @@
 				$statementQuestion -> execute();
 			
 			?>
+			<div class="content">
+				<div class="block-center">
+					<div class="inner">
+						<main class="block-main">
+							<section class="section group">
+								<article class="item title">
+									<h1 class="title">Question <?php echo $idQuestion;?></h1>	
+								</article>					
+								<article class="item forms">
 
-			<div class="block-center">
-				<div class="inner">
-					<main class="block-main">
-						<section class="section group">
-							<article class="item title">
-								<h1 class="title">Question <?php echo $idQuestion;?></h1>	
-							</article>					
-							<article class="item forms">
-								
-								<?php 
-								//Passage à la question suivante
-								if ($idQuestion == 1) {
-									echo "<form method='get' action='Question2.php'>";
-
-
-								//Si erreur, redirection vers début du formulaire
-								} else {
-									echo "Erreur, pour revenir au début du formulaire, <a href='debutformulaire.php'>cliquez-ici</a>";
-								}
-								?>
-								
-								
-									<div class="quest">
-										<?php
-										//Affichage de la question
-										while ($question = $statementQuestion -> fetch()) {
-											echo "<p>".$question -> texteQuestion."</p>";
-										?>
-									</div>
-									<div class="answers">
-										<?php 	
-											//Requête pour la table réponse
-											$query = "SELECT * FROM reponse WHERE idQuestion=:id";
-											$statementReponse = $connexion->prepare($query);
-											$statementReponse -> bindValue(':id', $idQuestion);
-											$statementReponse -> execute();
+									<?php 
+									//Passage à la question suivante
+									if ($idQuestion == 1) {
+										echo "<form method='get' action='Question2.php'>";
 
 
-											//Affichage des réponses correspondantes
-											$i=0;
-											while ($reponse = $statementReponse -> fetch()) {
-												$i++;
-												echo "<p><input id='reponse".$i."' name='reponse1' type='radio' value ='".$reponse -> idReponse."'required><label for='reponse".$i."'>".$reponse -> texteReponse."</label></p>";		
+									//Si erreur, redirection vers début du formulaire
+									} else {
+										echo "Erreur, pour revenir au début du formulaire, <a href='debutformulaire.php'>cliquez-ici</a>";
+									}
+									?>
 
-											} 
 
-										}
-										?>
-									</div>
-									<div class="next">
-										<input class="button" name="submit" type="submit" value="Valider">
-									</div>
-								</form>
-							</article>
-						</section>				
-					</main>
-				</div>
-			</div>	
+										<div class="quest">
+											<?php
+											//Affichage de la question
+											while ($question = $statementQuestion -> fetch()) {
+												echo "<p>".$question -> texteQuestion."</p>";
+											?>
+										</div>
+										<div class="answers">
+											<?php 	
+												//Requête pour la table réponse
+												$query = "SELECT * FROM reponse WHERE idQuestion=:id";
+												$statementReponse = $connexion->prepare($query);
+												$statementReponse -> bindValue(':id', $idQuestion);
+												$statementReponse -> execute();
 
+
+												//Affichage des réponses correspondantes
+												$i=0;
+												while ($reponse = $statementReponse -> fetch()) {
+													$i++;
+													echo "<p><input id='reponse".$i."' name='reponse1' type='radio' value ='".$reponse -> idReponse."'required><label for='reponse".$i."'>".$reponse -> texteReponse."</label></p>";		
+
+												} 
+
+											}
+											?>
+										</div>
+										<div class="next">
+											<input class="button" name="submit" type="submit" value="Valider">
+										</div>
+									</form>
+								</article>
+							</section>				
+						</main>
+					</div>
+				</div>	
+			</div>
 
 			<?php include('footer.php');?>
 		</div>

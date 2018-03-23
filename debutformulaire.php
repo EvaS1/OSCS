@@ -27,9 +27,7 @@
 									<p>Pour que nous puissions te proposer des évènements qui te correspondent, merci de répondre à ces quelques questions !</p>
 
 								<div class="buttonbegin">
-									<p>
-										<a class="button2" href="Question1.php" role="button">Je commence !</a>
-									</p>
+									<a class="button2" href="Question1.php" role="button">Je commence !</a>									
 								</div>
 										
 								
