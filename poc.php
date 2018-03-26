@@ -16,7 +16,6 @@
 			<?php include('header.php')?>;
 	
 		<div class="block_main_legal">
-			 <a href="http://www.ousortircesoir.com/"> POC</a>:
 
 			<h2>Politique modèle de confidentialité.</h2>
 

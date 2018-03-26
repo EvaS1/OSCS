@@ -16,7 +16,6 @@
 			<?php include('header.php')?>;
 	
 		<div class="block_main_legal">
-			 <a href="http://www.ousortircesoir.com/"> CGU</a>:
 
 			<h2>Conditions générales d'utilisation du site</h2>
 
