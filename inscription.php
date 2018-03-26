@@ -31,8 +31,8 @@
 											</p>
 
 											<p>
-												<label for="mail">E-mail</label>
-												<input type="email" name="mail" id="mail" size="32" required>
+												<label for="email">E-mail</label>
+												<input type="email" name="email" id="email" size="32" required>
 											</p>
 
 											<p>

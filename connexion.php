@@ -27,8 +27,8 @@
 									<form action="confirmationconnexion.php" method="post">
 										<fieldset>										
 											<p>
-												<label for="pseudo">Pseudo</label>
-												<input type="text" name="pseudo" id="pseudo"  maxlength="20" size="32" required>
+												<label for="mail">Mail</label>
+												<input type="mail" name="mail" id="mail" size="32" required>
 											</p>
 
 											<p>
