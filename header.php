@@ -30,7 +30,7 @@
 							<li><a href="listing.php?id=1">Bars</a></li>
 							<li><a href="listing.php?id=2">Concerts</a></li>
 							<li><a href="listing.php?id=3">Théâtres</a></li>
-							<li><a href="compte.php">Mon compte</a></li>
+							<li><a href="profil.php">Mon compte</a></li>
 							<li><a href="contact.php">Contact</a></li>
 						</div>
 					</ul>
@@ -61,9 +61,18 @@
 				</ul>
 			</div>
 			<div class="connexion">
-				<a href="connexion.php">
-					<img src="Icones/userb.png">
-					<p>Connexion</p>
+					<?php
+					//Si l'utilisateur n'est pas connecté
+					if (!isset($_SESSION['id'])) {
+						echo "<a href='connexion.php'>";
+						echo "<img src='Icones/userb.png'>";
+						echo "<p>Connexion</p>";
+					} else {
+						echo "<a href='profil.php'>";
+						echo "<img src='Icones/userb.png'>";
+						echo "<p>".($_SESSION['id'])."</p>";
+					}
+					 ?>
 				</a>
 			</div>
 		</div>

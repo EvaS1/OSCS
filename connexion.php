@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html>
 	<head>
@@ -27,7 +28,7 @@
 									<form action="confirmationconnexion.php" method="post">
 										<fieldset>										
 											<p>
-												<label for="mail">Mail</label>
+												<label for="mail">E-mail</label>
 												<input type="mail" name="mail" id="mail" size="32" required>
 											</p>
 

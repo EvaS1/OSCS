@@ -6,6 +6,7 @@
 		<title>Où sortir ce soir ?</title>
 		<link rel="icon" href="Logo/logof.png">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/eva.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
 		<script src="jquery.min.js"></script>
@@ -15,25 +16,23 @@
 	<body>
 		<div class="page">
 			<?php include('header.php');
-			include('pdo.php')?>
+			include('pdo.php');?>			
 			<div class="content">
-				<main class="block-main-debutformulaire">
+				<main class="block-main-listing">
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
-								<div class="title">
-									<h2>Questionnaire</h2>
+								<div class="title">									
+									<h2>Mon profil</h2>						
 								</div>
-								<div class="introduction">
-									<p>Pour que nous puissions te proposer des évènements qui te correspondent, merci de répondre à ces quelques questions !</p>
-
-								<div class="buttonbegin">
-									<a class="button2" href="Question1.php" role="button">Je commence !</a>									
-								</div>
+								<div class="event">
+									<div class="container">
 										
-								
+									</div> 									
+								</div>	
+							</div>	
 						</div>
-					</div>
+					</div>					
 				</main>
 			</div>
 			<?php include('footer.php');?>
