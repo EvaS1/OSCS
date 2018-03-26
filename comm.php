@@ -17,11 +17,11 @@
 	
 	<?php 
 	$stmt = $connexion -> prepare('INSERT INTO avis (commentaireAvis, noteAvis, idEvenement, idMembre)) VALUES (:CommentaireAvis, :noteAvis, :idEvenement, :idMembre)');
-	$stmt->bindValue(':commentaireAvis', $_POST ['commentaireAvis']);
-	$stmt->bindValue(':noteAvis', $_POST ['noteAvis']);
-	$stmt->bindValue(':idEvenement', $_POST ['idEvenement']);
-	$stmt->bindValue(':idMembre', $_POST ['idMembre']);
-	$stmt->execute;
+	$stmt->bindValue(':commentaireAvis', $_POST['commentaire']);
+	$stmt->bindValue(':noteAvis', $_POST['note']);
+	$stmt->bindValue(':idEvenement', $_POST['event']);
+	$stmt->bindValue(':idMembre', $_POST['pseudo']);
+	$stmt->execute();
 	?>
 </body>
 </html>
