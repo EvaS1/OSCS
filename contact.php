@@ -28,7 +28,7 @@
 									<p>Merci de remplir ce formulaire pour nous envoyer un petit message !</p>
 								</div>
 								<div class="form">
-									<form action="confirmationconnexion.php" method="post">
+									<form action="confirmationcontact.php" method="post">
 										<fieldset>										
 											<p>
 												<label for="firstname">Prénom</label>
@@ -56,6 +56,7 @@
 
 										</fieldset>
 									</form>
+								
 								</div>
 							
 							</div>

@@ -14,7 +14,8 @@
 
 	<body>
 		<div class="page">
-			<?php include('header.php');?>
+			<?php include('header.php');
+			include('pdo.php');?>
 			<div class="content">
 				<main class="block-main-confirmation-contact">
 					<div class="container">
@@ -25,21 +26,32 @@
 								</div>
 								
 								<?php 
+									if (isset($_POST['firstname'])) {
+										$prenom = $_POST['firstname'];
+										echo $prenom;
+									} 
+
+									if (isset($_POST['firstname'])) {
+										$nom = $_POST['lastname'];
+										echo $nom;
+									} 
 									//On vérifie que les données ont bien été récupérées
 									if (isset($_POST['mail']) && isset($_POST['message'])) {
-										
-										$prenom = $_POST['firstname'];
-										$nom = $_POST['lastname'];
+																
+										$mail = $_POST['mail'];
 										$message = $_POST['message'];
-
-										/*$from = "$prenom $nom";
-
-										$to = 'eva.saintier@gmail.com';
-										$objet = "Test"; //Met l'objet que tu veux*/
-
-									
 										
-										echo "<div class='sent'><p>Ton message a bien été envoyé !  Pour revenir aux nouveautés, <a href='news.php'>clique ici</a>.</p></div>";
+										$queryAjout = "INSERT INTO contact (prenomContact, nomContact, mailContact, messageContact) VALUES(:prenomContact, :nomContact, :mailContact, :messageContact)";
+										$statement = $connexion->prepare($queryAjout);
+										$statement -> bindValue(':prenomContact', $prenom,PDO::PARAM_STR);
+										$statement -> bindValue(':nomContact', $nom,PDO::PARAM_STR);
+										$statement -> bindValue(':mailContact', $mail,PDO::PARAM_STR);
+										$statement -> bindValue(':messageContact', $message,PDO::PARAM_STR);
+										if ($statement -> execute()) {							
+											echo "<div class='sent'><p>Ton message a bien été envoyé !  Pour revenir aux nouveautés, <a href='news.php'>clique ici</a>.</p></div>";
+										} else {
+											echo "<div class='error'><p>Erreur, pour revenir à la page contact, <a href='contact.php'>clique ici</a>.</p></div>";
+										}
 										
 									} else {
 										echo "<div class='error'><p>Erreur, pour revenir à la page contact, <a href='contact.php'>clique ici</a>.</p></div>";
