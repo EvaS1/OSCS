@@ -62,17 +62,25 @@
 			</div>
 			<div class="connexion">
 					<?php
+					include('pdo.php');
 					//Si l'utilisateur n'est pas connecté
 					if (!isset($_SESSION['id'])) {
 						echo "<a href='connexion.php'>";
 						echo "<img src='Icones/userb.png'>";
 						echo "<p>Connexion</p>";
 					} else {
+						$query = "SELECT * FROM membres WHERE idMembre=:id";
+						$statement = $connexion->prepare($query);
+						$statement -> bindValue(':id', $_SESSION['id']);
+						$statement -> execute();
+
+						$profil = $statement -> fetch();
+							
 						echo "<a href='profil.php'>";
 						echo "<img src='Icones/userb.png'>";
-						echo "<p>".($_SESSION['id'])."</p>";
+						echo "<p>".$profil -> pseudoMembre."</p>";
 					}
-					 ?>
+					?>
 				</a>
 			</div>
 		</div>
