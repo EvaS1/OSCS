@@ -25,30 +25,30 @@
 								<div class="title">									
 									<h2>Mon profil</h2>						
 								</div>
-								<div class="picture">
-									<img src="Icones/userb.png" alt="picture">
-								</div>
-								<div class="info">
-									<div class="container">
+								<div class="bloc">
+									<div class="picture">
+										<img src="Icones/userb.png" alt="picture">
+									</div>
+									<div class="info">									
 										<div class="name">
-											<?php echo "<p>".$profil -> pseudoMembre."</p>"; ?>
+											<?php echo "<p>Mon pseudo : ".$profil -> pseudoMembre."</p>"; ?>
 										</div>
 										<div class="age">
 											<?php 
 											if ($profil -> ageMembre == "age1") {
-												echo "<p>18-25 ans</p>";
+												echo "<p>Ma tranche d'âge : 18-25 ans</p>";
 											} else if ($profil -> ageMembre == "age2") {
-												echo "<p>26-30 ans</p>";
+												echo "<p>Ma tranche d'âge : 26-30 ans</p>";
 											} else if ($profil -> ageMembre == "age3") {
-												echo "<p>31-50 ans</p>";
+												echo "<p>Ma tranche d'âge : 31-50 ans</p>";
 											} else {
-												echo "<p>51 ans et +</p>";
+												echo "<p>Ma tranche d'âge : 51 ans et +</p>";
 											} ?>
 										</div>
 										<div class="mail">
-											<?php echo $profil -> emailMembre ?>
-										</div>
-									</div> 									
+											<?php echo "<p>Mon adresse email : ".$profil -> emailMembre."</p>" ?>
+										</div>						 							
+									</div>	
 								</div>	
 							</div>	
 						</div>

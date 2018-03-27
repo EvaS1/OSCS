@@ -55,15 +55,79 @@ HEADER MOBILE
 	width: 13%;
 }
 
-
+/*Taille icône user*/
 .block-header .connexion img{
 	width: 50px;
+	margin: 20px 0;
 }
 
+/*Style lien connexion*/
 .block-header .connexion a {
 	color: #274451;
 	font-size: 0.8em;
 }
+
+/*Style et position sous-menu*/
+.block-header .inner .sous-menu {
+	margin: 0;
+    padding: 0;
+    border: 1px solid #203863;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.5);
+	position: absolute;
+    right: 33px;
+    top: 120px;
+	display: none;
+}
+
+/*tyle li du sous-menu*/
+.block-header .inner .sous-menu li {
+	list-style: none;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 8px;
+	text-align: right;
+}
+
+/*Séparateur dans sous-menu*/
+.block-header .inner .sous-menu li:first-of-type {
+	border-bottom: 1px solid #203863;
+}
+
+.block-header .inner .connexion:hover .sous-menu,
+.block-header .inner .connexion:focus .sous-menu {
+	display: block;
+}
+
+/*Couleur et taille liens du sous-menu*/
+.block-header .inner .sous-menu li a {
+	color: #203863;
+	font-size: 1em;
+}
+
+/*Style du premier li du sous-menu au survol*/
+.block-header .inner .sous-menu li:first-of-type:hover,
+.block-header .inner .sous-menu li:first-of-type:active,
+.block-header .inner .sous-menu li:first-of-type:focus {
+	background-color: white;
+	border-radius: 5px 5px 0 0;
+}
+
+/*Style du deuxième li du sous-menu au survol*/
+.block-header .inner .sous-menu li:last-of-type:hover,
+.block-header .inner .sous-menu li:last-of-type:active,
+.block-header .inner .sous-menu li:last-of-type:focus {
+	background-color: white;
+	border-radius: 0 0 5px 5px;	
+}
+
+/*Enlever soulignement liens*/
+.block-header .inner .sous-menu a:hover,
+.block-header .inner .sous-menu a:active,
+.block-header .inner .sous-menu a:focus {
+	text-decoration: none;
+}
+
 
 /*---------------------------------
 NAV MOBILE
@@ -528,6 +592,48 @@ CONNEXION
 	font-size: 1.3em;
 	text-shadow: 1px 1px 2px #288797;
 }
+
+
+/*---------------------------------
+PAGE PROFIL
+----------------------------------*/
+
+/*Style titre*/
+.block-main-profil h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Style fond blanc*/
+.block-main-profil .bloc {
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.1em;
+	margin: 20px;
+	max-width: 650px;
+	text-align: center;
+}
+
+/*Taille photo profil*/
+.block-main-profil .picture img {
+	width: 75px;
+}
+
+/*Style texte*/
+.block-main-profil .info p {
+	margin: 15px 0;
+	font-size: 1.1rem;
+	color: #00022e;
+}
+
+/*Style texte*/
+.block-main-profil .info p:last-of-type {
+	margin: 15px 0 0;
+}
+
 
 /*---------------------------------
 PAGE DEBUT FORMULAIRE
