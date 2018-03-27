@@ -1,5 +1,6 @@
 <?php session_start();
-	/*CONNEXION*/
+
+/*CONNEXION*/
 require 'pdo.php';
 
 
@@ -10,7 +11,7 @@ $errors = [];
 
 //Si aucune erreur n'et detectée
 if(empty($errors)){
-
+	$pseudo = $_POST['pseudo'];
 	$hashpass=$_POST['password'];
   	$hashpass=sha1($hashpass);
 	$mail = $_POST['email'];
@@ -19,17 +20,19 @@ if(empty($errors)){
 
 	$stmt = $connexion->prepare('INSERT INTO membres (pseudoMembre, emailMembre, passwordMembre, genderMembre, ageMembre)
 	VALUES (:pseudoMembre, :emailMembre, :passwordMembre, :genderMembre, :ageMembre)');
-	$stmt->bindValue(':pseudoMembre', $_POST['pseudo']);
-	$stmt->bindValue(':emailMembre', $_POST['email']);
+	$stmt->bindValue(':pseudoMembre', $pseudo);
+	$stmt->bindValue(':emailMembre', $mail);
 	$stmt->bindValue(':passwordMembre', $hashpass);
 	$stmt->bindValue(':genderMembre', $gender);
 	$stmt->bindValue(':ageMembre', $age);	
 	$stmt->execute();
-
 	
-	$_SESSION['id'] = $stmt -> idMembre;
+	$req = $connexion->prepare('SELECT idMembre FROM membres WHERE emailMembre="'.$mail.'" AND passwordMembre="'.$hashpass.'"');
+	$req->execute();
+	$resultat = $req->fetch();
 	
-
+	$_SESSION['id'] = $resultat -> idMembre;
+	
 	header('Location: debutformulaire.php');
 
 

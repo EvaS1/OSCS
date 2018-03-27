@@ -612,9 +612,13 @@ PAGE PROFIL
 	border-radius: 20px;
 	padding: 20px;
 	font-size: 1.1em;
-	margin: 20px;
+	margin: 40px 0;
 	max-width: 650px;
 	text-align: center;
+}
+
+.block-main-profil .picture {
+	margin: 10px 0 20px 0;
 }
 
 /*Taille photo profil*/
