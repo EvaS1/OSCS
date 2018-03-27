@@ -20,7 +20,7 @@
 
 					$profil = $statement -> fetch();
 					
-					//Affichage icône + fin du h1
+					//Affichage icône
 					echo "<a href='profil.php' class='profile'><img src='Icones/userb.png'></a>";
 					
 					//Sous-menu
@@ -97,6 +97,9 @@
 						$profil = $statement -> fetch();
 							
 						echo "<a href='profil.php' class='profile'><img src='Icones/userb.png'><p>".$profil -> pseudoMembre."</p></a>";
+						
+						//Sous-menu
+						echo  "<ul class='sous-menu'><li><a href='profil.php'>Mon profil</a></li><li><a href='deconnexion.php'>Déconnexion</a></li></ul>";
 					}
 					?>
 			</div>
@@ -105,7 +108,7 @@
 			<a href="connexion.php"><h1>Où sortir ce soir</h1></a>
 			<img class="logo-web" src="Logo/logof.png" alt="logo">
 		</div>
-		<a href="deconnexion.php">Déconnexion</a>
+		
 		<div class="search">
 			<form method="get" action="search.php">
 				<input type="text" name="q" placeholder="Rechercher..." required>
