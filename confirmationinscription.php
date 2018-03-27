@@ -8,7 +8,7 @@ require 'pdo.php';
 $errors = [];
 
 
-//Si aucune erreur n'et detecté
+//Si aucune erreur n'et detectée
 if(empty($errors)){
 
 	$hashpass=$_POST['password'];
@@ -26,12 +26,15 @@ if(empty($errors)){
 	$stmt->bindValue(':ageMembre', $age);	
 	$stmt->execute();
 
+	
+	$_SESSION['id'] = $stmt -> idMembre;
+	
 
 	header('Location: debutformulaire.php');
 
-}
-//Si au moins une erreurs est detecté ont affiche les erreurs
-else{
+
+//Si au moins une erreur est detectée on affiche les erreurs
+} else {
 
     echo "<pre>";
     print_r($errors);

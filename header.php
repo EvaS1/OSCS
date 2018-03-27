@@ -88,6 +88,7 @@
 			<a href="connexion.php"><h1>Où sortir ce soir</h1></a>
 			<img class="logo-web" src="Logo/logof.png" alt="logo">
 		</div>
+		<a href="deconnexion.php">Déconnexion</a>
 		<div class="search">
 			<form method="get" action="search.php">
 				<input type="text" name="q" placeholder="Rechercher..." required>
