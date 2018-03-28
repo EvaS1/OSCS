@@ -55,15 +55,79 @@ HEADER MOBILE
 	width: 13%;
 }
 
-
+/*Taille icône user*/
 .block-header .connexion img{
 	width: 50px;
+	margin: 20px 0;
 }
 
+/*Style lien connexion*/
 .block-header .connexion a {
 	color: #274451;
 	font-size: 0.8em;
 }
+
+/*Style et position sous-menu*/
+.block-header .inner .sous-menu {
+	margin: 0;
+    padding: 0;
+    border: 1px solid #203863;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.5);
+	position: absolute;
+    right: 33px;
+    top: 120px;
+	display: none;
+}
+
+/*tyle li du sous-menu*/
+.block-header .inner .sous-menu li {
+	list-style: none;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 8px;
+	text-align: right;
+}
+
+/*Séparateur dans sous-menu*/
+.block-header .inner .sous-menu li:first-of-type {
+	border-bottom: 1px solid #203863;
+}
+
+.block-header .inner .connexion:hover .sous-menu,
+.block-header .inner .connexion:focus .sous-menu {
+	display: block;
+}
+
+/*Couleur et taille liens du sous-menu*/
+.block-header .inner .sous-menu li a {
+	color: #203863;
+	font-size: 1em;
+}
+
+/*Style du premier li du sous-menu au survol*/
+.block-header .inner .sous-menu li:first-of-type:hover,
+.block-header .inner .sous-menu li:first-of-type:active,
+.block-header .inner .sous-menu li:first-of-type:focus {
+	background-color: white;
+	border-radius: 5px 5px 0 0;
+}
+
+/*Style du deuxième li du sous-menu au survol*/
+.block-header .inner .sous-menu li:last-of-type:hover,
+.block-header .inner .sous-menu li:last-of-type:active,
+.block-header .inner .sous-menu li:last-of-type:focus {
+	background-color: white;
+	border-radius: 0 0 5px 5px;	
+}
+
+/*Enlever soulignement liens*/
+.block-header .inner .sous-menu a:hover,
+.block-header .inner .sous-menu a:active,
+.block-header .inner .sous-menu a:focus {
+	text-decoration: none;
+}
+
 
 /*---------------------------------
 NAV MOBILE
@@ -148,11 +212,17 @@ HEADER WEB
 	margin-right: 10px;
 }
 
-.block-header-web .topbar .connexion a {
+.block-header-web .topbar .connexion {
+	display: flex;
+	justify-content: space-around;
+}
+
+.block-header-web .topbar .connexion .profile {
 	display: flex;
 	align-items: center;
 	text-decoration: none;
 	justify-content: flex-end;
+	margin: 20px 0;
 }
 
 .block-header-web .topbar .connexion img {
@@ -166,6 +236,68 @@ HEADER WEB
 	margin: 0;
 	font-weight: 500;
 }
+
+/*Style et position sous-menu*/
+.block-header-web .sous-menu {
+	padding: 0;
+    border: 1px solid #203863;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.5);
+	margin: 60px 0 0;
+	position: absolute;
+	display: none;
+}
+
+/*tyle li du sous-menu*/
+.block-header-web .sous-menu li {
+	list-style: none;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 8px;
+	text-align: center;
+}
+
+/*Séparateur dans sous-menu*/
+.block-header-web .sous-menu li:first-of-type {
+	border-bottom: 1px solid #203863;
+}
+
+.block-header-web .connexion:hover .sous-menu,
+.block-header-web .connexion:focus .sous-menu {
+	display: block;
+}
+
+/*Couleur et taille liens du sous-menu*/
+.block-header-web .sous-menu li a {
+	color: #203863;
+	font-size: 1em;
+}
+
+/*Style du premier li du sous-menu au survol*/
+.block-header-web .sous-menu li:first-of-type:hover,
+.block-header-web .sous-menu li:first-of-type:active,
+.block-header-web .sous-menu li:first-of-type:focus {
+	background-color: white;
+	border-radius: 5px 5px 0 0;
+}
+
+/*Style du deuxième li du sous-menu au survol*/
+.block-header-web .sous-menu li:last-of-type:hover,
+.block-header-web .sous-menu li:last-of-type:active,
+.block-header-web .sous-menu li:last-of-type:focus {
+	background-color: white;
+	border-radius: 0 0 5px 5px;	
+}
+
+/*Enlever soulignement liens*/
+.block-header-web .sous-menu a:hover,
+.block-header-web .sous-menu a:active,
+.block-header-web .sous-menu a:focus {
+	text-decoration: none;
+}
+
+
+
 
 .titleandlogo {
 	display: flex;
@@ -199,6 +331,8 @@ HEADER WEB
 	display: flex;
 	justify-content: space-around;
 }
+
+
 
 /*---------------------------------
 BARRE DE RECHERCHE
@@ -527,6 +661,168 @@ CONNEXION
 	color: white;
 	font-size: 1.3em;
 	text-shadow: 1px 1px 2px #288797;
+}
+
+
+/*---------------------------------
+CONFIRMATION DÉCONNEXION
+----------------------------------*/
+
+/*Style titre déconnexion*/
+.block-main-deconnexion h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Style message confirmation + erreur*/
+.block-main-deconnexion .done p {
+	text-align: center;
+	color: white;
+	text-shadow: 1px 1px 2px #288797;
+	font-size: 1.2em;
+	margin: 40px 0 0;
+}
+
+/*Style liens retour*/
+.block-main-deconnexion .done a {
+	color: #00022e;
+}
+
+/*Style liens retour au survol*/
+.block-main-deconnexion .done a:hover,
+.block-main-deconnexion .done a:focus,
+.block-main-deconnexion .done a:active {
+	text-decoration: none;
+	color: #203863;
+}
+
+/*---------------------------------
+PAGE PROFIL
+----------------------------------*/
+
+/*Style titre*/
+.block-main-profil h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Style fond blanc*/
+.block-main-profil .bloc {
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.1em;
+	margin: 40px 0;
+	max-width: 650px;
+	text-align: center;
+}
+
+/*Marges photo de profil*/
+.block-main-profil .picture {
+	margin: 10px 0 20px 0;
+}
+
+/*Taille photo profil*/
+.block-main-profil .picture img {
+	width: 90px;
+	border-radius: 100%;
+	border: 3px solid #46b3a6;
+}
+
+/*Style texte*/
+.block-main-profil .info p {
+	margin: 10px 20px 10px 0;
+	font-size: 1.1rem;
+	color: #203863;
+}
+
+/*Affichage sur une ligne du texte et des boutons*/
+.block-main-profil .info .name,
+.block-main-profil .info .age,
+.block-main-profil .info .mail {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 400px;
+}
+
+.block-main-profil .info .name .action {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Style bouton modifier*/
+.block-main-profil .info .edit {
+	background-image: url(../Icones/edit-b2.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+/*Style bouton modifier au survol*/
+.block-main-profil .info .edit:hover,
+.block-main-profil .info .edit:focus,
+.block-main-profil .info .edit:active {
+	background-image: url(../Icones/edit-b.png)
+}
+
+/*Style bouton annuler*/
+.block-main-profil .info .cancel1 {
+	background-image: url(../Icones/cancel-g.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+/*Style bouton annuler au survol*/
+.block-main-profil .info .cancel1:hover,
+.block-main-profil .info .cancel1:focus,
+.block-main-profil .info .cancel1:active {
+	background-image: url(../Icones/cancel-b.png)
+}
+
+.block-main-profil .buttons {
+	display: flex;
+	justify-content: center;
+	margin: 10px 0 0;
+}
+
+/*Style bouton supprimer mon compte*/
+.block-main-profil .save .btn-save,
+.block-main-profil .cancel .btn-cancel {
+	margin: 10px 10px;
+	color: #203863;
+	padding: 8px 15px;
+	border: thin;
+	border-radius: 8px;
+	background-color: white;
+	filter: drop-shadow(0px 2px 5px #288797); 
+}
+
+.block-main-profil .cancel .btn-cancel:hover,
+.block-main-profil .cancel .btn-cancel:focus,
+.block-main-profil .cancel .btn-cancel:active,
+.block-main-profil .save .btn-save:hover,
+.block-main-profil .save .btn-save:focus,
+.block-main-profil .save .btn-save:active {
+	background-color: #203863;
+	color: white;
+	text-decoration: none;
 }
 
 /*---------------------------------

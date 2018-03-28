@@ -23,10 +23,10 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="title">
-									<h2>Les derniers événements ajoutés</h2>		
+									<h2>Les événements à venir</h2>		
 								</div>
 								<?php
-									$query = "SELECT * FROM evenement ORDER BY idEvenement desc";
+									$query = "SELECT * FROM evenement ORDER BY dateEvenement desc";
 									$statementEvenement = $connexion->prepare($query);
 									$statementEvenement -> bindValue(':id', 'idEvenement');
 									$statementEvenement -> execute();
@@ -95,9 +95,16 @@
 										</div>
 										<div class="priceevent">
 											<img src="Icones/euro.png" alt="price" class="price">
-											<p><?php $prix = $evenement ->prixEvenement;
+											<p>
+											<?php $prix = $evenement ->prixEvenement;
 												$prix = str_replace('.', ',', $prix);
-												echo $prix;?> €</p>
+												if ($prix == 0) {
+													echo "Entrée gratuite";
+												} else {
+													echo $prix." €";
+												}
+											?> 
+											</p>
 										</div>
 										<div class="placeevent">
 											<img src="Icones/maps-and-flags (1).png" alt="markevent1">

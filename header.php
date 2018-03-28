@@ -1,12 +1,33 @@
+<?php include('pdo.php');?>
+
 <div class="header">
 	<header class="block-header">
 		<div class="inner">
 			<img id="btnClickMe" src="Icones/menu.png" width="7%">
 			<img class="logo-mobile" src="Logo/logof.png" alt="logo">
 			<h1 class="connexion">
-				<a href="connexion.php"><img src="Icones/userb.png"></a>
-			</h1>
+				<?php 
+				//Si l'utilisateur n'est pas connecté, lien vers page connexion
+				if (!isset($_SESSION['id'])) {
+					echo "<a href='connexion.php' class='connect'><img src='Icones/userb.png'></a>";
 
+				//S'il est connecté, lien vers profil ou déconnexion
+				} else {
+					$query = "SELECT * FROM membres WHERE idMembre=:id";
+					$statement = $connexion->prepare($query);
+					$statement -> bindValue(':id', $_SESSION['id']);
+					$statement -> execute();
+
+					$profil = $statement -> fetch();
+					
+					//Affichage icône
+					echo "<a href='profil.php' class='profile'><img src='Icones/userb.png'></a>";
+					
+					//Sous-menu
+					echo  "<ul class='sous-menu'><li><a href='profil.php'>Mon profil</a></li><li><a href='deconnexion.php'>Déconnexion</a></li></ul>";
+				}
+				?>
+			</h1>
 		</div>
 	</header>
 	<nav class="block-nav">
@@ -30,7 +51,18 @@
 							<li><a href="listing.php?id=1">Bars</a></li>
 							<li><a href="listing.php?id=2">Concerts</a></li>
 							<li><a href="listing.php?id=3">Théâtres</a></li>
-							<li><a href="profil.php">Mon compte</a></li>
+							
+							<?php
+							//Si l'utilisateur n'est pas connecté, lien vers page connexion
+							if (!isset($_SESSION['id'])) {
+								echo "<li><a href='connexion.php'>Connexion</a></li>";
+
+							//S'il est connecté, lien vers profil ou déconnexion
+							} else {
+								echo "<li><a href='profil.php'>Mon compte</a></li>";
+							}
+								
+							?>
 							<li><a href="contact.php">Contact</a></li>
 						</div>
 					</ul>
@@ -62,12 +94,11 @@
 			</div>
 			<div class="connexion">
 					<?php
-					include('pdo.php');
-					//Si l'utilisateur n'est pas connecté
+					//Si l'utilisateur n'est pas connecté, lien vers page connexion
 					if (!isset($_SESSION['id'])) {
-						echo "<a href='connexion.php'>";
-						echo "<img src='Icones/userb.png'>";
-						echo "<p>Connexion</p>";
+						echo "<a href='connexion.php' class='connect'><img src='Icones/userb.png'><p>Connexion</p></a>";
+						
+					//S'il est connecté, lien vers profil ou déconnexion
 					} else {
 						$query = "SELECT * FROM membres WHERE idMembre=:id";
 						$statement = $connexion->prepare($query);
@@ -76,18 +107,19 @@
 
 						$profil = $statement -> fetch();
 							
-						echo "<a href='profil.php'>";
-						echo "<img src='Icones/userb.png'>";
-						echo "<p>".$profil -> pseudoMembre."</p>";
+						echo "<a href='profil.php' class='profile'><img src='Icones/userb.png'><p>".$profil -> pseudoMembre."</p></a>";
+						
+						//Sous-menu
+						echo  "<ul class='sous-menu'><li><a href='profil.php'>Mon profil</a></li><li><a href='deconnexion.php'>Déconnexion</a></li></ul>";
 					}
 					?>
-				</a>
 			</div>
 		</div>
 		<div class="titleandlogo">
 			<a href="connexion.php"><h1>Où sortir ce soir</h1></a>
 			<img class="logo-web" src="Logo/logof.png" alt="logo">
 		</div>
+		
 		<div class="search">
 			<form method="get" action="search.php">
 				<input type="text" name="q" placeholder="Rechercher..." required>

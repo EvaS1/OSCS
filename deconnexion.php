@@ -10,27 +10,26 @@
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
 		<script src="jquery.min.js"></script>
 		<script src="menu.js"></script>
+		
 	</head>
 
 	<body>
 		<div class="page">
 			<?php include('header.php');
-			include('pdo.php')?>
+			include('pdo.php');?>
 			<div class="content">
-				<main class="block-main-debutformulaire">
+				<main class="block-main-deconnexion">
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
 								<div class="title">
-									<h2>Questionnaire</h2>
+									<h2>Déconnexion</h2>
 								</div>
-								<div class="introduction">
-									<p>Pour que nous puissions te proposer des évènements qui te correspondent, merci de répondre à ces quelques questions !</p>
-								</div>
-								<div class="buttonbegin">
-									<a class="button2" href="Question1.php" role="button">Je commence !</a>									
-								</div>									
-							</div>	
+								<?php session_destroy(); ?>
+								<div class='done'>
+									<p>Tu as été déconnecté(e), pour te reconnecter <a href='connexion.php'>clique ici</a>.</p>
+								</div>								 						
+							</div>
 						</div>
 					</div>
 				</main>

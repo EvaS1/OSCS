@@ -26,29 +26,27 @@
 								</div>
 								<?php
 								include('pdo.php');
-								$hashpass=$_POST['password'];
-								$hashpass=sha1($hashpass);
+								$hashpass = $_POST['password'];
+								$hashpass = sha1($hashpass);
 								$mail = $_POST['mail'];
 
 								//On récupère les membres dont l'adresse mail et le mot de passe correspondent
-								$req = $connexion->prepare('SELECT idMembre FROM membres WHERE emailMembre="' .$mail.'" AND passwordMembre="'.$hashpass.'"');
+								$req = $connexion->prepare('SELECT idMembre FROM membres WHERE emailMembre="'.$mail.'" AND passwordMembre="'.$hashpass.'"');
 								$req->execute();
 								$resultat = $req->fetch();
 								
 
 								//S'il n'y a pas de résultat => message d'erreur
 								if (!$resultat) {
-									echo "Email ou mot de passe non valide, pour réessayer <a href='connexion.php'>clique ici</a>.";
-									
+									echo "Il n'y a pas de compte créé avec cette adresse, pour t'inscrire <a href='inscription.php'>clique ici</a>.";
 								//Si l'utilisateur est bien inscrit, on récupère son id pour la session
 								}else {
-
-									if (isset($_SESSION['idMembre']) && ($_SESSION['idMembre'] == $resultat->idMembre) ) {
-										$_SESSION['id'] = $resultat->idMembre;
+									$_SESSION['id'] = $resultat->idMembre;
+									if (isset($_SESSION['id'])) { /*&& ($_SESSION['idMembre'] == $resultat->idMembre) ) {*/
 										header('Location: debutformulaire.php');
 									}
 									else {
-										echo "email ou mdp non valide";
+										echo "Email ou mot de passe non valide, pour réessayer <a href='connexion.php'>clique ici</a>.";
 									}
 								} 
 								
