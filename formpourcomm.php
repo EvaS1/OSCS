@@ -16,9 +16,7 @@
       		<input type="text" name="pseudo" id="pseudo" placeholder="ton nom" />
 			<label for="event">id evenement: </label>
       		<input type="text" name="event" id="event" placeholder="Event?" />
-			
-
-    	</p>
+		</p>
 		<input type="submit" value="Envoyer" />
 	</form>	
 </body>

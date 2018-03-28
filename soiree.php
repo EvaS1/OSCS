@@ -81,6 +81,7 @@
 								</div>
 									
 								<?php 
+										
 									$query ="SELECT * FROM avis WHERE idEvenement=:id LIMIT 0,1";
 									$statementAvis = $connexion->prepare($query);
 									$statementAvis -> bindValue(':id', $evenement -> idEvenement);
@@ -88,13 +89,13 @@
 									$avis = $statementAvis -> fetch ();
 									
 								?> 
-									<?php 
-									$query ="SELECT * FROM membres WHERE idAvis=:id LIMIT 0,1";
+								<?php 
+																	
+									$query ="SELECT * FROM membres WHERE idAvis=:id";
 									$statementMembres = $connexion->prepare($query);
 									$statementMembres -> bindValue(':id', $avis -> idAvis);
 									$statementMembres -> execute();
-									$membres = $statementMembres -> fetch ();
-									
+									$membres = $statementMembres -> fetch ();	
 								?> 
 								
 								

@@ -12,7 +12,7 @@
 	echo $_POST['pseudo'], '<br/>'; 
 	echo $_POST['commentaire'], '<br/>';
 	echo $_POST['event'], '<br/>';
-	echo $_POST['note'];
+	echo $_POST['note']; '<br/>';
 	?>
 	
 	<?php 
@@ -20,8 +20,9 @@
 	$stmt->bindValue(':commentaireAvis', $_POST['commentaire']);
 	$stmt->bindValue(':noteAvis', $_POST['note']);
 	$stmt->bindValue(':idEvenement', $_POST['event']);
-	$stmt->bindValue(':idMembre', $_POST['pseudo']);
+	$stmt->bindValue(':idMembre', $_POST['pseudo']); 
 	$stmt->execute();
+	
 	?>
 </body>
 </html>
