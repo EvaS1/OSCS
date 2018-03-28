@@ -721,13 +721,16 @@ PAGE PROFIL
 	text-align: center;
 }
 
+/*Marges photo de profil*/
 .block-main-profil .picture {
 	margin: 10px 0 20px 0;
 }
 
 /*Taille photo profil*/
 .block-main-profil .picture img {
-	width: 75px;
+	width: 90px;
+	border-radius: 100%;
+	border: 3px solid #46b3a6;
 }
 
 /*Style texte*/
@@ -737,11 +740,19 @@ PAGE PROFIL
 	color: #203863;
 }
 
+/*Affichage sur une ligne du texte et des boutons*/
 .block-main-profil .info .name,
 .block-main-profil .info .age,
 .block-main-profil .info .mail {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+	min-width: 400px;
+}
+
+.block-main-profil .info .name .action {
+	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 
@@ -758,10 +769,60 @@ PAGE PROFIL
 	cursor: pointer;
 }
 
+/*Style bouton modifier au survol*/
 .block-main-profil .info .edit:hover,
 .block-main-profil .info .edit:focus,
 .block-main-profil .info .edit:active {
 	background-image: url(../Icones/edit-b.png)
+}
+
+/*Style bouton annuler*/
+.block-main-profil .info .cancel1 {
+	background-image: url(../Icones/cancel-g.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+/*Style bouton annuler au survol*/
+.block-main-profil .info .cancel1:hover,
+.block-main-profil .info .cancel1:focus,
+.block-main-profil .info .cancel1:active {
+	background-image: url(../Icones/cancel-b.png)
+}
+
+.block-main-profil .buttons {
+	display: flex;
+	justify-content: center;
+	margin: 10px 0 0;
+}
+
+/*Style bouton supprimer mon compte*/
+.block-main-profil .save .btn-save,
+.block-main-profil .cancel .btn-cancel {
+	margin: 10px 10px;
+	color: #203863;
+	padding: 8px 15px;
+	border: thin;
+	border-radius: 8px;
+	background-color: white;
+	filter: drop-shadow(0px 2px 5px #288797); 
+}
+
+.block-main-profil .cancel .btn-cancel:hover,
+.block-main-profil .cancel .btn-cancel:focus,
+.block-main-profil .cancel .btn-cancel:active,
+.block-main-profil .save .btn-save:hover,
+.block-main-profil .save .btn-save:focus,
+.block-main-profil .save .btn-save:active {
+	background-color: #203863;
+	color: white;
+	text-decoration: none;
 }
 
 /*---------------------------------

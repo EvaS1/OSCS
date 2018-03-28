@@ -51,7 +51,18 @@
 							<li><a href="listing.php?id=1">Bars</a></li>
 							<li><a href="listing.php?id=2">Concerts</a></li>
 							<li><a href="listing.php?id=3">Théâtres</a></li>
-							<li><a href="profil.php">Mon compte</a></li>
+							
+							<?php
+							//Si l'utilisateur n'est pas connecté, lien vers page connexion
+							if (!isset($_SESSION['id'])) {
+								echo "<li><a href='connexion.php'>Connexion</a></li>";
+
+							//S'il est connecté, lien vers profil ou déconnexion
+							} else {
+								echo "<li><a href='profil.php'>Mon compte</a></li>";
+							}
+								
+							?>
 							<li><a href="contact.php">Contact</a></li>
 						</div>
 					</ul>
