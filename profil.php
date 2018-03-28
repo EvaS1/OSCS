@@ -48,7 +48,7 @@
 													$('#edit').click(function() {
 														
 														//Affichage input
-														$('#pseudo').replaceWith('<input method="post" type="text" id="change-pseudo" value="<?php echo $profil -> pseudoMembre;?>">');				
+														$('#pseudo').replaceWith('<input method="post" type="text" id="change-pseudo" name="change-pseudo" value="<?php echo $profil -> pseudoMembre;?>" required>');				
 														
 														//Affichage icône annuler
 														$('#cancel1').show();	
@@ -139,7 +139,7 @@
 													$('#edit3').click(function() {
 														
 														//Affichage input
-														$('#mail').replaceWith('<input method="post" type="mail" id="change-mail" value="<?php echo $profil -> emailMembre;?>">');
+														$('#mail').replaceWith('<input method="post" type="mail" id="change-mail" value="<?php echo $profil -> emailMembre;?>" required>');
 														
 														//Affichage icône annuler
 														$('#cancel3').show();
@@ -215,6 +215,18 @@
 																pseudo = $("#change-pseudo").val();
 																console.log('pseudo défini : ' + pseudo);
 																nbChangements +=1;
+																console.log('<?php echo $profil -> idMembre;?>');
+																
+																
+																<?php
+																$pseudo = $_POST['change-pseudo'];
+																echo $pseudo;
+																$queryModif = "UPDATE membres SET pseudoMembre=$pseudo WHERE idMembre=:id";
+																$statement = $connexion->prepare($queryModif);
+																$statement -> bindValue(':id', ($profil -> idMembre));
+																$statement -> execute();
+																?>
+																
 															}
 															
 															//Si l'âge n'a pas été changé
