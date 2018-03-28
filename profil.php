@@ -23,7 +23,7 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="title">									
-									<h2>Mon profil</h2>						
+									<h2>Mon compte</h2>						
 								</div>
 								<div class="bloc">
 									<div class="picture">
@@ -32,6 +32,14 @@
 									<div class="info">									
 										<div class="name">
 											<?php echo "<p>Mon pseudo : ".$profil -> pseudoMembre."</p>"; ?>
+											<button method="get" id='edit' name="edit" class="edit" value=""></button>
+											
+											<?php 
+											if (isset($_GET['edit'])) {
+												echo "hey !";
+											} 
+											?>
+											
 										</div>
 										<div class="age">
 											<?php 
@@ -44,9 +52,11 @@
 											} else {
 												echo "<p>Ma tranche d'âge : 51 ans et +</p>";
 											} ?>
+											<button class="edit"></button>
 										</div>
 										<div class="mail">
 											<?php echo "<p>Mon adresse email : ".$profil -> emailMembre."</p>" ?>
+											<button class="edit"></button>
 										</div>						 							
 									</div>	
 								</div>	

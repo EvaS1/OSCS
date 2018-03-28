@@ -732,16 +732,37 @@ PAGE PROFIL
 
 /*Style texte*/
 .block-main-profil .info p {
-	margin: 15px 0;
+	margin: 10px 20px 10px 0;
 	font-size: 1.1rem;
-	color: #00022e;
+	color: #203863;
 }
 
-/*Style texte*/
-.block-main-profil .info p:last-of-type {
-	margin: 15px 0 0;
+.block-main-profil .info .name,
+.block-main-profil .info .age,
+.block-main-profil .info .mail {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
+/*Style bouton modifier*/
+.block-main-profil .info .edit {
+	background-image: url(../Icones/edit-b2.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+.block-main-profil .info .edit:hover,
+.block-main-profil .info .edit:focus,
+.block-main-profil .info .edit:active {
+	background-image: url(../Icones/edit-b.png)
+}
 
 /*---------------------------------
 PAGE DEBUT FORMULAIRE
