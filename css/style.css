@@ -736,6 +736,9 @@ PAGE PROFIL
 /*Marges photo de profil*/
 .block-main-profil .picture {
 	margin: 10px 0 20px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 /*Taille photo profil*/
@@ -743,6 +746,15 @@ PAGE PROFIL
 	width: 90px;
 	border-radius: 100%;
 	border: 3px solid #46b3a6;
+	margin: 0 0 20px;
+}
+
+/*Disposition annuler et input parcourir*/
+.block-main-profil .picture .action {
+	min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Style texte*/
@@ -769,7 +781,7 @@ PAGE PROFIL
 }
 
 /*Style bouton modifier*/
-.block-main-profil .info .edit {
+.block-main-profil .bloc .edit {
 	background-image: url(../Icones/edit-b2.png);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -782,14 +794,14 @@ PAGE PROFIL
 }
 
 /*Style bouton modifier au survol*/
-.block-main-profil .info .edit:hover,
-.block-main-profil .info .edit:focus,
-.block-main-profil .info .edit:active {
+.block-main-profil .bloc .edit:hover,
+.block-main-profil .bloc .edit:focus,
+.block-main-profil .bloc .edit:active {
 	background-image: url(../Icones/edit-b.png)
 }
 
 /*Style bouton annuler*/
-.block-main-profil .info .cancel1 {
+.block-main-profil .bloc .cancel1 {
 	background-image: url(../Icones/cancel-g.png);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -802,9 +814,9 @@ PAGE PROFIL
 }
 
 /*Style bouton annuler au survol*/
-.block-main-profil .info .cancel1:hover,
-.block-main-profil .info .cancel1:focus,
-.block-main-profil .info .cancel1:active {
+.block-main-profil .bloc .cancel1:hover,
+.block-main-profil .bloc .cancel1:focus,
+.block-main-profil .bloc .cancel1:active {
 	background-image: url(../Icones/cancel-b.png)
 }
 
@@ -836,6 +848,32 @@ PAGE PROFIL
 	color: white;
 	text-decoration: none;
 }
+
+/*Style lien delete*/
+.block-main-profil .info .delete {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px auto;
+	padding: 8px 10px;
+}
+
+.block-main-profil .info .delete img {
+	width: 20px;
+	margin: 0 10px 0 0;
+}
+
+.block-main-profil .info .delete p {
+	margin: 0;	
+}
+
+.block-main-profil .info .delete p:hover,
+.block-main-profil .info .delete p:active,
+.block-main-profil .info .delete p:focus {
+	color: white;
+	cursor: pointer;
+}
+
 
 /*---------------------------------
 PAGE DEBUT FORMULAIRE

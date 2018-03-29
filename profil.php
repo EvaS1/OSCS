@@ -27,7 +27,50 @@
 								</div>
 								<div class="bloc">
 									<div class="picture">
-										<img src="<?php if(($profil -> photoMembre)=='') { echo 'Icones/photob.png'; } else { echo 'Images/'.$profil -> photoMembre; }?>" alt="picture">
+										<img src="<?php if(($profil -> photoMembre)=='') { echo 'Icones/photob.png'; } else { echo 'Images/'.$profil -> photoMembre; }?>" alt="picture" id="picture">
+										<div class="action">						
+											<input type="button" id='edit0' name="edit" class="edit">
+											<input type="button" id='cancel0' name="cancel1" class="cancel1">
+										</div>
+										<script>
+												$(function() {
+													
+													//Bouton annuler caché
+													$('#cancel0').hide();
+													
+													//Quand on clique sur modifier
+													$('#edit0').click(function() {
+														
+														//Affichage input
+														$('.picture .action').prepend('<input type="file" id="change-picture" name="change-picture" accept="image/*" value="<?php echo $profil -> photoMembre;?>" required>');
+														
+														//Disposition input et croix
+														$('.picture .action').css('justify-content', 'space-between');
+														
+														//Affichage icône annuler
+														$('#cancel0').show();	
+														$('#edit0').hide();					
+													});
+													
+													//Quand on clique sur annuler
+													$('#cancel0').click(function() {
+														
+														//Enlève l'input
+														$('#change-picture').remove();
+														
+														//Centrage icône modifier
+														$('.picture .action').css('justify-content', 'center');
+														
+														//Affichage icône modifier
+														$('#edit0').show();
+														$('#cancel0').hide();
+													});
+													
+													
+													
+												});
+											</script>
+										<!--<input type="file">-->
 									</div>
 									<div class="info">									
 										<div class="name">
@@ -348,21 +391,127 @@
 																$('#cancel3').hide();
 															}
 															
-															if (nbChangements == 0) {																
+															
+															console.log($("#change-picture").val());
+															//Si la photo n'a pas été changée
+															if (($("#change-picture").val() == '<?php echo $profil -> photoMembre;?>') || (typeof($("#change-picture").val()) == 'undefined')) {
+
+																//Remet à zéro
+																//Enlève l'input
+																$('#change-picture').remove();
+
+																//Centrage icône modifier
+																$('.picture .action').css('justify-content', 'center');
+
+																//Affichage icône modifier
+																$('#edit0').show();
+																$('#cancel0').hide();
+
+
+															//Si la photo a été changée
+															} else {
+																var picture;
+																picture = $("#change-picture").val();
+																console.log('mail défini : ' + picture);
+																
+																var name;
+																var slash = "\\";
+																name = picture.split(slash);
+																name=name[2];
+																nbChangements += 1;
+
+																//Fonction Téo
+																function sendQuery(query){
+																   console.log('Function sendQuery');
+																   console.log("query : " + query);
+
+																   //instance de l'objet
+																   xhttp = new XMLHttpRequest();
+																   xhttp.onreadystatechange=function() {
+																	   if (this.readyState == 4 && this.status == 200) {
+																		   console.log("ShowMessage response = ");
+																		   console.log(this.responseText);
+																	   }
+																   };
+
+																   xhttp.open("GET",query , true);
+																   xhttp.send();
+																}
+																
+																sendQuery('uploadphoto.php?photo2='+name+'&from=root');
+
+																//Remet à zéro
+																//Enlève l'input
+																$('#change-picture').remove();
+
+																//Centrage icône modifier
+																$('.picture .action').css('justify-content', 'center');
+
+																//Affichage icône modifier
+																$('#edit0').show();
+																$('#cancel0').hide();
+															}
+															
+															
+															if (nbChangements == 0) {										
 																console.log('Aucun changement à sauvegarder !');
 															} else if (nbChangements == 1) {
 																alert('Le changement a bien été sauvegardé !')
 																location.reload();
-															} else if ((nbChangements == 2) || (nbChangements == 3)){
+															} else if ((nbChangements == 2) || (nbChangements == 3) || (nbChangements == 4)){
 																alert('Les changements ont bien été sauvegardés !')
 																location.reload();
 															}
 															
 														});
+														
+														
 													});
 												</script>
 											</div>						 					
 										</div>	
+										
+										
+										<div class="delete" id="delete">
+											<img src="Icones/remove-user.png" id="icon">
+											<p id="quit">Supprimer mon compte</p>
+											<script>
+												$(function() {	
+													$('#quit').mouseover(function() {
+														$('#icon').replaceWith('<img src="Icones/remove-user-g.png" id="icon">');
+														$("#icon").cursor("pointer");
+													});
+													
+													$('#quit').mouseout(function() {
+														$('#icon').replaceWith('<img src="Icones/remove-user.png" id="icon">');
+													});
+													
+													$('#delete').click(function() {
+														//Fonction Téo
+														function sendQuery(query){
+														   console.log('Function sendQuery');
+														   console.log("query : " + query);
+
+														   //instance de l'objet
+														   xhttp = new XMLHttpRequest();
+														   xhttp.onreadystatechange=function() {
+															   if (this.readyState == 4 && this.status == 200) {
+																   console.log("ShowMessage response = ");
+																   console.log(this.responseText);
+															   }
+														   };
+
+														   xhttp.open("GET",query , true);
+														   xhttp.send();
+														}
+
+														sendQuery('quit.php');
+													});
+													
+												});
+											</script>
+										</div>
+										
 									</div>	
 								</div>	
 							</div>	
