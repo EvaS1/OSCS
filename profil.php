@@ -27,7 +27,7 @@
 								</div>
 								<div class="bloc">
 									<div class="picture">
-										<img src="Images/etudiant2.jpg" alt="picture">
+										<img src="<?php if(($profil -> photoMembre)=='') { echo 'Icones/photob.png'; } else { echo 'Images/'.$profil -> photoMembre; }?>" alt="picture">
 									</div>
 									<div class="info">									
 										<div class="name">
@@ -76,8 +76,8 @@
 											} else if ($profil -> ageMembre == "age2") {
 												echo "<p>Ma tranche d'âge : <span id='age'>26-30 ans</span></p>";
 											} else if ($profil -> ageMembre == "age3") {
-												echo "<p>Ma tranche d'âge : <span id='age'> 31-50 ans</span></p>";
-											} else {
+												echo "<p>Ma tranche d'âge : <span id='age'>31-50 ans</span></p>";
+											} else if ($profil -> ageMembre == "age4"){
 												echo "<p>Ma tranche d'âge : <span id='age'> 51 ans et +</span></p>";
 											} ?>
 											<input type="button" id='edit2' name="edit" class="edit">
@@ -108,11 +108,11 @@
 														if ($profil -> ageMembre == "age1") { 
 															echo "<span id=\'age\'>18-25 ans</span>"; 
 														} else if ($profil -> ageMembre == "age2") {
-															echo "<span id='age'>26-30 ans</span>";
+															echo "<span id=\'age\'>26-30 ans</span>";
 														} else if ($profil -> ageMembre == "age3") {
-															echo "<span id='age'> 31-50 ans</span>";
+															echo "<span id=\'age\'>31-50 ans</span>";
 														} else {
-															echo "<span id='age'> 51 ans et +</span>";
+															echo "<span id=\'age\'> 51 ans et +</span>";
 														}
 														?>');
 																					 
@@ -180,7 +180,7 @@
 															} else if ($profil -> ageMembre == "age2") {
 																echo "<span id=\'age\'>26-30 ans</span>";
 															} else if ($profil -> ageMembre == "age3") {
-																echo "<span id=\'age\'> 31-50 ans</span>";
+																echo "<span id=\'age\'>31-50 ans</span>";
 															} else {
 																echo "<span id=\'age\'> 51 ans et +</span>";
 															}
@@ -200,38 +200,69 @@
 												<button class="btn-save">Sauvegarder</button>
 												<script>
 													$(function() {																
-														//Quand on clique sur le bouton annuler
+														//Quand on clique sur le bouton sauvegarder
 														$('.btn-save').click(function() {
 															var nbChangements;
 															nbChangements = 0;
 															
 															//Si le pseudo n'a pas été changé
 															if ($("#change-pseudo").val() == '<?php echo $profil -> pseudoMembre;?>' || (typeof($("#change-pseudo").val()) == 'undefined')) {
-																console.log('erreur');
-																
+																																
+																//Remet le pseudo à zéro
+																$('#change-pseudo').replaceWith('<span id="pseudo"><?php echo $profil -> pseudoMembre;?></span>');
+																$('#edit').show();
+																$('#cancel1').hide();	
+
 															//Si le pseudo a été changé
 															} else {
 																var pseudo;
 																pseudo = $("#change-pseudo").val();
 																console.log('pseudo défini : ' + pseudo);
 																nbChangements +=1;
-																console.log('<?php echo $profil -> idMembre;?>');
 																
+																//Fonction Téo
+																function sendQuery(query){
+																   console.log('Function sendQuery');
+																   console.log("query : " + query);
+
+																   //instance de l'objet
+																   xhttp = new XMLHttpRequest();
+																   xhttp.onreadystatechange=function() {
+																	   if (this.readyState == 4 && this.status == 200) {
+																		   console.log("ShowMessage response = ");
+																		  /* console.log(this.responseText);*/
+																	   }
+																   };
+
+																   xhttp.open("GET",query , true);
+																   xhttp.send();
+																}
+
+																sendQuery('upload.php?pseudo2='+pseudo+'&from=root');
 																
-																<?php
-																$pseudo = $_POST['change-pseudo'];
-																echo $pseudo;
-																$queryModif = "UPDATE membres SET pseudoMembre=$pseudo WHERE idMembre=:id";
-																$statement = $connexion->prepare($queryModif);
-																$statement -> bindValue(':id', ($profil -> idMembre));
-																$statement -> execute();
-																?>
-																
+																//Remet le pseudo à zéro
+																$('#change-pseudo').replaceWith('<span id="pseudo">'+pseudo+'</span>');
+																$('#edit').show();
+																$('#cancel1').hide();	
 															}
 															
-															//Si l'âge n'a pas été changé
+															//Si l'âge n'a pas été changé ou a été vidé
 															if ($("#change-age").val() == '<?php echo $profil -> ageMembre;?>' || (typeof($("#change-age").val()) == 'undefined')) {
-																console.log('erreur');
+																
+																//Remet l'âge à zéro
+																$('#change-age').replaceWith('<?php 
+																if ($profil -> ageMembre == "age1") { 
+																	echo "<span id=\'age\'>18-25 ans</span>"; 
+																} else if ($profil -> ageMembre == "age2") {
+																	echo "<span id=\'age\'>26-30 ans</span>";
+																} else if ($profil -> ageMembre == "age3") {
+																	echo "<span id=\'age\'>31-50 ans</span>";
+																} else if ($profil -> ageMembre == "age4") {
+																	echo "<span id=\'age\'>51 ans et +</span>";
+																}
+																?>');
+																$('#edit2').show();
+																$('#cancel2').hide();
 																
 															//Si l'âge a été changé	
 															} else {
@@ -239,11 +270,50 @@
 																age = $("#change-age").val();
 																console.log('age défini : ' + age);
 																nbChangements +=1;
-															}
+																
+																//Fonction Téo
+																function sendQuery(query){
+																   console.log('Function sendQuery');
+																   console.log("query : " + query);
+
+																   //instance de l'objet
+																   xhttp = new XMLHttpRequest();
+																   xhttp.onreadystatechange=function() {
+																	   if (this.readyState == 4 && this.status == 200) {
+																		   console.log("ShowMessage response = ");
+																		   console.log(this.responseText);
+																	   }
+																   };
+
+																   xhttp.open("GET",query , true);
+																   xhttp.send();
+																}
+
+																sendQuery('uploadage.php?age2='+age+'&from=root');
+																
+																//Remet l'âge à zéro
+																if (age=='age1') {
+																	$('#change-age').replaceWith('<span id=\'age\'>18-25 ans</span>');
+																} else if (age=='age2') {
+																	$('#change-age').replaceWith('<span id=\'age\'>26-30 ans</span>');
+																} else if (age=='age3') {
+																	$('#change-age').replaceWith('<span id=\'age\'>31-50 ans</span>');
+																} else if (age=='age4') {
+																	$('#change-age').replaceWith('<span id=\'age\'>51 ans et +</span>');
+																}
+																
+																
+																$('#edit2').show();
+																$('#cancel2').hide();
+																}
 															
 															//Si le mail n'a pas été changé
 															if (($("#change-mail").val() == '<?php echo $profil -> emailMembre;?>') || (typeof($("#change-mail").val()) == 'undefined')) {
-																console.log('erreur');
+																
+																//Remet le mail à zéro
+																$('#change-mail').replaceWith('<span id="mail"><?php echo $profil -> emailMembre?></span>');		
+																$('#edit3').show();
+																$('#cancel3').hide();
 																
 															//Si le mail a été changé
 															} else {
@@ -251,11 +321,42 @@
 																mail = $("#change-mail").val();
 																console.log('mail défini : ' + mail);
 																nbChangements += 1;
+																
+																//Fonction Téo
+																function sendQuery(query){
+																   console.log('Function sendQuery');
+																   console.log("query : " + query);
+
+																   //instance de l'objet
+																   xhttp = new XMLHttpRequest();
+																   xhttp.onreadystatechange=function() {
+																	   if (this.readyState == 4 && this.status == 200) {
+																		   console.log("ShowMessage response = ");
+																		   console.log(this.responseText);
+																	   }
+																   };
+
+																   xhttp.open("GET",query , true);
+																   xhttp.send();
+																}
+
+																sendQuery('uploadmail.php?mail2='+mail+'&from=root');
+																
+																//Remet le mail à zéro
+																$('#change-mail').replaceWith('<span id="mail">'+mail+'</span>');		
+																$('#edit3').show();
+																$('#cancel3').hide();
 															}
 															
-															if (nbChangements == 0) {
-																alert('Aucun changement à sauvegarder !');
-															} 
+															if (nbChangements == 0) {																
+																console.log('Aucun changement à sauvegarder !');
+															} else if (nbChangements == 1) {
+																alert('Le changement a bien été sauvegardé !')
+																location.reload();
+															} else if ((nbChangements == 2) || (nbChangements == 3)){
+																alert('Les changements ont bien été sauvegardés !')
+																location.reload();
+															}
 															
 														});
 													});

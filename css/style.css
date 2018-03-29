@@ -61,6 +61,11 @@ HEADER MOBILE
 	margin: 20px 0;
 }
 
+.block-header .connexion .profilep img {
+	border-radius: 100%;
+	border: 3px solid #203863;
+}
+
 /*Style lien connexion*/
 .block-header .connexion a {
 	color: #274451;
@@ -217,7 +222,8 @@ HEADER WEB
 	justify-content: space-around;
 }
 
-.block-header-web .topbar .connexion .profile {
+.block-header-web .topbar .connexion .profile,
+.block-header-web .topbar .connexion .profilep {
 	display: flex;
 	align-items: center;
 	text-decoration: none;
@@ -228,6 +234,12 @@ HEADER WEB
 .block-header-web .topbar .connexion img {
 	width: 30px;
 	margin-right: 10px;
+}
+
+.block-header-web .topbar .connexion .profilep img {
+	border-radius: 100%;
+	border: 3px solid #203863;
+	width: 35px
 }
 
 .block-header-web .topbar .connexion p {
