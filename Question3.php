@@ -94,9 +94,8 @@
 				$_SESSION['reponse2'] = $_GET['reponse2'];
 
 			?>	
-
-			<?php include('footer.php');?>
-		</div>
+			</div>			
+		<?php include('footer.php');?>
 	</body>
 </html>
 

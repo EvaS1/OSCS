@@ -87,13 +87,13 @@
 					</div>
 				</div>	
 			</div>
-			<?php
-				//On récupère la réponse de la question précedente
-				$_SESSION['reponse1'] = $_GET['reponse1'];
-			?>
-
-			<?php include('footer.php');?>
 		</div>
+		<?php
+			//On récupère la réponse de la question précedente
+			$_SESSION['reponse1'] = $_GET['reponse1'];
+		?>
+
+		<?php include('footer.php');?>		
 	</body>
 </html>
 

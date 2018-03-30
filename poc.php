@@ -97,7 +97,8 @@
 
 			Formulaire d'inscription</p><br />
 	
-			</div>
+		</div>
+	</div>
 	<?php include "footer.php" ?>
 
 

@@ -142,7 +142,8 @@
 
 			La société éditrice s'engage à faire figurer le nom du membre à proximité de chaque utilisation de sa publication.<br /><br />
 	
-			</div>
+		</div>
+	</div>
 	<?php include "footer.php" ?>
 
 
