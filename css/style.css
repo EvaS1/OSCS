@@ -41,7 +41,7 @@ body {
 HEADER MOBILE
 ----------------------------------*/
 .block-header .inner {
-	margin: 35px;
+	padding: 35px;
 	display: flex;
 	justify-content: space-between; 
 	align-items: center;
@@ -51,18 +51,18 @@ HEADER MOBILE
 /*Bouton menu par dessus la sidebar*/
 .block-header #btnClickMe {
 	z-index: 99;
-	width: 50px;
+	width: 100px;
 }
 
 /*Style logo mobile*/
 .block-header .logo-mobile  {
 	display: block;
-	width: 13%;
+	width: 25%;
 }
 
 /*Taille icône user*/
-.block-header .connexion img{
-	width: 50px;
+.block-header .connexion img {
+	width: 100px;
 	margin: 20px 0;
 }
 
@@ -86,7 +86,7 @@ HEADER MOBILE
     background-color: rgba(255,255,255,0.5);
 	position: absolute;
     right: 33px;
-    top: 120px;
+    top: 215px;
 	display: none;
 }
 
@@ -112,7 +112,7 @@ HEADER MOBILE
 /*Couleur et taille liens du sous-menu*/
 .block-header .inner .sous-menu li a {
 	color: #203863;
-	font-size: 1em;
+	font-size: 2em;
 }
 
 /*Style du premier li du sous-menu au survol*/
@@ -150,7 +150,7 @@ NAV MOBILE
 	background-color: #203863;
 	visibility: visible;
 	color: white;
-	padding: 25px;
+	padding: 85px 40px;
 	font-family: 'Fjalla One', Arial, sans-serif; 
 	font-size: 25px;
 	z-index: 98;
@@ -158,16 +158,22 @@ NAV MOBILE
 
 .block-nav #menu .titre {
 	text-align: center;
-	margin: 50px;
+	margin: 40px 0px 40px 100px;
 	color: white;
+}
+
+.block-nav #menu .titre h2 {
+	font-size: 3rem
 }
 
 .block-nav .search {
 	border-radius: 10px;
 	padding: 5px;
-	font-size: 20px;
+	font-size: 30px;
 	border: 2px solid #46b3a6;
 	background-color: rgba(255,255,255,0.90);
+	width: 350px;
+	margin: 40px 0 0
 }
 
 .block-nav .lemenu {
@@ -176,13 +182,13 @@ NAV MOBILE
 }
 
 .block-nav li {
-	padding-top: 20px;
+	padding-top: 40px;
 }
 
 .block-nav li a {
 	color: white;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 40px;
 }
 
 .block-nav li a:hover,
@@ -362,10 +368,10 @@ BARRE DE RECHERCHE
 .block-nav .button {
 	position: absolute;
     z-index: 1;
-    margin: -32px 0 0 225px;
+    margin: -44px 0 0 308px;
     background-image: url(../Icones/searchb.png);
-    width: 21px; 
-    height: 21px; 
+    width: 30px; 
+    height: 30px; 
     background-color: rgba(0,0,0,0);
     overflow: hidden;
     background-size: cover;
@@ -418,11 +424,10 @@ PAGE INSCRIPTION
 /*Style Inscription*/
 .block-main-inscription h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
-
 
 /*Couleur nom des champs*/
 .block-main-inscription .form label:nth-of-type(1) {
@@ -433,8 +438,9 @@ PAGE INSCRIPTION
 /*Style champs*/
 .block-main-inscription .form  p {
 	color: white;
-	margin: 50px 20px;
-	font-size: 1.2em;
+	margin: 50px 0px;
+	font-size: 2.1em;
+	width: 690px;
 }
 
 
@@ -447,11 +453,13 @@ PAGE INSCRIPTION
 /*Espace entre noms champs et zones de texte + boutons radios*/
 .block-main-inscription .form p label:nth-of-type(1) {
 	display: block;
-	width: 128px;
+	width: 200px;
 	float: left;
 }
 
-
+.block-main-inscription .form #radio {
+	width: 127px;
+}
 
 /*Espace entre boutons radios et textes*/
 .block-main-inscription .form p:nth-of-type(4) input,
@@ -461,13 +469,14 @@ PAGE INSCRIPTION
 
 
 /*Style zones de texte*/
-.block-main-inscription .form input:first-of-type,
-.block-main-inscription .form input:nth-of-type(2),
-.block-main-inscription .form input:nth-of-type(3) {
+.block-main-inscription .form #pseudo,
+.block-main-inscription .form #email,
+.block-main-inscription .form #password {
 	background-color: rgba(255,255,255,0.50);
 	border: thin;
 	border-radius: 10px;
 	color: #203863;
+	width: 690px;
 }
 
 
@@ -482,7 +491,7 @@ PAGE INSCRIPTION
 /*Style texte bouton*/
 .block-main-inscription .form p:last-of-type {
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 2.3em;
 	font-weight: 600;
 }
    
@@ -504,6 +513,121 @@ PAGE INSCRIPTION
 	background-color: #203863;
 	color: white;
 	text-decoration: none;
+}
+
+@media (min-width: 992px) { 
+
+	/*Style Inscription*/
+	.block-main-inscription h2 {
+		text-align: center;
+		font-size: 1.6em;
+		color: #00022e;
+		margin: 10px 0px 10px;
+	}
+
+
+	/*Couleur nom des champs*/
+	.block-main-inscription .form label:nth-of-type(1) {
+		color: #203863;
+	}
+
+
+	/*Style champs*/
+	.block-main-inscription .form  p {
+		color: white;
+		margin: 50px 20px;
+		font-size: 1.2em;
+		width: 720px;
+	}
+
+
+	/*Ombrage texte du formulaire sauf bouton*/
+	.block-main-inscription .form p:not(:last-of-type) {
+		text-shadow: 1px 1px 2px #288797;
+	}
+
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-inscription .form p label:nth-of-type(1) {
+		display: block;
+		width: 128px;
+		float: left;
+	}
+
+
+
+	/*Espace entre boutons radios et textes*/
+	.block-main-inscription .form p:nth-of-type(4) input,
+	.block-main-inscription .form p:nth-of-type(5) input {
+		margin: 0px 8px 0px 0px;	
+	}
+
+
+	/*Style zones de texte*/
+	.block-main-inscription .form #pseudo,
+	.block-main-inscription .form #email,
+	.block-main-inscription .form #password {
+		background-color: rgba(255,255,255,0.50);
+		border: thin;
+		border-radius: 10px;
+		color: #203863;
+		width: 570px;
+	}
+
+
+	/*Espace entre chaque input*/
+	.block-main-inscription .form p:nth-of-type(4) input:not(:first-of-type), 
+	.block-main-inscription .form p:nth-of-type(5) input:not(:first-of-type) { 
+		margin: 0px 8px 0px 29px;
+	}
+
+
+
+	/*Style texte bouton*/
+	.block-main-inscription .form p:last-of-type {
+		text-align: center;
+		font-size: 1.3em;
+		font-weight: 600;
+	}
+
+
+	/*Style bouton*/
+	.block-main-inscription .form p:last-of-type input {
+		color: #203863;
+		padding: 15px 30px;
+		border: thin;
+		border-radius: 10px;
+		background-color: white;
+		filter: drop-shadow(0px 2px 5px #288797); 
+	}
+
+	/*Style bouton au survol, au tab ou au clic*/
+	.block-main-inscription .form p:last-of-type input:hover,
+	.block-main-inscription .form p:last-of-type input:focus,
+	.block-main-inscription .form p:last-of-type input:active {
+		background-color: #203863;
+		color: white;
+		text-decoration: none;
+	}
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-inscription .form p label:nth-of-type(1) {
+		display: block;
+		width: 150px;
+		float: left;
+	}
+	
+	.block-main-inscription .form #radio {
+		width: 150px;
+	}
+
+	/*Espace entre boutons radios et textes*/
+	.block-main-inscription .form p:nth-of-type(4) input,
+	.block-main-inscription .form p:nth-of-type(5) input {
+		margin: 0px 20px 0px 0px;	
+	}
+
+	
 }
 
 /*---------------------------------
@@ -1411,23 +1535,6 @@ LARGE DEVICES (desktops, 992px and up)
 	.block-nav-web a:focus,
 	.block-nav-web a:active { 
 		color: #46b3a6;
-	}
-	
-	/*---------------------------------
-	PAGE INSCRIPTION GRANDS ECRANS
-	----------------------------------*/
-
-	/*Espace entre noms champs et zones de texte + boutons radios*/
-	.block-main-inscription .form p label:nth-of-type(1) {
-		display: block;
-		width: 150px;
-		float: left;
-	}
-	
-	/*Espace entre boutons radios et textes*/
-	.block-main-inscription .form p:nth-of-type(4) input,
-	.block-main-inscription .form p:nth-of-type(5) input {
-		margin: 0px 20px 0px 0px;	
 	}
 	
 	/*---------------------------------
