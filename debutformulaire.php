@@ -19,18 +19,14 @@
 			<div class="content">
 				<main class="block-main-debutformulaire">
 					<div class="container">
-						<div class="row">
-							<div class="col-12">
-								<div class="title">
-									<h2>Questionnaire</h2>
-								</div>
-								<div class="introduction">
-									<p>Pour que nous puissions te proposer des évènements qui te correspondent, merci de répondre à ces quelques questions !</p>
-								</div>
-								<div class="buttonbegin">
-									<a class="button2" href="Question1.php" role="button">Je commence !</a>									
-								</div>									
-							</div>	
+						<div class="title">
+							<h2>Questionnaire</h2>
+						</div>
+						<div class="introduction">
+							<p>Pour que nous puissions te proposer des évènements qui te correspondent, merci de répondre à ces quelques questions !</p>
+						</div>
+						<div class="buttonbegin">
+							<a class="button2" href="Question1.php" role="button">Je commence !</a>								
 						</div>
 					</div>
 				</main>

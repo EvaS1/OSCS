@@ -1009,7 +1009,7 @@ PAGE DEBUT FORMULAIRE
 /*Style titre page*/
 .block-main-debutformulaire h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
@@ -1017,17 +1017,17 @@ PAGE DEBUT FORMULAIRE
 /*Style texte paragraphe*/
 .block-main-debutformulaire .introduction p {
 	color: white;
-	font-size: 1.2em;
-	margin: 40px 70px;
+	font-size: 2.3em;
+	margin: 40px 0;
 	text-shadow: 1px 1px 2px #288797;
-	width: 800px;
+	width: 700px;
     text-align: center;
 }
 
 /*Style texte bouton*/
 .block-main-debutformulaire .buttonbegin {
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 2.3em;
 	font-weight: 600;
 	margin: 70px;
 }
@@ -1053,7 +1053,25 @@ PAGE DEBUT FORMULAIRE
 }
 
 
+@media (min-width: 992px) {
 
+	/*Style titre page*/
+	.block-main-debutformulaire h2 {
+		font-size: 1.6em;
+	}
+
+	/*Style texte paragraphe*/
+	.block-main-debutformulaire .introduction p {
+		font-size: 1.2em;
+		margin: 40px 70px;
+		width: 800px;
+	}
+
+	/*Style texte bouton*/
+	.block-main-debutformulaire .buttonbegin {
+		font-size: 1.3em;
+	}
+}
 
 /*---------------------------------
 PAGES QUESTION
@@ -1062,14 +1080,14 @@ PAGES QUESTION
 .block-center .block-main .title{	
 	text-align: center;
 	position: relative;
-	font-size: 1.3em;
+	font-size: 3.6rem;
 	color: #00022E;
 	margin: 70px 0 30px;
 }
 .block-center .block-main .section .forms{	
 	text-align: center;
 	position: relative;
-	font-size: 1.2em;
+	font-size: 2.6em;
 	color: #00022e;
 }
 
@@ -1084,7 +1102,7 @@ PAGES QUESTION
 }
 
 .block-center .section .forms .answers {
-	width: 400px;
+	width: 700px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -1124,6 +1142,76 @@ PAGES QUESTION
 	color: white;
 	text-decoration: none;
 }
+
+
+@media (min-width: 992px) {
+	.block-center .block-main .title{	
+		text-align: center;
+		position: relative;
+		font-size: 1.3em;
+		color: #00022E;
+		margin: 70px 0 30px;
+	}
+	.block-center .block-main .section .forms{	
+		text-align: center;
+		position: relative;
+		font-size: 1.2em;
+		color: #00022e;
+	}
+
+	.block-center .block-main .section .forms .quest{
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 1.3em;
+		color: white;
+		border-width: 50px;
+		text-shadow: 1px 1px 2px #288797;
+	}
+
+	.block-center .section .forms .answers {
+		width: 400px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 30px auto;
+	}
+
+	.block-center .section .forms .answers p {
+		width: 50%;
+		text-align: left;
+		font-weight: 500;
+	}
+
+	.block-center .section .forms .answers p:nth-of-type(2),
+	.block-center .section .forms .answers p:nth-of-type(4) {
+		padding-left: 53px;
+	}
+
+	.block-center .section .forms .answers input {
+		margin-right: 10px;
+	}
+
+	/*Style bouton*/
+	.block-center .next .button {
+		color: #203863;
+		padding: 15px 30px;
+		border: thin;
+		border-radius: 10px;
+		background-color: white;
+		filter: drop-shadow(0px 2px 5px #288797); 
+	}
+
+	/*Style bouton au survol, au tab ou au clic*/
+	.block-center .next .button:hover,
+	.block-center .next .button:focus,
+	.block-center .next .button:active {
+		background-color: #203863;
+		color: white;
+		text-decoration: none;
+	}
+}
+
 
 /*---------------------------------
 PAGE CHOIX
@@ -1625,7 +1713,7 @@ PAGE SOIREE
 
 
 /*------------------------------------
-Mention Legal
+Mentions légales
 ------------------------------------*/
 
 .block_main_legal {
