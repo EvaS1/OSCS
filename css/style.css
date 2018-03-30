@@ -1077,14 +1077,14 @@ PAGE DEBUT FORMULAIRE
 PAGES QUESTION
 ----------------------------------*/
 
-.block-center .block-main .title{	
+.block-center .block-main .title {	
 	text-align: center;
 	position: relative;
 	font-size: 3.6rem;
 	color: #00022E;
 	margin: 70px 0 30px;
 }
-.block-center .block-main .section .forms{	
+.block-center .block-main .section .forms {	
 	text-align: center;
 	position: relative;
 	font-size: 2.6em;
@@ -1145,70 +1145,20 @@ PAGES QUESTION
 
 
 @media (min-width: 992px) {
-	.block-center .block-main .title{	
-		text-align: center;
-		position: relative;
+	.block-center .block-main .title {	
 		font-size: 1.3em;
-		color: #00022E;
-		margin: 70px 0 30px;
 	}
+	
 	.block-center .block-main .section .forms{	
-		text-align: center;
-		position: relative;
 		font-size: 1.2em;
-		color: #00022e;
 	}
 
 	.block-center .block-main .section .forms .quest{
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
 		font-size: 1.3em;
-		color: white;
-		border-width: 50px;
-		text-shadow: 1px 1px 2px #288797;
 	}
 
 	.block-center .section .forms .answers {
 		width: 400px;
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		margin: 30px auto;
-	}
-
-	.block-center .section .forms .answers p {
-		width: 50%;
-		text-align: left;
-		font-weight: 500;
-	}
-
-	.block-center .section .forms .answers p:nth-of-type(2),
-	.block-center .section .forms .answers p:nth-of-type(4) {
-		padding-left: 53px;
-	}
-
-	.block-center .section .forms .answers input {
-		margin-right: 10px;
-	}
-
-	/*Style bouton*/
-	.block-center .next .button {
-		color: #203863;
-		padding: 15px 30px;
-		border: thin;
-		border-radius: 10px;
-		background-color: white;
-		filter: drop-shadow(0px 2px 5px #288797); 
-	}
-
-	/*Style bouton au survol, au tab ou au clic*/
-	.block-center .next .button:hover,
-	.block-center .next .button:focus,
-	.block-center .next .button:active {
-		background-color: #203863;
-		color: white;
-		text-decoration: none;
 	}
 }
 
@@ -1216,11 +1166,10 @@ PAGES QUESTION
 /*---------------------------------
 PAGE CHOIX
 ----------------------------------*/
-
 /*Style titre page*/
 .block-main-choix h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
@@ -1242,6 +1191,13 @@ PAGE CHOIX
 	font-size: 1.1em;
 	margin: 20px;
 	max-width: 650px;
+}
+
+.block-main-choix .event .row {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
 }
 
 /*Event : Style image*/
@@ -1312,6 +1268,109 @@ PAGE CHOIX
 }
 
 
+
+@media (min-width: 992px) {
+	/*Style titre page*/
+	.block-main-choix h2 {
+		text-align: center;
+		font-size: 1.6em;
+		color: #00022e;
+		margin: 10px 0px 10px;
+	}
+
+
+	/*Style sous-titre page*/
+	.block-main-choix .selection p {
+		font-size: 1.4em;
+		color: white;
+		margin: 20px 0px 20px;
+		text-shadow: 1px 1px 2px #288797;
+	}
+
+	/*Event : Style du fond*/
+	.block-main-choix .event {
+		background-color: rgba(255,255,255,0.50);
+		border-radius: 20px;
+		padding: 20px;
+		font-size: 1.1em;
+		margin: 20px;
+		max-width: 650px;
+	}
+	
+	.block-main-choix .event .row {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+	}
+
+	/*Event : Style image*/
+	.block-main-choix .event .image {
+		max-height: 135px;
+		max-width: 135px;
+	}
+
+	/*Event : Style titre*/
+	.block-main-choix .event .titleevent {
+		font-size: 1.2em;
+		color: #047395;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	/*Event : Style sous-titre*/
+	.block-main-choix .event .subtitleevent {
+		font-size: 1.1em;
+		color: #00022e;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	/*Event : Style description*/
+	.block-main-choix .event .descriptionevent {
+		text-align: justify;
+	}
+
+	/*Event : Décalage en savoir plus*/
+	.block-main-choix .event .link {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	/*Event : Style texte en savoir plus*/
+	.block-main-choix .event .link a {
+		color: #047395;
+		font-weight: bold;
+	}
+
+	/*Event : Infos*/
+	.block-main-choix .event .infoevent {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 20px 0px 20px;
+		/*font-size: 1em;*/
+	}
+
+	/*Event : Suppression espace après paragraphes*/
+	.block-main-choix .event p{
+		margin-bottom: 0;
+		max-width: 430px;
+	}
+
+	/*Event : Infos et icônes sur une ligne + alignement vertical*/
+	.block-main-choix .event .dayevent,
+	.block-main-choix .event .timeevent,
+	.block-main-choix .event .placeevent {
+		display: flex;
+		align-items: center;
+	}
+
+	/*Event : Taille des icônes + espace entre icônes et textes*/
+	.block-main-choix .infoevent img {
+		max-height: 30px;
+		margin: 0px 15px 0px 0px;
+	}
+
+}
 
 /*---------------------------------
 PAGE RESULTATS RECHERCHE
