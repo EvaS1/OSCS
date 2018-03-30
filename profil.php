@@ -472,7 +472,7 @@
 										</div>	
 										
 										
-										<div class="delete" id="delete">
+										<a href="connexion.php" class="delete" id="delete">
 											<img src="Icones/remove-user.png" id="icon">
 											<p id="quit">Supprimer mon compte</p>
 											<script>
@@ -510,7 +510,7 @@
 													
 												});
 											</script>
-										</div>
+										</a>
 										
 									</div>	
 								</div>	

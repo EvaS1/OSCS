@@ -15,6 +15,8 @@
 			$stmt = $connexion->prepare($sql);
 			$stmt->bindValue(':idMembre', ($profil -> idMembre));   
 			$stmt->execute();
+			
+			unset($_SESSION['id']);
 		
 		?>
 	</body>

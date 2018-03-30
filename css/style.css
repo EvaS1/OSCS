@@ -222,6 +222,11 @@ HEADER WEB
 	justify-content: space-around;
 }
 
+.block-header-web .topbar .connect {
+	display: flex;
+    align-items: center;
+}
+
 .block-header-web .topbar .connexion .profile,
 .block-header-web .topbar .connexion .profilep {
 	display: flex;

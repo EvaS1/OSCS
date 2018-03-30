@@ -100,7 +100,7 @@
 			<div class="connexion">
 					<?php
 					//Si l'utilisateur n'est pas connecté, lien vers page connexion
-					if (!isset($_SESSION['id'])) {
+					if (!isset($_SESSION['id']) ) {
 						echo "<a href='connexion.php' class='connect'><img src='Icones/userb.png'><p>Connexion</p></a>";
 						
 					//S'il est connecté, lien vers profil ou déconnexion
