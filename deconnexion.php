@@ -14,28 +14,8 @@
 	</head>
 
 	<body>
-		<div class="page">
-			<?php include('header.php');
-			include('pdo.php');?>
-			<div class="content">
-				<main class="block-main-deconnexion">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
-								<div class="title">
-									<h2>Déconnexion</h2>
-								</div>
-								<?php session_destroy(); ?>
-								<div class='done'>
-									<p>Tu as été déconnecté(e), pour te reconnecter <a href='connexion.php'>clique ici</a>.</p>
-								</div>								 						
-							</div>
-						</div>
-					</div>
-				</main>
-			</div>
-		</div>
-		<?php include('footer.php');?>
+		<?php session_destroy();
+		header('Location: connexion.php')?>		
 	</body>
 	
 </html>

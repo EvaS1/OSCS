@@ -42,16 +42,16 @@
 
 									<p> 
 										<label for="gender" id="radio">Sexe</label>
-										<input type="radio" required name="gender" id="gender1" value="gender1"><label for="gender1">Féminin</label>
-										<input type="radio" required name="gender" id="gender2" value="gender2"><label for="gender2">Masculin</label>
+										<input type="radio" required name="gender" id="gender1" value="gender1"><label for="gender1" id="gender">Féminin</label>
+										<input type="radio" required name="gender" id="gender2" value="gender2"><label for="gender2" id="gender">Masculin</label>
 									</p>
 
 									<p> 
 										<label for="age" id="radio">Age</label>
-										<input type="radio" required name="age" id="age1" value="age1"><label for="age1">18-25</label>		
-										<input type="radio" required name="age" id="age2" value="age2"><label for="age2">26-30</label>
-										<input type="radio" required name="age" id="age3" value="age3"><label for="age3">31-50</label>
-										<input type="radio" required name="age" id="age4" value="age4"><label for="age4">51 et +</label>
+										<input type="radio" required name="age" id="age1" value="age1"><label for="age1" id="age">18-25</label>		
+										<input type="radio" required name="age" id="age2" value="age2"><label for="age2" id="age">26-30</label>
+										<input type="radio" required name="age" id="age3" value="age3"><label for="age3" id="age">31-50</label>
+										<input type="radio" required name="age" id="age4" value="age4"><label for="age4" id="age">51 et +</label>
 									</p>
 
 									<p>											

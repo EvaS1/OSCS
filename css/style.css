@@ -439,7 +439,7 @@ PAGE INSCRIPTION
 .block-main-inscription .form  p {
 	color: white;
 	margin: 50px 0px;
-	font-size: 2.1em;
+	font-size: 2.6em;
 	width: 690px;
 }
 
@@ -453,7 +453,7 @@ PAGE INSCRIPTION
 /*Espace entre noms champs et zones de texte + boutons radios*/
 .block-main-inscription .form p label:nth-of-type(1) {
 	display: block;
-	width: 200px;
+	width: 690px;
 	float: left;
 }
 
@@ -478,6 +478,11 @@ PAGE INSCRIPTION
 	color: #203863;
 	width: 690px;
 }
+
+.block-main-inscription .form #age,
+.block-main-inscription .form #gender {
+	font-size: 0.75em;
+} 
 
 
 /*Espace entre chaque input*/
@@ -519,102 +524,35 @@ PAGE INSCRIPTION
 
 	/*Style Inscription*/
 	.block-main-inscription h2 {
-		text-align: center;
 		font-size: 1.6em;
-		color: #00022e;
-		margin: 10px 0px 10px;
 	}
-
-
-	/*Couleur nom des champs*/
-	.block-main-inscription .form label:nth-of-type(1) {
-		color: #203863;
-	}
-
 
 	/*Style champs*/
 	.block-main-inscription .form  p {
-		color: white;
-		margin: 50px 20px;
 		font-size: 1.2em;
 		width: 720px;
 	}
-
-
-	/*Ombrage texte du formulaire sauf bouton*/
-	.block-main-inscription .form p:not(:last-of-type) {
-		text-shadow: 1px 1px 2px #288797;
-	}
-
-
-	/*Espace entre noms champs et zones de texte + boutons radios*/
-	.block-main-inscription .form p label:nth-of-type(1) {
-		display: block;
-		width: 128px;
-		float: left;
-	}
-
-
-
-	/*Espace entre boutons radios et textes*/
-	.block-main-inscription .form p:nth-of-type(4) input,
-	.block-main-inscription .form p:nth-of-type(5) input {
-		margin: 0px 8px 0px 0px;	
-	}
-
 
 	/*Style zones de texte*/
 	.block-main-inscription .form #pseudo,
 	.block-main-inscription .form #email,
 	.block-main-inscription .form #password {
-		background-color: rgba(255,255,255,0.50);
-		border: thin;
-		border-radius: 10px;
-		color: #203863;
-		width: 570px;
+		width: 425px;
 	}
 
-
-	/*Espace entre chaque input*/
-	.block-main-inscription .form p:nth-of-type(4) input:not(:first-of-type), 
-	.block-main-inscription .form p:nth-of-type(5) input:not(:first-of-type) { 
-		margin: 0px 8px 0px 29px;
-	}
-
-
+	.block-main-inscription .form #age,
+	.block-main-inscription .form #gender {
+		font-size: 1em;
+	} 
 
 	/*Style texte bouton*/
 	.block-main-inscription .form p:last-of-type {
-		text-align: center;
 		font-size: 1.3em;
-		font-weight: 600;
-	}
-
-
-	/*Style bouton*/
-	.block-main-inscription .form p:last-of-type input {
-		color: #203863;
-		padding: 15px 30px;
-		border: thin;
-		border-radius: 10px;
-		background-color: white;
-		filter: drop-shadow(0px 2px 5px #288797); 
-	}
-
-	/*Style bouton au survol, au tab ou au clic*/
-	.block-main-inscription .form p:last-of-type input:hover,
-	.block-main-inscription .form p:last-of-type input:focus,
-	.block-main-inscription .form p:last-of-type input:active {
-		background-color: #203863;
-		color: white;
-		text-decoration: none;
 	}
 
 	/*Espace entre noms champs et zones de texte + boutons radios*/
 	.block-main-inscription .form p label:nth-of-type(1) {
-		display: block;
 		width: 150px;
-		float: left;
 	}
 	
 	.block-main-inscription .form #radio {
@@ -631,38 +569,6 @@ PAGE INSCRIPTION
 }
 
 /*---------------------------------
-PAGE CONFIRMATION INSCRIPTION
-----------------------------------*/
-
-/*Style Inscription*/
-.block-main-confirmationinscription .titleconfirmation h2 {
-	text-align: center;
-	font-size: 1.6em;
-	color: #00022e;
-	margin: 10px 0px 10px;
-}
-
-/*Style confirmation*/
-.block-main-confirmationinscription .confirmation {
-	color: white;
-	text-shadow: 1px 1px 2px #288797;
-	font-size: 1.4em;
-	margin: 20px;
-}
-
-/*Style lien suivant*/
-.block-main-confirmationinscription .buttonlink {
-	text-align: center;
-	
-}
-
-/*Style texte lien suivant*/
-.block-main-confirmationinscription .buttonlink a {
-	color: #00022e;
-	font-size: 1.3em;
-}
-
-/*---------------------------------
 CONNEXION
 ----------------------------------*/
 
@@ -670,11 +576,10 @@ CONNEXION
 /*Style titre connexion*/
 .block-main-connexion h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
-
 
 /*Couleur nom des champs*/
 .block-main-connexion .form label:nth-of-type(1) {
@@ -686,7 +591,7 @@ CONNEXION
 .block-main-connexion .form  p {
 	color: white;
 	margin: 50px 20px;
-	font-size: 1.3em;
+	font-size: 2.6em;
 }
 
 
@@ -699,7 +604,7 @@ CONNEXION
 /*Espace entre noms champs et zones de texte + boutons radios*/
 .block-main-connexion .form p label:nth-of-type(1) {
 	display: block;
-	width: 128px;
+	width: 690px;
 	float: left;
 }
 
@@ -713,13 +618,13 @@ CONNEXION
 
 
 /*Style zones de texte*/
-.block-main-connexion .form input:first-of-type,
-.block-main-connexion .form input:nth-of-type(2),
-.block-main-connexion .form input:nth-of-type(3) {
+.block-main-connexion .form #mail,
+.block-main-connexion .form #password {
 	background-color: rgba(255,255,255,0.50);
 	border: thin;
 	border-radius: 10px;
 	color: #203863;
+	width: 690px;
 }
 
 
@@ -734,7 +639,7 @@ CONNEXION
 /*Style texte bouton*/
 .block-main-connexion .form p:last-of-type {
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 2.6em;
 	font-weight: 600;
 	margin: 70px;
 }
@@ -763,6 +668,7 @@ CONNEXION
 .block-main-connexion hr {
 	background-color: white;
 	height: 1px;
+	margin-bottom: 2rem;
 }
 
 /*Style Rien de prévu + inscription*/
@@ -775,7 +681,7 @@ CONNEXION
 .block-main-connexion .noplan p,
 .block-main-connexion .register a {
 	color: #203863;
-	font-size: 1.3em;
+	font-size: 2.6em;
 	text-shadow: 1px 1px 2px #288797;
 	text-decoration: none;
 }
@@ -786,7 +692,55 @@ CONNEXION
 }
 
 
-/*MAIN CONFIRMATION CONNEXION*/
+@media (min-width: 992px) { 
+	
+	/*Style titre connexion*/
+	.block-main-connexion h2 {
+		font-size: 1.6em;
+	}
+
+	/*Style champs*/
+	.block-main-connexion .form  p {
+		font-size: 1.3em;
+	}
+
+	/*Style zones de texte*/
+	.block-main-connexion .form #mail,
+	.block-main-connexion .form #password {
+		width: 363px;
+	}
+
+	/*Style texte bouton*/
+	.block-main-connexion .form p:last-of-type {
+		font-size: 1.3em;
+	}
+
+	/*Style ligne horizontale*/
+	.block-main-connexion hr {
+		margin-bottom: 1rem;
+	}
+
+	/*Style texte Rien de prévu + inscription*/
+	.block-main-connexion .noplan p,
+	.block-main-connexion .register a {
+		font-size: 1.3em;		
+	}
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-connexion .form p label:nth-of-type(1) {
+		width: 150px;
+	}
+
+	.block-main-connexion .register {
+		margin-bottom: 20px;
+	}
+
+}
+
+
+/*---------------------------------
+CONFIRMATION CONNEXION
+----------------------------------*/
 .block-main-confirmationconnexion p  {
 	display: none;
 }
@@ -811,47 +765,12 @@ CONNEXION
 
 
 /*---------------------------------
-CONFIRMATION DÉCONNEXION
-----------------------------------*/
-
-/*Style titre déconnexion*/
-.block-main-deconnexion h2 {
-	text-align: center;
-	font-size: 1.6em;
-	color: #00022e;
-	margin: 10px 0px 10px;
-}
-
-/*Style message confirmation + erreur*/
-.block-main-deconnexion .done p {
-	text-align: center;
-	color: white;
-	text-shadow: 1px 1px 2px #288797;
-	font-size: 1.2em;
-	margin: 40px 0 0;
-}
-
-/*Style liens retour*/
-.block-main-deconnexion .done a {
-	color: #00022e;
-}
-
-/*Style liens retour au survol*/
-.block-main-deconnexion .done a:hover,
-.block-main-deconnexion .done a:focus,
-.block-main-deconnexion .done a:active {
-	text-decoration: none;
-	color: #203863;
-}
-
-/*---------------------------------
 PAGE PROFIL
 ----------------------------------*/
-
 /*Style titre*/
 .block-main-profil h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
@@ -864,7 +783,7 @@ PAGE PROFIL
 	font-size: 1.1em;
 	margin: 40px 0;
 	max-width: 650px;
-	text-align: center;
+	text-align: left;
 }
 
 /*Marges photo de profil*/
@@ -877,7 +796,7 @@ PAGE PROFIL
 
 /*Taille photo profil*/
 .block-main-profil .picture img {
-	width: 90px;
+	width: 200px;
 	border-radius: 100%;
 	border: 3px solid #46b3a6;
 	margin: 0 0 20px;
@@ -885,16 +804,17 @@ PAGE PROFIL
 
 /*Disposition annuler et input parcourir*/
 .block-main-profil .picture .action {
-	min-width: 400px;
+	width: 610px;
     display: flex;
     justify-content: center;
     align-items: center;
+	font-size: 1.7em;
 }
 
 /*Style texte*/
 .block-main-profil .info p {
 	margin: 10px 20px 10px 0;
-	font-size: 1.1rem;
+	font-size: 2.2rem;
 	color: #203863;
 }
 
@@ -906,6 +826,21 @@ PAGE PROFIL
 	justify-content: space-between;
 	align-items: center;
 	min-width: 400px;
+}
+
+
+.block-main-profil .action #change-picture {
+	color: #203863;
+}
+
+.block-main-profil .info #change-pseudo,
+.block-main-profil .info #change-mail,
+.block-main-profil .info #change-age {
+	background-color: rgba(255,255,255,0.75);
+    border-radius: 10px;
+    border: 1px solid #203863;
+    color: #203863;
+	padding: 0 6px;
 }
 
 .block-main-profil .info .name .action {
@@ -922,8 +857,8 @@ PAGE PROFIL
 	background-size: cover;
 	background-color: transparent;
 	border: none;
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
 	cursor: pointer;
 }
 
@@ -942,8 +877,8 @@ PAGE PROFIL
 	background-size: cover;
 	background-color: transparent;
 	border: none;
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
 	cursor: pointer;
 }
 
@@ -957,7 +892,8 @@ PAGE PROFIL
 .block-main-profil .buttons {
 	display: flex;
 	justify-content: center;
-	margin: 10px 0 0;
+	margin: 20px 0;
+	font-size: 2.2em;
 }
 
 /*Style bouton supprimer mon compte*/
@@ -993,7 +929,7 @@ PAGE PROFIL
 }
 
 .block-main-profil .info .delete img {
-	width: 20px;
+	width: 40px;
 	margin: 0 10px 0 0;
 }
 
@@ -1008,6 +944,63 @@ PAGE PROFIL
 	cursor: pointer;
 }
 
+.block-main-profil .info a:hover,
+.block-main-profil .info a:active,
+.block-main-profil .info a:focus {
+	text-decoration: none;
+}
+
+
+@media (min-width: 992px) {
+	/*Style titre*/
+	.block-main-profil h2 {
+		font-size: 1.6em;
+	}
+
+	/*Style fond blanc*/
+	.block-main-profil .bloc {
+		width: 500px;
+		text-align: center;
+	}
+
+	/*Taille photo profil*/
+	.block-main-profil .picture img {
+		width: 90px;
+	}
+
+	/*Disposition annuler et input parcourir*/
+	.block-main-profil .picture .action {
+		width: 460px;
+		font-size: 1em;
+	}
+
+	/*Style texte*/
+	.block-main-profil .info p {
+		font-size: 1.1rem;
+	}
+
+	/*Style bouton modifier*/
+	.block-main-profil .bloc .edit {
+		width: 20px;
+		height: 20px;		
+	}
+
+	/*Style bouton annuler*/
+	.block-main-profil .bloc .cancel1 {
+		width: 20px;
+		height: 20px;
+	}
+
+	.block-main-profil .buttons {
+		margin: 10px 0 0;
+		font-size: 1em;
+	}
+
+	.block-main-profil .info .delete img {
+		width: 20px;
+	}
+
+}
 
 /*---------------------------------
 PAGE DEBUT FORMULAIRE
@@ -1025,9 +1018,10 @@ PAGE DEBUT FORMULAIRE
 .block-main-debutformulaire .introduction p {
 	color: white;
 	font-size: 1.2em;
-	text-align: justify;
 	margin: 40px 70px;
 	text-shadow: 1px 1px 2px #288797;
+	width: 800px;
+    text-align: center;
 }
 
 /*Style texte bouton*/
@@ -1537,20 +1531,6 @@ LARGE DEVICES (desktops, 992px and up)
 		color: #46b3a6;
 	}
 	
-	/*---------------------------------
-	PAGE CONNEXION GRANDS ECRANS
-	----------------------------------*/
-
-	/*Espace entre noms champs et zones de texte + boutons radios*/
-	.block-main-connexion .form p label:nth-of-type(1) {
-		display: block;
-		width: 150px;
-		float: left;
-	}
-	
-	.block-main-connexion .register {
-		margin-bottom: 20px;
-	}
 	
 }
 
