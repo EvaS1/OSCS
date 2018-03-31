@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html>
 	<head>
@@ -17,58 +18,54 @@
 			<div class="content">
 				<main class="block-main-inscription">
 					<div class="container">
-						<div class="row">
-							<div class="col-12">
-								<div class="title">
-									<h2>Inscription</h2>
-								</div>
-								<div class="form">
-									<form action="confirmationinscription.php" method="post">
-										<fieldset>
-											<p>
-												<label for="pseudo">Pseudo</label>
-												<input type="text" name="pseudo" id="pseudo"  maxlength="20" size="32" required>
-											</p>
+						<div class="title">
+							<h2>Inscription</h2>
+						</div>
+						<div class="form">
+							<form action="confirmationinscription.php" method="post">
+								<fieldset>
+									<p>
+										<label for="pseudo">Pseudo</label>
+										<input type="text" name="pseudo" id="pseudo"  maxlength="20" size="32" required>
+									</p>
 
-											<p>
-												<label for="mail">E-mail</label>
-												<input type="email" name="mail" id="mail" size="32" required>
-											</p>
+									<p>
+										<label for="email">E-mail</label>
+										<input type="email" name="email" id="email" size="32" required>
+									</p>
 
-											<p>
-												<label for="password">Mot de passe</label>
-												<input type="password" name="password" id="password" size="32" required>
-											</p>
+									<p>
+										<label for="password">Mot de passe</label>
+										<input type="password" name="password" id="password" size="32" required>
+									</p>
 
-											
-											<p> 
-												<label for="gender">Sexe</label>
-												<input type="radio" required name="gender" id="gender1" value="gender1"><label for="gender1">Féminin</label>
-												<input type="radio" required name="gender" id="gender2" value="gender2"><label for="gender2">Masculin</label>
-											</p>
 
-											<p> 
-												<label for="age">Age</label>
-												<input type="radio" required name="age" id="age1" value="age1"><label for="age1">18-25</label>		
-												<input type="radio" required name="age" id="age2" value="age2"><label for="age2">26-30</label>
-												<input type="radio" required name="age" id="age3" value="age3"><label for="age3">31-50</label>
-												<input type="radio" required name="age" id="age4" value="age4"><label for="age4">51 et +</label>
-											</p>
+									<p> 
+										<label for="gender" id="radio">Sexe</label>
+										<input type="radio" required name="gender" id="gender1" value="gender1"><label for="gender1" id="gender">Féminin</label>
+										<input type="radio" required name="gender" id="gender2" value="gender2"><label for="gender2" id="gender">Masculin</label>
+									</p>
 
-											<p>											
-												<input id="button" type="submit" value="Créer un compte">
-											</p>
+									<p> 
+										<label for="age" id="radio">Age</label>
+										<input type="radio" required name="age" id="age1" value="age1"><label for="age1" id="age">18-25</label>		
+										<input type="radio" required name="age" id="age2" value="age2"><label for="age2" id="age">26-30</label>
+										<input type="radio" required name="age" id="age3" value="age3"><label for="age3" id="age">31-50</label>
+										<input type="radio" required name="age" id="age4" value="age4"><label for="age4" id="age">51 et +</label>
+									</p>
 
-										</fieldset>
-									</form>
-								</div>
-							</div>
+									<p>											
+										<input id="button" type="submit" value="Créer un compte">
+									</p>
+
+								</fieldset>
+							</form>
 						</div>
 					</div>
 				</main>
 			</div>
-			<?php include('footer.php');?>
 		</div>
+		<?php include('footer.php');?>
 	</body>
 	
 </html>

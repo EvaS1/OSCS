@@ -1,43 +1,74 @@
+<?php include('pdo.php');?>
+
 <div class="header">
 	<header class="block-header">
 		<div class="inner">
-
-			<figure class="logo">
-				<img src="Logo/logof.png" style="width: 22%">
-			</figure>
-
+			<img id="btnClickMe" src="Icones/menu.png" width="7%">
+			<img class="logo-mobile" src="Logo/logof.png" alt="logo">
 			<h1 class="connexion">
-				<img src="Icones/userf.png">
-				<a href="connexion.php"> connexion </a>
-			</h1>
+				<?php 
+				//Si l'utilisateur n'est pas connecté, lien vers page connexion
+				if (!isset($_SESSION['id'])) {
+					echo "<a href='connexion.php' class='connect'><img src='Icones/userb.png'></a>";
 
+				//S'il est connecté, lien vers profil ou déconnexion
+				} else {
+					$query = "SELECT * FROM membres WHERE idMembre=:id";
+					$statement = $connexion->prepare($query);
+					$statement -> bindValue(':id', $_SESSION['id']);
+					$statement -> execute();
+
+					$profil = $statement -> fetch();
+					
+					//Affichage icône
+					if (($profil -> photoMembre)=='') {
+						echo "<a href='profil.php' class='profile'><img src='Icones/userb.png'></a>";
+					} else {
+						echo "<a href='profil.php' class='profilep'><img src='Images/".$profil -> photoMembre."'></a>";
+					}
+				
+					
+					//Sous-menu
+					echo  "<ul class='sous-menu'><li><a href='profil.php'>Mon profil</a></li><li><a href='deconnexion.php'>Déconnexion</a></li></ul>";
+				}
+				?>
+			</h1>
 		</div>
 	</header>
 	<nav class="block-nav">
 		<div class="inner">
 			<div class="action">
-				<a href="#menu" id="toggle"><span></span></a>
+				<a href="#menu" id="toggle"></a>
 			</div>
 			<div id="my_header">
-				<img id="btnClickMe" src="Icones/menublanc.png" width="7%">
 				<div id="menu">	
 					<ul>
 						<div class="menunav hide">
 							<div class="titre">
-								<a href="">Menu</a>
+								<h2>Menu</h2>
 							</div>
-							<form class="form" method="get" role="search">
-							<input class="search" type="search" name="q" id="q" placeholder="Rechercher...">
-
+							<form class="form" method="get" action="search.php">
+								<input class="search" type="search" name="q" id="q" placeholder="Rechercher..." required>
+								<input class="button" type="submit" value="" alt="Rechercher">
 							</form>
-							<li><a href="news.html">News</a></li>
-							<li><a href="about.html">Bars</a></li>
-							<li><a href="concert.html">Concerts</a></li>
-							<li><a href="theatre.html">Théâtres</a></li>
-							<li><a href="event.html">Evènements</a></li>
-							<li><a href="arrond.html">Autour de moi</a></li>
-							<li><a href="compte.html">Mon compte</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="news.php">Nouveautés</a></li>
+							<li><a href="debutformulaire.php">Questionnaire</a></li>
+							<li><a href="listing.php?id=1">Bars</a></li>
+							<li><a href="listing.php?id=2">Concerts</a></li>
+							<li><a href="listing.php?id=3">Théâtres</a></li>
+							
+							<?php
+							//Si l'utilisateur n'est pas connecté, lien vers page connexion
+							if (!isset($_SESSION['id'])) {
+								echo "<li><a href='connexion.php'>Connexion</a></li>";
+
+							//S'il est connecté, lien vers profil ou déconnexion
+							} else {
+								echo "<li><a href='profil.php'>Mon compte</a></li>";
+							}
+								
+							?>
+							<li><a href="contact.php">Contact</a></li>
 						</div>
 					</ul>
 				</div>
@@ -46,41 +77,92 @@
 	</nav>	
 
 	<header class="block-header-web">
+		<div class="topbar">
+			<div class="socialmedia">
+				<ul>
+					<li>
+						<a href="https://www.facebook.com">
+							<img class="facebook" src="Icones/facebook.png" width="40px" alt="facebook">
+						</a>
+					</li>
+					<li>
+						<a href="https://twitter.com/?lang=fr">
+							<img class="twitter" src="Icones/twitter-2.png" width="40px" alt="twitter">
+						</a>					
+					</li>
+					<li>
+						<a href="https://www.instagram.com">
+							<img class="instagram" src="Icones/instagram-2.png" width="40px" alt="instagram">	
+						</a>		
+					</li>
+				</ul>
+			</div>
+			<div class="connexion">
+					<?php
+					//Si l'utilisateur n'est pas connecté, lien vers page connexion
+					if (!isset($_SESSION['id']) ) {
+						echo "<a href='connexion.php' class='connect'><img src='Icones/userb.png'><p>Connexion</p></a>";
+						
+					//S'il est connecté, lien vers profil ou déconnexion
+					} else {
+						$query = "SELECT * FROM membres WHERE idMembre=:id";
+						$statement = $connexion->prepare($query);
+						$statement -> bindValue(':id', $_SESSION['id']);
+						$statement -> execute();
+
+						$profil = $statement -> fetch();
+						
+						//Affichage icône
+						if (($profil -> photoMembre)=='') {
+							echo "<a href='profil.php' class='profile'><img src='Icones/userb.png'><p>".$profil -> pseudoMembre."</p></a>";
+						} else {
+							echo "<a href='profil.php' class='profilep'><img src='Images/".$profil -> photoMembre."'><p>".$profil -> pseudoMembre."</p></a>";
+						}
+						
+						//Sous-menu
+						echo  "<ul class='sous-menu'><li><a href='profil.php'>Mon profil</a></li><li><a href='deconnexion.php'>Déconnexion</a></li></ul>";
+					}
+					?>
+			</div>
+		</div>
 		<div class="titleandlogo">
-			<h1>Où sortir ce soir</h1>
+			<a href="connexion.php"><h1>Où sortir ce soir</h1></a>
 			<img class="logo-web" src="Logo/logof.png" alt="logo">
+		</div>
+		
+		<div class="search">
+			<form method="get" action="search.php">
+				<input type="text" name="q" placeholder="Rechercher..." required>
+				<input class="button" type="submit" value="" alt="Rechercher">
+			</form>
 		</div>
 	</header>
 
 	<nav class="block-nav-web">
 		<div class="inner">
-			<ul class="nav justify-content-center">
+			<ul class="nav justify-content">
 			  <li class="nav-item">
-				<a class="nav-link" href="#">Home</a>
+				<a class="nav-link" href="news.php">Nouveautés</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#">News</a>
+				<a class="nav-link" href="debutformulaire.php">Questionnaire</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#">Bars</a>
+				<a class="nav-link" href="listing.php?id=1">Bars</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#">Concerts</a>
+				<a class="nav-link" href="listing.php?id=2">Concerts</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#">Théâtres</a>
+				<a class="nav-link" href="listing.php?id=3">Théâtres</a>
 			  </li>
 			  <li>|</li>
 			  <li class="nav-item">
-				<a class="nav-link" href="#">Evènements</a>
-			  </li>
-			  <li>|</li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#">Autour de moi</a>
+				<a class="nav-link" href="contact.php">Contact</a>
 			  </li>
 			</ul>
 		</div>

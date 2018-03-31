@@ -1,0 +1,208 @@
+/*---------------------------------
+PAGE CHOIX
+----------------------------------*/
+.block-main-choix .priceevent {
+	display: flex;
+	align-items: center;
+}
+
+
+/*---------------------------------
+PAGE LISTING
+----------------------------------*/
+
+/*Style titre page*/
+.block-main-listing h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+
+/*Style sous-titre page*/
+.block-main-listing .selection p {
+	font-size: 1.4em;
+	color: white;
+	margin: 20px 0px 20px;
+	text-shadow: 1px 1px 2px #288797;
+}
+
+/*Event : Style du fond*/
+.block-main-listing .event {
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.1em;
+	margin: 20px;
+	max-width: 650px;
+}
+
+/*Event : Style image*/
+.block-main-listing .event .image {
+	max-height: 135px;
+	max-width: 135px;
+}
+
+/*Event : Style titre*/
+.block-main-listing .event .titleevent {
+	font-size: 1.2em;
+	color: #047395;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style sous-titre*/
+.block-main-listing .event .subtitleevent {
+	font-size: 1.1em;
+	color: #00022e;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style description*/
+.block-main-listing .event .descriptionevent {
+	text-align: justify;
+}
+
+/*Event : Décalage en savoir plus*/
+.block-main-listing .event .link {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/*Event : Style texte en savoir plus*/
+.block-main-listing .event .link a {
+	color: #047395;
+	font-weight: bold;
+}
+
+/*Event : Infos*/
+.block-main-listing .event .infoevent {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px 0px 20px;
+	/*font-size: 1em;*/
+}
+
+/*Event : Suppression espace après paragraphes*/
+.block-main-listing .event p {
+	margin-bottom: 0;
+	max-width: 430px;
+}
+
+/*Event : Infos et icônes sur une ligne + alignement vertical*/
+.block-main-listing .event .dayevent,
+.block-main-listing .event .timeevent,
+.block-main-listing .event .priceevent,
+.block-main-listing .event .placeevent {
+	display: flex;
+	align-items: center;
+}
+
+/*Event : Taille des icônes + espace entre icônes et textes*/
+.block-main-listing .infoevent img {
+	max-height: 30px;
+	margin: 0px 15px 0px 0px;
+}
+
+
+/*---------------------------------
+PAGE NEWS
+----------------------------------*/
+
+/*Style titre page*/
+.block-main-news h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+
+/*Style sous-titre page*/
+.block-main-news .selection p {
+	font-size: 1.4em;
+	color: white;
+	margin: 20px 0px 20px;
+	text-shadow: 1px 1px 2px #288797;
+}
+
+/*Event : Style du fond*/
+.block-main-news .event {
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 20px;
+	padding: 20px 8px;
+	font-size: 1.1em;
+	margin: 20px;
+	max-width: 650px;
+}
+
+/*Event : Style image*/
+.block-main-news .event .image {
+	max-height: 135px;
+	max-width: 135px;
+}
+
+/*Event : Style titre*/
+.block-main-news .event .titleevent {
+	font-size: 1.2em;
+	color: #047395;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style sous-titre*/
+.block-main-news .event .subtitleevent {
+	font-size: 1.1em;
+	color: #00022e;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style description*/
+.block-main-news .event .descriptionevent {
+	text-align: justify;
+}
+
+/*Event : Décalage en savoir plus*/
+.block-main-news .event .link {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/*Event : Style texte en savoir plus*/
+.block-main-news .event .link a {
+	color: #047395;
+	font-weight: bold;
+}
+
+/*Event : Infos*/
+.block-main-news .event .infoevent {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px 0px 20px;
+	/*font-size: 1em;*/
+}
+
+/*Event : Suppression espace après paragraphes*/
+.block-main-news .event p {
+	margin-bottom: 0;
+	max-width: 430px;
+}
+
+/*Event : Infos et icônes sur une ligne + alignement vertical*/
+.block-main-news .event .dayevent,
+.block-main-news .event .timeevent,
+.block-main-news .event .priceevent,
+.block-main-news .event .placeevent {
+	display: flex;
+	align-items: center;
+}
+
+/*Event : Taille des icônes + espace entre icônes et textes*/
+.block-main-news .infoevent img {
+	max-height: 30px;
+	margin: 0px 15px 0px 0px;
+}
+

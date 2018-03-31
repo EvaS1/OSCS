@@ -12,9 +12,6 @@ POUR TOUS
 ----------------------------------*/
 a {
 	text-decoration: none; /*Pour enlever la mise en forme des liens, ici soulignage*/
-}
-
-a {
 	color: white;
 }
 
@@ -25,66 +22,127 @@ list-style-type:none;
 body {
 	background-image: url("../Fond/Fond rectangulairedouble.png");
 	background-size: cover;
-	/*background-position: center;*/
+	background-position: center;
 	background-repeat: no-repeat;
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 }
 
-#page {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+.page {
+	position: relative;
+	min-height: 94vh;
 }
+
+.content {
+	min-height: 570px;
+}
+
 
 /*---------------------------------
 HEADER MOBILE
 ----------------------------------*/
-.block-header {
-	margin: 20px;
+.block-header .inner {
+	padding: 35px;
+	display: flex;
+	justify-content: space-between; 
+	align-items: center;
 }
 
-/*.block-header .inner .connexion {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 200px;
-	padding: 20px;
-	font-family: 'Fjalla One', Arial, sans-serif; 
-	font-size: 1em;
-}*/
 
-.block-header .inner .logo-mobile {
+/*Bouton menu par dessus la sidebar*/
+.block-header #btnClickMe {
+	z-index: 99;
+	width: 100px;
+}
+
+/*Style logo mobile*/
+.block-header .logo-mobile  {
 	display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
+	width: 25%;
 }
 
-.block-header .inner .logo img {
-	position: relative;
-    right: -325px;
-    margin: 20px;
+/*Taille icône user*/
+.block-header .connexion img {
+	width: 100px;
+	margin: 20px 0;
 }
 
-.block-header .inner .connexion img{
-	position: absolute;
-	top: 70px;
-	right: 190px;
-	width: 60px;
+.block-header .connexion .profilep img {
+	border-radius: 100%;
+	border: 3px solid #203863;
 }
 
-.block-header .inner .connexion a {
-	position: absolute;
-	top: 80px;
-	right: 25px;
+/*Style lien connexion*/
+.block-header .connexion a {
 	color: #274451;
 	font-size: 0.8em;
 }
 
+/*Style et position sous-menu*/
+.block-header .inner .sous-menu {
+	margin: 0;
+    padding: 0;
+    border: 1px solid #203863;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.5);
+	position: absolute;
+    right: 33px;
+    top: 215px;
+	display: none;
+}
+
+/*tyle li du sous-menu*/
+.block-header .inner .sous-menu li {
+	list-style: none;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 8px;
+	text-align: right;
+}
+
+/*Séparateur dans sous-menu*/
+.block-header .inner .sous-menu li:first-of-type {
+	border-bottom: 1px solid #203863;
+}
+
+.block-header .inner .connexion:hover .sous-menu,
+.block-header .inner .connexion:focus .sous-menu {
+	display: block;
+}
+
+/*Couleur et taille liens du sous-menu*/
+.block-header .inner .sous-menu li a {
+	color: #203863;
+	font-size: 2em;
+}
+
+/*Style du premier li du sous-menu au survol*/
+.block-header .inner .sous-menu li:first-of-type:hover,
+.block-header .inner .sous-menu li:first-of-type:active,
+.block-header .inner .sous-menu li:first-of-type:focus {
+	background-color: white;
+	border-radius: 5px 5px 0 0;
+}
+
+/*Style du deuxième li du sous-menu au survol*/
+.block-header .inner .sous-menu li:last-of-type:hover,
+.block-header .inner .sous-menu li:last-of-type:active,
+.block-header .inner .sous-menu li:last-of-type:focus {
+	background-color: white;
+	border-radius: 0 0 5px 5px;	
+}
+
+/*Enlever soulignement liens*/
+.block-header .inner .sous-menu a:hover,
+.block-header .inner .sous-menu a:active,
+.block-header .inner .sous-menu a:focus {
+	text-decoration: none;
+}
+
+
 /*---------------------------------
 NAV MOBILE
 ----------------------------------*/
-.block-nav .inner .menunav{
+.block-nav .menunav {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -92,36 +150,54 @@ NAV MOBILE
 	background-color: #203863;
 	visibility: visible;
 	color: white;
-	padding: 35px 30px 5px 15px;
+	padding: 85px 40px;
 	font-family: 'Fjalla One', Arial, sans-serif; 
-	font-size: 30px;
+	font-size: 25px;
 	z-index: 98;
 }
-.block-nav .inner #menu .titre{
-	padding: 50px;
-	padding-left: 125px;
-	top: 70px;
+
+.block-nav #menu .titre {
+	text-align: center;
+	margin: 40px 0px 40px 100px;
+	color: white;
 }
-.block-nav .inner .search{
-	border-radius: 50px;
-	padding: 10px;
+
+.block-nav #menu .titre h2 {
+	font-size: 3rem
 }
-.block-nav .inner #btnClickMe{
-	position: absolute;
-	z-index: 99;
-	top: 70px;
-	left: 25px;
+
+.block-nav .search {
+	border-radius: 10px;
+	padding: 5px;
+	font-size: 30px;
+	border: 2px solid #46b3a6;
+	background-color: rgba(255,255,255,0.90);
+	width: 350px;
+	margin: 40px 0 0
 }
-.block-nav .inner .lemenu{
+
+.block-nav .lemenu {
 	padding-top: 70px;
-	padding-left:100px;
+	padding-left: 100px;
 }
+
 .block-nav li {
-	padding-top: 100px;
-	left: 0;
-	padding-left: 0px;
+	padding-top: 40px;
 }
-.block-nav .inner .action ul input  {
+
+.block-nav li a {
+	color: white;
+	text-decoration: none;
+	font-size: 40px;
+}
+
+.block-nav li a:hover,
+.block-nav li a:focus,
+.block-nav li a:active {
+	color: #46b3a6;
+}
+
+.block-nav .action ul input  {
 	padding: 10px 10px 0px;
 	position: relative;
 	border-radius: 50px;
@@ -130,11 +206,136 @@ NAV MOBILE
 /*---------------------------------
 HEADER WEB
 ----------------------------------*/
+.block-header-web .topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1000px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.block-header-web .topbar .socialmedia ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+}
+
+.block-header-web .topbar .socialmedia img {
+	width: 30px;
+	margin-right: 10px;
+}
+
+.block-header-web .topbar .connexion {
+	display: flex;
+	justify-content: space-around;
+}
+
+.block-header-web .topbar .connect {
+	display: flex;
+    align-items: center;
+}
+
+.block-header-web .topbar .connexion .profile,
+.block-header-web .topbar .connexion .profilep {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	justify-content: flex-end;
+	margin: 20px 0;
+}
+
+.block-header-web .topbar .connexion img {
+	width: 30px;
+	margin-right: 10px;
+}
+
+.block-header-web .topbar .connexion .profilep img {
+	border-radius: 100%;
+	border: 3px solid #203863;
+	width: 35px
+}
+
+.block-header-web .topbar .connexion p {
+	color: #203863;
+	font-size: 1.2rem;
+	margin: 0;
+	font-weight: 500;
+}
+
+/*Style et position sous-menu*/
+.block-header-web .sous-menu {
+	padding: 0;
+    border: 1px solid #203863;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.5);
+	margin: 60px 0 0;
+	position: absolute;
+	display: none;
+}
+
+/*tyle li du sous-menu*/
+.block-header-web .sous-menu li {
+	list-style: none;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 8px;
+	text-align: center;
+}
+
+/*Séparateur dans sous-menu*/
+.block-header-web .sous-menu li:first-of-type {
+	border-bottom: 1px solid #203863;
+}
+
+.block-header-web .connexion:hover .sous-menu,
+.block-header-web .connexion:focus .sous-menu {
+	display: block;
+}
+
+/*Couleur et taille liens du sous-menu*/
+.block-header-web .sous-menu li a {
+	color: #203863;
+	font-size: 1em;
+}
+
+/*Style du premier li du sous-menu au survol*/
+.block-header-web .sous-menu li:first-of-type:hover,
+.block-header-web .sous-menu li:first-of-type:active,
+.block-header-web .sous-menu li:first-of-type:focus {
+	background-color: white;
+	border-radius: 5px 5px 0 0;
+}
+
+/*Style du deuxième li du sous-menu au survol*/
+.block-header-web .sous-menu li:last-of-type:hover,
+.block-header-web .sous-menu li:last-of-type:active,
+.block-header-web .sous-menu li:last-of-type:focus {
+	background-color: white;
+	border-radius: 0 0 5px 5px;	
+}
+
+/*Enlever soulignement liens*/
+.block-header-web .sous-menu a:hover,
+.block-header-web .sous-menu a:active,
+.block-header-web .sous-menu a:focus {
+	text-decoration: none;
+}
+
+
+
+
 .titleandlogo {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 20px;
+}
+
+.block-header-web .titleandlogo a {
+	text-decoration: none;
 }
 
 .block-header-web .titleandlogo h1 {
@@ -144,8 +345,8 @@ HEADER WEB
 	margin: 0px 15px 0px 0px;
 }
 
-.block-header-web .titleandlogo img {
-	width: 20%;
+.block-header-web .titleandlogo .logo-web {
+	width: 100px;
 }
 
 
@@ -157,6 +358,54 @@ HEADER WEB
 .block-nav-web .inner {
 	display: flex;
 	justify-content: space-around;
+}
+
+
+
+/*---------------------------------
+BARRE DE RECHERCHE
+----------------------------------*/
+.block-nav .button {
+	position: absolute;
+    z-index: 1;
+    margin: -44px 0 0 308px;
+    background-image: url(../Icones/searchb.png);
+    width: 30px; 
+    height: 30px; 
+    background-color: rgba(0,0,0,0);
+    overflow: hidden;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+.block-header-web .search {
+	width: 1000px;
+    text-align: right;
+    margin: 0 auto 20px;
+}
+
+.block-header-web .search input:first-of-type {
+	border-radius: 5px;
+    padding: 1px;
+    /* font-size: 20px; */
+    border: 2px solid #203863;
+    background-color: rgba(255,255,255,0.75);
+}
+
+
+.block-header-web .button {
+	position: absolute;
+    z-index: 1;
+    margin: 5px 0 0 -26px;
+    background-image: url(../Icones/searchv.png);
+    width: 21px; 
+    height: 21px; 
+    background-color: rgba(0,0,0,0);
+    overflow: hidden;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
 }
 
 
@@ -175,11 +424,10 @@ PAGE INSCRIPTION
 /*Style Inscription*/
 .block-main-inscription h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
-
 
 /*Couleur nom des champs*/
 .block-main-inscription .form label:nth-of-type(1) {
@@ -190,8 +438,9 @@ PAGE INSCRIPTION
 /*Style champs*/
 .block-main-inscription .form  p {
 	color: white;
-	margin: 50px 20px;
-	font-size: 1.2em;
+	margin: 50px 0px;
+	font-size: 2.6em;
+	width: 690px;
 }
 
 
@@ -204,11 +453,13 @@ PAGE INSCRIPTION
 /*Espace entre noms champs et zones de texte + boutons radios*/
 .block-main-inscription .form p label:nth-of-type(1) {
 	display: block;
-	width: 128px;
+	width: 690px;
 	float: left;
 }
 
-
+.block-main-inscription .form #radio {
+	width: 127px;
+}
 
 /*Espace entre boutons radios et textes*/
 .block-main-inscription .form p:nth-of-type(4) input,
@@ -218,14 +469,20 @@ PAGE INSCRIPTION
 
 
 /*Style zones de texte*/
-.block-main-inscription .form input:first-of-type,
-.block-main-inscription .form input:nth-of-type(2),
-.block-main-inscription .form input:nth-of-type(3) {
+.block-main-inscription .form #pseudo,
+.block-main-inscription .form #email,
+.block-main-inscription .form #password {
 	background-color: rgba(255,255,255,0.50);
 	border: thin;
 	border-radius: 10px;
 	color: #203863;
+	width: 690px;
 }
+
+.block-main-inscription .form #age,
+.block-main-inscription .form #gender {
+	font-size: 0.75em;
+} 
 
 
 /*Espace entre chaque input*/
@@ -239,9 +496,8 @@ PAGE INSCRIPTION
 /*Style texte bouton*/
 .block-main-inscription .form p:last-of-type {
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 2.3em;
 	font-weight: 600;
-	margin: 70px;
 }
    
 
@@ -264,36 +520,52 @@ PAGE INSCRIPTION
 	text-decoration: none;
 }
 
-/*---------------------------------
-PAGE CONFIRMATION INSCRIPTION
-----------------------------------*/
+@media (min-width: 992px) { 
 
-/*Style Inscription*/
-.block-main-confirmationinscription .titleconfirmation h2 {
-	text-align: center;
-	font-size: 1.6em;
-	color: #00022e;
-	margin: 10px 0px 10px;
-}
+	/*Style Inscription*/
+	.block-main-inscription h2 {
+		font-size: 1.6em;
+	}
 
-/*Style confirmation*/
-.block-main-confirmationinscription .confirmation {
-	color: white;
-	text-shadow: 1px 1px 2px #288797;
-	font-size: 1.4em;
-	margin: 20px;
-}
+	/*Style champs*/
+	.block-main-inscription .form  p {
+		font-size: 1.2em;
+		width: 720px;
+	}
 
-/*Style lien suivant*/
-.block-main-confirmationinscription .buttonlink {
-	text-align: center;
+	/*Style zones de texte*/
+	.block-main-inscription .form #pseudo,
+	.block-main-inscription .form #email,
+	.block-main-inscription .form #password {
+		width: 425px;
+	}
+
+	.block-main-inscription .form #age,
+	.block-main-inscription .form #gender {
+		font-size: 1em;
+	} 
+
+	/*Style texte bouton*/
+	.block-main-inscription .form p:last-of-type {
+		font-size: 1.3em;
+	}
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-inscription .form p label:nth-of-type(1) {
+		width: 150px;
+	}
 	
-}
+	.block-main-inscription .form #radio {
+		width: 150px;
+	}
 
-/*Style texte lien suivant*/
-.block-main-confirmationinscription .buttonlink a {
-	color: #00022e;
-	font-size: 1.3em;
+	/*Espace entre boutons radios et textes*/
+	.block-main-inscription .form p:nth-of-type(4) input,
+	.block-main-inscription .form p:nth-of-type(5) input {
+		margin: 0px 20px 0px 0px;	
+	}
+
+	
 }
 
 /*---------------------------------
@@ -304,11 +576,10 @@ CONNEXION
 /*Style titre connexion*/
 .block-main-connexion h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
-
 
 /*Couleur nom des champs*/
 .block-main-connexion .form label:nth-of-type(1) {
@@ -320,7 +591,7 @@ CONNEXION
 .block-main-connexion .form  p {
 	color: white;
 	margin: 50px 20px;
-	font-size: 1.3em;
+	font-size: 2.6em;
 }
 
 
@@ -333,7 +604,7 @@ CONNEXION
 /*Espace entre noms champs et zones de texte + boutons radios*/
 .block-main-connexion .form p label:nth-of-type(1) {
 	display: block;
-	width: 128px;
+	width: 690px;
 	float: left;
 }
 
@@ -347,13 +618,13 @@ CONNEXION
 
 
 /*Style zones de texte*/
-.block-main-connexion .form input:first-of-type,
-.block-main-connexion .form input:nth-of-type(2),
-.block-main-connexion .form input:nth-of-type(3) {
+.block-main-connexion .form #mail,
+.block-main-connexion .form #password {
 	background-color: rgba(255,255,255,0.50);
 	border: thin;
 	border-radius: 10px;
 	color: #203863;
+	width: 690px;
 }
 
 
@@ -368,7 +639,7 @@ CONNEXION
 /*Style texte bouton*/
 .block-main-connexion .form p:last-of-type {
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 2.6em;
 	font-weight: 600;
 	margin: 70px;
 }
@@ -397,6 +668,7 @@ CONNEXION
 .block-main-connexion hr {
 	background-color: white;
 	height: 1px;
+	margin-bottom: 2rem;
 }
 
 /*Style Rien de prévu + inscription*/
@@ -409,8 +681,9 @@ CONNEXION
 .block-main-connexion .noplan p,
 .block-main-connexion .register a {
 	color: #203863;
-	font-size: 1.3em;
+	font-size: 2.6em;
 	text-shadow: 1px 1px 2px #288797;
+	text-decoration: none;
 }
 
 /*Espace après paragraphe Rien de prévu*/
@@ -419,7 +692,55 @@ CONNEXION
 }
 
 
-/*MAIN CONFIRMATION CONNEXION*/
+@media (min-width: 992px) { 
+	
+	/*Style titre connexion*/
+	.block-main-connexion h2 {
+		font-size: 1.6em;
+	}
+
+	/*Style champs*/
+	.block-main-connexion .form  p {
+		font-size: 1.3em;
+	}
+
+	/*Style zones de texte*/
+	.block-main-connexion .form #mail,
+	.block-main-connexion .form #password {
+		width: 363px;
+	}
+
+	/*Style texte bouton*/
+	.block-main-connexion .form p:last-of-type {
+		font-size: 1.3em;
+	}
+
+	/*Style ligne horizontale*/
+	.block-main-connexion hr {
+		margin-bottom: 1rem;
+	}
+
+	/*Style texte Rien de prévu + inscription*/
+	.block-main-connexion .noplan p,
+	.block-main-connexion .register a {
+		font-size: 1.3em;		
+	}
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-connexion .form p label:nth-of-type(1) {
+		width: 150px;
+	}
+
+	.block-main-connexion .register {
+		margin-bottom: 20px;
+	}
+
+}
+
+
+/*---------------------------------
+CONFIRMATION CONNEXION
+----------------------------------*/
 .block-main-confirmationconnexion p  {
 	display: none;
 }
@@ -442,6 +763,245 @@ CONNEXION
 	text-shadow: 1px 1px 2px #288797;
 }
 
+
+/*---------------------------------
+PAGE PROFIL
+----------------------------------*/
+/*Style titre*/
+.block-main-profil h2 {
+	text-align: center;
+	font-size: 3.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Style fond blanc*/
+.block-main-profil .bloc {
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.1em;
+	margin: 40px 0;
+	max-width: 650px;
+	text-align: left;
+}
+
+/*Marges photo de profil*/
+.block-main-profil .picture {
+	margin: 10px 0 20px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*Taille photo profil*/
+.block-main-profil .picture img {
+	width: 200px;
+	border-radius: 100%;
+	border: 3px solid #46b3a6;
+	margin: 0 0 20px;
+}
+
+/*Disposition annuler et input parcourir*/
+.block-main-profil .picture .action {
+	width: 610px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	font-size: 1.7em;
+}
+
+/*Style texte*/
+.block-main-profil .info p {
+	margin: 10px 20px 10px 0;
+	font-size: 2.2rem;
+	color: #203863;
+}
+
+/*Affichage sur une ligne du texte et des boutons*/
+.block-main-profil .info .name,
+.block-main-profil .info .age,
+.block-main-profil .info .mail {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 400px;
+}
+
+
+.block-main-profil .action #change-picture {
+	color: #203863;
+}
+
+.block-main-profil .info #change-pseudo,
+.block-main-profil .info #change-mail,
+.block-main-profil .info #change-age {
+	background-color: rgba(255,255,255,0.75);
+    border-radius: 10px;
+    border: 1px solid #203863;
+    color: #203863;
+	padding: 0 6px;
+}
+
+.block-main-profil .info .name .action {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Style bouton modifier*/
+.block-main-profil .bloc .edit {
+	background-image: url(../Icones/edit-b2.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
+
+/*Style bouton modifier au survol*/
+.block-main-profil .bloc .edit:hover,
+.block-main-profil .bloc .edit:focus,
+.block-main-profil .bloc .edit:active {
+	background-image: url(../Icones/edit-b.png)
+}
+
+/*Style bouton annuler*/
+.block-main-profil .bloc .cancel1 {
+	background-image: url(../Icones/cancel-g.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: transparent;
+	border: none;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
+
+/*Style bouton annuler au survol*/
+.block-main-profil .bloc .cancel1:hover,
+.block-main-profil .bloc .cancel1:focus,
+.block-main-profil .bloc .cancel1:active {
+	background-image: url(../Icones/cancel-b.png)
+}
+
+.block-main-profil .buttons {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0;
+	font-size: 2.2em;
+}
+
+/*Style bouton supprimer mon compte*/
+.block-main-profil .save .btn-save,
+.block-main-profil .cancel .btn-cancel {
+	margin: 10px 10px;
+	color: #203863;
+	padding: 8px 15px;
+	border: thin;
+	border-radius: 8px;
+	background-color: white;
+	filter: drop-shadow(0px 2px 5px #288797); 
+}
+
+.block-main-profil .cancel .btn-cancel:hover,
+.block-main-profil .cancel .btn-cancel:focus,
+.block-main-profil .cancel .btn-cancel:active,
+.block-main-profil .save .btn-save:hover,
+.block-main-profil .save .btn-save:focus,
+.block-main-profil .save .btn-save:active {
+	background-color: #203863;
+	color: white;
+	text-decoration: none;
+}
+
+/*Style lien delete*/
+.block-main-profil .info .delete {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px auto;
+	padding: 8px 10px;
+}
+
+.block-main-profil .info .delete img {
+	width: 40px;
+	margin: 0 10px 0 0;
+}
+
+.block-main-profil .info .delete p {
+	margin: 0;	
+}
+
+.block-main-profil .info .delete p:hover,
+.block-main-profil .info .delete p:active,
+.block-main-profil .info .delete p:focus {
+	color: white;
+	cursor: pointer;
+}
+
+.block-main-profil .info a:hover,
+.block-main-profil .info a:active,
+.block-main-profil .info a:focus {
+	text-decoration: none;
+}
+
+
+@media (min-width: 992px) {
+	/*Style titre*/
+	.block-main-profil h2 {
+		font-size: 1.6em;
+	}
+
+	/*Style fond blanc*/
+	.block-main-profil .bloc {
+		width: 500px;
+		text-align: center;
+	}
+
+	/*Taille photo profil*/
+	.block-main-profil .picture img {
+		width: 90px;
+	}
+
+	/*Disposition annuler et input parcourir*/
+	.block-main-profil .picture .action {
+		width: 460px;
+		font-size: 1em;
+	}
+
+	/*Style texte*/
+	.block-main-profil .info p {
+		font-size: 1.1rem;
+	}
+
+	/*Style bouton modifier*/
+	.block-main-profil .bloc .edit {
+		width: 20px;
+		height: 20px;		
+	}
+
+	/*Style bouton annuler*/
+	.block-main-profil .bloc .cancel1 {
+		width: 20px;
+		height: 20px;
+	}
+
+	.block-main-profil .buttons {
+		margin: 10px 0 0;
+		font-size: 1em;
+	}
+
+	.block-main-profil .info .delete img {
+		width: 20px;
+	}
+
+}
+
 /*---------------------------------
 PAGE DEBUT FORMULAIRE
 ----------------------------------*/
@@ -449,23 +1009,25 @@ PAGE DEBUT FORMULAIRE
 /*Style titre page*/
 .block-main-debutformulaire h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
 
 /*Style texte paragraphe*/
-.block-main-debutformulaire .introduction {
+.block-main-debutformulaire .introduction p {
 	color: white;
-	font-size: 1.2em;
-	text-align: justify;
-	margin: 40px 70px;
+	font-size: 2.3em;
+	margin: 40px 0;
+	text-shadow: 1px 1px 2px #288797;
+	width: 700px;
+    text-align: center;
 }
 
 /*Style texte bouton*/
 .block-main-debutformulaire .buttonbegin {
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 2.3em;
 	font-weight: 600;
 	margin: 70px;
 }
@@ -491,14 +1053,123 @@ PAGE DEBUT FORMULAIRE
 }
 
 
+@media (min-width: 992px) {
+
+	/*Style titre page*/
+	.block-main-debutformulaire h2 {
+		font-size: 1.6em;
+	}
+
+	/*Style texte paragraphe*/
+	.block-main-debutformulaire .introduction p {
+		font-size: 1.2em;
+		margin: 40px 70px;
+		width: 800px;
+	}
+
+	/*Style texte bouton*/
+	.block-main-debutformulaire .buttonbegin {
+		font-size: 1.3em;
+	}
+}
+
+/*---------------------------------
+PAGES QUESTION
+----------------------------------*/
+
+.block-center .block-main .title {	
+	text-align: center;
+	position: relative;
+	font-size: 3.6rem;
+	color: #00022E;
+	margin: 70px 0 30px;
+}
+.block-center .block-main .section .forms {	
+	text-align: center;
+	position: relative;
+	font-size: 2.6em;
+	color: #00022e;
+}
+
+.block-center .block-main .section .forms .quest{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.3em;
+	color: white;
+	border-width: 50px;
+	text-shadow: 1px 1px 2px #288797;
+}
+
+.block-center .section .forms .answers {
+	width: 700px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+	margin: 30px auto;
+}
+
+.block-center .section .forms .answers p {
+	width: 50%;
+	text-align: left;
+	font-weight: 500;
+}
+
+.block-center .section .forms .answers p:nth-of-type(2),
+.block-center .section .forms .answers p:nth-of-type(4) {
+	padding-left: 53px;
+}
+
+.block-center .section .forms .answers input {
+    margin-right: 10px;
+}
+
+/*Style bouton*/
+.block-center .next .button {
+	color: #203863;
+	padding: 15px 30px;
+	border: thin;
+	border-radius: 10px;
+	background-color: white;
+	filter: drop-shadow(0px 2px 5px #288797); 
+}
+
+/*Style bouton au survol, au tab ou au clic*/
+.block-center .next .button:hover,
+.block-center .next .button:focus,
+.block-center .next .button:active {
+	background-color: #203863;
+	color: white;
+	text-decoration: none;
+}
+
+
+@media (min-width: 992px) {
+	.block-center .block-main .title {	
+		font-size: 1.3em;
+	}
+	
+	.block-center .block-main .section .forms{	
+		font-size: 1.2em;
+	}
+
+	.block-center .block-main .section .forms .quest{
+		font-size: 1.3em;
+	}
+
+	.block-center .section .forms .answers {
+		width: 400px;
+	}
+}
+
+
 /*---------------------------------
 PAGE CHOIX
 ----------------------------------*/
-
 /*Style titre page*/
 .block-main-choix h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
@@ -513,8 +1184,7 @@ PAGE CHOIX
 }
 
 /*Event : Style du fond*/
-.block-main-choix .event1,
-.block-main-choix .event2 {
+.block-main-choix .event {
 	background-color: rgba(255,255,255,0.50);
 	border-radius: 20px;
 	padding: 20px;
@@ -523,15 +1193,21 @@ PAGE CHOIX
 	max-width: 650px;
 }
 
+.block-main-choix .event .row {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+}
+
 /*Event : Style image*/
-.block-main-choix .event1 .image1,
-.block-main-choix .event2 .image2 {
-	height: 135px;
+.block-main-choix .event .image {
+	max-height: 135px;
+	max-width: 135px;
 }
 
 /*Event : Style titre*/
-.block-main-choix .event1 .titleevent1,
-.block-main-choix .event2 .titleevent2 {
+.block-main-choix .event .titleevent {
 	font-size: 1.2em;
 	color: #047395;
 	font-weight: bold;
@@ -539,8 +1215,7 @@ PAGE CHOIX
 }
 
 /*Event : Style sous-titre*/
-.block-main-choix .event1 .subtitleevent1,
-.block-main-choix .event2 .subtitleevent2 {
+.block-main-choix .event .subtitleevent {
 	font-size: 1.1em;
 	color: #00022e;
 	font-weight: bold;
@@ -548,57 +1223,384 @@ PAGE CHOIX
 }
 
 /*Event : Style description*/
-.block-main-choix .event1 .descriptionevent1,
-.block-main-choix .event2 .descriptionevent2 {
+.block-main-choix .event .descriptionevent {
 	text-align: justify;
 }
 
 /*Event : Décalage en savoir plus*/
-.block-main-choix .event1 .link,
-.block-main-choix .event2 .link {
+.block-main-choix .event .link {
 	display: flex;
 	justify-content: flex-end;
 }
 
 /*Event : Style texte en savoir plus*/
-.block-main-choix .event1 .link a,
-.block-main-choix .event2 .link a {
+.block-main-choix .event .link a {
 	color: #047395;
 	font-weight: bold;
 }
 
 /*Event : Infos*/
-.block-main-choix .event1 .infoevent1,
-.block-main-choix .event2 .infoevent2 {
+.block-main-choix .event .infoevent {
 	display: flex;
 	justify-content: space-between;
 	padding: 10px 20px 0px 20px;
-	font-size: 1.2em;
+	/*font-size: 1em;*/
 }
 
 /*Event : Suppression espace après paragraphes*/
-.block-main-choix .event1 p,
-.block-main-choix .event2 p {
+.block-main-choix .event p{
 	margin-bottom: 0;
 	max-width: 430px;
 }
 
 /*Event : Infos et icônes sur une ligne + alignement vertical*/
-.block-main-choix .event1 .dayevent1,
-.block-main-choix .event1 .timeevent1,
-.block-main-choix .event1 .placeevent1,
-.block-main-choix .event2 .dayevent2,
-.block-main-choix .event2 .timeevent2,
-.block-main-choix .event2 .placeevent2 {
+.block-main-choix .event .dayevent,
+.block-main-choix .event .timeevent,
+.block-main-choix .event .placeevent {
 	display: flex;
 	align-items: center;
 }
 
 /*Event : Taille des icônes + espace entre icônes et textes*/
-.block-main-choix .infoevent1 img,
-.block-main-choix .infoevent2 img {
+.block-main-choix .infoevent img {
 	max-height: 30px;
 	margin: 0px 15px 0px 0px;
+}
+
+
+
+@media (min-width: 992px) {
+	/*Style titre page*/
+	.block-main-choix h2 {
+		text-align: center;
+		font-size: 1.6em;
+		color: #00022e;
+		margin: 10px 0px 10px;
+	}
+
+
+	/*Style sous-titre page*/
+	.block-main-choix .selection p {
+		font-size: 1.4em;
+		color: white;
+		margin: 20px 0px 20px;
+		text-shadow: 1px 1px 2px #288797;
+	}
+
+	/*Event : Style du fond*/
+	.block-main-choix .event {
+		background-color: rgba(255,255,255,0.50);
+		border-radius: 20px;
+		padding: 20px;
+		font-size: 1.1em;
+		margin: 20px;
+		max-width: 650px;
+	}
+	
+	.block-main-choix .event .row {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+	}
+
+	/*Event : Style image*/
+	.block-main-choix .event .image {
+		max-height: 135px;
+		max-width: 135px;
+	}
+
+	/*Event : Style titre*/
+	.block-main-choix .event .titleevent {
+		font-size: 1.2em;
+		color: #047395;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	/*Event : Style sous-titre*/
+	.block-main-choix .event .subtitleevent {
+		font-size: 1.1em;
+		color: #00022e;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	/*Event : Style description*/
+	.block-main-choix .event .descriptionevent {
+		text-align: justify;
+	}
+
+	/*Event : Décalage en savoir plus*/
+	.block-main-choix .event .link {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	/*Event : Style texte en savoir plus*/
+	.block-main-choix .event .link a {
+		color: #047395;
+		font-weight: bold;
+	}
+
+	/*Event : Infos*/
+	.block-main-choix .event .infoevent {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 20px 0px 20px;
+		/*font-size: 1em;*/
+	}
+
+	/*Event : Suppression espace après paragraphes*/
+	.block-main-choix .event p{
+		margin-bottom: 0;
+		max-width: 430px;
+	}
+
+	/*Event : Infos et icônes sur une ligne + alignement vertical*/
+	.block-main-choix .event .dayevent,
+	.block-main-choix .event .timeevent,
+	.block-main-choix .event .placeevent {
+		display: flex;
+		align-items: center;
+	}
+
+	/*Event : Taille des icônes + espace entre icônes et textes*/
+	.block-main-choix .infoevent img {
+		max-height: 30px;
+		margin: 0px 15px 0px 0px;
+	}
+
+}
+
+/*---------------------------------
+PAGE RESULTATS RECHERCHE
+----------------------------------*/
+/*Bloc résultats recherche*/
+.block-content-search .inner {
+	width: 600px;
+	margin: 0 auto;
+}
+
+/*Alignement titre*/
+.block-content-search .results {
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Affichage liste des résultats*/
+.block-content-search ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0;
+}
+
+/*Style de chaque résultat*/
+.block-content-search li {
+	width: 300px;
+	height: 380px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(255,255,255,0.50);
+    border-radius: 20px;
+    padding: 20px;
+	margin: 0 0 20px;
+}
+
+/*Taille images*/
+.block-content-search li img {
+	max-width: 260px;
+	max-height: 260px;
+	margin: 0 0 20px;
+}
+
+/*Style nom de l'événement*/
+.block-content-search .name {
+	color: #00022e;
+	font-size: 1.3rem;
+	text-decoration: none;
+	text-align: center;
+}
+
+/*Style nom de l'événement*/
+.block-content-search .description {
+	font-size: 1.2rem;	
+	text-decoration: none;
+	text-align: center;
+	color: black;
+}
+
+.block-content-search a:hover,
+.block-content-search a:focus,
+.block-content-search a:active {
+	text-decoration: none;
+}
+
+
+
+/*---------------------------------
+CONTACT
+----------------------------------*/
+
+
+/*Style titre contact*/
+.block-main-contact h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Style intro contact*/
+.block-main-contact .send p {
+	text-align: center;
+	color: white;
+	text-shadow: 1px 1px 2px #288797;
+	font-size: 1.2em;
+	margin: 20px 0 0;
+}
+
+/*Couleur nom des champs*/
+.block-main-contact .form label:nth-of-type(1) {
+	color: #203863;
+}
+
+
+/*Style champs*/
+.block-main-contact .form  p {
+	color: white;
+	margin: 50px 20px;
+	font-size: 1.2em;
+}
+
+
+/*Ombrage texte du formulaire sauf bouton*/
+.block-main-contact .form p:not(:last-of-type) {
+	text-shadow: 1px 1px 2px #288797;
+}
+
+
+/*Espace entre noms champs et zones de texte + boutons radios*/
+.block-main-contact .form p label:nth-of-type(1) {
+	display: block;
+	width: 128px;
+	float: left;
+}
+
+
+/*Style zones de texte*/
+.block-main-contact .form input:first-of-type,
+.block-main-contact .form input:nth-of-type(2),
+.block-main-contact .form input:nth-of-type(3),
+.block-main-contact .form textarea {
+	background-color: rgba(255,255,255,0.50);
+	border: thin;
+	border-radius: 10px;
+	color: #203863;
+}
+
+/*Style zone de texte*/
+.block-main-contact .form textarea {
+	resize: vertical;
+}
+
+/*Style texte bouton*/
+.block-main-contact .form p:last-of-type {
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: 600;
+}
+   
+
+/*Style bouton*/
+.block-main-contact .form p:last-of-type input {
+	color: #203863;
+	padding: 15px 30px;
+	border: thin;
+	border-radius: 10px;
+	background-color: white;
+	filter: drop-shadow(0px 2px 5px #288797); 
+}
+
+/*Style bouton au survol, au tab ou au clic*/
+.block-main-contact .form p:last-of-type input:hover,
+.block-main-contact .form p:last-of-type input:focus,
+.block-main-contact .form p:last-of-type input:active {
+	background-color: #203863;
+	color: white;
+	text-decoration: none;
+}
+
+/*---------------------------------
+CONFIRMATION CONTACT
+----------------------------------*/
+
+
+/*Style titre confirmation contact*/
+.block-main-confirmation-contact h2 {
+	text-align: center;
+	font-size: 1.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+/*Style message confirmation + erreur*/
+.block-main-confirmation-contact .sent p,
+.block-main-confirmation-contact .error p {
+	text-align: center;
+	color: white;
+	text-shadow: 1px 1px 2px #288797;
+	font-size: 1.2em;
+	margin: 40px 0 0;
+}
+
+/*Style liens retour*/
+.block-main-confirmation-contact .sent a,
+.block-main-confirmation-contact .error a {
+	color: #00022e;
+}
+
+/*Style liens retour au survol*/
+.block-main-confirmation-contact .sent a:hover,
+.block-main-confirmation-contact .sent a:focus,
+.block-main-confirmation-contact .sent a:active,
+.block-main-confirmation-contact .error a:hover,
+.block-main-confirmation-contact .error a:focus,
+.block-main-confirmation-contact .error a:active {
+	text-decoration: none;
+	color: #203863;
+}
+
+@media (min-width: 992px) { 
+
+	.block-content-search .inner {
+		width: 1000px;
+		margin: 0 auto;
+	}
+	
+	/*Affichage liste des résultats*/
+	.block-content-search ul {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		padding: 20px 0;
+	}
+	
+	/*Style de chaque résultat*/
+	.block-content-search li {
+		flex-direction: column;
+		align-items: center;
+		border-radius: 20px;
+		padding: 20px;
+		margin: 0 0 20px;
+	}
+	
 }
 
 
@@ -627,6 +1629,11 @@ LARGE DEVICES (desktops, 992px and up)
 		display: block;
 	}
 	
+	.block-nav-web {
+		background-color: #203863;
+		margin: 0 0 40px;
+	}
+	
 	/*Disparition header mobile*/
 	.block-header,
 	.block-nav {
@@ -635,15 +1642,20 @@ LARGE DEVICES (desktops, 992px and up)
 	
 	/*Couleur barre de nav*/
 	.block-nav-web .nav {
-		background: #203863;
-		margin: 0px 0px 40px;
-		width: 100vw;
+		width: 1000px;
 	}
 	
 	/*Style "a"*/
 	.block-nav-web a {
 		color: white;
 		font-size: 1.2em;
+		padding: .5rem 0;
+	}
+	
+	.block-nav-web ul {
+		list-style: none;
+		display: flex;
+		justify-content: space-around;
 	}
 	
 	/*Style séparateurs*/
@@ -666,40 +1678,109 @@ LARGE DEVICES (desktops, 992px and up)
 		color: #46b3a6;
 	}
 	
-	/*---------------------------------
-	PAGE INSCRIPTION GRANDS ECRANS
-	----------------------------------*/
-
-	/*Espace entre noms champs et zones de texte + boutons radios*/
-	.block-main-inscription .form p label:nth-of-type(1) {
-		display: block;
-		width: 150px;
-		float: left;
-	}
-	
-	/*Espace entre boutons radios et textes*/
-	.block-main-inscription .form p:nth-of-type(4) input,
-	.block-main-inscription .form p:nth-of-type(5) input {
-		margin: 0px 20px 0px 0px;	
-	}
-	
-	/*---------------------------------
-	PAGE CONNEXION GRANDS ECRANS
-	----------------------------------*/
-
-	/*Espace entre noms champs et zones de texte + boutons radios*/
-	.block-main-connexion .form p label:nth-of-type(1) {
-		display: block;
-		width: 150px;
-		float: left;
-	}
-	
-	.block-main-connexion .register {
-		margin-bottom: 20px;
-	}
 	
 }
 
+
+/*---------------------------------
+PAGE SOIREE
+----------------------------------*/
+	/* POUR TOUS */
+	.block-main-soiree {
+		color: #00022e;
+		width: 1000px;
+	}
+	
+	/* TITRE */
+	.block-main-soiree .titre_soiree {
+		font-size: 45px;
+		text-align: center;	
+	}
+	
+	/*COORDONNEES + MAP */
+
+	.block-main-soiree .mapcoordonnees {
+		display: flex;
+		margin-top: 10%;
+		width: 1000px;
+		justify-content: space-between;
+		
+	}
+	
+
+	/* COORDONNEES */
+	.block-main-soiree .coordonnees {
+		font-size: 25px;	
+		text-align: right;
+		margin-bottom: 0%;
+	}
+
+	/* Places*/
+	.block-main-soiree	 a{
+		color: orangered;
+		text-align: center;
+	}	
+		
+
+	/*MAP*/
+	.block-main-soiree #map {
+		width: 500px;
+		height: 300px;
+		border: solid;
+	}
+
+	/*affiche*/
+	.block-main-soiree .afficheavis {	
+		display: flex;
+		margin-top: 10%;
+		width: 1000px;		
+		justify-content: space-between;
+	}
+
+	/* Avis */
+
+	.block-main-soiree .avis {
+		width: 450px;
+		padding: 15px;
+	}
+
+	.block-main-soiree .avis .perso {
+		border: 0.2rem solid #2B2B2B;
+		margin-top: 30px;
+		padding: 5px;
+		
+	}
+	
+	.block-main-soiree .avis .perso .userbleu{
+		width: 75px;
+	}
+
+	.block-main-soiree .afficheavis .image{
+		max-height: 400px;
+		max-width: 400px;
+	}
+	.block-main-soiree .afficheavis .avis{
+			font-size: 25px;
+			text-align: center;
+	}
+
+	.block-main-soiree .afficheavis .avis img{
+		max-height: 400px;
+		max-width: 400px;
+	}
+
+
+
+/*------------------------------------
+Mentions légales
+------------------------------------*/
+
+.block_main_legal {
+	display: block;
+	width: 1000px;
+	margin-left: auto ;
+	margin-right: auto;
+}
 
 /*---------------------------------
 FOOTER
@@ -709,9 +1790,11 @@ FOOTER
 	text-align: center;
 	color: white;
 	font-size: 1.1em;
-	width: 100%;
   	height: 50px;
 	text-shadow: 1px 1px 2px #288797;
+	position: absolute;    
+    width: 99vw;
+	margin-bottom: 10px;
 }
 
 /*Couleur des liens*/
