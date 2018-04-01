@@ -238,6 +238,18 @@ HEADER WEB
     align-items: center;
 }
 
+.block-header-web .topbar .connexion .connect,
+.block-header-web .topbar .connexion .profilep {
+	color: #203863;
+}
+
+.block-header-web .topbar .connexion .connect:hover,
+.block-header-web .topbar .connexion .connect:focus,
+.block-header-web .topbar .connexion .connect:active {
+	text-decoration: none;
+	color: #047395;
+}
+
 .block-header-web .topbar .connexion .profile,
 .block-header-web .topbar .connexion .profilep {
 	display: flex;
@@ -259,7 +271,6 @@ HEADER WEB
 }
 
 .block-header-web .topbar .connexion p {
-	color: #203863;
 	font-size: 1.2rem;
 	margin: 0;
 	font-weight: 500;
@@ -1202,6 +1213,14 @@ PAGE CHOIX
 	margin: 10px 0px 10px;
 }
 
+/*Nombre de résultats*/
+.block-main-choix .results {
+	text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px #288797;
+    font-size: 2.5em;
+}
+
 
 /*Event : Style du fond*/
 .block-main-choix .event {
@@ -1301,6 +1320,11 @@ PAGE CHOIX
 	/*Style titre page*/
 	.block-main-choix h2 {
 		font-size: 1.6em;
+	}
+
+	/*Nombre de résultats*/
+	.block-main-choix .results {
+		font-size: 1.3em;
 	}
 
 	/*Event : Style du fond*/

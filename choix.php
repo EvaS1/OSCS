@@ -220,7 +220,17 @@
 							?>								
 						</div>
 
-						<?php									
+						<?php	
+							//S'il y a au moins un résultat : affichage du nombre de résultat(s)
+							if ($statementEvenement -> rowCount() > 0) { 
+							 echo "<div class='results'>Il y a ".$statementEvenement -> rowCount();
+								if ($statementEvenement -> rowCount() > 1) {
+									echo " résultats : </div>";
+								} else {
+									echo " résultat : </div>";
+								} 
+							}
+
 							$i = 0;
 							while ($evenement = $statementEvenement -> fetch()) {
 								$i++;
