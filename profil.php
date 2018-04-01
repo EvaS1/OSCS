@@ -6,7 +6,6 @@
 		<title>Où sortir ce soir ?</title>
 		<link rel="icon" href="Logo/logof.png">
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/eva.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
 		<script src="jquery.min.js"></script>

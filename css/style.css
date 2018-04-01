@@ -331,7 +331,7 @@ HEADER WEB
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px;
+	padding: 0 20px 20px;
 }
 
 .block-header-web .titleandlogo a {
@@ -741,26 +741,42 @@ CONNEXION
 /*---------------------------------
 CONFIRMATION CONNEXION
 ----------------------------------*/
-.block-main-confirmationconnexion p  {
-	display: none;
-}
-
-.block-main-confirmationconnexion .erreurpseudo p,
-.block-main-confirmationconnexion .erreurpassword p {
-	display: block;
-}
-
 .block-main-confirmationconnexion h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
-	margin: 10px 0px 10px;
+	margin: 10px 0px;
 }
 
-.block-main-confirmationconnexion p:last-of-type {
+.block-main-confirmationconnexion p {
 	color: white;
-	font-size: 1.3em;
+	font-size: 2.3em;
 	text-shadow: 1px 1px 2px #288797;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.block-main-confirmationconnexion a {
+	text-shadow: none;
+	color: #00022e;
+}
+
+.block-main-confirmationconnexion a:hover,
+.block-main-confirmationconnexion a:focus,
+.block-main-confirmationconnexion a:active {
+	color: #047395;
+	text-decoration: none; 
+}
+
+@media (min-width: 992px) {
+
+	.block-main-confirmationconnexion h2 {
+		font-size: 1.6em;
+	}
+
+	.block-main-confirmationconnexion p {
+		font-size: 1.3em;
+	}
 }
 
 
@@ -1121,7 +1137,11 @@ PAGES QUESTION
 }
 
 .block-center .section .forms .answers input {
-    margin-right: 10px;
+    margin-right: 16px;
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    vertical-align: 5px;
 }
 
 /*Style bouton*/
@@ -1160,6 +1180,14 @@ PAGES QUESTION
 	.block-center .section .forms .answers {
 		width: 400px;
 	}
+
+	.block-center .section .forms .answers input {
+		margin-right: 10px;
+	    -ms-transform: scale(1);
+	    -webkit-transform: scale(1);
+	    transform: scale(1);
+	    vertical-align: -1px;
+	}
 }
 
 
@@ -1175,21 +1203,13 @@ PAGE CHOIX
 }
 
 
-/*Style sous-titre page*/
-.block-main-choix .selection p {
-	font-size: 1.4em;
-	color: white;
-	margin: 20px 0px 20px;
-	text-shadow: 1px 1px 2px #288797;
-}
-
 /*Event : Style du fond*/
 .block-main-choix .event {
 	background-color: rgba(255,255,255,0.50);
 	border-radius: 20px;
 	padding: 20px;
 	font-size: 1.1em;
-	margin: 20px;
+	margin: 50px 0;
 	max-width: 650px;
 }
 
@@ -1202,13 +1222,12 @@ PAGE CHOIX
 
 /*Event : Style image*/
 .block-main-choix .event .image {
-	max-height: 135px;
-	max-width: 135px;
+	width: 300px;
 }
 
 /*Event : Style titre*/
 .block-main-choix .event .titleevent {
-	font-size: 1.2em;
+	font-size: 2.5em;
 	color: #047395;
 	font-weight: bold;
 	text-align: center;
@@ -1216,7 +1235,7 @@ PAGE CHOIX
 
 /*Event : Style sous-titre*/
 .block-main-choix .event .subtitleevent {
-	font-size: 1.1em;
+	font-size: 2.3em;
 	color: #00022e;
 	font-weight: bold;
 	text-align: center;
@@ -1225,12 +1244,14 @@ PAGE CHOIX
 /*Event : Style description*/
 .block-main-choix .event .descriptionevent {
 	text-align: justify;
+	font-size: 2em;
 }
 
 /*Event : Décalage en savoir plus*/
 .block-main-choix .event .link {
 	display: flex;
 	justify-content: flex-end;
+	font-size: 2em;
 }
 
 /*Event : Style texte en savoir plus*/
@@ -1244,18 +1265,20 @@ PAGE CHOIX
 	display: flex;
 	justify-content: space-between;
 	padding: 10px 20px 0px 20px;
-	/*font-size: 1em;*/
+	font-size: 2em;
+	flex-wrap: wrap;
 }
 
 /*Event : Suppression espace après paragraphes*/
-.block-main-choix .event p{
+.block-main-choix .event p {
 	margin-bottom: 0;
-	max-width: 430px;
+	max-width: 600px;
 }
 
 /*Event : Infos et icônes sur une ligne + alignement vertical*/
 .block-main-choix .event .dayevent,
 .block-main-choix .event .timeevent,
+.block-main-choix .event .priceevent,
 .block-main-choix .event .placeevent {
 	display: flex;
 	align-items: center;
@@ -1263,8 +1286,13 @@ PAGE CHOIX
 
 /*Event : Taille des icônes + espace entre icônes et textes*/
 .block-main-choix .infoevent img {
-	max-height: 30px;
+	max-height: 40px;
 	margin: 0px 15px 0px 0px;
+}
+
+/*Event : Infos sur deux lignes*/
+.block-main-choix .infoevent .dayevent {
+	margin-right: 40px;
 }
 
 
@@ -1272,112 +1300,420 @@ PAGE CHOIX
 @media (min-width: 992px) {
 	/*Style titre page*/
 	.block-main-choix h2 {
-		text-align: center;
 		font-size: 1.6em;
-		color: #00022e;
-		margin: 10px 0px 10px;
-	}
-
-
-	/*Style sous-titre page*/
-	.block-main-choix .selection p {
-		font-size: 1.4em;
-		color: white;
-		margin: 20px 0px 20px;
-		text-shadow: 1px 1px 2px #288797;
 	}
 
 	/*Event : Style du fond*/
 	.block-main-choix .event {
-		background-color: rgba(255,255,255,0.50);
-		border-radius: 20px;
-		padding: 20px;
-		font-size: 1.1em;
-		margin: 20px;
 		max-width: 650px;
+		margin: 20px;
 	}
 	
 	.block-main-choix .event .row {
-		display: flex;
-		justify-content: space-between;
 		flex-direction: row;
 	}
 
 	/*Event : Style image*/
 	.block-main-choix .event .image {
-		max-height: 135px;
-		max-width: 135px;
+		width: 135px;
 	}
 
 	/*Event : Style titre*/
 	.block-main-choix .event .titleevent {
 		font-size: 1.2em;
-		color: #047395;
-		font-weight: bold;
-		text-align: center;
 	}
 
 	/*Event : Style sous-titre*/
 	.block-main-choix .event .subtitleevent {
 		font-size: 1.1em;
-		color: #00022e;
-		font-weight: bold;
-		text-align: center;
 	}
 
 	/*Event : Style description*/
 	.block-main-choix .event .descriptionevent {
-		text-align: justify;
+		font-size: 1em;
 	}
 
 	/*Event : Décalage en savoir plus*/
 	.block-main-choix .event .link {
-		display: flex;
-		justify-content: flex-end;
-	}
-
-	/*Event : Style texte en savoir plus*/
-	.block-main-choix .event .link a {
-		color: #047395;
-		font-weight: bold;
+		font-size: 1em;
+		width: 610px;
 	}
 
 	/*Event : Infos*/
 	.block-main-choix .event .infoevent {
-		display: flex;
-		justify-content: space-between;
-		padding: 10px 20px 0px 20px;
-		/*font-size: 1em;*/
+		font-size: 1em;
+		flex-wrap: nowrap;
 	}
 
 	/*Event : Suppression espace après paragraphes*/
-	.block-main-choix .event p{
-		margin-bottom: 0;
+	.block-main-choix .event p {
 		max-width: 430px;
-	}
-
-	/*Event : Infos et icônes sur une ligne + alignement vertical*/
-	.block-main-choix .event .dayevent,
-	.block-main-choix .event .timeevent,
-	.block-main-choix .event .placeevent {
-		display: flex;
-		align-items: center;
 	}
 
 	/*Event : Taille des icônes + espace entre icônes et textes*/
 	.block-main-choix .infoevent img {
 		max-height: 30px;
-		margin: 0px 15px 0px 0px;
+	}
+
+	/*Event : Suppression marge*/
+	.block-main-choix .infoevent .dayevent {
+		margin-right: 0;
+	}
+
+}
+
+
+/*---------------------------------
+PAGE LISTING
+----------------------------------*/
+/*Style titre page*/
+.block-main-listing h2 {
+	text-align: center;
+	font-size: 3.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+
+/*Event : Style du fond*/
+.block-main-listing .event {
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.1em;
+	margin: 50px 0;
+	max-width: 650px;
+}
+
+.block-main-listing .event .row {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*Event : Style image*/
+.block-main-listing .event .image {
+	width: 300px;
+}
+
+/*Event : Style titre*/
+.block-main-listing .event .titleevent {
+	font-size: 2.5em;
+	color: #047395;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style sous-titre*/
+.block-main-listing .event .subtitleevent {
+	font-size: 2.3em;
+	color: #00022e;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style description*/
+.block-main-listing .event .descriptionevent {
+	text-align: justify;
+	font-size: 2em;
+}
+
+/*Event : Décalage en savoir plus*/
+.block-main-listing .event .link {
+	display: flex;
+	justify-content: flex-end;
+	font-size: 2em;
+}
+
+/*Event : Style texte en savoir plus*/
+.block-main-listing .event .link a {
+	color: #047395;
+	font-weight: bold;
+}
+
+/*Event : Infos*/
+.block-main-listing .event .infoevent {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px 0px 20px;
+	font-size: 2em;
+	flex-wrap: wrap;
+}
+
+/*Event : Suppression espace après paragraphes*/
+.block-main-listing .event p {
+	margin-bottom: 0;
+	max-width: 600px;
+}
+
+/*Event : Infos et icônes sur une ligne + alignement vertical*/
+.block-main-listing .event .dayevent,
+.block-main-listing .event .timeevent,
+.block-main-listing .event .priceevent,
+.block-main-listing .event .placeevent {
+	display: flex;
+	align-items: center;
+}
+
+/*Event : Taille des icônes + espace entre icônes et textes*/
+.block-main-listing .infoevent img {
+	max-height: 40px;
+	margin: 0px 15px 0px 0px;
+}
+
+/*Event : Infos sur deux lignes*/
+.block-main-listing .infoevent .dayevent {
+	margin-right: 40px;
+}
+
+
+
+@media (min-width: 992px) {
+	/*Style titre page*/
+	.block-main-listing h2 {
+		font-size: 1.6em;
+	}
+
+	/*Event : Style du fond*/
+	.block-main-listing .event {
+		max-width: 650px;
+		margin: 20px;
+	}
+	
+	.block-main-listing .event .row {
+		flex-direction: row;
+	}
+
+	/*Event : Style image*/
+	.block-main-listing .event .image {
+		width: 135px;
+	}
+
+	/*Event : Style titre*/
+	.block-main-listing .event .titleevent {
+		font-size: 1.2em;
+	}
+
+	/*Event : Style sous-titre*/
+	.block-main-listing .event .subtitleevent {
+		font-size: 1.1em;
+	}
+
+	/*Event : Style description*/
+	.block-main-listing .event .descriptionevent {
+		font-size: 1em;
+	}
+
+	/*Event : Décalage en savoir plus*/
+	.block-main-listing .event .link {
+		font-size: 1em;
+		width: 610px;
+	}
+
+	/*Event : Infos*/
+	.block-main-listing .event .infoevent {
+		font-size: 1em;
+		flex-wrap: nowrap;
+	}
+
+	/*Event : Suppression espace après paragraphes*/
+	.block-main-listing .event p {
+		max-width: 430px;
+	}
+
+	/*Event : Taille des icônes + espace entre icônes et textes*/
+	.block-main-listing .infoevent img {
+		max-height: 30px;
+	}
+
+	/*Event : Suppression marge*/
+	.block-main-listing .infoevent .dayevent {
+		margin-right: 0;
 	}
 
 }
 
 /*---------------------------------
+PAGE NEWS
+----------------------------------*/
+
+/*Style titre page*/
+.block-main-news h2 {
+	text-align: center;
+	font-size: 3.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+
+/*Event : Style du fond*/
+.block-main-news .event {
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.1em;
+	margin: 50px 0;
+	max-width: 650px;
+}
+
+.block-main-news .event .row {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*Event : Style image*/
+.block-main-news .event .image {
+	width: 300px;
+}
+
+/*Event : Style titre*/
+.block-main-news .event .titleevent {
+	font-size: 2.5em;
+	color: #047395;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style sous-titre*/
+.block-main-news .event .subtitleevent {
+	font-size: 2.3em;
+	color: #00022e;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style description*/
+.block-main-news .event .descriptionevent {
+	text-align: justify;
+	font-size: 2em;
+}
+
+/*Event : Décalage en savoir plus*/
+.block-main-news .event .link {
+	display: flex;
+	justify-content: flex-end;
+	font-size: 2em;
+}
+
+/*Event : Style texte en savoir plus*/
+.block-main-news .event .link a {
+	color: #047395;
+	font-weight: bold;
+}
+
+/*Event : Infos*/
+.block-main-news .event .infoevent {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px 0px 20px;
+	font-size: 2em;
+	flex-wrap: wrap;
+}
+
+/*Event : Suppression espace après paragraphes*/
+.block-main-news .event p {
+	margin-bottom: 0;
+	max-width: 600px;
+}
+
+/*Event : Infos et icônes sur une ligne + alignement vertical*/
+.block-main-news .event .dayevent,
+.block-main-news .event .timeevent,
+.block-main-news .event .priceevent,
+.block-main-news .event .placeevent {
+	display: flex;
+	align-items: center;
+}
+
+/*Event : Taille des icônes + espace entre icônes et textes*/
+.block-main-news .infoevent img {
+	max-height: 40px;
+	margin: 0px 15px 0px 0px;
+}
+
+/*Event : Infos sur deux lignes*/
+.block-main-news .infoevent .dayevent {
+	margin-right: 40px;
+}
+
+
+
+@media (min-width: 992px) {
+	/*Style titre page*/
+	.block-main-news h2 {
+		font-size: 1.6em;
+	}
+
+	/*Event : Style du fond*/
+	.block-main-news .event {
+		max-width: 650px;
+		margin: 20px;
+	}
+	
+	.block-main-news .event .row {
+		flex-direction: row;
+	}
+
+	/*Event : Style image*/
+	.block-main-news .event .image {
+		width: 135px;
+	}
+
+	/*Event : Style titre*/
+	.block-main-news .event .titleevent {
+		font-size: 1.2em;
+	}
+
+	/*Event : Style sous-titre*/
+	.block-main-news .event .subtitleevent {
+		font-size: 1.1em;
+	}
+
+	/*Event : Style description*/
+	.block-main-news .event .descriptionevent {
+		font-size: 1em;
+	}
+
+	/*Event : Décalage en savoir plus*/
+	.block-main-news .event .link {
+		font-size: 1em;
+		width: 610px;
+	}
+
+	/*Event : Infos*/
+	.block-main-news .event .infoevent {
+		font-size: 1em;
+		flex-wrap: nowrap;
+	}
+
+	/*Event : Suppression espace après paragraphes*/
+	.block-main-news .event p {
+		max-width: 430px;
+	}
+
+	/*Event : Taille des icônes + espace entre icônes et textes*/
+	.block-main-news .infoevent img {
+		max-height: 30px;
+	}
+
+	/*Event : Suppression marge*/
+	.block-main-news .infoevent .dayevent {
+		margin-right: 0;
+	}
+
+}
+
+
+/*---------------------------------
 PAGE RESULTATS RECHERCHE
 ----------------------------------*/
+
 /*Bloc résultats recherche*/
 .block-content-search .inner {
-	width: 600px;
+	width: auto;
 	margin: 0 auto;
 }
 
@@ -1385,9 +1721,9 @@ PAGE RESULTATS RECHERCHE
 .block-content-search .results {
 	padding: 0 0 20px;
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 2.6em;
 	color: #00022e;
-	margin: 10px 0px 10px;
+	margin: 10px 0px;
 }
 
 /*Affichage liste des résultats*/
@@ -1401,35 +1737,34 @@ PAGE RESULTATS RECHERCHE
 
 /*Style de chaque résultat*/
 .block-content-search li {
-	width: 300px;
-	height: 380px;
+	width: 550px;
+	height: 600px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: rgba(255,255,255,0.50);
     border-radius: 20px;
-    padding: 20px;
-	margin: 0 0 20px;
+    padding: 50px;
+	margin: 0 0 50px;
 }
 
 /*Taille images*/
 .block-content-search li img {
-	max-width: 260px;
-	max-height: 260px;
+	width: 400px;
 	margin: 0 0 20px;
 }
 
 /*Style nom de l'événement*/
 .block-content-search .name {
 	color: #00022e;
-	font-size: 1.3rem;
+	font-size: 2.3rem;
 	text-decoration: none;
 	text-align: center;
 }
 
 /*Style nom de l'événement*/
 .block-content-search .description {
-	font-size: 1.2rem;	
+	font-size: 2.2rem;	
 	text-decoration: none;
 	text-align: center;
 	color: black;
@@ -1442,16 +1777,62 @@ PAGE RESULTATS RECHERCHE
 }
 
 
+@media (min-width: 992px) {
+	/*Bloc résultats recherche*/
+	.block-content-search .inner {
+		width: 1000px;
+	}
+	
+	/*Affichage liste des résultats*/
+	.block-content-search ul {
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	
+	/*Style de chaque résultat*/
+	.block-content-search li {
+		width: 300px;
+		height: 380px;
+		flex-wrap: wrap;
+		padding: 20px;
+		margin: 0 0 20px;
+	}
+
+	/*Alignement titre*/
+	.block-content-search .results {
+		padding: 0 0 20px;
+		text-align: center;
+		font-size: 1.6em;
+		color: #00022e;
+		margin: 10px 0px 10px;
+	}
+
+	/*Taille images*/
+	.block-content-search li img {
+		width: 260px;
+	}
+
+	/*Style nom de l'événement*/
+	.block-content-search .name {
+		font-size: 1.3rem;
+	}
+
+	/*Style nom de l'événement*/
+	.block-content-search .description {
+		font-size: 1.2rem;
+	}
+}
+
 
 /*---------------------------------
 CONTACT
 ----------------------------------*/
 
-
 /*Style titre contact*/
 .block-main-contact h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
@@ -1461,9 +1842,16 @@ CONTACT
 	text-align: center;
 	color: white;
 	text-shadow: 1px 1px 2px #288797;
-	font-size: 1.2em;
+	font-size: 2.2em;
 	margin: 20px 0 0;
 }
+
+/*Largeur et centrage fieldset*/
+.block-main-cpntact fieldset {
+	width: 650px;
+	margin: 0 auto;
+}
+
 
 /*Couleur nom des champs*/
 .block-main-contact .form label:nth-of-type(1) {
@@ -1475,7 +1863,7 @@ CONTACT
 .block-main-contact .form  p {
 	color: white;
 	margin: 50px 20px;
-	font-size: 1.2em;
+	font-size: 1.8em;
 }
 
 
@@ -1488,20 +1876,23 @@ CONTACT
 /*Espace entre noms champs et zones de texte + boutons radios*/
 .block-main-contact .form p label:nth-of-type(1) {
 	display: block;
-	width: 128px;
+	width: 200px;
 	float: left;
+    font-size: 1.2em;
 }
 
 
 /*Style zones de texte*/
-.block-main-contact .form input:first-of-type,
-.block-main-contact .form input:nth-of-type(2),
-.block-main-contact .form input:nth-of-type(3),
-.block-main-contact .form textarea {
+.block-main-contact .form #firstname,
+.block-main-contact .form #lastname,
+.block-main-contact .form #mail,
+.block-main-contact .form #message {
 	background-color: rgba(255,255,255,0.50);
 	border: thin;
 	border-radius: 10px;
 	color: #203863;
+	font-size: 1.3em;
+	width: 450px;
 }
 
 /*Style zone de texte*/
@@ -1525,6 +1916,7 @@ CONTACT
 	border-radius: 10px;
 	background-color: white;
 	filter: drop-shadow(0px 2px 5px #288797); 
+	font-size: 1.6em;
 }
 
 /*Style bouton au survol, au tab ou au clic*/
@@ -1536,6 +1928,57 @@ CONTACT
 	text-decoration: none;
 }
 
+
+@media (min-width: 992px) {
+
+	/*Style titre contact*/
+	.block-main-contact h2 {
+		font-size: 1.6em;
+	}
+
+	/*Largeur et centrage fieldset*/
+	.block-main-contact fieldset {
+		width: 430px;
+	}
+
+	/*Style intro contact*/
+	.block-main-contact .send p {
+		font-size: 1.2em;
+	}
+
+	/*Style champs*/
+	.block-main-contact .form  p {
+		font-size: 1.2em;
+	}
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-contact .form p label:nth-of-type(1) {
+		width: 128px;
+		font-size: 1em;
+	}
+
+
+	/*Style zones de texte*/
+	.block-main-contact .form #firstname,
+	.block-main-contact .form #lastname,
+	.block-main-contact .form #mail,
+	.block-main-contact .form #message {
+		font-size: 1rem;
+		width: 258px;
+	}
+
+	/*Style texte bouton*/
+	.block-main-contact .form p:last-of-type {
+		font-size: 1.3em;
+	}
+	   
+
+	/*Style bouton*/
+	.block-main-contact .form p:last-of-type input {
+		font-size: 1em;
+	}
+}
+
 /*---------------------------------
 CONFIRMATION CONTACT
 ----------------------------------*/
@@ -1544,7 +1987,7 @@ CONFIRMATION CONTACT
 /*Style titre confirmation contact*/
 .block-main-confirmation-contact h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
@@ -1555,7 +1998,7 @@ CONFIRMATION CONTACT
 	text-align: center;
 	color: white;
 	text-shadow: 1px 1px 2px #288797;
-	font-size: 1.2em;
+	font-size: 2.2em;
 	margin: 40px 0 0;
 }
 
@@ -1576,31 +2019,19 @@ CONFIRMATION CONTACT
 	color: #203863;
 }
 
-@media (min-width: 992px) { 
 
-	.block-content-search .inner {
-		width: 1000px;
-		margin: 0 auto;
+@media (min-width: 992px) {
+
+	/*Style titre confirmation contact*/
+	.block-main-confirmation-contact h2 {
+		font-size: 1.6em;
 	}
-	
-	/*Affichage liste des résultats*/
-	.block-content-search ul {
-		list-style: none;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		padding: 20px 0;
+
+	/*Style message confirmation + erreur*/
+	.block-main-confirmation-contact .sent p,
+	.block-main-confirmation-contact .error p {
+		font-size: 1.2em;
 	}
-	
-	/*Style de chaque résultat*/
-	.block-content-search li {
-		flex-direction: column;
-		align-items: center;
-		border-radius: 20px;
-		padding: 20px;
-		margin: 0 0 20px;
-	}
-	
 }
 
 
@@ -1685,116 +2116,145 @@ LARGE DEVICES (desktops, 992px and up)
 /*---------------------------------
 PAGE SOIREE
 ----------------------------------*/
-	/* POUR TOUS */
-	.block-main-soiree {
-		color: #00022e;
-		width: 1000px;
-	}
-	
-	/* TITRE */
-	.block-main-soiree .titre_soiree {
-		font-size: 45px;
-		text-align: center;	
-	}
-	
-	/*COORDONNEES + MAP */
+/* POUR TOUS */
+.block-main-soiree {
+	color: #00022e;
+	width: 1000px;
+}
 
-	.block-main-soiree .mapcoordonnees {
-		display: flex;
-		margin-top: 10%;
-		width: 1000px;
-		justify-content: space-between;
-		
-	}
+/* TITRE */
+.block-main-soiree .titre_soiree {
+	font-size: 45px;
+	text-align: center;	
+}
+
+/*COORDONNEES + MAP */
+
+.block-main-soiree .mapcoordonnees {
+	display: flex;
+	margin-top: 10%;
+	width: 1000px;
+	justify-content: space-between;
+	
+}
+
+
+/* COORDONNEES */
+.block-main-soiree .coordonnees {
+	font-size: 25px;	
+	text-align: right;
+	margin-bottom: 0%;
+}
+
+/* Places*/
+.block-main-soiree	 a{
+	color: orangered;
+	text-align: center;
+}	
 	
 
-	/* COORDONNEES */
-	.block-main-soiree .coordonnees {
-		font-size: 25px;	
-		text-align: right;
-		margin-bottom: 0%;
-	}
+/*MAP*/
+.block-main-soiree #map {
+	width: 500px;
+	height: 300px;
+	border: solid;
+}
 
-	/* Places*/
-	.block-main-soiree	 a{
-		color: orangered;
+/*affiche*/
+.block-main-soiree .afficheavis {	
+	display: flex;
+	margin-top: 10%;
+	width: 1000px;		
+	justify-content: space-between;
+}
+
+/* Avis */
+
+.block-main-soiree .avis {
+	width: 450px;
+	padding: 15px;
+}
+
+.block-main-soiree .avis .perso {
+	border: 0.2rem solid #2B2B2B;
+	margin-top: 30px;
+	padding: 5px;
+	
+}
+
+.block-main-soiree .avis .perso .userbleu{
+	width: 75px;
+}
+
+.block-main-soiree .afficheavis .image{
+	max-height: 400px;
+	max-width: 400px;
+}
+.block-main-soiree .afficheavis .avis{
+		font-size: 25px;
 		text-align: center;
-	}	
-		
+}
 
-	/*MAP*/
-	.block-main-soiree #map {
-		width: 500px;
-		height: 300px;
-		border: solid;
-	}
-
-	/*affiche*/
-	.block-main-soiree .afficheavis {	
-		display: flex;
-		margin-top: 10%;
-		width: 1000px;		
-		justify-content: space-between;
-	}
-
-	/* Avis */
-
-	.block-main-soiree .avis {
-		width: 450px;
-		padding: 15px;
-	}
-
-	.block-main-soiree .avis .perso {
-		border: 0.2rem solid #2B2B2B;
-		margin-top: 30px;
-		padding: 5px;
-		
-	}
-	
-	.block-main-soiree .avis .perso .userbleu{
-		width: 75px;
-	}
-
-	.block-main-soiree .afficheavis .image{
-		max-height: 400px;
-		max-width: 400px;
-	}
-	.block-main-soiree .afficheavis .avis{
-			font-size: 25px;
-			text-align: center;
-	}
-
-	.block-main-soiree .afficheavis .avis img{
-		max-height: 400px;
-		max-width: 400px;
-	}
+.block-main-soiree .afficheavis .avis img{
+	max-height: 400px;
+	max-width: 400px;
+}
 
 
 
-/*------------------------------------
-Mentions légales
-------------------------------------*/
+/*---------------------------------------------------
+Mentions légales + CGU + Politique de confidentialité
+-----------------------------------------------------*/
 
 .block_main_legal {
 	display: block;
-	width: 1000px;
-	margin-left: auto ;
-	margin-right: auto;
+	width: 700px;
+	margin: 20px auto;
+	text-align: justify;
 }
+
+.block_main_legal h2 {
+	text-align: center;
+	font-size: 3.6em;
+	color: #00022e;
+	margin: 10px 0px 40px;
+}
+
+.block_main_legal h3,
+.block_main_legal p {
+	font-size: 2.3em;
+}
+
+
+@media (min-width: 992px) {
+	.block_main_legal {
+		width: 1000px;
+	}
+
+	.block_main_legal h2 {
+		font-size: 1.6em;
+	}
+
+	.block_main_legal h3,
+	.block_main_legal p {
+		font-size: 1em;
+	}
+}
+
 
 /*---------------------------------
 FOOTER
 ----------------------------------*/
+
 .footer {
 	background-color: transparent;
 	text-align: center;
 	color: white;
-	font-size: 1.1em;
+	font-size: 1.3em;
   	height: 50px;
-	text-shadow: 1px 1px 2px #288797;
-	position: absolute;    
-    width: 99vw;
-	margin-bottom: 10px;
+	text-shadow: 1px 1px 2px #288797;   
+    width: 98vw;
+	margin: 0 auto 10px;
 }
 
 /*Couleur des liens*/
@@ -1811,7 +2271,7 @@ FOOTER
 
 /*Espace entre liens du footer*/
 .footer ul li:not(:last-of-type) {
-	padding-right: 10px;
+	padding-right: 18px;
 }
 
 /*Séparateur*/
@@ -1819,3 +2279,14 @@ FOOTER
 	background-color: white;
 }
 
+
+@media (min-width: 992px) {
+	.footer {
+		font-size: 1.1em;
+	}
+
+	/*Espace entre liens du footer*/
+	.footer ul li:not(:last-of-type) {
+		padding-right: 10px;
+	}
+}

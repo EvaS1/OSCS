@@ -8,8 +8,9 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
-	<script src="menu.js"></script>
 	<script src="jquery.min.js"></script>
+	<script src="menu.js"></script>
+	
 </head>
 
 <body>
@@ -18,7 +19,7 @@
 	
 		<div class="block_main_legal">
 
-			<h2>Politique modèle de confidentialité.</h2>
+			<h2>Politique de confidentialité</h2>
 
 			<h3>1 : Collecte des renseignements personnels</h3>
 
@@ -74,7 +75,7 @@
 
 			<p>Nous nous engageons à reconnaître un droit d'accès et de rectification aux personnes concernées désireuses de consulter, modifier, voire radier les informations les concernant.<br />
 			L'exercice de ce droit se fera :<br />
-			Code postal : 19 Rue André le Notre, Angers 4900<br />
+			Code postal : 19 Rue André le Nôtre, Angers 4900<br />
 			Section du site web : http://www.ousortircesoir.com/ <br /><br /></p>
 
 			<h3>6 : Sécurité</h3>
@@ -90,12 +91,6 @@
 			Nous nous engageons à maintenir un haut degré de confidentialité en intégrant les dernières innovations technologiques permettant d'assurer la confidentialité de vos transactions. Toutefois, comme aucun mécanisme n'offre une sécurité maximale, une part de risque est toujours présente lorsque l'on utilise Internet pour transmettre des renseignements personnels.<br />
 
 			</p>
-
-			<h3>7 : Enfants</h3>
-
-			<p>Notre site Web contient des sections destinées aux enfants. La collecte de leurs renseignements personnels se fait avec le consentement des parents ou du représentant de l'enfant. Nous demandons le consentement de ces derniers par le biais :<br /><br />
-
-			Formulaire d'inscription</p><br />
 	
 		</div>
 	</div>

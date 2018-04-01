@@ -17,7 +17,7 @@
 		<div class="page">
 			<?php include('header.php');?>
 			<div class="content">
-				<main class="block-main-connexion">
+				<main class="block-main-confirmationconnexion">
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
@@ -38,7 +38,8 @@
 
 								//S'il n'y a pas de résultat => message d'erreur
 								if (!$resultat) {
-									echo "Il n'y a pas de compte créé avec cette adresse, pour t'inscrire <a href='inscription.php'>clique ici</a>.";
+									echo "<p>Email ou mot de passe non valide, pour réessayer <a href='connexion.php'>clique ici</a>.</p>";
+
 								//Si l'utilisateur est bien inscrit, on récupère son id pour la session
 								}else {
 									$_SESSION['id'] = $resultat->idMembre;
@@ -46,7 +47,7 @@
 										header('Location: debutformulaire.php');
 									}
 									else {
-										echo "Email ou mot de passe non valide, pour réessayer <a href='connexion.php'>clique ici</a>.";
+										echo "<p>Email ou mot de passe non valide, pour réessayer <a href='connexion.php'>clique ici</a>.</p>";
 									}
 								} 
 								
