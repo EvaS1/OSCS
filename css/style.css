@@ -239,7 +239,8 @@ HEADER WEB
 }
 
 .block-header-web .topbar .connexion .connect,
-.block-header-web .topbar .connexion .profilep {
+.block-header-web .topbar .connexion .profilep,
+.block-header-web .topbar .connexion .profile {
 	color: #203863;
 }
 
