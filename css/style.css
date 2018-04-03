@@ -2291,15 +2291,22 @@ FOOTER
 	text-align: center;
 	color: white;
 	font-size: 1.3em;
-  	height: 50px;
 	text-shadow: 1px 1px 2px #288797;   
     width: 98vw;
-	margin: 0 auto 10px;
+	margin: 0 auto;
 }
 
 /*Couleur des liens*/
 .footer ul a {
 	color: white;
+}
+
+/*Couleur des liens au sruvol, clic et tab*/
+.footer ul a:hover,
+.footer ul a:focus,
+.footer ul a:active {
+	color: #203863;
+	text-decoration: none;
 }
 
 /*Alignement footer*/

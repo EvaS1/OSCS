@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 27 mars 2018 à 11:14
+-- Généré le :  mar. 03 avr. 2018 à 09:58
 -- Version du serveur :  10.1.25-MariaDB
 -- Version de PHP :  5.6.31
 
@@ -31,7 +31,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `avis` (
   `idAvis` int(11) NOT NULL,
   `commentaireAvis` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `noteAvis` int(1) NOT NULL,
   `idEvenement` int(11) NOT NULL,
   `idMembre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,10 +39,13 @@ CREATE TABLE `avis` (
 -- Déchargement des données de la table `avis`
 --
 
-INSERT INTO `avis` (`idAvis`, `commentaireAvis`, `noteAvis`, `idEvenement`, `idMembre`) VALUES
-(1, 'Un bon concret plutôt bien fait, un peps inoyable merci.', 4, 3, 18),
-(2, 'Un bon ptit bar bien sympatoche.', 5, 1, 17),
-(4, 'sympas moi j adore en tout cas', 3, 2, 19);
+INSERT INTO `avis` (`idAvis`, `commentaireAvis`, `idEvenement`, `idMembre`) VALUES
+(1, 'Un bon concert plutôt bien fait, un peps inoyable merci.', 2, 18),
+(2, 'Un bon ptit bar bien sympatoche.', 1, 19),
+(4, 'sympas moi j adore en tout cas', 3, 24),
+(7, 'bof j\'aime pas trop très beauff', 4, 25),
+(8, 'sympatoche', 6, 19),
+(9, 'pas ouff.', 5, 18);
 
 --
 -- Index pour les tables déchargées
@@ -65,18 +67,7 @@ ALTER TABLE `avis`
 -- AUTO_INCREMENT pour la table `avis`
 --
 ALTER TABLE `avis`
-  MODIFY `idAvis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `avis`
---
-ALTER TABLE `avis`
-  ADD CONSTRAINT `evenement2` FOREIGN KEY (`idEvenement`) REFERENCES `evenement` (`idEvenement`),
-  ADD CONSTRAINT `membre` FOREIGN KEY (`idMembre`) REFERENCES `membres` (`idMembre`);
-COMMIT;
+  MODIFY `idAvis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

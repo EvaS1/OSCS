@@ -54,7 +54,6 @@
 											<p>											
 												<input id="button" type="submit" value="Envoyer">
 											</p>
-
 										</fieldset>
 									</form>
 								
