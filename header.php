@@ -21,7 +21,12 @@
 					$profil = $statement -> fetch();
 					
 					//Affichage icône
-					echo "<a href='profil.php' class='profile'><img src='Icones/userb.png'></a>";
+					if (($profil -> photoMembre)=='') {
+						echo "<a href='profil.php' class='profile'><img src='Icones/userb.png'></a>";
+					} else {
+						echo "<a href='profil.php' class='profilep'><img src='Images/".$profil -> photoMembre."'></a>";
+					}
+				
 					
 					//Sous-menu
 					echo  "<ul class='sous-menu'><li><a href='profil.php'>Mon profil</a></li><li><a href='deconnexion.php'>Déconnexion</a></li></ul>";
@@ -95,7 +100,7 @@
 			<div class="connexion">
 					<?php
 					//Si l'utilisateur n'est pas connecté, lien vers page connexion
-					if (!isset($_SESSION['id'])) {
+					if (!isset($_SESSION['id']) ) {
 						echo "<a href='connexion.php' class='connect'><img src='Icones/userb.png'><p>Connexion</p></a>";
 						
 					//S'il est connecté, lien vers profil ou déconnexion
@@ -106,8 +111,13 @@
 						$statement -> execute();
 
 						$profil = $statement -> fetch();
-							
-						echo "<a href='profil.php' class='profile'><img src='Icones/userb.png'><p>".$profil -> pseudoMembre."</p></a>";
+						
+						//Affichage icône
+						if (($profil -> photoMembre)=='') {
+							echo "<a href='profil.php' class='profile'><img src='Icones/userb.png'><p>".$profil -> pseudoMembre."</p></a>";
+						} else {
+							echo "<a href='profil.php' class='profilep'><img src='Images/".$profil -> photoMembre."'><p>".$profil -> pseudoMembre."</p></a>";
+						}
 						
 						//Sous-menu
 						echo  "<ul class='sous-menu'><li><a href='profil.php'>Mon profil</a></li><li><a href='deconnexion.php'>Déconnexion</a></li></ul>";
@@ -116,7 +126,13 @@
 			</div>
 		</div>
 		<div class="titleandlogo">
-			<a href="connexion.php"><h1>Où sortir ce soir</h1></a>
+			<?php
+			if (!isset($_SESSION['id'])) {
+				echo '<a href="connexion.php"><h1>Où sortir ce soir</h1></a>';
+			}  else {
+				echo '<a href="news.php"><h1>Où sortir ce soir</h1></a>';
+			}				
+			?>
 			<img class="logo-web" src="Logo/logof.png" alt="logo">
 		</div>
 		

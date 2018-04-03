@@ -6,7 +6,6 @@
 		<title>Où sortir ce soir ?</title>
 		<link rel="icon" href="Logo/logof.png">
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/eva.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 		<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
 		<script src="jquery.min.js"></script>
@@ -38,36 +37,30 @@
 								<div class="event">
 									<div class="container">
 										<div class="row">
-											<div class="col-3">
-												<div class="inner">
-													<?php 
-														$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
-														$statementImage = $connexion->prepare($query);
-														$statementImage -> bindValue(':id', $evenement -> idEvenement);
-														$statementImage -> execute();
-														$image = $statementImage -> fetch ();
-														echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
-													?>
+											<div class="inner">
+												<?php 
+													$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
+													$statementImage = $connexion->prepare($query);
+													$statementImage -> bindValue(':id', $evenement -> idEvenement);
+													$statementImage -> execute();
+													$image = $statementImage -> fetch ();
+													echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
+												?>
+											</div>
+											<div class="inner">
+												<div class="titleevent">
+													<p><?php echo $evenement -> nomEvenement; ?></p>
+												</div>
+												<div class="subtitleevent">
+													<p><?php echo $evenement -> libelleCourtEvenement;?></p>
+												</div>
+												<div class="descriptionevent">
+													<p><?php echo $evenement -> descriptionEvenement;?></p>
 												</div>
 											</div>
-											<div class="col-9">
-												<div class="inner">
-													<div class="titleevent">
-														<p><?php echo $evenement -> nomEvenement; ?></p>
-													</div>
-													<div class="subtitleevent">
-														<p><?php echo $evenement -> libelleCourtEvenement;?></p>
-													</div>
-													<div class="descriptionevent">
-														<p><?php echo $evenement -> descriptionEvenement;?></p>
-													</div>
-												</div>
-											</div>
-											<div class="col">
-												<div class="inner">
-													<div class="link">
-														<a class="lamomali-link" href="soiree.php?id=<?php echo $evenement -> idEvenement;?>">En savoir plus</a>
-													</div>
+											<div class="inner">
+												<div class="link">
+													<a class="lamomali-link" href="soiree.php?id=<?php echo $evenement -> idEvenement;?>">En savoir plus</a>
 												</div>
 											</div>
 										</div> 
@@ -119,8 +112,8 @@
 					</div>					
 				</main>
 			</div>
-			<?php include('footer.php');?>
 		</div>
+		<?php include('footer.php');?>		
 	</body>
 	
 </html>

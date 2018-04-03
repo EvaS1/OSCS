@@ -8,16 +8,16 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
-	<script src="menu.js"></script>
 	<script src="jquery.min.js"></script>
+	<script src="menu.js"></script>
+	
 </head>
 
 <body>
 	<div class="page">
-			<?php include('header.php')?>;
+			<?php include('header.php')?>
 	
 		<div class="block_main_legal">
-			Vos mentions légales :
 
 			<h2>Informations légales</h2>
 
@@ -27,7 +27,7 @@
 
 			<p><strong>Propriétaire</strong> : Où sortir ce soir – Start-up – 19 Rue André le Notre<br />
 
-			<strong>Créateur</strong>  : <a href="http://www.ousortircesoir.com/">Eva et Hugo</a><br />
+			<strong>Créateurs</strong>  : <a href="http://www.ousortircesoir.com/">Eva et Hugo</a><br />
 
 			<strong>Responsable publication</strong> : Jean Sérien – hugocrach@gmail.com<br />
 
@@ -124,7 +124,8 @@
 
 			<p>Informations personnelles : « les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).</p>
 	
-			</div>
+		</div>
+	</div>
 	<?php include "footer.php" ?>
 
 

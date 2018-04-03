@@ -27,6 +27,11 @@ body {
 	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
 }
 
+.page {
+	position: relative;
+	min-height: 94vh;
+}
+
 .content {
 	min-height: 570px;
 }
@@ -36,7 +41,7 @@ body {
 HEADER MOBILE
 ----------------------------------*/
 .block-header .inner {
-	margin: 35px;
+	padding: 35px;
 	display: flex;
 	justify-content: space-between; 
 	align-items: center;
@@ -46,19 +51,24 @@ HEADER MOBILE
 /*Bouton menu par dessus la sidebar*/
 .block-header #btnClickMe {
 	z-index: 99;
-	width: 50px;
+	width: 100px;
 }
 
 /*Style logo mobile*/
 .block-header .logo-mobile  {
 	display: block;
-	width: 13%;
+	width: 25%;
 }
 
 /*Taille icône user*/
-.block-header .connexion img{
-	width: 50px;
+.block-header .connexion img {
+	width: 100px;
 	margin: 20px 0;
+}
+
+.block-header .connexion .profilep img {
+	border-radius: 100%;
+	border: 3px solid #203863;
 }
 
 /*Style lien connexion*/
@@ -76,7 +86,7 @@ HEADER MOBILE
     background-color: rgba(255,255,255,0.5);
 	position: absolute;
     right: 33px;
-    top: 120px;
+    top: 215px;
 	display: none;
 }
 
@@ -102,7 +112,7 @@ HEADER MOBILE
 /*Couleur et taille liens du sous-menu*/
 .block-header .inner .sous-menu li a {
 	color: #203863;
-	font-size: 1em;
+	font-size: 2em;
 }
 
 /*Style du premier li du sous-menu au survol*/
@@ -140,7 +150,7 @@ NAV MOBILE
 	background-color: #203863;
 	visibility: visible;
 	color: white;
-	padding: 25px;
+	padding: 85px 40px;
 	font-family: 'Fjalla One', Arial, sans-serif; 
 	font-size: 25px;
 	z-index: 98;
@@ -148,16 +158,22 @@ NAV MOBILE
 
 .block-nav #menu .titre {
 	text-align: center;
-	margin: 50px;
+	margin: 40px 0px 40px 100px;
 	color: white;
+}
+
+.block-nav #menu .titre h2 {
+	font-size: 3rem
 }
 
 .block-nav .search {
 	border-radius: 10px;
 	padding: 5px;
-	font-size: 20px;
+	font-size: 30px;
 	border: 2px solid #46b3a6;
 	background-color: rgba(255,255,255,0.90);
+	width: 350px;
+	margin: 40px 0 0
 }
 
 .block-nav .lemenu {
@@ -166,13 +182,13 @@ NAV MOBILE
 }
 
 .block-nav li {
-	padding-top: 20px;
+	padding-top: 40px;
 }
 
 .block-nav li a {
 	color: white;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 40px;
 }
 
 .block-nav li a:hover,
@@ -196,7 +212,6 @@ HEADER WEB
 	align-items: center;
 	width: 1000px;
 	margin: auto;
-	margin-top: 20px;
 }
 
 .block-header-web .topbar .socialmedia ul {
@@ -217,7 +232,27 @@ HEADER WEB
 	justify-content: space-around;
 }
 
+.block-header-web .topbar .connect {
+	display: flex;
+    align-items: center;
+	margin: 20px 0;
+}
+
+.block-header-web .topbar .connexion .connect,
+.block-header-web .topbar .connexion .profilep,
 .block-header-web .topbar .connexion .profile {
+	color: #203863;
+}
+
+.block-header-web .topbar .connexion .connect:hover,
+.block-header-web .topbar .connexion .connect:focus,
+.block-header-web .topbar .connexion .connect:active {
+	text-decoration: none;
+	color: #047395;
+}
+
+.block-header-web .topbar .connexion .profile,
+.block-header-web .topbar .connexion .profilep {
 	display: flex;
 	align-items: center;
 	text-decoration: none;
@@ -230,8 +265,13 @@ HEADER WEB
 	margin-right: 10px;
 }
 
+.block-header-web .topbar .connexion .profilep img {
+	border-radius: 100%;
+	border: 3px solid #203863;
+	width: 35px
+}
+
 .block-header-web .topbar .connexion p {
-	color: #203863;
 	font-size: 1.2rem;
 	margin: 0;
 	font-weight: 500;
@@ -303,7 +343,7 @@ HEADER WEB
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 20px;
+	padding: 0 20px 20px;
 }
 
 .block-header-web .titleandlogo a {
@@ -340,10 +380,10 @@ BARRE DE RECHERCHE
 .block-nav .button {
 	position: absolute;
     z-index: 1;
-    margin: -32px 0 0 225px;
+    margin: -44px 0 0 308px;
     background-image: url(../Icones/searchb.png);
-    width: 21px; 
-    height: 21px; 
+    width: 30px; 
+    height: 30px; 
     background-color: rgba(0,0,0,0);
     overflow: hidden;
     background-size: cover;
@@ -396,11 +436,10 @@ PAGE INSCRIPTION
 /*Style Inscription*/
 .block-main-inscription h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
-
 
 /*Couleur nom des champs*/
 .block-main-inscription .form label:nth-of-type(1) {
@@ -411,8 +450,9 @@ PAGE INSCRIPTION
 /*Style champs*/
 .block-main-inscription .form  p {
 	color: white;
-	margin: 50px 20px;
-	font-size: 1.2em;
+	margin: 50px 0px;
+	font-size: 2.6em;
+	width: 690px;
 }
 
 
@@ -425,11 +465,13 @@ PAGE INSCRIPTION
 /*Espace entre noms champs et zones de texte + boutons radios*/
 .block-main-inscription .form p label:nth-of-type(1) {
 	display: block;
-	width: 128px;
+	width: 690px;
 	float: left;
 }
 
-
+.block-main-inscription .form #radio {
+	width: 127px;
+}
 
 /*Espace entre boutons radios et textes*/
 .block-main-inscription .form p:nth-of-type(4) input,
@@ -439,14 +481,20 @@ PAGE INSCRIPTION
 
 
 /*Style zones de texte*/
-.block-main-inscription .form input:first-of-type,
-.block-main-inscription .form input:nth-of-type(2),
-.block-main-inscription .form input:nth-of-type(3) {
+.block-main-inscription .form #pseudo,
+.block-main-inscription .form #email,
+.block-main-inscription .form #password {
 	background-color: rgba(255,255,255,0.50);
 	border: thin;
 	border-radius: 10px;
 	color: #203863;
+	width: 690px;
 }
+
+.block-main-inscription .form #age,
+.block-main-inscription .form #gender {
+	font-size: 0.75em;
+} 
 
 
 /*Espace entre chaque input*/
@@ -460,7 +508,7 @@ PAGE INSCRIPTION
 /*Style texte bouton*/
 .block-main-inscription .form p:last-of-type {
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 2.3em;
 	font-weight: 600;
 }
    
@@ -486,33 +534,53 @@ PAGE INSCRIPTION
 
 
 
+@media (min-width: 992px) { 
 
-/*Style Inscription*/
-.block-main-confirmationinscription .titleconfirmation h2 {
-	text-align: center;
-	font-size: 1.6em;
-	color: #00022e;
-	margin: 10px 0px 10px;
-}
 
-/*Style confirmation*/
-.block-main-confirmationinscription .confirmation {
-	color: white;
-	text-shadow: 1px 1px 2px #288797;
-	font-size: 1.4em;
-	margin: 20px;
-}
+	/*Style Inscription*/
+	.block-main-inscription h2 {
+		font-size: 1.6em;
+	}
 
-/*Style lien suivant*/
-.block-main-confirmationinscription .buttonlink {
-	text-align: center;
+	/*Style champs*/
+	.block-main-inscription .form  p {
+		font-size: 1.2em;
+		width: 720px;
+	}
+
+	/*Style zones de texte*/
+	.block-main-inscription .form #pseudo,
+	.block-main-inscription .form #email,
+	.block-main-inscription .form #password {
+		width: 425px;
+	}
+
+	.block-main-inscription .form #age,
+	.block-main-inscription .form #gender {
+		font-size: 1em;
+	} 
+
+	/*Style texte bouton*/
+	.block-main-inscription .form p:last-of-type {
+		font-size: 1.3em;
+	}
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-inscription .form p label:nth-of-type(1) {
+		width: 150px;
+	}
 	
-}
+	.block-main-inscription .form #radio {
+		width: 150px;
+	}
 
-/*Style texte lien suivant*/
-.block-main-confirmationinscription .buttonlink a {
-	color: #00022e;
-	font-size: 1.3em;
+	/*Espace entre boutons radios et textes*/
+	.block-main-inscription .form p:nth-of-type(4) input,
+	.block-main-inscription .form p:nth-of-type(5) input {
+		margin: 0px 20px 0px 0px;	
+	}
+
+	
 }
 
 /*---------------------------------
@@ -523,11 +591,10 @@ CONNEXION
 /*Style titre connexion*/
 .block-main-connexion h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
-
 
 /*Couleur nom des champs*/
 .block-main-connexion .form label:nth-of-type(1) {
@@ -539,7 +606,7 @@ CONNEXION
 .block-main-connexion .form  p {
 	color: white;
 	margin: 50px 20px;
-	font-size: 1.3em;
+	font-size: 2.6em;
 }
 
 
@@ -552,7 +619,7 @@ CONNEXION
 /*Espace entre noms champs et zones de texte + boutons radios*/
 .block-main-connexion .form p label:nth-of-type(1) {
 	display: block;
-	width: 128px;
+	width: 690px;
 	float: left;
 }
 
@@ -566,13 +633,13 @@ CONNEXION
 
 
 /*Style zones de texte*/
-.block-main-connexion .form input:first-of-type,
-.block-main-connexion .form input:nth-of-type(2),
-.block-main-connexion .form input:nth-of-type(3) {
+.block-main-connexion .form #mail,
+.block-main-connexion .form #password {
 	background-color: rgba(255,255,255,0.50);
 	border: thin;
 	border-radius: 10px;
 	color: #203863;
+	width: 690px;
 }
 
 
@@ -587,7 +654,7 @@ CONNEXION
 /*Style texte bouton*/
 .block-main-connexion .form p:last-of-type {
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 2.6em;
 	font-weight: 600;
 	margin: 70px;
 }
@@ -616,6 +683,7 @@ CONNEXION
 .block-main-connexion hr {
 	background-color: white;
 	height: 1px;
+	margin-bottom: 2rem;
 }
 
 /*Style Rien de prévu + inscription*/
@@ -628,7 +696,7 @@ CONNEXION
 .block-main-connexion .noplan p,
 .block-main-connexion .register a {
 	color: #203863;
-	font-size: 1.3em;
+	font-size: 2.6em;
 	text-shadow: 1px 1px 2px #288797;
 	text-decoration: none;
 }
@@ -639,72 +707,101 @@ CONNEXION
 }
 
 
-/*MAIN CONFIRMATION CONNEXION*/
-.block-main-confirmationconnexion p  {
-	display: none;
-}
+@media (min-width: 992px) { 
+	
+	/*Style titre connexion*/
+	.block-main-connexion h2 {
+		font-size: 1.6em;
+	}
 
-.block-main-confirmationconnexion .erreurpseudo p,
-.block-main-confirmationconnexion .erreurpassword p {
-	display: block;
-}
+	/*Style champs*/
+	.block-main-connexion .form  p {
+		font-size: 1.3em;
+	}
 
-.block-main-confirmationconnexion h2 {
-	text-align: center;
-	font-size: 1.6em;
-	color: #00022e;
-	margin: 10px 0px 10px;
-}
+	/*Style zones de texte*/
+	.block-main-connexion .form #mail,
+	.block-main-connexion .form #password {
+		width: 363px;
+	}
 
-.block-main-confirmationconnexion p:last-of-type {
-	color: white;
-	font-size: 1.3em;
-	text-shadow: 1px 1px 2px #288797;
+	/*Style texte bouton*/
+	.block-main-connexion .form p:last-of-type {
+		font-size: 1.3em;
+	}
+
+	/*Style ligne horizontale*/
+	.block-main-connexion hr {
+		margin-bottom: 1rem;
+	}
+
+	/*Style texte Rien de prévu + inscription*/
+	.block-main-connexion .noplan p,
+	.block-main-connexion .register a {
+		font-size: 1.3em;		
+	}
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-connexion .form p label:nth-of-type(1) {
+		width: 150px;
+	}
+
+	.block-main-connexion .register {
+		margin-bottom: 20px;
+	}
+
 }
 
 
 /*---------------------------------
-CONFIRMATION DÉCONNEXION
+CONFIRMATION CONNEXION
 ----------------------------------*/
-
-/*Style titre déconnexion*/
-.block-main-deconnexion h2 {
+.block-main-confirmationconnexion h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
-	margin: 10px 0px 10px;
+	margin: 10px 0px;
 }
 
-/*Style message confirmation + erreur*/
-.block-main-deconnexion .done p {
-	text-align: center;
+.block-main-confirmationconnexion p {
 	color: white;
+	font-size: 2.3em;
 	text-shadow: 1px 1px 2px #288797;
-	font-size: 1.2em;
-	margin: 40px 0 0;
+	text-align: center;
+	margin-top: 40px;
 }
 
-/*Style liens retour*/
-.block-main-deconnexion .done a {
+.block-main-confirmationconnexion a {
+	text-shadow: none;
 	color: #00022e;
 }
 
-/*Style liens retour au survol*/
-.block-main-deconnexion .done a:hover,
-.block-main-deconnexion .done a:focus,
-.block-main-deconnexion .done a:active {
-	text-decoration: none;
-	color: #203863;
+.block-main-confirmationconnexion a:hover,
+.block-main-confirmationconnexion a:focus,
+.block-main-confirmationconnexion a:active {
+	color: #047395;
+	text-decoration: none; 
 }
+
+@media (min-width: 992px) {
+
+	.block-main-confirmationconnexion h2 {
+		font-size: 1.6em;
+	}
+
+	.block-main-confirmationconnexion p {
+		font-size: 1.3em;
+	}
+}
+
 
 /*---------------------------------
 PAGE PROFIL
 ----------------------------------*/
-
 /*Style titre*/
 .block-main-profil h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
@@ -717,25 +814,38 @@ PAGE PROFIL
 	font-size: 1.1em;
 	margin: 40px 0;
 	max-width: 650px;
-	text-align: center;
+	text-align: left;
 }
 
 /*Marges photo de profil*/
 .block-main-profil .picture {
 	margin: 10px 0 20px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 /*Taille photo profil*/
 .block-main-profil .picture img {
-	width: 90px;
+	width: 200px;
 	border-radius: 100%;
 	border: 3px solid #46b3a6;
+	margin: 0 0 20px;
+}
+
+/*Disposition annuler et input parcourir*/
+.block-main-profil .picture .action {
+	width: 610px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	font-size: 1.7em;
 }
 
 /*Style texte*/
 .block-main-profil .info p {
 	margin: 10px 20px 10px 0;
-	font-size: 1.1rem;
+	font-size: 2.2rem;
 	color: #203863;
 }
 
@@ -749,6 +859,21 @@ PAGE PROFIL
 	min-width: 400px;
 }
 
+
+.block-main-profil .action #change-picture {
+	color: #203863;
+}
+
+.block-main-profil .info #change-pseudo,
+.block-main-profil .info #change-mail,
+.block-main-profil .info #change-age {
+	background-color: rgba(255,255,255,0.75);
+    border-radius: 10px;
+    border: 1px solid #203863;
+    color: #203863;
+	padding: 0 6px;
+}
+
 .block-main-profil .info .name .action {
 	display: flex;
 	justify-content: center;
@@ -756,49 +881,50 @@ PAGE PROFIL
 }
 
 /*Style bouton modifier*/
-.block-main-profil .info .edit {
+.block-main-profil .bloc .edit {
 	background-image: url(../Icones/edit-b2.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: transparent;
 	border: none;
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
 	cursor: pointer;
 }
 
 /*Style bouton modifier au survol*/
-.block-main-profil .info .edit:hover,
-.block-main-profil .info .edit:focus,
-.block-main-profil .info .edit:active {
+.block-main-profil .bloc .edit:hover,
+.block-main-profil .bloc .edit:focus,
+.block-main-profil .bloc .edit:active {
 	background-image: url(../Icones/edit-b.png)
 }
 
 /*Style bouton annuler*/
-.block-main-profil .info .cancel1 {
+.block-main-profil .bloc .cancel1 {
 	background-image: url(../Icones/cancel-g.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: transparent;
 	border: none;
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
 	cursor: pointer;
 }
 
 /*Style bouton annuler au survol*/
-.block-main-profil .info .cancel1:hover,
-.block-main-profil .info .cancel1:focus,
-.block-main-profil .info .cancel1:active {
+.block-main-profil .bloc .cancel1:hover,
+.block-main-profil .bloc .cancel1:focus,
+.block-main-profil .bloc .cancel1:active {
 	background-image: url(../Icones/cancel-b.png)
 }
 
 .block-main-profil .buttons {
 	display: flex;
 	justify-content: center;
-	margin: 10px 0 0;
+	margin: 20px 0;
+	font-size: 2.2em;
 }
 
 /*Style bouton supprimer mon compte*/
@@ -824,6 +950,89 @@ PAGE PROFIL
 	text-decoration: none;
 }
 
+/*Style lien delete*/
+.block-main-profil .info .delete {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px auto;
+	padding: 8px 10px;
+}
+
+.block-main-profil .info .delete img {
+	width: 40px;
+	margin: 0 10px 0 0;
+}
+
+.block-main-profil .info .delete p {
+	margin: 0;	
+}
+
+.block-main-profil .info .delete p:hover,
+.block-main-profil .info .delete p:active,
+.block-main-profil .info .delete p:focus {
+	color: white;
+	cursor: pointer;
+}
+
+.block-main-profil .info a:hover,
+.block-main-profil .info a:active,
+.block-main-profil .info a:focus {
+	text-decoration: none;
+}
+
+
+@media (min-width: 992px) {
+	/*Style titre*/
+	.block-main-profil h2 {
+		font-size: 1.6em;
+	}
+
+	/*Style fond blanc*/
+	.block-main-profil .bloc {
+		width: 500px;
+		text-align: center;
+	}
+
+	/*Taille photo profil*/
+	.block-main-profil .picture img {
+		width: 90px;
+	}
+
+	/*Disposition annuler et input parcourir*/
+	.block-main-profil .picture .action {
+		width: 460px;
+		font-size: 1em;
+	}
+
+	/*Style texte*/
+	.block-main-profil .info p {
+		font-size: 1.1rem;
+	}
+
+	/*Style bouton modifier*/
+	.block-main-profil .bloc .edit {
+		width: 20px;
+		height: 20px;		
+	}
+
+	/*Style bouton annuler*/
+	.block-main-profil .bloc .cancel1 {
+		width: 20px;
+		height: 20px;
+	}
+
+	.block-main-profil .buttons {
+		margin: 10px 0 0;
+		font-size: 1em;
+	}
+
+	.block-main-profil .info .delete img {
+		width: 20px;
+	}
+
+}
+
 /*---------------------------------
 PAGE DEBUT FORMULAIRE
 ----------------------------------*/
@@ -831,7 +1040,7 @@ PAGE DEBUT FORMULAIRE
 /*Style titre page*/
 .block-main-debutformulaire h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
@@ -839,16 +1048,17 @@ PAGE DEBUT FORMULAIRE
 /*Style texte paragraphe*/
 .block-main-debutformulaire .introduction p {
 	color: white;
-	font-size: 1.2em;
-	text-align: justify;
-	margin: 40px 70px;
+	font-size: 2.3em;
+	margin: 40px 0;
 	text-shadow: 1px 1px 2px #288797;
+	width: 700px;
+    text-align: center;
 }
 
 /*Style texte bouton*/
 .block-main-debutformulaire .buttonbegin {
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 2.3em;
 	font-weight: 600;
 	margin: 70px;
 }
@@ -874,23 +1084,41 @@ PAGE DEBUT FORMULAIRE
 }
 
 
+@media (min-width: 992px) {
 
+	/*Style titre page*/
+	.block-main-debutformulaire h2 {
+		font-size: 1.6em;
+	}
+
+	/*Style texte paragraphe*/
+	.block-main-debutformulaire .introduction p {
+		font-size: 1.2em;
+		margin: 40px 70px;
+		width: 800px;
+	}
+
+	/*Style texte bouton*/
+	.block-main-debutformulaire .buttonbegin {
+		font-size: 1.3em;
+	}
+}
 
 /*---------------------------------
 PAGES QUESTION
 ----------------------------------*/
 
-.block-center .block-main .title{	
+.block-center .block-main .title {	
 	text-align: center;
 	position: relative;
-	font-size: 1.3em;
+	font-size: 3.6rem;
 	color: #00022E;
 	margin: 70px 0 30px;
 }
-.block-center .block-main .section .forms{	
+.block-center .block-main .section .forms {	
 	text-align: center;
 	position: relative;
-	font-size: 1.2em;
+	font-size: 2.6em;
 	color: #00022e;
 }
 
@@ -905,7 +1133,7 @@ PAGES QUESTION
 }
 
 .block-center .section .forms .answers {
-	width: 400px;
+	width: 700px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -924,7 +1152,11 @@ PAGES QUESTION
 }
 
 .block-center .section .forms .answers input {
-    margin-right: 10px;
+    margin-right: 16px;
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    vertical-align: 5px;
 }
 
 /*Style bouton*/
@@ -946,26 +1178,53 @@ PAGES QUESTION
 	text-decoration: none;
 }
 
+
+@media (min-width: 992px) {
+	.block-center .block-main .title {	
+		font-size: 1.3em;
+	}
+	
+	.block-center .block-main .section .forms{	
+		font-size: 1.2em;
+	}
+
+	.block-center .block-main .section .forms .quest{
+		font-size: 1.3em;
+	}
+
+	.block-center .section .forms .answers {
+		width: 400px;
+	}
+
+	.block-center .section .forms .answers input {
+		margin-right: 10px;
+	    -ms-transform: scale(1);
+	    -webkit-transform: scale(1);
+	    transform: scale(1);
+	    vertical-align: -1px;
+	}
+}
+
+
 /*---------------------------------
 PAGE CHOIX
 ----------------------------------*/
-
 /*Style titre page*/
 .block-main-choix h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
 
-
-/*Style sous-titre page*/
-.block-main-choix .selection p {
-	font-size: 1.4em;
-	color: white;
-	margin: 20px 0px 20px;
-	text-shadow: 1px 1px 2px #288797;
+/*Nombre de résultats*/
+.block-main-choix .results {
+	text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px #288797;
+    font-size: 2.5em;
 }
+
 
 /*Event : Style du fond*/
 .block-main-choix .event {
@@ -973,19 +1232,25 @@ PAGE CHOIX
 	border-radius: 20px;
 	padding: 20px;
 	font-size: 1.1em;
-	margin: 20px;
+	margin: 50px 0;
 	max-width: 650px;
+}
+
+.block-main-choix .event .row {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
 }
 
 /*Event : Style image*/
 .block-main-choix .event .image {
-	max-height: 135px;
-	max-width: 135px;
+	width: 300px;
 }
 
 /*Event : Style titre*/
 .block-main-choix .event .titleevent {
-	font-size: 1.2em;
+	font-size: 2.5em;
 	color: #047395;
 	font-weight: bold;
 	text-align: center;
@@ -993,7 +1258,7 @@ PAGE CHOIX
 
 /*Event : Style sous-titre*/
 .block-main-choix .event .subtitleevent {
-	font-size: 1.1em;
+	font-size: 2.3em;
 	color: #00022e;
 	font-weight: bold;
 	text-align: center;
@@ -1002,12 +1267,14 @@ PAGE CHOIX
 /*Event : Style description*/
 .block-main-choix .event .descriptionevent {
 	text-align: justify;
+	font-size: 2em;
 }
 
 /*Event : Décalage en savoir plus*/
 .block-main-choix .event .link {
 	display: flex;
 	justify-content: flex-end;
+	font-size: 2em;
 }
 
 /*Event : Style texte en savoir plus*/
@@ -1021,18 +1288,20 @@ PAGE CHOIX
 	display: flex;
 	justify-content: space-between;
 	padding: 10px 20px 0px 20px;
-	/*font-size: 1em;*/
+	font-size: 2em;
+	flex-wrap: wrap;
 }
 
 /*Event : Suppression espace après paragraphes*/
-.block-main-choix .event p{
+.block-main-choix .event p {
 	margin-bottom: 0;
-	max-width: 430px;
+	max-width: 600px;
 }
 
 /*Event : Infos et icônes sur une ligne + alignement vertical*/
 .block-main-choix .event .dayevent,
 .block-main-choix .event .timeevent,
+.block-main-choix .event .priceevent,
 .block-main-choix .event .placeevent {
 	display: flex;
 	align-items: center;
@@ -1040,18 +1309,439 @@ PAGE CHOIX
 
 /*Event : Taille des icônes + espace entre icônes et textes*/
 .block-main-choix .infoevent img {
-	max-height: 30px;
+	max-height: 40px;
 	margin: 0px 15px 0px 0px;
 }
 
+/*Event : Infos sur deux lignes*/
+.block-main-choix .infoevent .dayevent {
+	margin-right: 40px;
+}
+
+
+
+@media (min-width: 992px) {
+	/*Style titre page*/
+	.block-main-choix h2 {
+		font-size: 1.6em;
+	}
+
+	/*Nombre de résultats*/
+	.block-main-choix .results {
+		font-size: 1.3em;
+	}
+
+	/*Event : Style du fond*/
+	.block-main-choix .event {
+		max-width: 650px;
+		margin: 20px;
+	}
+	
+	.block-main-choix .event .row {
+		flex-direction: row;
+	}
+
+	/*Event : Style image*/
+	.block-main-choix .event .image {
+		width: 135px;
+	}
+
+	/*Event : Style titre*/
+	.block-main-choix .event .titleevent {
+		font-size: 1.2em;
+	}
+
+	/*Event : Style sous-titre*/
+	.block-main-choix .event .subtitleevent {
+		font-size: 1.1em;
+	}
+
+	/*Event : Style description*/
+	.block-main-choix .event .descriptionevent {
+		font-size: 1em;
+	}
+
+	/*Event : Décalage en savoir plus*/
+	.block-main-choix .event .link {
+		font-size: 1em;
+		width: 610px;
+	}
+
+	/*Event : Infos*/
+	.block-main-choix .event .infoevent {
+		font-size: 1em;
+		flex-wrap: nowrap;
+	}
+
+	/*Event : Suppression espace après paragraphes*/
+	.block-main-choix .event p {
+		max-width: 430px;
+	}
+
+	/*Event : Taille des icônes + espace entre icônes et textes*/
+	.block-main-choix .infoevent img {
+		max-height: 30px;
+	}
+
+	/*Event : Suppression marge*/
+	.block-main-choix .infoevent .dayevent {
+		margin-right: 0;
+	}
+
+}
+
+
+/*---------------------------------
+PAGE LISTING
+----------------------------------*/
+/*Style titre page*/
+.block-main-listing h2 {
+	text-align: center;
+	font-size: 3.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+
+/*Event : Style du fond*/
+.block-main-listing .event {
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.1em;
+	margin: 50px 0;
+	max-width: 650px;
+}
+
+.block-main-listing .event .row {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*Event : Style image*/
+.block-main-listing .event .image {
+	width: 300px;
+}
+
+/*Event : Style titre*/
+.block-main-listing .event .titleevent {
+	font-size: 2.5em;
+	color: #047395;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style sous-titre*/
+.block-main-listing .event .subtitleevent {
+	font-size: 2.3em;
+	color: #00022e;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style description*/
+.block-main-listing .event .descriptionevent {
+	text-align: justify;
+	font-size: 2em;
+}
+
+/*Event : Décalage en savoir plus*/
+.block-main-listing .event .link {
+	display: flex;
+	justify-content: flex-end;
+	font-size: 2em;
+}
+
+/*Event : Style texte en savoir plus*/
+.block-main-listing .event .link a {
+	color: #047395;
+	font-weight: bold;
+}
+
+/*Event : Infos*/
+.block-main-listing .event .infoevent {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px 0px 20px;
+	font-size: 2em;
+	flex-wrap: wrap;
+}
+
+/*Event : Suppression espace après paragraphes*/
+.block-main-listing .event p {
+	margin-bottom: 0;
+	max-width: 600px;
+}
+
+/*Event : Infos et icônes sur une ligne + alignement vertical*/
+.block-main-listing .event .dayevent,
+.block-main-listing .event .timeevent,
+.block-main-listing .event .priceevent,
+.block-main-listing .event .placeevent {
+	display: flex;
+	align-items: center;
+}
+
+/*Event : Taille des icônes + espace entre icônes et textes*/
+.block-main-listing .infoevent img {
+	max-height: 40px;
+	margin: 0px 15px 0px 0px;
+}
+
+/*Event : Infos sur deux lignes*/
+.block-main-listing .infoevent .dayevent {
+	margin-right: 40px;
+}
+
+
+
+@media (min-width: 992px) {
+	/*Style titre page*/
+	.block-main-listing h2 {
+		font-size: 1.6em;
+	}
+
+	/*Event : Style du fond*/
+	.block-main-listing .event {
+		max-width: 650px;
+		margin: 20px;
+	}
+	
+	.block-main-listing .event .row {
+		flex-direction: row;
+	}
+
+	/*Event : Style image*/
+	.block-main-listing .event .image {
+		width: 135px;
+	}
+
+	/*Event : Style titre*/
+	.block-main-listing .event .titleevent {
+		font-size: 1.2em;
+	}
+
+	/*Event : Style sous-titre*/
+	.block-main-listing .event .subtitleevent {
+		font-size: 1.1em;
+	}
+
+	/*Event : Style description*/
+	.block-main-listing .event .descriptionevent {
+		font-size: 1em;
+	}
+
+	/*Event : Décalage en savoir plus*/
+	.block-main-listing .event .link {
+		font-size: 1em;
+		width: 610px;
+	}
+
+	/*Event : Infos*/
+	.block-main-listing .event .infoevent {
+		font-size: 1em;
+		flex-wrap: nowrap;
+	}
+
+	/*Event : Suppression espace après paragraphes*/
+	.block-main-listing .event p {
+		max-width: 430px;
+	}
+
+	/*Event : Taille des icônes + espace entre icônes et textes*/
+	.block-main-listing .infoevent img {
+		max-height: 30px;
+	}
+
+	/*Event : Suppression marge*/
+	.block-main-listing .infoevent .dayevent {
+		margin-right: 0;
+	}
+
+}
+
+/*---------------------------------
+PAGE NEWS
+----------------------------------*/
+
+/*Style titre page*/
+.block-main-news h2 {
+	text-align: center;
+	font-size: 3.6em;
+	color: #00022e;
+	margin: 10px 0px 10px;
+}
+
+
+/*Event : Style du fond*/
+.block-main-news .event {
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 1.1em;
+	margin: 50px 0;
+	max-width: 650px;
+}
+
+.block-main-news .event .row {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+}
+
+/*Event : Style image*/
+.block-main-news .event .image {
+	width: 300px;
+}
+
+/*Event : Style titre*/
+.block-main-news .event .titleevent {
+	font-size: 2.5em;
+	color: #047395;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style sous-titre*/
+.block-main-news .event .subtitleevent {
+	font-size: 2.3em;
+	color: #00022e;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*Event : Style description*/
+.block-main-news .event .descriptionevent {
+	text-align: justify;
+	font-size: 2em;
+}
+
+/*Event : Décalage en savoir plus*/
+.block-main-news .event .link {
+	display: flex;
+	justify-content: flex-end;
+	font-size: 2em;
+}
+
+/*Event : Style texte en savoir plus*/
+.block-main-news .event .link a {
+	color: #047395;
+	font-weight: bold;
+}
+
+/*Event : Infos*/
+.block-main-news .event .infoevent {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px 0px 20px;
+	font-size: 2em;
+	flex-wrap: wrap;
+}
+
+/*Event : Suppression espace après paragraphes*/
+.block-main-news .event p {
+	margin-bottom: 0;
+	max-width: 600px;
+}
+
+/*Event : Infos et icônes sur une ligne + alignement vertical*/
+.block-main-news .event .dayevent,
+.block-main-news .event .timeevent,
+.block-main-news .event .priceevent,
+.block-main-news .event .placeevent {
+	display: flex;
+	align-items: center;
+}
+
+/*Event : Taille des icônes + espace entre icônes et textes*/
+.block-main-news .infoevent img {
+	max-height: 40px;
+	margin: 0px 15px 0px 0px;
+}
+
+/*Event : Infos sur deux lignes*/
+.block-main-news .infoevent .dayevent {
+	margin-right: 40px;
+}
+
+
+
+@media (min-width: 992px) {
+	/*Style titre page*/
+	.block-main-news h2 {
+		font-size: 1.6em;
+	}
+
+	/*Event : Style du fond*/
+	.block-main-news .event {
+		max-width: 650px;
+		margin: 20px;
+	}
+	
+	.block-main-news .event .row {
+		flex-direction: row;
+	}
+
+	/*Event : Style image*/
+	.block-main-news .event .image {
+		width: 135px;
+	}
+
+	/*Event : Style titre*/
+	.block-main-news .event .titleevent {
+		font-size: 1.2em;
+	}
+
+	/*Event : Style sous-titre*/
+	.block-main-news .event .subtitleevent {
+		font-size: 1.1em;
+	}
+
+	/*Event : Style description*/
+	.block-main-news .event .descriptionevent {
+		font-size: 1em;
+	}
+
+	/*Event : Décalage en savoir plus*/
+	.block-main-news .event .link {
+		font-size: 1em;
+		width: 610px;
+	}
+
+	/*Event : Infos*/
+	.block-main-news .event .infoevent {
+		font-size: 1em;
+		flex-wrap: nowrap;
+	}
+
+	/*Event : Suppression espace après paragraphes*/
+	.block-main-news .event p {
+		max-width: 430px;
+	}
+
+	/*Event : Taille des icônes + espace entre icônes et textes*/
+	.block-main-news .infoevent img {
+		max-height: 30px;
+	}
+
+	/*Event : Suppression marge*/
+	.block-main-news .infoevent .dayevent {
+		margin-right: 0;
+	}
+
+}
 
 
 /*---------------------------------
 PAGE RESULTATS RECHERCHE
 ----------------------------------*/
+
 /*Bloc résultats recherche*/
 .block-content-search .inner {
-	width: 600px;
+	width: auto;
 	margin: 0 auto;
 }
 
@@ -1059,9 +1749,9 @@ PAGE RESULTATS RECHERCHE
 .block-content-search .results {
 	padding: 0 0 20px;
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 2.6em;
 	color: #00022e;
-	margin: 10px 0px 10px;
+	margin: 10px 0px;
 }
 
 /*Affichage liste des résultats*/
@@ -1075,35 +1765,34 @@ PAGE RESULTATS RECHERCHE
 
 /*Style de chaque résultat*/
 .block-content-search li {
-	width: 300px;
-	height: 380px;
+	width: 550px;
+	height: 600px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: rgba(255,255,255,0.50);
     border-radius: 20px;
-    padding: 20px;
-	margin: 0 0 20px;
+    padding: 50px;
+	margin: 0 0 50px;
 }
 
 /*Taille images*/
 .block-content-search li img {
-	max-width: 260px;
-	max-height: 260px;
+	width: 400px;
 	margin: 0 0 20px;
 }
 
 /*Style nom de l'événement*/
 .block-content-search .name {
 	color: #00022e;
-	font-size: 1.3rem;
+	font-size: 2.3rem;
 	text-decoration: none;
 	text-align: center;
 }
 
 /*Style nom de l'événement*/
 .block-content-search .description {
-	font-size: 1.2rem;	
+	font-size: 2.2rem;	
 	text-decoration: none;
 	text-align: center;
 	color: black;
@@ -1116,16 +1805,62 @@ PAGE RESULTATS RECHERCHE
 }
 
 
+@media (min-width: 992px) {
+	/*Bloc résultats recherche*/
+	.block-content-search .inner {
+		width: 1000px;
+	}
+	
+	/*Affichage liste des résultats*/
+	.block-content-search ul {
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	
+	/*Style de chaque résultat*/
+	.block-content-search li {
+		width: 300px;
+		height: 380px;
+		flex-wrap: wrap;
+		padding: 20px;
+		margin: 0 0 20px;
+	}
+
+	/*Alignement titre*/
+	.block-content-search .results {
+		padding: 0 0 20px;
+		text-align: center;
+		font-size: 1.6em;
+		color: #00022e;
+		margin: 10px 0px 10px;
+	}
+
+	/*Taille images*/
+	.block-content-search li img {
+		width: 260px;
+	}
+
+	/*Style nom de l'événement*/
+	.block-content-search .name {
+		font-size: 1.3rem;
+	}
+
+	/*Style nom de l'événement*/
+	.block-content-search .description {
+		font-size: 1.2rem;
+	}
+}
+
 
 /*---------------------------------
 CONTACT
 ----------------------------------*/
 
-
 /*Style titre contact*/
 .block-main-contact h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
@@ -1135,9 +1870,16 @@ CONTACT
 	text-align: center;
 	color: white;
 	text-shadow: 1px 1px 2px #288797;
-	font-size: 1.2em;
+	font-size: 2.2em;
 	margin: 20px 0 0;
 }
+
+/*Largeur et centrage fieldset*/
+.block-main-cpntact fieldset {
+	width: 650px;
+	margin: 0 auto;
+}
+
 
 /*Couleur nom des champs*/
 .block-main-contact .form label:nth-of-type(1) {
@@ -1149,7 +1891,7 @@ CONTACT
 .block-main-contact .form  p {
 	color: white;
 	margin: 50px 20px;
-	font-size: 1.2em;
+	font-size: 1.8em;
 }
 
 
@@ -1162,20 +1904,23 @@ CONTACT
 /*Espace entre noms champs et zones de texte + boutons radios*/
 .block-main-contact .form p label:nth-of-type(1) {
 	display: block;
-	width: 128px;
+	width: 200px;
 	float: left;
+    font-size: 1.2em;
 }
 
 
 /*Style zones de texte*/
-.block-main-contact .form input:first-of-type,
-.block-main-contact .form input:nth-of-type(2),
-.block-main-contact .form input:nth-of-type(3),
-.block-main-contact .form textarea {
+.block-main-contact .form #firstname,
+.block-main-contact .form #lastname,
+.block-main-contact .form #mail,
+.block-main-contact .form #message {
 	background-color: rgba(255,255,255,0.50);
 	border: thin;
 	border-radius: 10px;
 	color: #203863;
+	font-size: 1.3em;
+	width: 450px;
 }
 
 /*Style zone de texte*/
@@ -1199,6 +1944,7 @@ CONTACT
 	border-radius: 10px;
 	background-color: white;
 	filter: drop-shadow(0px 2px 5px #288797); 
+	font-size: 1.6em;
 }
 
 /*Style bouton au survol, au tab ou au clic*/
@@ -1210,6 +1956,57 @@ CONTACT
 	text-decoration: none;
 }
 
+
+@media (min-width: 992px) {
+
+	/*Style titre contact*/
+	.block-main-contact h2 {
+		font-size: 1.6em;
+	}
+
+	/*Largeur et centrage fieldset*/
+	.block-main-contact fieldset {
+		width: 430px;
+	}
+
+	/*Style intro contact*/
+	.block-main-contact .send p {
+		font-size: 1.2em;
+	}
+
+	/*Style champs*/
+	.block-main-contact .form  p {
+		font-size: 1.2em;
+	}
+
+	/*Espace entre noms champs et zones de texte + boutons radios*/
+	.block-main-contact .form p label:nth-of-type(1) {
+		width: 128px;
+		font-size: 1em;
+	}
+
+
+	/*Style zones de texte*/
+	.block-main-contact .form #firstname,
+	.block-main-contact .form #lastname,
+	.block-main-contact .form #mail,
+	.block-main-contact .form #message {
+		font-size: 1rem;
+		width: 258px;
+	}
+
+	/*Style texte bouton*/
+	.block-main-contact .form p:last-of-type {
+		font-size: 1.3em;
+	}
+	   
+
+	/*Style bouton*/
+	.block-main-contact .form p:last-of-type input {
+		font-size: 1em;
+	}
+}
+
 /*---------------------------------
 CONFIRMATION CONTACT
 ----------------------------------*/
@@ -1218,7 +2015,7 @@ CONFIRMATION CONTACT
 /*Style titre confirmation contact*/
 .block-main-confirmation-contact h2 {
 	text-align: center;
-	font-size: 1.6em;
+	font-size: 3.6em;
 	color: #00022e;
 	margin: 10px 0px 10px;
 }
@@ -1229,7 +2026,7 @@ CONFIRMATION CONTACT
 	text-align: center;
 	color: white;
 	text-shadow: 1px 1px 2px #288797;
-	font-size: 1.2em;
+	font-size: 2.2em;
 	margin: 40px 0 0;
 }
 
@@ -1250,31 +2047,19 @@ CONFIRMATION CONTACT
 	color: #203863;
 }
 
-@media (min-width: 992px) { 
 
-	.block-content-search .inner {
-		width: 1000px;
-		margin: 0 auto;
+@media (min-width: 992px) {
+
+	/*Style titre confirmation contact*/
+	.block-main-confirmation-contact h2 {
+		font-size: 1.6em;
 	}
-	
-	/*Affichage liste des résultats*/
-	.block-content-search ul {
-		list-style: none;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-		padding: 20px 0;
+
+	/*Style message confirmation + erreur*/
+	.block-main-confirmation-contact .sent p,
+	.block-main-confirmation-contact .error p {
+		font-size: 1.2em;
 	}
-	
-	/*Style de chaque résultat*/
-	.block-content-search li {
-		flex-direction: column;
-		align-items: center;
-		border-radius: 20px;
-		padding: 20px;
-		margin: 0 0 20px;
-	}
-	
 }
 
 
@@ -1352,37 +2137,6 @@ LARGE DEVICES (desktops, 992px and up)
 		color: #46b3a6;
 	}
 	
-	/*---------------------------------
-	PAGE INSCRIPTION GRANDS ECRANS
-	----------------------------------*/
-
-	/*Espace entre noms champs et zones de texte + boutons radios*/
-	.block-main-inscription .form p label:nth-of-type(1) {
-		display: block;
-		width: 150px;
-		float: left;
-	}
-	
-	/*Espace entre boutons radios et textes*/
-	.block-main-inscription .form p:nth-of-type(4) input,
-	.block-main-inscription .form p:nth-of-type(5) input {
-		margin: 0px 20px 0px 0px;	
-	}
-	
-	/*---------------------------------
-	PAGE CONNEXION GRANDS ECRANS
-	----------------------------------*/
-
-	/*Espace entre noms champs et zones de texte + boutons radios*/
-	.block-main-connexion .form p label:nth-of-type(1) {
-		display: block;
-		width: 150px;
-		float: left;
-	}
-	
-	.block-main-connexion .register {
-		margin-bottom: 20px;
-	}
 	
 }
 
@@ -1390,131 +2144,145 @@ LARGE DEVICES (desktops, 992px and up)
 /*---------------------------------
 PAGE SOIREE
 ----------------------------------*/
-	/* POUR TOUS */
-	.block-main-soiree {
-		color: #00022e;
-		width: 1000px;
-	}
-	
-	/* TITRE */
-	.block-main-soiree .titre_soiree {
-		font-size: 45px;
-		text-align: center;	
-	}
-	
-	/*COORDONNEES + MAP */
+/* POUR TOUS */
+.block-main-soiree {
+	color: #00022e;
+	width: 1000px;
+}
 
-	.block-main-soiree .mapcoordonnees {
-		display: flex;
-		margin-top: 10%;
-		width: 1000px;
-		justify-content: space-between;
-		
-	}
+/* TITRE */
+.block-main-soiree .titre_soiree {
+	font-size: 45px;
+	text-align: center;	
+}
+
+/*COORDONNEES + MAP */
+
+.block-main-soiree .mapcoordonnees {
+	display: flex;
+	margin-top: 10%;
+	width: 1000px;
+	justify-content: space-between;
+	
+}
+
+
+/* COORDONNEES */
+.block-main-soiree .coordonnees {
+	font-size: 25px;	
+	text-align: right;
+	margin-bottom: 0%;
+}
+
+/* Places*/
+.block-main-soiree	 a{
+	color: orangered;
+	text-align: center;
+}	
 	
 
-	/* COORDONNEES */
-	.block-main-soiree .coordonnees {
-		font-size: 25px;	
-		text-align: right;
-		margin-bottom: 0%;
-	}
+/*MAP*/
+.block-main-soiree #map {
+	width: 500px;
+	height: 300px;
+	border: solid;
+}
 
-	/* Places*/
-	.block-main-soiree	 a{
-		color: orangered;
+/*affiche*/
+.block-main-soiree .afficheavis {	
+	display: flex;
+	margin-top: 10%;
+	width: 1000px;		
+	justify-content: space-between;
+}
+
+/* Avis */
+
+.block-main-soiree .avis {
+	width: 450px;
+	padding: 15px;
+}
+
+.block-main-soiree .avis .perso {
+	border: 0.2rem solid #2B2B2B;
+	margin-top: 30px;
+	padding: 5px;
+	
+}
+
+.block-main-soiree .avis .perso .userbleu{
+	width: 75px;
+}
+
+.block-main-soiree .afficheavis .image{
+	max-height: 400px;
+	max-width: 400px;
+}
+.block-main-soiree .afficheavis .avis{
+		font-size: 25px;
 		text-align: center;
-	}	
-		
+}
 
-	/*MAP*/
-	.block-main-soiree #map {
-		width: 500px;
-		height: 300px;
-		border: solid;
-	}
-
-	/*affiche*/
-	.block-main-soiree .afficheavis {	
-		display: flex;
-		margin-top: 10%;
-		width: 1000px;		
-		justify-content: space-between;
-	}
-
-	/* Avis */
-
-	.block-main-soiree .avis {
-		width: 450px;
-		padding: 15px;
-	}
-
-	.block-main-soiree .avis .perso {
-		border: 0.2rem solid #2B2B2B;
-		margin-top: 30px;
-		padding: 5px;
-		
-	}
-	
-	.block-main-soiree .avis .perso .userbleu{
-		
-		width: 75px;
-	}
-	
-	.block-main-soiree .avis .perso .description{
-		border-bottom: 0.1rem solid #000419;
-	}
-
-	.block-main-soiree .afficheavis .image{
-		max-height: 400px;
-		max-width: 400px;
-	}
-	.block-main-soiree .afficheavis .avis{
-			font-size: 25px;
-			text-align: center;
-	}
-
-	.block-main-soiree .afficheavis .avis img{
-		max-height: 400px;
-		max-width: 400px;
-	}
+.block-main-soiree .afficheavis .avis img{
+	max-height: 400px;
+	max-width: 400px;
+}
 
 
 
-/*------------------------------------
-Mention Legal
-------------------------------------*/
+/*---------------------------------------------------
+Mentions légales + CGU + Politique de confidentialité
+-----------------------------------------------------*/
 
 .block_main_legal {
 	display: block;
-	width: 1000px;
-	margin-left: auto ;
-	margin-right: auto;
+	width: 700px;
+	margin: 20px auto;
+	text-align: justify;
 }
 
-/*------------------------------------
-Mention Legal
-------------------------------------*/
+.block_main_legal h2 {
+	text-align: center;
+	font-size: 3.6em;
+	color: #00022e;
+	margin: 10px 0px 40px;
+}
 
-formulaireComm{
-	display: block;
-	width: 1000px;
-	margin-left: auto ;
-	margin-right: auto;
+.block_main_legal h3,
+.block_main_legal p {
+	font-size: 2.3em;
+}
+
+
+@media (min-width: 992px) {
+	.block_main_legal {
+		width: 1000px;
+	}
+
+	.block_main_legal h2 {
+		font-size: 1.6em;
+	}
+
+	.block_main_legal h3,
+	.block_main_legal p {
+		font-size: 1em;
+	}
 }
 
 
 /*---------------------------------
 FOOTER
 ----------------------------------*/
+
 .footer {
 	background-color: transparent;
 	text-align: center;
 	color: white;
-	font-size: 1.1em;
-	width: 100%;
+	font-size: 1.3em;
   	height: 50px;
-	text-shadow: 1px 1px 2px #288797;
+	text-shadow: 1px 1px 2px #288797;   
+    width: 98vw;
+	margin: 0 auto 10px;
 }
 
 /*Couleur des liens*/
@@ -1531,7 +2299,7 @@ FOOTER
 
 /*Espace entre liens du footer*/
 .footer ul li:not(:last-of-type) {
-	padding-right: 10px;
+	padding-right: 18px;
 }
 
 /*Séparateur*/
@@ -1539,3 +2307,14 @@ FOOTER
 	background-color: white;
 }
 
+
+@media (min-width: 992px) {
+	.footer {
+		font-size: 1.1em;
+	}
+
+	/*Espace entre liens du footer*/
+	.footer ul li:not(:last-of-type) {
+		padding-right: 10px;
+	}
+}

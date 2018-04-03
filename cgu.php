@@ -8,8 +8,9 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-grid.min.css">
 	<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
-	<script src="menu.js"></script>
 	<script src="jquery.min.js"></script>
+	<script src="menu.js"></script>
+	
 </head>
 
 <body>
@@ -142,7 +143,8 @@
 
 			La société éditrice s'engage à faire figurer le nom du membre à proximité de chaque utilisation de sa publication.<br /><br />
 	
-			</div>
+		</div>
+	</div>
 	<?php include "footer.php" ?>
 
 

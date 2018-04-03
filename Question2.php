@@ -36,7 +36,7 @@
 						<main class="block-main">
 							<section class="section group">
 								<article class="item title">
-									<h1 class="title">Question <?php echo $idQuestion;?></h1>	
+									<h2 class="title">Question <?php echo $idQuestion;?></h2>	
 								</article>					
 								<article class="item forms">
 
@@ -87,13 +87,13 @@
 					</div>
 				</div>	
 			</div>
-			<?php
-				//On récupère la réponse de la question précedente
-				$_SESSION['reponse1'] = $_GET['reponse1'];
-			?>
-
-			<?php include('footer.php');?>
 		</div>
+		<?php
+			//On récupère la réponse de la question précedente
+			$_SESSION['reponse1'] = $_GET['reponse1'];
+		?>
+
+		<?php include('footer.php');?>		
 	</body>
 </html>
 
