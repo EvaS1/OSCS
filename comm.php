@@ -21,14 +21,15 @@
 	<body>
 		<div class="page">
 			<?php include('header.php');
-			include('pdo.php');?>
+			include('pdo.php');
+			$evenement = $_GET['id']; ?>
 
 	<p class="merciAvis"> Merci votre avis à bien était pris en compte</p>
 	
 	<?php 
 	$stmt = $connexion -> prepare('INSERT INTO avis (commentaireAvis, idEvenement, idMembre) VALUES (:commentaireAvis, :idEvenement, :idMembre)');
 	$stmt->bindValue(':commentaireAvis', $_POST['commentaire']);
-	$stmt->bindValue(':idEvenement', $_POST['event']);
+	$stmt->bindValue(':idEvenement', $evenement);
 	$stmt->bindValue(':idMembre', $profil -> idMembre ); 
 	echo '<br />';
 	$stmt->execute();

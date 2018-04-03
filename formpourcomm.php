@@ -20,7 +20,8 @@
 
 	<body>
 		<div class="page">
-			<?php include('header.php');?>
+			<?php include('header.php');
+			$evenement = $_GET['id']; ?>
 
 	
 <html>
@@ -30,11 +31,10 @@
 </head>
 
 <body>
-	<form method="post" action="comm.php" class="formulaireComm" >
+	<form method="post" action="comm.php?id=<?php echo $evenement ?>" class="formulaireComm" >
     	<p>
         	<label for="commentaire">Votre commentaires:</label>
         	<input type="text" name="commentaire" id="commentaire" placeholder="Votre comm" /><br />
-			<label for="event">id evenement: </label>
       		<input type="text" name="event" id="event" placeholder="Event?" />
 		</p>
 		<input type="submit" value="Envoyer" />
