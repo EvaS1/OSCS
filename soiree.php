@@ -48,22 +48,24 @@
 								<div class="mapcoordonnees">
 								
 									<div class="map">
-											<div id="map"><script>
-											function initMap() {
-												var angers = {lat: <?php echo $evenement -> latitudeEvenement;?>, lng: <?php echo $evenement -> longitudeEvenement;?>};
-												var map = new google.maps.Map(document.getElementById('map'), {
-													zoom: 15,
-													center: angers
-												});
-												var marker = new google.maps.Marker({
-													position: angers,
-													map: map
-												});
-											}
-										</script>
-										<script async defer
-											src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyytxogOqYAz2Dyz8WRsqZRZ9dABbEN6o&callback=initMap">
-										</script></div>
+										<div id="map">
+											<script>
+												function initMap() {
+													var angers = {lat: <?php echo $evenement -> latitudeEvenement;?>, lng: <?php echo $evenement -> longitudeEvenement;?>};
+													var map = new google.maps.Map(document.getElementById('map'), {
+														zoom: 15,
+														center: angers
+													});
+													var marker = new google.maps.Marker({
+														position: angers,
+														map: map
+													});
+												}
+											</script>
+											<script async defer
+												src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyytxogOqYAz2Dyz8WRsqZRZ9dABbEN6o&callback=initMap">
+											</script>
+										</div>
 										
 									
 									</div>
@@ -113,32 +115,30 @@
 											<p><a href="formpourcomm.php"> Poster votre commentaire </a>	</p>
 										</div>
 									
-									<?
-											}
+										<?php
 										}
-									?>
-									
-									
-									<?php 
-										$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
-										$statementImage = $connexion->prepare($query);
-										$statementImage -> bindValue(':id', $evenement -> idEvenement);
-										$statementImage -> execute();
-										$image = $statementImage -> fetch ();
-										echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
-									?>          
-									
-									<?php
-									} 
-								?>
-									
+										?>
+
+										<?php 
+											$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
+											$statementImage = $connexion->prepare($query);
+											$statementImage -> bindValue(':id', $evenement -> idEvenement);
+											$statementImage -> execute();
+											$image = $statementImage -> fetch ();
+											echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
+										?>          
+
+										<?php
+											}
+										} 
+										?>									
+								</div>							
 							</div>
-							<?php include "footer.php"; ?>
+						</div>
 					</div>
-				</div>
+				</main>
 			</div>
-		</div>
-	</main>
-	</div>							
+		</div>	
+		<?php include "footer.php"; ?>						
 	</body>	
 </html>
