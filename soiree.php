@@ -106,12 +106,12 @@
 										?>
 
 										<div class="perso">
-											<img src="Images/userbleu.png" alt="user" class="userbleu"><br />
+											<img src="Images/<?php echo $photoMembre -> photoMembre; ?>" alt="user" class="userbleu"><br />
 											<?php echo $nom -> pseudoMembre;  ?>
 											<div class="description">
 												<?php echo $avis -> commentaireAvis; ?><br /> <br />
 											</div>	
-											<p><a href="formpourcomm.php?id= <?php echo $idEvenement ?>"> Poster votre commentaire </a>	</p>
+											
 										</div>
 									
 										<?php
@@ -119,6 +119,8 @@
 											}
 										} 
 										?>	
+									<p><a href="formpourcomm.php?id= <?php echo $idEvenement ?>"> Poster votre commentaire </a>	</p>
+									
 									<?php 
 											$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
 											$statementImage = $connexion->prepare($query);
@@ -126,7 +128,8 @@
 											$statementImage -> execute();
 											$image = $statementImage -> fetch ();
 											echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
-										?> 
+									?> 
+									
 								</div>							
 							</div>
 						</div>
