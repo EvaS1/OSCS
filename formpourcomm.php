@@ -35,7 +35,6 @@
     	<p>
         	<label for="commentaire">Votre commentaires:</label>
         	<input type="text" name="commentaire" id="commentaire" placeholder="Votre comm" /><br />
-      		<input type="text" name="event" id="event" placeholder="Event?" />
 		</p>
 		<input type="submit" value="Envoyer" />
 	</form>	
