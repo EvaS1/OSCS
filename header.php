@@ -126,7 +126,13 @@
 			</div>
 		</div>
 		<div class="titleandlogo">
-			<a href="connexion.php"><h1>Où sortir ce soir</h1></a>
+			<?php
+			if (!isset($_SESSION['id'])) {
+				echo '<a href="connexion.php"><h1>Où sortir ce soir</h1></a>';
+			}  else {
+				echo '<a href="news.php"><h1>Où sortir ce soir</h1></a>';
+			}				
+			?>
 			<img class="logo-web" src="Logo/logof.png" alt="logo">
 		</div>
 		

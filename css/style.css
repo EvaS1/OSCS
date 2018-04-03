@@ -212,7 +212,6 @@ HEADER WEB
 	align-items: center;
 	width: 1000px;
 	margin: auto;
-	margin-top: 20px;
 }
 
 .block-header-web .topbar .socialmedia ul {
@@ -236,6 +235,7 @@ HEADER WEB
 .block-header-web .topbar .connect {
 	display: flex;
     align-items: center;
+	margin: 20px 0;
 }
 
 .block-header-web .topbar .connexion .connect,
