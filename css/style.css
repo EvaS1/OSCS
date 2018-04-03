@@ -2396,7 +2396,14 @@ PAGE SOIREE
 	margin-bottom: 0;
 }
 
+.block-main-soiree .avis .commentaire p:first-of-type {
+	font-weight: bold;
+	color: #047395;
+}
 
+.block-main-soiree .avis .commentaire p:last-of-type {
+	font-size: 1.3em;
+}
 
 @media (min-width: 992px) {
 	.block-main-soiree .titre_soiree {
@@ -2483,7 +2490,11 @@ PAGE SOIREE
 	}
 	
 	.block-main-soiree .avis .commentaire p:first-of-type {
-		margin-bottom: 15px;	
+		margin-bottom: 10px;	
+	}
+	
+	.block-main-soiree .avis .commentaire p:last-of-type {
+		font-size: 0.9em;
 	}
 }
 

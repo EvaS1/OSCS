@@ -32,7 +32,7 @@
 					</div>
 	
 	<?php 
-	$stmt = $connexion -> prepare('INSERT INTO avis (commentaireAvis, idEvenement, idMembre) VALUES (:commentaireAvis, :idEvenement, :idMembre)');
+	$stmt = $connexion -> prepare('INSERT INTO avis (commentaireAvis, dateAvis, idEvenement, idMembre) VALUES (:commentaireAvis, (NOW()), :idEvenement, :idMembre)');
 	$stmt->bindValue(':commentaireAvis', $_POST['commentaire']);
 	$stmt->bindValue(':idEvenement', $evenement);
 	$stmt->bindValue(':idMembre', $profil -> idMembre ); 

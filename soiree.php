@@ -182,7 +182,7 @@
 									<?php
 
 									// Récupération des commentaires
-									$query = "SELECT * FROM avis WHERE idEvenement=:id";
+									$query = "SELECT * FROM avis WHERE idEvenement=:id ORDER BY dateAvis desc";
 									$statementEvenement = $connexion->prepare($query);
 									$statementEvenement -> bindValue(':id', $idEvenement);
 									$statementEvenement -> execute();
@@ -206,6 +206,12 @@
 											<div class="commentaire">
 												<p><?php echo $nom -> pseudoMembre; ?></p>
 												<p><?php echo $avis -> commentaireAvis; ?></p>
+												<p><?php 
+													$dateUS = $avis -> dateAvis; 
+													list($annee, $mois, $jour) = explode('-',$dateUS); 
+													$dateFR = $jour."/".$mois."/".$annee; 
+													echo "Posté le ".$dateFR;
+													?></p>
 											</div>	
 											
 										</div>
