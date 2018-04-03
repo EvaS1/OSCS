@@ -484,9 +484,8 @@ PAGE INSCRIPTION
 	text-decoration: none;
 }
 
-/*---------------------------------
-PAGE CONFIRMATION INSCRIPTION
-----------------------------------*/
+
+
 
 /*Style Inscription*/
 .block-main-confirmationinscription .titleconfirmation h2 {
@@ -1458,7 +1457,12 @@ PAGE SOIREE
 	}
 	
 	.block-main-soiree .avis .perso .userbleu{
+		
 		width: 75px;
+	}
+	
+	.block-main-soiree .avis .perso .description{
+		border-bottom: 0.1rem solid #000419;
 	}
 
 	.block-main-soiree .afficheavis .image{
@@ -1487,6 +1491,18 @@ Mention Legal
 	margin-left: auto ;
 	margin-right: auto;
 }
+
+/*------------------------------------
+Mention Legal
+------------------------------------*/
+
+formulaireComm{
+	display: block;
+	width: 1000px;
+	margin-left: auto ;
+	margin-right: auto;
+}
+
 
 /*---------------------------------
 FOOTER

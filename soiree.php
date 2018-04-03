@@ -42,7 +42,7 @@
 								
 								?>
 								<div class="titre_soiree">
-								 <?php echo $evenement -> nomEvenement;?>
+								 <?php echo $evenement -> nomEvenement; ?>
 								</div>
 								
 								<div class="mapcoordonnees">
@@ -71,7 +71,7 @@
 										<strong>Coordonnées</strong>
 										<div class="contact">
 											<p><?php echo $evenement -> lieuEvenement;?></p> 
-											<p><?php echo $evenement -> numeroVoieEvenement;?> <?php echo $evenement -> typeVoieEvenement;?> <?php echo $evenement -> nomVoieEvenement;?></p>
+											<p><?php echo $evenement -> numeroVoieEvenement	;?> <?php echo $evenement -> typeVoieEvenement;?> <?php echo $evenement -> nomVoieEvenement;?></p>
 											<p><?php echo $evenement -> codePostalEvenement;?> <?php echo $evenement -> nomVilleEvenement;?></p>
 											<p><?php echo $evenement -> telephoneEvenement;?></p>
 											
@@ -80,40 +80,43 @@
 									</div>
 								</div>
 									
-								<?php 
-										
-									$query ="SELECT * FROM avis WHERE idEvenement=:id LIMIT 0,1";
-									$statementAvis = $connexion->prepare($query);
-									$statementAvis -> bindValue(':id', $evenement -> idEvenement);
-									$statementAvis -> execute();
-									$avis = $statementAvis -> fetch ();
-									
-								?> 
-								<?php 
-																	
-									$query ="SELECT * FROM membres WHERE idAvis=:id";
-									$statementMembres = $connexion->prepare($query);
-									$statementMembres -> bindValue(':id', $avis -> idAvis);
-									$statementMembres -> execute();
-									$membres = $statementMembres -> fetch ();	
-								?> 
-								
-								
-								<div class="afficheavis">
-									<div class="avis">
-									Avis: <br />
-									
+							
+									<?php
+
+									// Récupération des commentaires
+									$query = "SELECT * FROM avis WHERE idEvenement=:id";
+									$statementEvenement = $connexion->prepare($query);
+									$statementEvenement -> bindValue(':id', $idEvenement);
+									$statementEvenement -> execute();
+
+									$i = 0;
+									while ($avis = $statementEvenement -> fetch()) {
+										$i++;
+
+										// Récupération des commentaires
+										$query = "SELECT * FROM membres WHERE idMembre =" . $avis -> idMembre;
+										$statement = $connexion->prepare($query);
+										$nom = $statement -> execute();
+
+										$ii = 0;
+										while ($nom = $statement -> fetch()) {
+										$ii++;
+										?>
+
 										<div class="perso">
 											<img src="Images/userbleu.png" alt="user" class="userbleu"><br />
-											<?php echo $membres -> pseudoMembre; ?>
-											<img src="Images/4-5.png" alt="étoiles"><br />
+											<?php echo $nom -> pseudoMembre;  ?>
+											ta note est de <?php echo $avis	-> noteAvis; ?> /5.<br /><br />
 											<div class="description">
-												<?php echo $avis -> commentaireAvis; ?>
+												<?php echo $avis -> commentaireAvis; ?><br /> <br />
 											</div>	
+											<p><a href="formpourcomm.php"> Poster votre commentaire </a>	</p>
 										</div>
-										
-									</div>
 									
+									<?
+											}
+										}
+									?>
 									
 									
 									<?php 
@@ -123,30 +126,19 @@
 										$statementImage -> execute();
 										$image = $statementImage -> fetch ();
 										echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
-									?>                  		
-									<!--</div>
-
-									vos avis:<br />
-										<a href="action.php">Rédigez votre avis</a><br />
-
-									ta note est de <?php echo (int)$_POST['note']; ?> /5.<br />
-									<?php echo htmlspecialchars($_POST['avis']); ?>.
-
-									</form>-->
+									?>          
 									
 									<?php
 									} 
 								?>
 									
-																	</div>
-							<?php include "footer.php" ?>
-						
+							</div>
+							<?php include "footer.php"; ?>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-							
-	</body>
-	
+	</main>
+	</div>							
+	</body>	
 </html>
