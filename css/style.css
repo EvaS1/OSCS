@@ -2159,12 +2159,12 @@ PAGE SOIREE
 /* POUR TOUS */
 .block-main-soiree {
 	color: #00022e;
-	width: 1000px;
+	width: 800px;
 }
 
 /* TITRE */
 .block-main-soiree .titre_soiree {
-	font-size: 45px;
+	font-size: 3.6em;
 	text-align: center;	
 }
 
@@ -2172,25 +2172,30 @@ PAGE SOIREE
 
 .block-main-soiree .mapcoordonnees {
 	display: flex;
-	margin-top: 10%;
-	width: 1000px;
-	justify-content: space-between;
-	
+	flex-direction: column;
+	align-items: center;	
 }
 
 
 /* COORDONNEES */
 .block-main-soiree .coordonnees {
-	font-size: 25px;	
-	text-align: right;
-	margin-bottom: 0%;
+	font-size: 2em;	
+	text-align: center;
 }
 
 /* Places*/
-.block-main-soiree	 a{
-	color: orangered;
+.block-main-soiree .coordonnees a {
+	color: white;
+	text-shadow: 1px 1px 2px #288797;
 	text-align: center;
 }	
+
+.block-main-soiree .coordonnees a:hover,
+.block-main-soiree .coordonnees a:focus,
+.block-main-soiree .coordonnees a:active {
+	color: #203863;
+	text-decoration: none;
+}
 	
 
 /*MAP*/
@@ -2222,24 +2227,43 @@ PAGE SOIREE
 	
 }
 
-.block-main-soiree .avis .perso .userbleu{
+.block-main-soiree .avis .perso .userbleu {
 	width: 75px;
 }
 
-.block-main-soiree .afficheavis .image{
+.block-main-soiree .afficheavis .image {
 	max-height: 400px;
 	max-width: 400px;
 }
-.block-main-soiree .afficheavis .avis{
-		font-size: 25px;
-		text-align: center;
+.block-main-soiree .afficheavis .avis {
+	font-size: 25px;
+	text-align: center;
 }
 
-.block-main-soiree .afficheavis .avis img{
+.block-main-soiree .afficheavis .avis img {
 	max-height: 400px;
 	max-width: 400px;
 }
 
+
+@media (min-width: 992px) {
+	.block-main-soiree .titre_soiree {
+		font-size: 1.6em;
+	}
+	
+	.block-main-soiree .mapcoordonnees {
+		flex-direction: row;
+		align-items: center;	
+		justify-content: space-between;
+		width: 800px;
+		margin: 30px auto;
+	}
+	
+	.block-main-soiree .coordonnees {
+		font-size: 1.2em;
+		text-align: right;
+	}
+}
 
 
 /*---------------------------------------------------
@@ -2267,6 +2291,7 @@ Mentions légales + CGU + Politique de confidentialité
 
 
 @media (min-width: 992px) {
+	
 	.block_main_legal {
 		width: 1000px;
 	}
