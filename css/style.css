@@ -1393,14 +1393,95 @@ PAGE CHOIX
 /*---------------------------------
 FORM SOIREE
 ---------------------------------*/
-.formulaireComm {
-	text-align: center;
+.block-main-form .formulaireComm {
 	background-color: rgba(255,255,255,0.50);
-	border-radius: 20px;
+	border-radius: 15px;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	font-size: 3em;
+	width: 700px;
+	margin: 80px 0;
+}
+
+.block-main-form .formulaireComm label {
+	color: #203863;
+	margin: 0 0 40px;
+	font-weight: bold;
+}
+
+.block-main-form .formulaireComm textarea {
+	border: 2px solid #00022e;
+	margin: 0 0 40px;
+	border-radius: 10px;
 	padding: 20px;
-	font-size: 1.1em;
-	margin: auto;
-	max-width: 650px;
+}
+
+.block-main-form .formulaireComm input {
+	padding: 15px 30px;
+    border: thin;
+    border-radius: 10px;
+    background-color: white;
+    filter: drop-shadow(0px 2px 5px #288797);
+	width: 400px;
+    margin: 0 auto;
+	color: #203863;
+}
+
+.block-main-form .formulaireComm input:hover, 
+.block-main-form .formulaireComm input:focus, 
+.block-main-form .formulaireComm input:active {
+	background-color: #203863;
+    color: white;
+    text-decoration: none;
+}
+
+/*Accusé enregistrement commentaire*/
+.block-main-form .merciAvis {
+	color: #203863;
+	font-size: 3em;
+	width: 800px;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 80px;
+}
+
+.block-main-form .merciAvis a {
+	color: #047395;
+}
+
+.block-main-form .merciAvis a:hover,
+.block-main-form .merciAvis a:focus,
+.block-main-form .merciAvis a:active {
+	color: white;
+	text-decoration: none;
+}
+
+
+@media (min-width: 992px) {
+	.block-main-form .formulaireComm {
+		font-size: 1.2em;	
+	}
+	
+	.block-main-form .formulaireComm label {
+		margin: 0 0 20px;
+	}
+	
+	.block-main-form .formulaireComm textarea {
+		border: 2px solid #00022e;
+		margin: 0 0 20px;
+		border-radius: 8px;
+		padding: 10px;
+	}
+	
+	.block-main-form .formulaireComm input {
+		width: 200px;
+	}
+	
+	/*Accusé enregistrement commentaire*/
+	.block-main-form .merciAvis {
+		font-size: 1.2em;
+	}
 }
 
 /*---------------------------------
@@ -2166,33 +2247,90 @@ PAGE SOIREE
 .block-main-soiree .titre_soiree {
 	font-size: 3.6em;
 	text-align: center;	
+	font-weight: bold;
 }
 
-/*COORDONNEES + MAP */
 
-.block-main-soiree .mapcoordonnees {
+/* INFOS*/
+.block-main-soiree .event {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px 0;
+	font-size: 2em;
+}
+
+.block-main-soiree .event p {
+	margin-bottom: 0;
+}
+
+.block-main-soiree .event .eventpicture img {
+	width: 200px;
+	margin: 0 20px 0 0;
+}
+
+
+.block-main-soiree .infoevent {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 2em;
+}
+
+.block-main-soiree .infoevent-web {
+	display: none;
+}
+
+.block-main-soiree .infoevent img {
+	height: 40px;
+	margin: 0 10px 0 0;
+}
+
+.block-main-soiree .infoevent p {
+	margin-bottom: 0;
+}
+
+.block-main-soiree .infoevent .dayevent,
+.block-main-soiree .infoevent .timeevent,
+.block-main-soiree .infoevent .priceevent {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+/*COORDONNEES + MAP */
+.block-main-soiree .mapcoordonnees h2 {
+	font-size: 3.6em;
+	text-align: center;
+	margin: 80px 0 0;
+}
+
+.block-main-soiree .coordonnees {
 	display: flex;
 	flex-direction: column;
 	align-items: center;	
 }
 
 
+
 /* COORDONNEES */
-.block-main-soiree .coordonnees {
-	font-size: 2em;	
+.block-main-soiree .contact p {
 	text-align: center;
+	font-size: 2em;
+	margin-bottom: 0;
 }
 
 /* Places*/
-.block-main-soiree .coordonnees a {
+.block-main-soiree .contact a {
 	color: white;
 	text-shadow: 1px 1px 2px #288797;
 	text-align: center;
 }	
 
-.block-main-soiree .coordonnees a:hover,
-.block-main-soiree .coordonnees a:focus,
-.block-main-soiree .coordonnees a:active {
+.block-main-soiree .contact a:hover,
+.block-main-soiree .contact a:focus,
+.block-main-soiree .contact a:active {
 	color: #203863;
 	text-decoration: none;
 }
@@ -2203,47 +2341,61 @@ PAGE SOIREE
 	width: 500px;
 	height: 300px;
 	border: solid;
-}
-
-/*affiche*/
-.block-main-soiree .afficheavis {	
-	display: flex;
-	margin-top: 10%;
-	width: 1000px;		
-	justify-content: space-between;
+	margin-top: 40px;
 }
 
 /* Avis */
 
 .block-main-soiree .avis {
-	width: 450px;
-	padding: 15px;
+	margin: 80px auto;
 }
 
-.block-main-soiree .avis .perso {
-	border: 0.2rem solid #2B2B2B;
-	margin-top: 30px;
-	padding: 5px;
-	
-}
-
-.block-main-soiree .avis .perso .userbleu {
-	width: 75px;
-}
-
-.block-main-soiree .afficheavis .image {
-	max-height: 400px;
-	max-width: 400px;
-}
-.block-main-soiree .afficheavis .avis {
-	font-size: 25px;
+.block-main-soiree .avis h2 {
+	font-size: 3.6em;
 	text-align: center;
 }
 
-.block-main-soiree .afficheavis .avis img {
-	max-height: 400px;
-	max-width: 400px;
+.block-main-soiree .avis a {
+	font-size: 2em;
+	color: white;
+	text-shadow: 1px 1px 2px #288797;
+	text-align: center;
 }
+
+.block-main-soiree .avis a:hover,
+.block-main-soiree .avis a:focus,
+.block-main-soiree .avis a:active {
+	color: #203863;
+	text-decoration: none;
+}
+
+.block-main-soiree .avis .perso {
+	border: 0.2rem solid #00022e;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: 20px;
+	background-color: rgba(255,255,255,0.50);
+	border-radius: 10px;
+}
+
+.block-main-soiree .avis .perso .userpicture {
+	width: 100px;
+	margin: 0 20px 0 0;
+}
+
+.block-main-soiree .avis .commentaire {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.block-main-soiree .avis .commentaire p {
+	font-size: 2em;
+	margin-bottom: 0;
+}
+
 
 
 @media (min-width: 992px) {
@@ -2251,17 +2403,87 @@ PAGE SOIREE
 		font-size: 1.6em;
 	}
 	
-	.block-main-soiree .mapcoordonnees {
+	/*INFOS*/
+	
+	.block-main-soiree .event {
+		font-size: 1.2em;
+		justify-content: space-around;
+	}
+	
+	.block-main-soiree .event .eventpicture img {
+		width: 150px;
+	}
+	
+	.block-main-soiree .descriptionevent {
+		width: 500px;
+	}
+	
+	.block-main-soiree .infoevent {
+		display: none;
+	}
+	
+	.block-main-soiree .infoevent-web {
+		margin-top: 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.block-main-soiree .infoevent-web img {
+		height: 20px;
+		margin: 0 10px 0 0;
+	}
+	
+	.block-main-soiree .infoevent-web .dayevent,
+	.block-main-soiree .infoevent-web .timeevent,
+	.block-main-soiree .infoevent-web .priceevent {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	/*COORDONNEES*/
+		
+	.block-main-soiree .coordonnees {
 		flex-direction: row;
 		align-items: center;	
 		justify-content: space-between;
-		width: 800px;
 		margin: 30px auto;
 	}
 	
+	.block-main-soiree .mapcoordonnees h2 {
+		font-size: 1.5em;
+	}
+	
 	.block-main-soiree .coordonnees {
+		font-size: 1.2em;		
+	} 
+	
+	.block-main-soiree .contact p {
+		font-size: 1em;
+		text-align: left;
+	}
+	
+	.block-main-soiree .contact a {
+		margin-top: 20px;
+	}
+	
+	
+	/*AVIS*/
+	.block-main-soiree .avis h2 {
+		font-size: 1.6em;
+	}
+	
+	.block-main-soiree .avis a {
 		font-size: 1.2em;
-		text-align: right;
+	}
+	
+	.block-main-soiree .avis .commentaire p {
+		font-size: 1.2em;
+	}
+	
+	.block-main-soiree .avis .commentaire p:first-of-type {
+		margin-bottom: 15px;	
 	}
 }
 

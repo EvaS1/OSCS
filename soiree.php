@@ -41,48 +41,144 @@
 										$i++;
 								
 								?>
-								<div class="titre_soiree">
-								 <?php echo $evenement -> nomEvenement; ?>
-								</div>
+									<div class="titre_soiree">
+									 <?php echo $evenement -> nomEvenement; ?>
+									</div>	
+									
+									<div class="event">									
+										<div class="eventpicture">
+										<?php 
+											$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
+											$statementImage = $connexion->prepare($query);
+											$statementImage -> bindValue(':id', $evenement -> idEvenement);
+											$statementImage -> execute();
+											$image = $statementImage -> fetch ();
+											echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
+										?>	
+										</div>	
+																
+											
+										<div class="descriptionevent">
+											<p><?php echo $evenement -> descriptionEvenement;?></p>
+											
+											<div class="infoevent-web">
+											<div class="dayevent">
+												<img src="Icones/calendar.png" alt="Calendar" class="calendarevent1">
+												<p><?php 
+												$dateUS = $evenement -> dateEvenement; 
+												list($annee, $mois, $jour) = explode('-',$dateUS); 
+												$dateFR = $jour."/".$mois."/".$annee; 
+												echo $dateFR;?></p>
+											</div>
+											<div class="timeevent">
+												<img src="Icones/clock.png" alt="Clock" class="clockevent1">
+												<p><?php $heure = $evenement -> heureEvenement;
+												list($heures, $minutes) = explode('.', $heure);
+
+												if ($minutes < 10) {
+													$heuretexte = $heures."h".'0'.$minutes*0.6;
+												} else {
+													$heuretexte = $heures."h".$minutes*0.6;
+												}
+												echo $heuretexte;?></p>
+											</div>
+											<div class="priceevent">
+												<img src="Icones/euro.png" alt="price" class="price">
+												<p>
+												<?php $prix = $evenement ->prixEvenement;
+													$prix = str_replace('.', ',', $prix);
+													if ($prix == 0) {
+														echo "Entrée gratuite";
+													} else {
+														echo $prix." €";
+													}
+												?> 
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>																	
+
+
+
+									<div class="infoevent">
+										<div class="dayevent">
+											<img src="Icones/calendar.png" alt="Calendar" class="calendarevent1">
+											<p><?php 
+											$dateUS = $evenement -> dateEvenement; 
+											list($annee, $mois, $jour) = explode('-',$dateUS); 
+											$dateFR = $jour."/".$mois."/".$annee; 
+											echo $dateFR;?></p>
+										</div>
+										<div class="timeevent">
+											<img src="Icones/clock.png" alt="Clock" class="clockevent1">
+											<p><?php $heure = $evenement -> heureEvenement;
+											list($heures, $minutes) = explode('.', $heure);
+
+											if ($minutes < 10) {
+												$heuretexte = $heures."h".'0'.$minutes*0.6;
+											} else {
+												$heuretexte = $heures."h".$minutes*0.6;
+											}
+											echo $heuretexte;?></p>
+										</div>
+										<div class="priceevent">
+											<img src="Icones/euro.png" alt="price" class="price">
+											<p>
+											<?php $prix = $evenement ->prixEvenement;
+												$prix = str_replace('.', ',', $prix);
+												if ($prix == 0) {
+													echo "Entrée gratuite";
+												} else {
+													echo $prix." €";
+												}
+											?> 
+											</p>
+										</div>
+									</div>
+															
 								
 								<div class="mapcoordonnees">
-								
-									<div class="map">
-										<div id="map">
-											<script>
-												function initMap() {
-													var angers = {lat: <?php echo $evenement -> latitudeEvenement;?>, lng: <?php echo $evenement -> longitudeEvenement;?>};
-													var map = new google.maps.Map(document.getElementById('map'), {
-														zoom: 15,
-														center: angers
-													});
-													var marker = new google.maps.Marker({
-														position: angers,
-														map: map
-													});
-												}
-											</script>
-											<script async defer
-												src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyytxogOqYAz2Dyz8WRsqZRZ9dABbEN6o&callback=initMap">
-											</script>
-										</div>
-										
+									<div class="title">
+										<h2>Coordonnées</h2>
+									</div>	
 									
-									</div>
 									<div class="coordonnees">
-										<strong>Coordonnées</strong>
 										<div class="contact">
 											<p><?php echo $evenement -> lieuEvenement;?></p> 
 											<p><?php echo $evenement -> numeroVoieEvenement	;?> <?php echo $evenement -> typeVoieEvenement;?> <?php echo $evenement -> nomVoieEvenement;?></p>
 											<p><?php echo $evenement -> codePostalEvenement;?> <?php echo $evenement -> nomVilleEvenement;?></p>
 											<p><?php echo $evenement -> telephoneEvenement;?></p>
-											
+
 											<p><a href="<?php echo $evenement -> siteEvenement;?>"> Achetez  vos places </a>	</p>
 										</div>
-									</div>
+
+										<div class="map">
+											<div id="map">
+												<script>
+													function initMap() {
+														var angers = {lat: <?php echo $evenement -> latitudeEvenement;?>, lng: <?php echo $evenement -> longitudeEvenement;?>};
+														var map = new google.maps.Map(document.getElementById('map'), {
+															zoom: 15,
+															center: angers
+														});
+														var marker = new google.maps.Marker({
+															position: angers,
+															map: map
+														});
+													}
+												</script>
+												<script async defer
+													src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyytxogOqYAz2Dyz8WRsqZRZ9dABbEN6o&callback=initMap">
+												</script>
+											</div>								
+										</div>	
+									</div>								
 								</div>
 									
-							
+								<div class="avis">
+									<h2>Les avis</h2>
+									<p><a href="formpourcomm.php?id= <?php echo $idEvenement ?>"> Écris ton commentaire </a></p>
 									<?php
 
 									// Récupération des commentaires
@@ -102,35 +198,23 @@
 
 										$ii = 0;
 										while ($nom = $statement -> fetch()) {
-										$ii++;
+											$ii++;
 										?>
 
 										<div class="perso">
-											<img src="Images/<?php echo $nom -> photoMembre; ?>" alt="user" class="userbleu"><br />
-											<?php echo $nom -> pseudoMembre;  ?>
-											<div class="description">
-												<?php echo $avis -> commentaireAvis; ?><br /> <br />
+											<img src="Images/<?php echo $nom -> photoMembre; ?>" alt="user" class="userpicture">
+											<div class="commentaire">
+												<p><?php echo $nom -> pseudoMembre; ?></p>
+												<p><?php echo $avis -> commentaireAvis; ?></p>
 											</div>	
 											
 										</div>
 									
-										<?php
-										}
+											<?php
 											}
-										
-										?>	
-									<p><a href="formpourcomm.php?id= <?php echo $idEvenement ?>"> Poster votre commentaire </a>	</p>
-									
-									<?php 
-											$query ="SELECT * FROM image WHERE idEvenement=:id LIMIT 0,1";
-											$statementImage = $connexion->prepare($query);
-											$statementImage -> bindValue(':id', $evenement -> idEvenement);
-											$statementImage -> execute();
-											$image = $statementImage -> fetch ();
-											echo "<img class='image' alt='image1' src='Images/".$image-> nomImage."'>";
-									
-									
-										  }?> 
+										}
+									}?> 
+									</div>
 									
 								</div>							
 							</div>

@@ -20,25 +20,20 @@
 
 	<body>
 		<div class="page">
-			<?php include('header.php');
-			$evenement = $_GET['id']; ?>
+			<?php include('header.php');?>
+			<div class="content">
+				<main class="block-main-form">
+					<?php $evenement = $_GET['id']; ?>
 
-	
-<html>
-<head>
-<meta charset="utf-8">
-<title>Document sans titre</title>
-</head>
-
-<body>
-	<form method="post" action="comm.php?id=<?php echo $evenement ?>" class="formulaireComm" >
-    	<p>
-        	<label for="commentaire">Votre commentaires:</label>
-        	<input type="text" name="commentaire" id="commentaire" placeholder="Votre comm" /><br />
-		</p>
-		<input type="submit" value="Envoyer" />
-	</form>	
-<?php include('footer.php');?>
-	
+					<form method="post" action="comm.php?id=<?php echo $evenement ?>" class="formulaireComm" >
+						<label for="commentaire">Ton commentaire :</label>
+						<textarea name="commentaire" id="commentaire" placeholder="Écris ici..." rows="5" required></textarea>						
+						<input id="button" type="submit" value="Envoyer" />
+					</form>	
+				</main>
+			</div>
+		</div>
+		<?php include('footer.php');?>
+		
 	</body>
 </html>	
