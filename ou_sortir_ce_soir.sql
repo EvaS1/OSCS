@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 27 Mars 2018 à 11:13
+-- Généré le :  Mer 04 Avril 2018 à 09:03
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.1
 
@@ -28,11 +28,26 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `avis` (
   `idAvis` int(11) NOT NULL,
+  `dateAvis` date NOT NULL,
   `commentaireAvis` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `noteAvis` int(1) NOT NULL,
   `idEvenement` int(11) NOT NULL,
   `idMembre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `avis`
+--
+
+INSERT INTO `avis` (`idAvis`, `dateAvis`, `commentaireAvis`, `idEvenement`, `idMembre`) VALUES
+(1, '0000-00-00', 'Un bon concert plutôt bien fait, un peps incroyable merci.', 2, 18),
+(2, '0000-00-00', 'Un bon ptit bar bien sympatoche.', 1, 19),
+(4, '0000-00-00', 'sympas moi j adore en tout cas', 3, 24),
+(7, '2018-03-20', 'bof j\'aime pas trop très beauff', 4, 25),
+(8, '0000-00-00', 'sympatoche', 6, 19),
+(9, '0000-00-00', 'pas ouff.', 5, 18),
+(23, '2018-03-28', 'Sympa !!!', 2, 44),
+(35, '2018-04-01', 'Trop géniaaaal !', 2, 25),
+(36, '2018-04-03', 'Un bon concert plutôt bien fait, un peps incroyable !', 2, 44);
 
 -- --------------------------------------------------------
 
@@ -53,7 +68,8 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`idContact`, `prenomContact`, `nomContact`, `mailContact`, `messageContact`) VALUES
-(1, '', '', 'eva.saintier@gmail.com', 'njtrjrtjur');
+(1, '', '', 'eva.saintier@gmail.com', 'njtrjrtjur'),
+(2, '', '', 'eva.saintier@gmail.com', 'enhry');
 
 -- --------------------------------------------------------
 
@@ -63,9 +79,9 @@ INSERT INTO `contact` (`idContact`, `prenomContact`, `nomContact`, `mailContact`
 
 CREATE TABLE `evenement` (
   `idEvenement` int(11) NOT NULL,
-  `nomEvenement` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `libelleCourtEvenement` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `descriptionEvenement` varchar(510) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `nomEvenement` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `libelleCourtEvenement` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `descriptionEvenement` varchar(510) CHARACTER SET utf8 DEFAULT NULL,
   `dateEvenement` date DEFAULT NULL,
   `prixEvenement` decimal(10,2) NOT NULL,
   `telephoneEvenement` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
@@ -130,18 +146,18 @@ CREATE TABLE `membres` (
   `emailMembre` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `passwordMembre` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `genderMembre` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `ageMembre` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+  `ageMembre` varchar(15) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `photoMembre` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `membres`
 --
 
-INSERT INTO `membres` (`idMembre`, `pseudoMembre`, `emailMembre`, `passwordMembre`, `genderMembre`, `ageMembre`) VALUES
-(18, 'Hugo', 'egez@zehzeh', 'hugo', 'gender2', 'age1'),
-(19, 'El patron', 'lanoche@gmail.com', 'azerty', 'gender2', 'age1'),
-(24, 'EvaS', 'eva.saintier@gmail.com', 'e4599fa9f2653074005dad27f086837c20faeef4', 'gender1', 'age1'),
-(25, 'Essai', 'essai@gmail.com', '10ba3a9c8bce3bec5f82023a71cc7b9f6dcf3d7a', 'gender2', 'age1');
+INSERT INTO `membres` (`idMembre`, `pseudoMembre`, `emailMembre`, `passwordMembre`, `genderMembre`, `ageMembre`, `photoMembre`) VALUES
+(25, 'Essai', 'essai@gmail.com', '10ba3a9c8bce3bec5f82023a71cc7b9f6dcf3d7a', 'gender2', 'age1', 'etudiant1.jpg'),
+(35, 'Hugo', 'hugo@gmail.com', 'd808bc58aa813503d413f8b5416f647af96114fb', 'gender2', 'age1', 'etudiant3.jpg'),
+(44, 'EvaS', 'eva.saintier@gmail.com', 'e4599fa9f2653074005dad27f086837c20faeef4', 'gender1', 'age1', 'etudiant2.jpg');
 
 -- --------------------------------------------------------
 
@@ -278,17 +294,17 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT pour la table `avis`
 --
 ALTER TABLE `avis`
-  MODIFY `idAvis` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAvis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT pour la table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `idContact` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idContact` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `membres`
 --
 ALTER TABLE `membres`
-  MODIFY `idMembre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `idMembre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT pour la table `question`
 --
@@ -302,13 +318,6 @@ ALTER TABLE `reponse`
 --
 -- Contraintes pour les tables exportées
 --
-
---
--- Contraintes pour la table `avis`
---
-ALTER TABLE `avis`
-  ADD CONSTRAINT `evenement2` FOREIGN KEY (`idEvenement`) REFERENCES `evenement` (`idEvenement`),
-  ADD CONSTRAINT `membre` FOREIGN KEY (`idMembre`) REFERENCES `membres` (`idMembre`);
 
 --
 -- Contraintes pour la table `image`
