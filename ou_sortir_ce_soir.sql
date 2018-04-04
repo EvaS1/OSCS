@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 04 Avril 2018 à 09:03
+-- Généré le :  Mer 04 Avril 2018 à 09:13
 -- Version du serveur :  10.1.21-MariaDB
 -- Version de PHP :  7.1.1
 
@@ -202,7 +202,7 @@ INSERT INTO `reponse` (`idReponse`, `texteReponse`, `idQuestion`) VALUES
 (4, 'Peu importe', 1),
 (5, '19h00 - 19h30', 2),
 (6, '19h31 - 20h00', 2),
-(7, '20h01 - 20h30', 2),
+(7, 'Après 20h', 2),
 (8, 'Peu importe', 2),
 (9, 'Moins de 15 €', 3),
 (10, 'Moins de 30 €', 3),
